@@ -1,2 +1,18 @@
 ###> symfony/mercure-bundle ###
 ###< symfony/mercure-bundle ###
+services:
+    database:
+        image: mysql:8.0
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_ROOT_PASSWORD: "!ChangeMe!"
+            MYSQL_DATABASE: app
+        volumes:
+            - db-data:/var/lib/mysql:rw
+        ports:
+            - "3337:3306"
+        labels:
+            com.symfony.server.service-ignore: true
+
+volumes:
+    db-data:

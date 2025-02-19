@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 trait KeyValue
 {
     #[Assert\NotBlank]
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(name: '`key`', length: 255)]
     private string $key;
 
     #[Assert\NotBlank]
