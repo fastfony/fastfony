@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="{% block html_class %}{% endblock %}" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block favicon %}
+            {{ include('_favicon.html.twig') }}
+        {% endblock %}
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body class="{% block body_class %}{% endblock %}">
+        <div id="toast-container" class="toast toast-top toast-center z-40">
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ label }}">
+                        <span>{{ message|trans }}</span>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+
+        <div id="loader" class="fixed z-50 w-full h-full hidden">
+            <!--<div class="z-40 fixed h-full w-full bg-base-100 opacity-50"></div>-->
+            <div class="z-40 fixed w-full text-center h-16 bg-base-100 p-4">
+                <span class="loading loading-dots loading-xl"></span>
+            </div>
+        </div>
+
+        {% block body %}{% endblock %}
+    </body>
+</html>

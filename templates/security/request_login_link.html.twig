@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="flex flex-col w-full overflow-hidden relative min-h-screen items-center justify-center g-0 px-4">
+
+        <div class="justify-center items-center w-full card lg:flex max-w-md bg-white mb-32">
+            <div class="w-full card-body">
+                {% if form is defined %}
+                    {% if company_icon_filepath %}
+                        <img class="h-25 mx-auto" src="{{ asset(company_icon_filepath) }}" alt="{{ company_name }}">
+                    {% endif %}
+
+                    <h2 class="mt-4 text-2xl/9 font-bold tracking-tight text-gray-900">{{ 'login.title'|trans }}</h2>
+
+                    <p class="my-4 text-sm/6 text-gray-500">
+                        {{ 'login.no_account'|trans }}
+                        <a href="{{ path('register') }}" class="link link-primary">
+                            {{ 'login.create_account'|trans }}
+                        </a>
+                    </p>
+
+                    <!-- Login with email link -->
+                    {{ form_start(form, {attr: {class: 'space-y-6'}}) }}
+                        <div>
+                            <div class="mt-2">
+                                <label class="floating-label">
+                                    <span>{{ 'label.email'|trans }}</span>
+                                    {{ form_widget(form.email, {attr: {class: 'input w-full', placeholder: ''}}) }}
+                                    {{ form_errors(form.email) }}
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <button type="submit" class="btn btn-primary w-full">
+                                {{ 'login.button'|trans }}
+                            </button>
+                        </div>
+                    {{ form_end(form) }}
+                {% else %}
+                    <div class="py-10">
+                        <div class="mx-auto flex size-20 items-center justify-center rounded-full bg-green-100">
+                            <svg class="size-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"></path>
+                            </svg>
+                        </div>
+
+                        <p class="m-8 text-gray-500">{{ 'login.link_sent_validity'|trans }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

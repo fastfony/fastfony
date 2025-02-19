@@ -1,0 +1,21 @@
+{
+  "button.theme": "Appearance",
+  "flash.already_logged_in": "You are already logged in!",
+  "flash.login_link_sent.error": "An error occured while sending the login link. Please retry.",
+  "flash.login_link_sent.success": "An email with login link has been sent to the user.",
+  "flash.require_login": "You have to login in order to access this page.",
+  "input.admin_email": "Your email",
+  "installation.error": "An error occurred. Please retry.",
+  "label.email": "Email address",
+  "login.button": "Send me a login link",
+  "login.create_account": "Get started for free",
+  "login.link_sent_validity": "If you have an account a login link has been sent to your email address. This link is valid for 5 minutes.",
+  "login.no_account": "Not a member?",
+  "login.title": "Log in to your account",
+  "register.agree_with_terms": "By clicking on \"Create an account\" I accept the terms and conditions of use and I have read the confidentiality policy. ",
+  "register.already_account": "Already have an Account?",
+  "register.button": "Create an account",
+  "register.link_sent_validity": "A login link has been sent to your email address. This link is valid for 5 minutes.",
+  "register.login": "Log In",
+  "register.title": "Join us!"
+}

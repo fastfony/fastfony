@@ -1,0 +1,60 @@
+{% extends 'installation/layout.html.twig' %}
+
+{% trans_default_domain 'installation' %}
+
+{% set not_fully_operational = 1 <= app.request.session.get('installation_checks')|filter(check => not check)|length %}
+
+{% block header %}
+    {% if not_fully_operational %}
+        <div role="alert" class="alert alert-error mx-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>{{ 'error.checks'|trans }}</span>
+        </div>
+    {% endif %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="grid grid-flow-row-dense grid-cols-3 grid-rows-1 py-12 px-8">
+        <div class="">
+            <ul class="steps steps-vertical">
+                <li class="step step-primary">
+                    <a href="{{ path('installation') }}">
+                        {{ 'stepper.item.1'|trans }}
+                    </a>
+                </li>
+                <li class="step step-primary">{{ 'stepper.item.2'|trans }}</li>
+                <li class="step">{{ 'stepper.item.3'|trans }}</li>
+            </ul>
+        </div>
+        <div class="col-span-2">
+            <div class="card shadow-lg">
+                {{ form_start(login_form, {attr: {action: path('installation_step', {step: 3}), class: 'card-body'}}) }}
+                    <h2 class="card-title mb-4">{{ 'step2.title'|trans }}</h2>
+
+                    {{ form_errors(login_form) }}
+
+                    <fieldset class="fieldset bg-base-200 border border-base-300 p-4 rounded-box">
+                        <legend class="fieldset-legend">{{ 'step2.choose_login'|trans }}</legend>
+                        {{ form_widget(login_form.email, {attr: {placeholder: 'input.admin_email', class: 'input'}}) }}
+                        {{ form_errors(login_form.email) }}
+                        <p class="fieldset-label">{{ 'step2.help'|trans|raw }}</p>
+                    </fieldset>
+
+                    <p class="py-4">{{ 'step2.instruction'|trans|raw }}</p>
+
+                    <button type="submit" {{ not_fully_operational ? 'disabled' : '' }}
+                        class="mt-4 btn place-self-end">
+                        {{ 'step2.button.next'|trans }}
+                        <svg width="16px" height="16px" class="me-2 inline-block"
+                            data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811V8.69ZM12.75 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061a1.125 1.125 0 0 1-1.683-.977V8.69Z"></path>
+                        </svg>
+                    </button>
+                {{ form_end(login_form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

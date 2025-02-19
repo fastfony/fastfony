@@ -1,0 +1,41 @@
+{
+    "devDependencies": {
+        "@babel/core": "^7.17.0",
+        "@babel/preset-env": "^7.16.0",
+        "@hotwired/stimulus": "^3.0.0",
+        "@hotwired/turbo": "^7.1.1 || ^8.0",
+        "@symfony/stimulus-bridge": "^3.2.0",
+        "@symfony/ux-turbo": "file:vendor/symfony/ux-turbo/assets",
+        "@symfony/ux-vue": "file:vendor/symfony/ux-vue/assets",
+        "@symfony/webpack-encore": "^5.0.0",
+        "@tailwindcss/typography": "^0.5.16",
+        "@vue/compiler-sfc": "^3.5.13",
+        "core-js": "^3.38.0",
+        "daisyui": "^5.0.0-beta.6",
+        "file-loader": "^6.2.0",
+        "regenerator-runtime": "^0.13.9",
+        "vue": "^3.5.13",
+        "vue-loader": "^17.4.2",
+        "webpack": "^5.74.0",
+        "webpack-cli": "^5.1.0",
+        "webpack-dev-server": "^5.2.0",
+        "webpack-notifier": "^1.15.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "@headlessui/vue": "^1.7.23",
+        "@heroicons/vue": "^2.2.0",
+        "@tailwindcss/postcss": "^4.0.4",
+        "axios": "^1.7.9",
+        "postcss": "^8.5.1",
+        "postcss-loader": "^8.1.1",
+        "tailwindcss": "^4.0.4"
+    }
+}

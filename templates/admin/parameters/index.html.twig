@@ -1,0 +1,12 @@
+{% extends 'admin.html.twig' %}
+
+{% trans_default_domain 'admin' %}
+
+{% block main %}
+    <div class="prose mb-12">
+        <h1>{{ 'Settings'|trans }}</h1>
+        <p>{{ 'settings.description'|trans|raw }}</p>
+    </div>
+
+    <div {{ vue_component('Parameters') }}></div>
+{% endblock %}

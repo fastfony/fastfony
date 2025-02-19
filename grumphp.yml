@@ -1,0 +1,30 @@
+grumphp:
+    environment:
+        variables:
+            PHP_CS_FIXER_IGNORE_ENV: "1"
+    stop_on_failure: true
+    tasks:
+        securitychecker_symfony:
+            lockfile: ./composer.lock
+            format: ~
+            run_always: false
+        phpcsfixer2:
+            config: .php-cs-fixer.dist.php
+            config_contains_finder: true
+            verbose: true
+            diff: false
+        twigcsfixer:
+            paths: [ ]
+            level: ~
+            config: ~
+            report: 'text'
+            no-cache: false
+            verbose: false
+            triggered_by: [ 'twig' ]
+    parallel:
+        enabled: true
+        max_workers: 32
+    fixer:
+        enabled: true
+        fix_by_default: true
+    process_timeout: 600

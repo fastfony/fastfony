@@ -1,0 +1,10 @@
+twig:
+    file_name_pattern: '*.twig'
+    globals:
+        company_name: '%env(database:COMPANY_NAME)%'
+        company_icon_filepath: '%env(database:COMPANY_ICON_FILEPATH)%'
+        background_login_image_url: '%env(database:BACKGROUND_LOGIN_IMAGE_URL)%'
+
+when@test:
+    twig:
+        strict_variables: true
