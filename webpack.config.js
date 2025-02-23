@@ -37,6 +37,7 @@ Encore
     options.watchFiles = {
       paths: ['assets/locales/*', 'src/**/*.php', 'templates/**/*'],
     };
+    options.allowedHosts = 'all';
     options.server = {
       type: 'https',
       options: {

@@ -1,0 +1,11 @@
+proxy:
+    domains:
+        - fastfony
+
+http:
+    port: 9876 
+    
+workers:
+    docker_compose: ~
+    npm_encore_watch:
+        cmd: ['npx', 'encore', 'dev-server']

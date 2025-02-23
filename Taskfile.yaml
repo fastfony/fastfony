@@ -1,0 +1,65 @@
+version: '3'
+
+tasks:
+    fixtures:
+        desc: Generate fixtures for dev environment
+        cmds:
+            - task: vendor
+            - task: node_modules
+            - symfony console doctrine:database:drop --force --env=dev
+            - symfony console doctrine:database:create --env=dev
+            - symfony console doctrine:schema:create --env=dev
+            - symfony console doctrine:fixtures:load --no-interaction --env=dev
+
+    vendor:
+        cmds:
+            - composer install
+        sources:
+            - composer.lock
+        generates:
+            - vendor/**/*
+    
+    node_modules:
+        cmds:
+            - npm install
+        sources:
+            - package-lock.lock
+        generates:
+            - node_modules/**/*
+    
+    setup_tests:
+        cmds:
+            - task: vendor
+            - task: node_modules
+            - symfony console doctrine:database:drop --force --env=test
+            - symfony console doctrine:database:create --env=test
+            - symfony console doctrine:schema:create --env=test
+            - symfony console doctrine:fixtures:load --no-interaction --env=test
+            - symfony console cache:clear --env=test
+            - symfony console cache:warmup --env=test
+    
+    start:
+        desc: Start the development server
+        cmds:
+            - task: vendor
+            - task: node_modules
+            - symfony proxy:start
+            - symfony server:start -d
+    
+    stop:
+        desc: Stop Docker containers, Symfony server & kill npm dev-server
+        cmds:
+            - symfony server:stop
+            - symfony proxy:stop
+
+    tests:
+        desc: Run tests
+        cmds:
+            -   task: setup_tests
+            - symfony run bin/phpunit
+
+    coverage:
+        desc: Run tests with coverage (required Xdebug)
+        cmds:
+            -   task: setup_tests
+            - symfony php -dpcov.enabled=1 bin/phpunit --coverage-html=docs/coverage

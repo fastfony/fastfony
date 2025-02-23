@@ -2,15 +2,21 @@
 
 ## Getting Started
 
-1. If not already, [install Symfony CLI](https://symfony.com/download), [install Node](https://nodejs.org/en/download) and [install Docker Compose](https://docs.docker.com/compose/install/)
-2. First time, run `composer install && npm ci`
-3. Run `docker compose up -d && symfony serve -d && npm run dev-server`
-4. Open `https://127.0.0.1:8000` in your favorite web browser
+1. If not already, [install PHP](https://www.php.net/manual/en/install.php), [install Composer](https://getcomposer.org) [install Symfony CLI](https://symfony.com/download), [install Node](https://nodejs.org/en/download), [install Docker Compose](https://docs.docker.com/compose/install/) and [install Taskfile](https://taskfile.dev/installation/)
+2. First time, run `task fixtures`
+3. Run `task start`
+4. Open `https://fastfony.wip` (if you have setting up the [Symfony local proxy](https://symfony.com/doc/current/setup/symfony_server.html#setting-up-the-local-proxy)) or `https://127.0.0.1:9876` in your favorite web browser
+
+If you want to change the domain name, you can edit the `.symfony.local.yaml` file and change the `proxy.domains` variable.
 
 ## Start & stop
 
-* Start : run `docker compose up -d && symfony serve -d && npm run dev-server`
-* Stop : quit the start prompt and run `symfony server:stop && docker compose down`
+* Start : just run `task start`
+* Stop : just run `task stop` (Thanks to Taskfile!)
+
+## Execute tests
+
+* Run `task tests`
 
 ## Features
 
@@ -21,6 +27,7 @@
 * API Platform 4
 * EasyAdmin (with Bootstrap 5) and CRUD controllers for : Users, Parameters, Parameter Categories
 * Webpack Encore, Vue.js, Tailwind CSS & DaisyUI
+* Taskfile for easy commands
 
 ## Docs
 
@@ -50,6 +57,8 @@ For more advanced options, refer to [the documentation of *template sync*](https
 You can contribute to Fastfony by creating a pull request on the GitHub repository.
 
 This repository use the git plugin [git-flow](https://github.com/nvie/gitflow), so please create your feature branch from the `develop` branch and install [git-flow](https://git-flow.readthedocs.io/fr/latest/index.html).
+
+The Conventional Commits specification is a lightweight convention on top of commit messages. Fastfony uses it. You can find more information on the [Conventional Commits website](https://www.conventionalcommits.org/en/v1.0.0/).
 
 ## License
 
