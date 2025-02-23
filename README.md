@@ -45,6 +45,12 @@ curl -sSL https://raw.githubusercontent.com/coopTilleuls/template-sync/main/temp
 
 For more advanced options, refer to [the documentation of *template sync*](https://github.com/coopTilleuls/template-sync#template-sync).
 
+## Contribute
+
+You can contribute to Fastfony by creating a pull request on the GitHub repository.
+
+This repository use the git plugin [git-flow](https://github.com/nvie/gitflow), so please create your feature branch from the `develop` branch and install [git-flow](https://git-flow.readthedocs.io/fr/latest/index.html).
+
 ## License
 
 Fastfony is available under the MIT License.
