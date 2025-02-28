@@ -13,13 +13,20 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class UserCrud extends AbstractCrudController
 {
+    public function __construct(
+        private readonly AdminUrlGenerator $adminUrlGenerator,
+    ) {
+    }
+
     public static function getEntityFqcn(): string
     {
         return UserEntity::class;
@@ -35,17 +42,14 @@ class UserCrud extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')
-                ->hideOnIndex()
-                ->hideOnForm(),
             EmailField::new('email'),
-            //            CollectionField::new('groups')
-            //                ->hideOnForm(),
-            //            AssociationField::new('groups')
-            //                ->setFormTypeOptions([
-            //                    'by_reference' => false,
-            //                ])
-            //                ->hideOnIndex(),
+            CollectionField::new('groups')
+                ->hideOnForm(),
+            AssociationField::new('groups')
+                ->setFormTypeOptions([
+                    'by_reference' => false,
+                ])
+                ->hideOnIndex(),
             BooleanField::new('enabled'),
         ];
     }
@@ -55,7 +59,7 @@ class UserCrud extends AbstractCrudController
         return $filters
             ->add('email')
             ->add('enabled')
-//            ->add('groups')
+            ->add('groups')
         ;
     }
 
@@ -65,9 +69,19 @@ class UserCrud extends AbstractCrudController
             ->linkToCrudAction('sendLoginLinkEmail')
             ->displayIf(fn ($entity) => $entity->isEnabled());
 
+        $groupsCrudAction = Action::new('groups', 'Groups')
+            ->linkToUrl($this->adminUrlGenerator
+                ->setController(GroupCrud::class)
+                ->setAction(Action::INDEX)
+                ->generateUrl()
+            )
+            ->createAsGlobalAction();
+
         return $actions
             ->add(Crud::PAGE_EDIT, $sendLoginLinkAction)
-            ->add(Crud::PAGE_INDEX, $sendLoginLinkAction);
+            ->add(Crud::PAGE_INDEX, $sendLoginLinkAction)
+            ->add(Crud::PAGE_INDEX, $groupsCrudAction)
+        ;
     }
 
     #[AdminAction(routePath: '/send-login-link', routeName: 'send_login_link')]

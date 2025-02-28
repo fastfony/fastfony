@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace App\Repository;
 
+use App\Entity\Group;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityNotFoundException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -31,10 +33,18 @@ class UserRepository extends ServiceEntityRepository
 
     public function createSuperAdmin(string $email, bool $enabled = false): User
     {
+        $superAdminGroup = $this->getEntityManager()
+            ->getRepository(Group::class)
+            ->findOneBy(['name' => Group::SUPER_ADMIN_NAME]);
+
+        if (null === $superAdminGroup) {
+            throw new EntityNotFoundException('Super Admin group not found.');
+        }
+
         $user = $this->create($email);
         $user
             ->setEnabled($enabled)
-            ->setRoles(['ROLE_SUPER_ADMIN'])
+            ->addGroup($superAdminGroup)
         ;
 
         $this->save($user);
