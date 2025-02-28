@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace App\DataFixtures;
 
+use App\Entity\Group;
 use App\Entity\Page;
 use App\Entity\Parameter;
 use App\Entity\ParameterCategory;
+use App\Entity\Role;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -30,6 +32,7 @@ class Installation extends Fixture implements FixtureGroupInterface
     {
         $this->createParameters($manager);
         $this->createHomepage($manager);
+        $this->createGroupsAndRoles($manager);
         $manager->flush();
     }
 
@@ -112,5 +115,52 @@ class Installation extends Fixture implements FixtureGroupInterface
             ->setEnabled(true)
         ;
         $manager->persist($homepage);
+    }
+
+    private function createGroupsAndRoles(ObjectManager $manager): void
+    {
+        $roles = [
+            'ROLE_USER' => 'User',
+            'ROLE_ADMIN' => 'Administrator',
+            'ROLE_ALLOWED_TO_SWITCH' => 'Allowed to switch',
+            'ROLE_SUPER_ADMIN' => 'Super Administrator',
+        ];
+
+        foreach ($roles as $key => $description) {
+            $role = (new Role())
+                ->setName($key)
+                ->setDescription($description);
+            $manager->persist($role);
+            $this->addReference(
+                $key,
+                $role
+            );
+        }
+
+        $groups = [
+            'User' => [
+                $this->getReference('ROLE_USER', Role::class),
+            ],
+            'Administrator' => [
+                $this->getReference('ROLE_USER', Role::class),
+                $this->getReference('ROLE_ADMIN', Role::class),
+            ],
+            Group::SUPER_ADMIN_NAME => [
+                $this->getReference('ROLE_USER', Role::class),
+                $this->getReference('ROLE_ADMIN', Role::class),
+                $this->getReference('ROLE_ALLOWED_TO_SWITCH', Role::class),
+                $this->getReference('ROLE_SUPER_ADMIN', Role::class),
+            ],
+        ];
+
+        foreach ($groups as $key => $roles) {
+            $group = (new Group())
+                ->setName($key);
+
+            foreach ($roles as $role) {
+                $group->addRole($role);
+            }
+            $manager->persist($group);
+        }
     }
 }
