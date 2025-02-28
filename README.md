@@ -1,11 +1,11 @@
-# Fastfony : boilerplate, starter kit for develop your project or launch your SaaS idea with Symfony 7
+# Fastfony : pragmatic boilerplate and starter kit for fastly develop a project or launch a SaaS idea with Symfony 7
 
 ## Getting Started
 
 1. If not already, [install PHP](https://www.php.net/manual/en/install.php), [install Composer](https://getcomposer.org) [install Symfony CLI](https://symfony.com/download), [install Node](https://nodejs.org/en/download), [install Docker Compose](https://docs.docker.com/compose/install/) and [install Taskfile](https://taskfile.dev/installation/)
 2. First time, run `task fixtures`
 3. Run `task start`
-4. Open `https://fastfony.wip` (if you have setting up the [Symfony local proxy](https://symfony.com/doc/current/setup/symfony_server.html#setting-up-the-local-proxy)) or `https://127.0.0.1:9876` in your favorite web browser
+4. Open `https://fastfony.wip/` (if you have setting up the [Symfony local proxy](https://symfony.com/doc/current/setup/symfony_server.html#setting-up-the-local-proxy)) or `https://127.0.0.1:9876` in your favorite web browser
 
 If you want to change the domain name, you can edit the `.symfony.local.yaml` file and change the `proxy.domains` variable.
 
@@ -20,10 +20,11 @@ If you want to change the domain name, you can edit the `.symfony.local.yaml` fi
 
 ## Features
 
+* Simple pages SEO friendly (front and backoffice)
 * Register and received a login link by email
 * Login form with email that send a login link by email
 * Settings panel
-* DaisyUI themes chooser on admin panel
+* DaisyUI themes chooser
 * API Platform 4
 * EasyAdmin (with Bootstrap 5) and CRUD controllers for : Users, Parameters, Parameter Categories
 * Webpack Encore, Vue.js, Tailwind CSS & DaisyUI
@@ -63,6 +64,21 @@ The Conventional Commits specification is a lightweight convention on top of com
 ## License
 
 Fastfony is available under the MIT License.
+
+## Special thanks
+
+Without the following projects, Fastfony would not exist:
+
+* [Symfony](https://symfony.com)
+* [API Platform](https://api-platform.com)
+* [EasyAdmin](https://symfony.com/doc/current/bundles/EasyAdminBundle/index.html)
+* [Webpack Encore](https://symfony.com/doc/current/frontend.html)
+* [Vue.js](https://vuejs.org)
+* [Tailwind CSS](https://tailwindcss.com)
+* [DaisyUI](https://daisyui.com)
+* [Taskfile](https://taskfile.dev)
+* [Editorjs](https://editorjs.io)
+* and many others... *Thank you!
 
 ## Credits
 

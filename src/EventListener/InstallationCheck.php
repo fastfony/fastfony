@@ -54,7 +54,7 @@ readonly class InstallationCheck
 
         // If one of the checks is not passed or if there haven't a first user, redirect to the installation page
         if (\in_array(false, $checks, true) || 0 === $users) {
-            // $event->setResponse(new RedirectResponse($this->router->generate('installation')));
+            $event->setResponse(new RedirectResponse($this->router->generate('installation')));
         }
     }
 }

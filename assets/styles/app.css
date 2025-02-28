@@ -9,7 +9,6 @@
 }
 
 @custom-variant dark (&:where(
-    /*[data-theme=minuit11-dark], [data-theme=minuit11-dark] *,*/
     [data-theme=dark], [data-theme=dark] *,
     [data-theme=synthwave], [data-theme=synthwave] *,
     [data-theme=halloween], [data-theme=halloween] *,

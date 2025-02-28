@@ -21,6 +21,20 @@ grumphp:
             no-cache: false
             verbose: false
             triggered_by: [ 'twig' ]
+        git_commit_message:
+            enforce_capitalized_subject: false
+            type_scope_conventions:
+                types:
+                    - fix
+                    - feat
+                    - build
+                    - chore
+                    - ci
+                    - docs
+                    - style
+                    - refactor
+                    - perf
+                    - test
     parallel:
         enabled: true
         max_workers: 32

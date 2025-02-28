@@ -30,12 +30,26 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "@editorjs/code": "^2.9.3",
+        "@editorjs/delimiter": "^1.4.2",
+        "@editorjs/editorjs": "^2.30.8",
+        "@editorjs/embed": "^2.7.6",
+        "@editorjs/header": "^2.8.8",
+        "@editorjs/inline-code": "^1.5.1",
+        "@editorjs/list": "^2.0.4",
+        "@editorjs/paragraph": "^2.11.7",
+        "@editorjs/quote": "^2.7.6",
+        "@editorjs/raw": "^2.5.1",
+        "@editorjs/simple-image": "^1.6.0",
+        "@editorjs/table": "^2.4.3",
+        "@editorjs/underline": "^1.2.1",
         "@headlessui/vue": "^1.7.23",
         "@heroicons/vue": "^2.2.0",
         "@tailwindcss/postcss": "^4.0.4",
         "axios": "^1.7.9",
         "postcss": "^8.5.1",
         "postcss-loader": "^8.1.1",
+        "table": "^6.9.0",
         "tailwindcss": "^4.0.4"
     }
 }

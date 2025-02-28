@@ -9,7 +9,9 @@
             <div class="mx-auto w-full max-w-sm lg:w-96">
                 {% if form is defined %}
                     {% if company_icon_filepath %}
-                        <img class="h-20 w-auto" src="{{ asset(company_icon_filepath) }}" alt="{{ company_name }}">
+                        <a href="{{ path('homepage') }}">
+                            <img class="h-20 w-auto" src="{{ asset(company_icon_filepath) }}" alt="{{ company_name }}">
+                        </a>
                     {% endif %}
 
                     <h2 class="mt-8 text-2xl/9 font-bold tracking-tight text-gray-900">{{ 'register.title'|trans }}</h2>

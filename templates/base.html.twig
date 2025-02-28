@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html class="{% block html_class %}{% endblock %}" data-theme="light">
+<html class="{% block html_class %}h-full{% endblock %}" data-theme="light">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Welcome!{% endblock %}</title>
+
+        {% block meta %}{% endblock %}
+        {% block meta_robots %}{% endblock %}
+
         {% block favicon %}
             {{ include('_favicon.html.twig') }}
         {% endblock %}
@@ -15,8 +19,10 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+
+        {% block rich_snippets %}{% endblock %}
     </head>
-    <body class="{% block body_class %}{% endblock %}">
+    <body class="{% block body_class %}h-full{% endblock %}">
         <div id="toast-container" class="toast toast-top toast-center z-40">
             {% for label, messages in app.flashes %}
                 {% for message in messages %}

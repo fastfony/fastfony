@@ -22,6 +22,7 @@ yarn-error.log
 
 src/Controller/Test.php
 templates/test.html.twig
+assets/vue/controllers/Test.vue
 *babeledit.metadata.babel
 
 ###> vincentlanglet/twig-cs-fixer ###

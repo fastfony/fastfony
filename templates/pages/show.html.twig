@@ -1,0 +1,30 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block meta %}
+    {% if page.metaTitle %}<meta name="title" content="{{ page.metaTitle }}">{% endif %}
+    {% if page.metaDescription %}<meta name="description" content="{{ page.metaDescription }}">{% endif %}
+{% endblock %}
+
+{% block meta_robots %}
+    <meta name="robots" content="{{ page.metaRobotsDirectives|join(', ') }}">
+{% endblock %}
+
+{% block rich_snippets %}
+    {% if page.richSnippets %}
+        <script type="application/ld+json">
+            {{ page.richSnippets|json_encode|raw }}
+        </script>
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+    <div class="prose py-16 lg:py-32">
+        <h1>{{ page.title }}</h1>
+
+        {% if page.content|length > 0 %}
+            {{ editorjs_to_html(page.content|json_encode) }}
+        {% endif %}
+    </div>
+{% endblock %}

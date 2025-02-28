@@ -43,6 +43,7 @@ tasks:
         cmds:
             - task: vendor
             - task: node_modules
+            - symfony console doctrine:schema:update --force  --env=dev
             - symfony proxy:start
             - symfony server:start -d
     
