@@ -15,7 +15,10 @@ Encore
     to: 'images/[path][name].[hash:8].[ext]',
   })
   .addEntry('app', './assets/app.js')
+  .addEntry('easyadmin', './assets/easyadmin.js')
   .splitEntryChunks()
+  .enableVueLoader()
+  .enablePostCssLoader()
   .enableVueLoader(() => {
   }, {runtimeCompilerBuild: false})
   .enableStimulusBridge('./assets/controllers.json')
@@ -28,7 +31,6 @@ Encore
     config.useBuiltIns = 'usage';
     config.corejs = '3.38';
   })
-  .enablePostCssLoader()
   .configureDevServerOptions(options => {
     options.liveReload = true;
     options.static = {

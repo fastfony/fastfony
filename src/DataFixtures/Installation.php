@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\DataFixtures;
 
+use App\Entity\Page;
 use App\Entity\Parameter;
 use App\Entity\ParameterCategory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -28,6 +29,7 @@ class Installation extends Fixture implements FixtureGroupInterface
     public function load(ObjectManager $manager): void
     {
         $this->createParameters($manager);
+        $this->createHomepage($manager);
         $manager->flush();
     }
 
@@ -59,7 +61,7 @@ class Installation extends Fixture implements FixtureGroupInterface
                 ),
             ],
             'COMPANY_ICON_FILEPATH' => [
-                'value' => '/build/images/Fastfony-icon.svg',
+                'value' => '/images/Fastfony-icon.svg',
                 'label' => 'Icon filepath',
                 'category' => $this->getReference(
                     self::COMPANY_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
@@ -99,5 +101,16 @@ class Installation extends Fixture implements FixtureGroupInterface
 
             $manager->persist($parameter);
         }
+    }
+
+    private function createHomepage(ObjectManager $manager): void
+    {
+        $homepage = (new Page())
+            ->setHomepage(true)
+            ->setName('Homepage')
+            ->setTitle('Welcome on Fastfony!')
+            ->setEnabled(true)
+        ;
+        $manager->persist($homepage);
     }
 }

@@ -1,0 +1,9 @@
+{% block editorjs_row %}
+    <div class="{{ ea_crud_form.ea_field.columns }}">
+        {{ form_label(form) }}
+        <div id="editorjs" class="editorjs" data-field-id="{{ id }}"></div>
+        <input type="hidden" name="{{ full_name }}" id="{{ id }}" value="{{ value }}" />
+        {{ form_errors(form) }}
+    </div>
+    <div class="flex-fill"></div>
+{% endblock %}

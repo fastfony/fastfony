@@ -337,7 +337,7 @@
         ]
     },
     "symfony/ux-vue": {
-        "version": "2.22",
+        "version": "2.23",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "main",

@@ -1,0 +1,45 @@
+/* Editor.js customization */
+.editorjs {
+    background-color: var(--form-control-bg);
+    background-repeat: no-repeat;
+    border: 1px solid var(--form-input-border-color);
+    border-radius: var(--bs-border-radius);
+    box-shadow: var(--form-input-shadow);
+    color: var(--form-input-text-color);
+    margin: 1rem 0;
+    padding: 0.5rem 1rem 0.5rem 3rem;
+    transition: box-shadow .08s ease-in, color .08s ease-in;
+    white-space: nowrap;
+    word-break:keep-all;
+
+    .codex-editor__redactor {
+        padding-bottom: 2rem!important;
+
+
+    }
+    .ce-inline-toolbar {
+        .ce-popover__container, .ce-popover__items {
+            overflow-y: hidden!important;
+        }
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    /* Editor.js customization */
+    .editorjs {
+        .codex-editor__redactor {
+            .ce-block__content {
+                background-color: transparent;
+            }
+        }
+        .ce-toolbar {
+            .ce-toolbar__plus, .ce-toolbar__settings-btn {
+                color: var(--text-color)!important;
+                &:hover {
+                    color: #1d202b!important;
+                }
+            }
+        }
+    }
+}

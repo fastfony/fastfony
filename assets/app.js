@@ -15,4 +15,3 @@ document.addEventListener('vue:before-mount', (event) => {
     app, // The Vue application instance
   } = event.detail;
 });
-

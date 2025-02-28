@@ -7,7 +7,9 @@
             <div class="w-full card-body">
                 {% if form is defined %}
                     {% if company_icon_filepath %}
-                        <img class="h-25 mx-auto" src="{{ asset(company_icon_filepath) }}" alt="{{ company_name }}">
+                        <a href="{{ path('homepage') }}">
+                            <img class="h-25 mx-auto" src="{{ asset(company_icon_filepath) }}" alt="{{ company_name }}">
+                        </a>
                     {% endif %}
 
                     <h2 class="mt-4 text-2xl/9 font-bold tracking-tight text-gray-900">{{ 'login.title'|trans }}</h2>
