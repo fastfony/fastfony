@@ -29,3 +29,4 @@ assets/vue/controllers/Test.vue
 /.twig-cs-fixer.cache
 ###< vincentlanglet/twig-cs-fixer ###
 .php-cs-fixer.cache
+.task/
