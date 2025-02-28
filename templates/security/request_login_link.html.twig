@@ -14,15 +14,17 @@
 
                     <h2 class="mt-4 text-2xl/9 font-bold tracking-tight text-gray-900">{{ 'login.title'|trans }}</h2>
 
-                    <p class="my-4 text-sm/6 text-gray-500">
-                        {{ 'login.no_account'|trans }}
-                        <a href="{{ path('register') }}" class="link link-primary">
-                            {{ 'login.create_account'|trans }}
-                        </a>
-                    </p>
+                    {% if registration_enabled %}
+                        <p class="mt-4 text-sm/6 text-gray-500">
+                            {{ 'login.no_account'|trans }}
+                            <a href="{{ path('register') }}" class="link link-primary">
+                                {{ 'login.create_account'|trans }}
+                            </a>
+                        </p>
+                    {% endif %}
 
                     <!-- Login with email link -->
-                    {{ form_start(form, {attr: {class: 'space-y-6'}}) }}
+                    {{ form_start(form, {attr: {class: 'space-y-6 mt-4'}}) }}
                         <div>
                             <div class="mt-2">
                                 <label class="floating-label">

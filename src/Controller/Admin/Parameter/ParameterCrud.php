@@ -11,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -38,6 +39,8 @@ class ParameterCrud extends AbstractCrudController
             AssociationField::new('category'),
             TextField::new('label'),
             TextField::new('help'),
+            ChoiceField::new('type')
+                ->setChoices(array_combine(Parameter::LIST_TYPES, Parameter::LIST_TYPES)),
         ];
     }
 
