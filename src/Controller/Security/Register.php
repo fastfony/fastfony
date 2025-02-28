@@ -18,12 +18,17 @@ class Register extends AbstractController
     public function __construct(
         private LoginLink $loginLink,
         private UserRepository $userRepository,
+        private bool $registrationEnabled,
     ) {
     }
 
     public function __invoke(
         Request $request,
     ): Response {
+        if (!$this->registrationEnabled) {
+            throw $this->createNotFoundException();
+        }
+
         $registerForm = $this->createForm(RegisterFormType::class);
 
         if ($request->isMethod('POST')) {

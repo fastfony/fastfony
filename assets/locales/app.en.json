@@ -1,0 +1,14 @@
+{
+  "An URL with https://": "An URL with https://",
+  "Background Image URL": "Background Image URL",
+  "Company": "Company",
+  "Email": "Email",
+  "Icon filepath": "Icon filepath",
+  "Login": "Login",
+  "Name": "Name",
+  "No": "No",
+  "Registration authorized": "Registration authorized",
+  "Sender email address": "Sender email address",
+  "This e-mail must be authorize by server configure on MAILER_DSN in .env.local": "This e-mail must be authorize by server configure on MAILER_DSN in .env.local",
+  "Yes": "Yes"
+}

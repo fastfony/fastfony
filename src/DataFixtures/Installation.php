@@ -56,6 +56,7 @@ class Installation extends Fixture implements FixtureGroupInterface
         $parameters = [
             'MAILER_SENDER' => [
                 'value' => 'noreply@domain.tld',
+                'type' => 'email',
                 'label' => 'Sender email address',
                 'help' => 'This e-mail must be authorize by server configure on MAILER_DSN in .env.local',
                 'category' => $this->getReference(
@@ -65,6 +66,7 @@ class Installation extends Fixture implements FixtureGroupInterface
             ],
             'COMPANY_ICON_FILEPATH' => [
                 'value' => '/images/Fastfony-icon.svg',
+                'type' => 'text',
                 'label' => 'Icon filepath',
                 'category' => $this->getReference(
                     self::COMPANY_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
@@ -73,14 +75,25 @@ class Installation extends Fixture implements FixtureGroupInterface
             ],
             'COMPANY_NAME' => [
                 'value' => 'Fastfony',
+                'type' => 'text',
                 'label' => 'Name',
                 'category' => $this->getReference(
                     self::COMPANY_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
                     ParameterCategory::class
                 ),
             ],
+            'REGISTRATION_ENABLED' => [
+                'value' => '1',
+                'type' => 'bool',
+                'label' => 'Registration authorized',
+                'category' => $this->getReference(
+                    self::LOGIN_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
+                    ParameterCategory::class
+                ),
+            ],
             'BACKGROUND_LOGIN_IMAGE_URL' => [
                 'value' => 'https://images.unsplash.com/photo-1496917756835-20cb06e75b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1908&q=80',
+                'type' => 'url',
                 'label' => 'Background Image URL',
                 'help' => 'An URL with https://',
                 'category' => $this->getReference(
@@ -94,6 +107,7 @@ class Installation extends Fixture implements FixtureGroupInterface
             $parameter = (new Parameter())
                 ->setKey($key)
                 ->setValue($values['value'])
+                ->setType($values['type'])
                 ->setLabel($values['label'])
                 ->setHelp($values['help'] ?? null)
             ;

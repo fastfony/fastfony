@@ -17,29 +17,39 @@ onMounted(() => {
     });
 });
 
-const patchParameter = (parameter) => {
-    axios.patch(
-        parameter['@id'],
-        { value: parameter.value },
-        { headers: { 'Content-Type': 'application/merge-patch+json' } }
-    );
+const patchParameter = (parameter, event) => {
+    if (event.target.checkValidity()) {
+        axios.patch(
+            parameter['@id'],
+            { value: parameter.value },
+            { headers: { 'Content-Type': 'application/merge-patch+json' } }
+        );
+    }
 };
 </script>
 
 <template>
     <div class="grid xl:grid-cols-3 gap-4">
         <fieldset v-for="(parameters, category) in parameters" :key="category"
-                  class="fieldset bg-base-200 border border-base-300 p-4 rounded-box" >
-            <legend class="fieldset-legend">{{ category }}</legend>
+                  class="fieldset bg-base-200 border border-base-300 p-5 rounded-box" >
+            <legend class="fieldset-legend">{{ $t(category) }}</legend>
 
-            <div v-for="parameter in parameters" :key="parameters.id" class="form-control flex flex-col gap-1">
-                <label class="fieldset-label">{{ parameter.label ?? parameter.key }}</label>
-                <input type="text"
+            <div v-for="parameter in parameters" :key="parameters.id" class="form-control flex flex-col gap-1 my-2">
+                <label class="fieldset-label text-sm font-semibold mb-2">{{ $t(parameter.label) ?? $t(parameter.key) }}</label>
+                <select v-if="'bool' === parameter.type"
+                        class="select select-bordered w-full validator"
+                        v-model="parameter.value"
+                        @change="patchParameter(parameter, $event)">
+                    <option value="1">{{ $t('Yes') }}</option>
+                    <option value="0">{{ $t('No') }}</option>
+                </select>
+                <input v-else :type="parameter.type"
                        class="input w-full validator"
                        v-model="parameter.value"
-                       @change="patchParameter(parameter)"
+                       required
+                       @change="patchParameter(parameter, $event)"
                 />
-                <p class="fieldset-label" v-if="parameter.help">{{ parameter.help }}</p>
+                <p class="text-info ms-3" v-if="parameter.help">{{ $t(parameter.help) }}</p>
             </div>
         </fieldset>
     </div>

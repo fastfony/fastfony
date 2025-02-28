@@ -13,6 +13,7 @@ use Doctrine\DBAL\Exception\ConnectionException;
 use Doctrine\DBAL\Exception\TableNotFoundException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 /**
@@ -57,7 +58,11 @@ class Installation extends AbstractController
         if (3 === $step && $request->isMethod('POST')) {
             $this->step3->do($loginForm, $request);
             if ($loginForm->isValid()) {
-                return $this->redirectToRoute('installation_step', ['step' => $step]);
+                return $this->render(
+                    'installation/step'.$step.'.html.twig',
+                    [],
+                    new Response(null, Response::HTTP_SEE_OTHER), // This is for turbo
+                );
             }
             --$step;
             $this->addFlash('error', 'installation.error');
