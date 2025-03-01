@@ -51,13 +51,16 @@ class Installation extends AbstractController
         $loginForm = $this->createForm(LoginFormType::class);
         // If step 2 and all checks are passed
         if (2 === $step && !$this->allHealthChecks->hasPreviouslyErrors()) {
-            $this->step2->do();
+            if (!$this->step2->do()) {
+                --$step;
+                $this->addFlash('error', 'installation.error');
+            }
         }
 
         // If step 3 and form is submitted
         if (3 === $step && $request->isMethod('POST')) {
-            $this->step3->do($loginForm, $request);
-            if ($loginForm->isValid()) {
+            $step3 = $this->step3->do($loginForm, $request);
+            if ($step3 && $loginForm->isValid()) {
                 return $this->render(
                     'installation/step'.$step.'.html.twig',
                     [],

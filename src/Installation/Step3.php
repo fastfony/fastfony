@@ -20,17 +20,27 @@ class Step3
     public function do(
         FormInterface $loginForm,
         Request $request,
-    ): void {
+    ): bool {
+        $success = false;
         $loginForm->handleRequest($request);
 
         if ($loginForm->isSubmitted() && $loginForm->isValid()) {
-            // We create the first admin user
-            $user = $this->userRepository->createSuperAdmin(
-                $loginForm->getData()['email'],
-                true,
-            );
+            try {
+                // We create the first admin user
+                $user = $this->userRepository->createSuperAdmin(
+                    $loginForm->getData()['email'],
+                    true,
+                );
+            } catch (\Exception $e) {
+                return false;
+            }
+
             // We send a email login link
-            $this->loginLink->send($user);
+            if ($this->loginLink->send($user)) {
+                $success = true;
+            }
         }
+
+        return $success;
     }
 }

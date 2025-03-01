@@ -6,7 +6,7 @@
   "flash.require_login": "You have to login in order to access this page.",
   "flash.revert_to_previous_version.success": "The page has been reverted to the selected version.",
   "input.admin_email": "Your email",
-  "installation.error": "An error occurred. Please retry.",
+  "installation.error": "An error occurred. Please verify the configuration and retry.",
   "label.email": "Email address",
   "login.button": "Send me a login link",
   "login.create_account": "Get started for free",

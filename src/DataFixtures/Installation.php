@@ -12,6 +12,7 @@ use App\Entity\Role;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class Installation extends Fixture implements FixtureGroupInterface
 {
@@ -27,6 +28,11 @@ class Installation extends Fixture implements FixtureGroupInterface
     ];
 
     private const PARAMETER_CATEGORY_REFERENCE_SUFFIX = '_PARAMETER_CATEGORY_REFERENCE';
+
+    public function __construct(
+        private readonly RequestStack $requestStack,
+    ) {
+    }
 
     public function load(ObjectManager $manager): void
     {
@@ -55,7 +61,7 @@ class Installation extends Fixture implements FixtureGroupInterface
 
         $parameters = [
             'MAILER_SENDER' => [
-                'value' => 'noreply@domain.tld',
+                'value' => 'noreply@'.$this->requestStack->getMainRequest()->getHost(),
                 'type' => 'email',
                 'label' => 'Sender email address',
                 'help' => 'This e-mail must be authorize by server configure on MAILER_DSN in .env.local',
