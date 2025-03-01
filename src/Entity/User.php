@@ -58,7 +58,7 @@ class User implements UserInterface
         })->toArray();
 
         // guarantee every user at least has ROLE_USER
-        $roles = ['ROLE_USER', ...reset($roles)];
+        $roles = ['ROLE_USER', ...(reset($roles) ?: [])];
 
         return array_unique($roles);
     }
