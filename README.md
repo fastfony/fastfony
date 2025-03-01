@@ -42,7 +42,7 @@ If you want to change the domain name, you can edit the `.symfony.local.yaml` fi
 To import the changes made to the *Fastfony* template into your project, we recommend using
 [*template-sync*](https://github.com/coopTilleuls/template-sync):
 
-1. Run the script to synchronize your project with the latest version of Fastfony:
+1. Run the script on your branch `main` to synchronize your project with the latest version of Fastfony:
 
 ```console
 curl -sSL https://raw.githubusercontent.com/coopTilleuls/template-sync/main/template-sync.sh | sh -s -- https://github.com/fastfony/fastfony
