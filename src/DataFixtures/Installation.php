@@ -71,7 +71,7 @@ class Installation extends Fixture implements FixtureGroupInterface
                 ),
             ],
             'COMPANY_ICON_FILEPATH' => [
-                'value' => '/images/Fastfony-icon.svg',
+                'value' => '/images/Fastfony-icon.png',
                 'type' => 'text',
                 'label' => 'Icon filepath',
                 'category' => $this->getReference(
