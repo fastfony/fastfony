@@ -1,0 +1,6 @@
+@import './tailwind-with-daisyui.css';
+
+@theme {
+    --font-sans: InterVariable, sans-serif;
+}
+

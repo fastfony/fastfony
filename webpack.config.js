@@ -14,7 +14,9 @@ Encore
     from: './assets/images',
     to: 'images/[path][name].[hash:8].[ext]',
   })
-  .addEntry('app', './assets/app.js')
+  .addEntry('install', './assets/install.js')
+  .addEntry('front', './assets/front.js')
+  .addEntry('admin', './assets/admin.js')
   .addEntry('easyadmin', './assets/easyadmin.js')
   .splitEntryChunks()
   .enableVueLoader()

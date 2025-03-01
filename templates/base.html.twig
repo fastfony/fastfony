@@ -11,13 +11,15 @@
         {% block favicon %}
             {{ include('_favicon.html.twig') }}
         {% endblock %}
+
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+            {{ encore_entry_link_tags('front') }}
         {% endblock %}
 
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+            {{ encore_entry_script_tags('front') }}
         {% endblock %}
 
         {% block rich_snippets %}{% endblock %}

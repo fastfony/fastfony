@@ -6,6 +6,14 @@
     {{ 'head.title'|trans }}
 {% endblock %}
 
+{% block stylesheets %}
+    {{ encore_entry_link_tags('install') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('install') }}
+{% endblock %}
+
 {% block body %}
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="navbar bg-base-100">

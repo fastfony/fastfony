@@ -3,7 +3,7 @@
 {% block body %}
     <div class="flex flex-col w-full overflow-hidden relative min-h-screen items-center justify-center g-0 px-4">
 
-        <div class="justify-center items-center w-full card lg:flex max-w-md bg-white mb-32">
+        <div class="justify-center items-center w-full card lg:flex max-w-md bg-base-200 mb-32">
             <div class="w-full card-body">
                 {% if form is defined %}
                     {% if company_icon_filepath %}
@@ -12,10 +12,10 @@
                         </a>
                     {% endif %}
 
-                    <h2 class="mt-4 text-2xl/9 font-bold tracking-tight text-gray-900">{{ 'login.title'|trans }}</h2>
+                    <h2 class="mt-4 text-2xl/9 font-bold tracking-tight text-primary">{{ 'login.title'|trans }}</h2>
 
                     {% if registration_enabled %}
-                        <p class="mt-4 text-sm/6 text-gray-500">
+                        <p class="mt-4 text-sm/6">
                             {{ 'login.no_account'|trans }}
                             <a href="{{ path('register') }}" class="link link-primary">
                                 {{ 'login.create_account'|trans }}
