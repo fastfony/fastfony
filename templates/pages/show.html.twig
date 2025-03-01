@@ -21,7 +21,7 @@
 
 {% block main %}
     <div class="prose py-16 lg:py-32">
-        <h1>{{ page.title }}</h1>
+        <h1 class="text-primary">{{ page.title }}</h1>
 
         {% if page.content|length > 0 %}
             {{ editorjs_to_html(page.content|json_encode) }}

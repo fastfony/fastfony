@@ -26,14 +26,14 @@
                     {% if app.user %}
                         <a
                             href="{{ path('_logout_main') }}"
-                            class="text-sm font-semibold link link-hover link-primary"
+                            class="text-sm font-semibold link link-hover"
                         >
                             <span>{{ 'link.logout'|trans }}</span>
                         </a>
                     {% else %}
                         <a
                             href="{{ path('login') }}"
-                            class="text-sm font-semibold link link-hover link-primary"
+                            class="text-sm font-semibold link link-hover"
                         >
                             <span>{{ 'link.login'|trans }}</span>
                         </a>
@@ -42,7 +42,7 @@
                     {% if is_granted('ROLE_ADMIN') %}
                         <a
                             href="{{ path('admin') }}"
-                            class="text-sm font-semibold link link-hover link-primary"
+                            class="text-sm font-semibold link link-hover"
                         >
                             <span>{{ 'link.admin'|trans }}</span>
                         </a>
