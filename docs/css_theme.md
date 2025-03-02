@@ -1,6 +1,6 @@
 # CSS Theme
 
-You can generate a new theme with the [daisyUI theme generator](https://v5.daisyui.com/theme-generator/). 
+You can generate a new theme with the [daisyUI theme generator](https://v5.daisyui.com/theme-generator/).
 
 Click on the button `{} CSS` and copy the content in `assets/css/app.css`.
 
