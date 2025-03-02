@@ -23,7 +23,8 @@
         {% block rich_snippets %}{% endblock %}
     </head>
     <body class="{% block body_class %}h-full{% endblock %}">
-        <div id="toast-container" class="toast toast-top toast-center z-40">
+        <!-- Twig Toast container for symfony flash messages -->
+        <div id="toast-container" class="toast toast-top toast-center" style="z-index: 999">
             {% for label, messages in app.flashes %}
                 {% for message in messages %}
                     <div class="alert alert-{{ label }}">

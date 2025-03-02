@@ -7,8 +7,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
   Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
 }
 
-Encore
-  .setOutputPath('public/build/')
+Encore.setOutputPath('public/build/')
   .setPublicPath('/build')
   .copyFiles({
     from: './assets/images',
@@ -21,8 +20,7 @@ Encore
   .splitEntryChunks()
   .enableVueLoader()
   .enablePostCssLoader()
-  .enableVueLoader(() => {
-  }, {runtimeCompilerBuild: false})
+  .enableVueLoader(() => {}, { runtimeCompilerBuild: false })
   .enableStimulusBridge('./assets/controllers.json')
   .enableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()
@@ -33,7 +31,7 @@ Encore
     config.useBuiltIns = 'usage';
     config.corejs = '3.38';
   })
-  .configureDevServerOptions(options => {
+  .configureDevServerOptions((options) => {
     options.liveReload = true;
     options.static = {
       watch: false,
@@ -48,7 +46,6 @@ Encore
         pfx: path.join(process.env.HOME, '.symfony5/certs/default.p12'),
       },
     };
-  })
-;
+  });
 
 module.exports = Encore.getWebpackConfig();

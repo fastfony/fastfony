@@ -11,24 +11,24 @@ If you want to change the domain name, you can edit the `.symfony.local.yaml` fi
 
 ## Start & stop
 
-* Start : just run `task start`
-* Stop : just run `task stop` (Thanks to Taskfile!)
+- Start : just run `task start`
+- Stop : just run `task stop` (Thanks to Taskfile!)
 
 ## Execute tests
 
-* Run `task tests`
+- Run `task tests`
 
 ## Features
 
-* Simple pages SEO friendly (front and backoffice)
-* Register and received a login link by email
-* Login form with email that send a login link by email
-* Settings panel
-* DaisyUI themes chooser
-* API Platform 4
-* EasyAdmin (with Bootstrap 5) and CRUD controllers for : Users, Parameters, Parameter Categories
-* Webpack Encore, Vue.js, Tailwind CSS & DaisyUI
-* Taskfile for easy commands
+- Simple pages SEO friendly (front and backoffice)
+- Register and received a login link by email
+- Login form with email that send a login link by email
+- Settings panel
+- DaisyUI themes chooser
+- API Platform 4
+- EasyAdmin (with Bootstrap 5) and CRUD controllers for : Users, Parameters, Parameter Categories
+- Webpack Encore, Vue.js, Tailwind CSS & DaisyUI
+- Taskfile for easy commands
 
 ## Docs
 
@@ -39,8 +39,8 @@ If you want to change the domain name, you can edit the `.symfony.local.yaml` fi
 
 # Updating Your Project
 
-To import the changes made to the *Fastfony* template into your project, we recommend using
-[*template-sync*](https://github.com/coopTilleuls/template-sync):
+To import the changes made to the _Fastfony_ template into your project, we recommend using
+[_template-sync_](https://github.com/coopTilleuls/template-sync):
 
 1. Run the script on your branch `main` to synchronize your project with the latest version of Fastfony:
 
@@ -51,7 +51,7 @@ curl -sSL https://raw.githubusercontent.com/coopTilleuls/template-sync/main/temp
 2. Resolve conflicts, if any
 3. Run `git cherry-pick --continue`
 
-For more advanced options, refer to [the documentation of *template sync*](https://github.com/coopTilleuls/template-sync#template-sync).
+For more advanced options, refer to [the documentation of _template sync_](https://github.com/coopTilleuls/template-sync#template-sync).
 
 ## Contribute
 
@@ -69,17 +69,17 @@ Fastfony is available under the MIT License.
 
 Without the following projects, Fastfony would not exist:
 
-* [Symfony](https://symfony.com)
-* [API Platform](https://api-platform.com)
-* [EasyAdmin](https://symfony.com/doc/current/bundles/EasyAdminBundle/index.html)
-* [Webpack Encore](https://symfony.com/doc/current/frontend.html)
-* [Vue.js](https://vuejs.org)
-* [Tailwind CSS](https://tailwindcss.com)
-* [DaisyUI](https://daisyui.com)
-* [Taskfile](https://taskfile.dev)
-* [Editorjs](https://editorjs.io)
-* and many others... *Thank you!
+- [Symfony](https://symfony.com)
+- [API Platform](https://api-platform.com)
+- [EasyAdmin](https://symfony.com/doc/current/bundles/EasyAdminBundle/index.html)
+- [Webpack Encore](https://symfony.com/doc/current/frontend.html)
+- [Vue.js](https://vuejs.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [DaisyUI](https://daisyui.com)
+- [Taskfile](https://taskfile.dev)
+- [Editorjs](https://editorjs.io)
+- and many others... \*Thank you!
 
 ## Credits
 
-* Fastfony is created by [Mathieu Dumoutier](https://mathieu.dumoutier.fr) and sponsored by [Minuit 11](https://minuit11.fr).
+- Fastfony is created by [Mathieu Dumoutier](https://mathieu.dumoutier.fr) and sponsored by [Minuit 11](https://minuit11.fr).

@@ -7,11 +7,14 @@ if (loader) {
     return config;
   });
 
-  axios.interceptors.response.use((response) => {
-    loader.classList.add('hidden');
-    return response;
-  }, function (error) {
-    loader.classList.add('hidden');
-    return Promise.reject(error);
-  });
+  axios.interceptors.response.use(
+    (response) => {
+      loader.classList.add('hidden');
+      return response;
+    },
+    function (error) {
+      loader.classList.add('hidden');
+      return Promise.reject(error);
+    },
+  );
 }

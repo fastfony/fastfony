@@ -2,7 +2,7 @@ import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header';
 import Quote from '@editorjs/quote';
 import RawTool from '@editorjs/raw';
-import SimpleImage from "@editorjs/simple-image";
+import SimpleImage from '@editorjs/simple-image';
 import EditorjsList from '@editorjs/list';
 import Embed from '@editorjs/embed';
 import Paragraph from '@editorjs/paragraph';
@@ -23,8 +23,8 @@ if (wrapper) {
         shortcut: 'CMD+SHIFT+H',
         config: {
           levels: [2, 3, 4, 5, 6],
-          defaultLevel: 3
-        }
+          defaultLevel: 3,
+        },
       },
       paragraph: {
         class: Paragraph,
@@ -48,7 +48,7 @@ if (wrapper) {
         inlineToolbar: true,
         shortcut: 'CMD+SHIFT+L',
         config: {
-          defaultStyle: 'unordered'
+          defaultStyle: 'unordered',
         },
       },
       code: {
@@ -75,8 +75,6 @@ if (wrapper) {
       editor.save().then((outputData) => {
         input.value = JSON.stringify(outputData);
       });
-    }
+    },
   });
 }
-
-

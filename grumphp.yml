@@ -1,7 +1,7 @@
 grumphp:
     environment:
         variables:
-            PHP_CS_FIXER_IGNORE_ENV: "1"
+            PHP_CS_FIXER_IGNORE_ENV: '1'
     stop_on_failure: true
     tasks:
         securitychecker_symfony:
@@ -14,13 +14,24 @@ grumphp:
             verbose: true
             diff: false
         twigcsfixer:
-            paths: [ ]
+            paths: []
             level: ~
             config: ~
             report: 'text'
             no-cache: false
             verbose: false
-            triggered_by: [ 'twig' ]
+            triggered_by: ['twig']
+        eslint:
+            bin: node_modules/.bin/eslint
+            triggered_by: [js, vue]
+            whitelist_patterns:
+                - /^assets\/(.*)/
+            config: eslint.config.mjs
+        npm_script:
+            script: format
+            triggered_by: [js, vue]
+            working_directory: './'
+            is_run_task: true
         git_commit_message:
             enforce_capitalized_subject: false
             type_scope_conventions:

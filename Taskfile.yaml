@@ -18,7 +18,7 @@ tasks:
             - composer.lock
         generates:
             - vendor/**/*
-    
+
     node_modules:
         cmds:
             - npm install
@@ -26,7 +26,7 @@ tasks:
             - package-lock.lock
         generates:
             - node_modules/**/*
-    
+
     setup_tests:
         cmds:
             - task: vendor
@@ -37,7 +37,7 @@ tasks:
             - symfony console doctrine:fixtures:load --no-interaction --env=test
             - symfony console cache:clear --env=test
             - symfony console cache:warmup --env=test
-    
+
     start:
         desc: Start the development server
         cmds:
@@ -46,7 +46,7 @@ tasks:
             - symfony console doctrine:schema:update --force  --env=dev
             - symfony proxy:start
             - symfony server:start -d
-    
+
     stop:
         desc: Stop Docker containers, Symfony server & kill npm dev-server
         cmds:
@@ -56,11 +56,11 @@ tasks:
     tests:
         desc: Run tests
         cmds:
-            -   task: setup_tests
+            - task: setup_tests
             - symfony run bin/phpunit
 
     coverage:
         desc: Run tests with coverage (required Xdebug)
         cmds:
-            -   task: setup_tests
+            - task: setup_tests
             - symfony php -dpcov.enabled=1 bin/phpunit --coverage-html=docs/coverage

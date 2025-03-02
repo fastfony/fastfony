@@ -15,10 +15,7 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{js,html,ts,tsx}]
-indent_size = 2
-
-[*.json]
+[*.{js,json,jsx,mjs,cjs,ts,tsx,mts,cts,vue}]
 indent_size = 2
 
 [*.md]
@@ -26,10 +23,6 @@ trim_trailing_whitespace = false
 
 [*.sh]
 indent_style = tab
-
-[*.xml.dist]
-indent_style = space
-indent_size = 4
 
 [*.{yaml,yml}]
 trim_trailing_whitespace = false
@@ -39,10 +32,6 @@ indent_size = 2
 
 [.gitmodules]
 indent_style = tab
-
-[.php_cs.dist]
-indent_style = space
-indent_size = 4
 
 [composer.json]
 indent_size = 4

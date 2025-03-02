@@ -1,11 +1,11 @@
 # Development environment override
 services:
-###> symfony/mailer ###
+  ###> symfony/mailer ###
   mailer:
     image: axllent/mailpit
     ports:
-      - "1025:1025"
-      - "8025:8025"
+      - '1025:1025'
+      - '8025:8025'
     labels:
       com.symfony.server.service-ignore: true
     environment:

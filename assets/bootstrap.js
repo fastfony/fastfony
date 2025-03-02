@@ -1,29 +1,40 @@
 import './js/loader.js';
 import './js/theme.js';
 
-/** Symfony ux-stimulus */
+/* Symfony ux-stimulus */
 import { startStimulusApp } from '@symfony/stimulus-bridge';
 
 // Registers Stimulus controllers from controllers.json and in the controllers/ directory
-export const app = startStimulusApp(require.context(
+export const app = startStimulusApp(
+  require.context(
     '@symfony/stimulus-bridge/lazy-controller-loader!./controllers',
     true,
-    /\.[jt]sx?$/
-));
+    /\.[jt]sx?$/,
+  ),
+);
 
-/** Symfony ux-vue */
+/* Symfony ux-vue */
+import { registerVueControllerComponents } from '@symfony/ux-vue';
+registerVueControllerComponents(
+  require.context('./vue/controllers', true, /\.vue$/),
+);
+
+/* Internationalisation */
 import { createI18n } from 'vue-i18n';
 import en from './locales/app.en.json';
 
-import { registerVueControllerComponents } from '@symfony/ux-vue';
-registerVueControllerComponents(require.context('./vue/controllers', true, /\.vue$/));
+/* Toast */
+import Toast from 'vue-toastification';
+import { useToast } from 'vue-toastification';
+import 'vue-toastification/dist/index.css';
+const toast = useToast();
+
+import { createPinia } from 'pinia';
+import axios from 'axios';
 
 document.addEventListener('vue:before-mount', (event) => {
   const {
-    componentName, // The Vue component's name
-    component, // The resolved Vue component
-    props, // The props that will be injected to the component
-    app, // The Vue application instance
+    app, // The main Vue application instance
   } = event.detail;
 
   const i18n = createI18n({
@@ -34,4 +45,37 @@ document.addEventListener('vue:before-mount', (event) => {
   });
 
   app.use(i18n);
+
+  app.use(Toast, {});
+
+  // Capture and toast all axios errors
+  axios.interceptors.response.use(
+    (response) => {
+      return response;
+    },
+    function (error) {
+      if (error.response) {
+        const ignoreErrors = [422];
+        // Si ce n'est pas dans les erreurs à ignorer
+        if (
+          !ignoreErrors.find(
+            (errorCodeIgnore) => errorCodeIgnore === error.response.status,
+          )
+        ) {
+          const message =
+            '' !== error.response.statusText
+              ? error.response.statusText
+              : error.message;
+          toast.error(message, {
+            timeout: 15000,
+          });
+        }
+      }
+
+      return Promise.reject(error);
+    },
+  );
+
+  const pinia = createPinia();
+  app.use(pinia);
 });

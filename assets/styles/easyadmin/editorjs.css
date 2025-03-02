@@ -8,18 +8,19 @@
     color: var(--form-input-text-color);
     margin: 1rem 0;
     padding: 0.5rem 1rem 0.5rem 3rem;
-    transition: box-shadow .08s ease-in, color .08s ease-in;
+    transition:
+        box-shadow 0.08s ease-in,
+        color 0.08s ease-in;
     white-space: nowrap;
-    word-break:keep-all;
+    word-break: keep-all;
 
     .codex-editor__redactor {
-        padding-bottom: 2rem!important;
-
-
+        padding-bottom: 2rem !important;
     }
     .ce-inline-toolbar {
-        .ce-popover__container, .ce-popover__items {
-            overflow-y: hidden!important;
+        .ce-popover__container,
+        .ce-popover__items {
+            overflow-y: hidden !important;
         }
     }
 }
@@ -34,10 +35,11 @@
             }
         }
         .ce-toolbar {
-            .ce-toolbar__plus, .ce-toolbar__settings-btn {
-                color: var(--text-color)!important;
+            .ce-toolbar__plus,
+            .ce-toolbar__settings-btn {
+                color: var(--text-color) !important;
                 &:hover {
-                    color: #1d202b!important;
+                    color: #1d202b !important;
                 }
             }
         }
