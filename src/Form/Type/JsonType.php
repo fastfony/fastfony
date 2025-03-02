@@ -34,11 +34,14 @@ class JsonType extends AbstractType
                         return json_encode($value, \JSON_PRETTY_PRINT);
                     },
                     function ($value): ?array {
+                        if (null === $value) {
+                            return null;
+                        }
+
                         // Validate the JSON string
                         $violations = $this->validator->validate($value, new ValidJson());
 
                         if (\count($violations) > 0) {
-                            // Handle validation errors (e.g., throw an exception)
                             throw new TransformationFailedException();
                         }
 
