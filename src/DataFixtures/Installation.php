@@ -175,7 +175,8 @@ class Installation extends Fixture implements FixtureGroupInterface
 
         foreach ($groups as $key => $roles) {
             $group = (new Group())
-                ->setName($key);
+                ->setName($key)
+                ->setOnRegistration('User' === $key);
 
             foreach ($roles as $role) {
                 $group->addRole($role);

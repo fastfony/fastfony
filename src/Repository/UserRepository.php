@@ -57,6 +57,15 @@ class UserRepository extends ServiceEntityRepository
         $user = new User();
         $user->setEmail($email);
 
+        // By default, the user is in group with onRegistration = true
+        $groups = $this->getEntityManager()
+            ->getRepository(Group::class)
+            ->findBy(['onRegistration' => true]);
+
+        foreach ($groups as $group) {
+            $user->addGroup($group);
+        }
+
         $this->save($user);
 
         return $user;

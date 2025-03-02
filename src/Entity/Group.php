@@ -17,6 +17,9 @@ class Group
     use CommonProperties\Required\Name;
     public const SUPER_ADMIN_NAME = 'Super Admin';
 
+    #[ORM\Column(options: ['default' => false])]
+    private ?bool $onRegistration = false;
+
     /**
      * @var Collection<int, User>
      */
@@ -38,6 +41,18 @@ class Group
     public function __toString(): string
     {
         return $this->name;
+    }
+
+    public function isOnRegistration(): bool
+    {
+        return $this->onRegistration;
+    }
+
+    public function setOnRegistration(bool $onRegistration): static
+    {
+        $this->onRegistration = $onRegistration;
+
+        return $this;
     }
 
     /**

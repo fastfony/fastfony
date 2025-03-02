@@ -51,14 +51,14 @@ class User implements UserInterface
      */
     public function getRoles(): array
     {
-        $roles = $this->getGroups()->map(function (Group $group) {
-            return $group->getRoles()->map(function (Role $role) {
-                return $role->getName();
-            })->toArray();
-        })->toArray();
-
         // guarantee every user at least has ROLE_USER
-        $roles = ['ROLE_USER', ...(reset($roles) ?: [])];
+        $roles = ['ROLE_USER'];
+
+        foreach ($this->getGroups() as $group) {
+            foreach ($group->getRoles() as $role) {
+                $roles[] = $role->getName();
+            }
+        }
 
         return array_unique($roles);
     }
