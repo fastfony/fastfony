@@ -26,7 +26,7 @@ grumphp:
             triggered_by: [js, vue]
             whitelist_patterns:
                 - /^assets\/(.*)/
-            config: eslint.config.js
+            config: eslint.config.mjs
         npm_script:
             script: format
             triggered_by: [js, vue]
