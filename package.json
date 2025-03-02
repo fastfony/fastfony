@@ -47,10 +47,12 @@
         "@heroicons/vue": "^2.2.0",
         "@tailwindcss/postcss": "^4.0.4",
         "axios": "^1.7.9",
+        "pinia": "^3.0.1",
         "postcss": "^8.5.1",
         "postcss-loader": "^8.1.1",
         "table": "^6.9.0",
         "tailwindcss": "^4.0.4",
-        "vue-i18n": "^11.1.1"
+        "vue-i18n": "^11.1.1",
+        "vue-toastification": "^2.0.0-rc.5"
     }
 }

@@ -2,11 +2,17 @@
 import axios from 'axios';
 import { onMounted, ref } from 'vue';
 
+import { useToast } from "vue-toastification";
+const toast = useToast();
+
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+
 const parameters = ref([]);
 
 onMounted(() => {
     axios.get('/api/parameters').then(response => {
-        // On tri les paramètres par leur catégorie
+        // We sort the parameters by their category
         parameters.value = response.data.member.reduce((data, parameter) => {
             if (!data[parameter.category]) {
                 data[parameter.category] = [];
@@ -23,7 +29,11 @@ const patchParameter = (parameter, event) => {
             parameter['@id'],
             { value: parameter.value },
             { headers: { 'Content-Type': 'application/merge-patch+json' } }
-        );
+        ).then(response => {
+            toast.success(t('toast.parameter.updated'), {
+                timeout: 2000
+            });
+        });
     }
 };
 </script>
