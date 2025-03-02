@@ -1,3 +1,3 @@
-import "./js/editorjs.js";
+import './js/editorjs.js';
 
-import "./styles/easyadmin.css";
+import './styles/easyadmin.css';

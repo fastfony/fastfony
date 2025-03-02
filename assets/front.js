@@ -1,3 +1,3 @@
-import "./bootstrap.js";
+import './bootstrap.js';
 
-import "./styles/front.css";
+import './styles/front.css';

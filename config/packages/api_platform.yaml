@@ -4,4 +4,4 @@ api_platform:
     defaults:
         stateless: false # API is used by admin (stateful) and also by others users (stateless)
         cache_headers:
-            vary: ["Content-Type", "Authorization", "Origin"]
+            vary: ['Content-Type', 'Authorization', 'Origin']

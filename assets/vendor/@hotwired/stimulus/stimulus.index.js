@@ -29,7 +29,7 @@ class e {
   }
   handleEvent(e) {
     const t = (function (e) {
-      if ("immediatePropagationStopped" in e) return e;
+      if ('immediatePropagationStopped' in e) return e;
       {
         const { stopImmediatePropagation: t } = e;
         return Object.assign(e, {
@@ -120,9 +120,9 @@ class t {
       Object.keys(t)
         .sort()
         .forEach((e) => {
-          s.push(`${t[e] ? "" : "!"}${e}`);
+          s.push(`${t[e] ? '' : '!'}${e}`);
         }),
-      s.join(":")
+      s.join(':')
     );
   }
 }
@@ -134,13 +134,13 @@ const s = {
   r =
     /^(?:(?:([^.]+?)\+)?(.+?)(?:\.(.+?))?(?:@(window|document))?->)?(.+?)(?:#([^:]+?))(?::(.+))?$/;
 function n(e) {
-  return "window" == e ? window : "document" == e ? document : void 0;
+  return 'window' == e ? window : 'document' == e ? document : void 0;
 }
 function i(e) {
   return e.replace(/(?:[_-])([a-z0-9])/g, (e, t) => t.toUpperCase());
 }
 function o(e) {
-  return i(e.replace(/--/g, "-").replace(/__/g, "_"));
+  return i(e.replace(/--/g, '-').replace(/__/g, '_'));
 }
 function a(e) {
   return e.charAt(0).toUpperCase() + e.slice(1);
@@ -154,7 +154,7 @@ function l(e) {
 function h(e, t) {
   return Object.prototype.hasOwnProperty.call(e, t);
 }
-const u = ["meta", "ctrl", "alt", "shift"];
+const u = ['meta', 'ctrl', 'alt', 'shift'];
 class d {
   constructor(e, t, s, r) {
     (this.element = e),
@@ -166,11 +166,11 @@ class d {
           const t = e.tagName.toLowerCase();
           if (t in m) return m[t](e);
         })(e) ||
-        g("missing event name")),
+        g('missing event name')),
       (this.eventOptions = s.eventOptions || {}),
-      (this.identifier = s.identifier || g("missing identifier")),
-      (this.methodName = s.methodName || g("missing method name")),
-      (this.keyFilter = s.keyFilter || ""),
+      (this.identifier = s.identifier || g('missing identifier')),
+      (this.methodName = s.methodName || g('missing method name')),
+      (this.keyFilter = s.keyFilter || ''),
       (this.schema = r);
   }
   static forToken(e, t) {
@@ -183,17 +183,17 @@ class d {
           i = t[3];
         return (
           i &&
-            !["keydown", "keyup", "keypress"].includes(s) &&
-            ((s += `.${i}`), (i = "")),
+            !['keydown', 'keyup', 'keypress'].includes(s) &&
+            ((s += `.${i}`), (i = '')),
           {
             eventTarget: n(t[4]),
             eventName: s,
             eventOptions: t[7]
               ? ((o = t[7]),
-                o.split(":").reduce(
+                o.split(':').reduce(
                   (e, t) =>
                     Object.assign(e, {
-                      [t.replace(/^!/, "")]: !/^!/.test(t),
+                      [t.replace(/^!/, '')]: !/^!/.test(t),
                     }),
                   {},
                 ))
@@ -209,13 +209,13 @@ class d {
     );
   }
   toString() {
-    const e = this.keyFilter ? `.${this.keyFilter}` : "",
-      t = this.eventTargetName ? `@${this.eventTargetName}` : "";
+    const e = this.keyFilter ? `.${this.keyFilter}` : '',
+      t = this.eventTargetName ? `@${this.eventTargetName}` : '';
     return `${this.eventName}${e}${t}->${this.identifier}#${this.methodName}`;
   }
   shouldIgnoreKeyboardEvent(e) {
     if (!this.keyFilter) return !1;
-    const t = this.keyFilter.split("+");
+    const t = this.keyFilter.split('+');
     if (this.keyFilterDissatisfied(e, t)) return !0;
     const s = t.filter((e) => !u.includes(e))[0];
     return (
@@ -232,7 +232,7 @@ class d {
   }
   get params() {
     const e = {},
-      t = new RegExp(`^data-${this.identifier}-(.+)-param$`, "i");
+      t = new RegExp(`^data-${this.identifier}-(.+)-param$`, 'i');
     for (const { name: s, value: r } of Array.from(this.element.attributes)) {
       const n = s.match(t),
         o = n && n[1];
@@ -242,9 +242,9 @@ class d {
   }
   get eventTargetName() {
     return (e = this.eventTarget) == window
-      ? "window"
+      ? 'window'
       : e == document
-        ? "document"
+        ? 'document'
         : void 0;
     var e;
   }
@@ -259,13 +259,13 @@ class d {
   }
 }
 const m = {
-  a: () => "click",
-  button: () => "click",
-  form: () => "submit",
-  details: () => "toggle",
-  input: (e) => ("submit" == e.getAttribute("type") ? "click" : "input"),
-  select: () => "change",
-  textarea: () => "input",
+  a: () => 'click',
+  button: () => 'click',
+  form: () => 'submit',
+  details: () => 'toggle',
+  input: (e) => ('submit' == e.getAttribute('type') ? 'click' : 'input'),
+  select: () => 'change',
+  textarea: () => 'input',
 };
 function g(e) {
   throw new Error(e);
@@ -304,7 +304,7 @@ class f {
   }
   get method() {
     const e = this.controller[this.methodName];
-    if ("function" == typeof e) return e;
+    if ('function' == typeof e) return e;
     throw new Error(
       `Action "${this.action}" references undefined method "${this.methodName}"`,
     );
@@ -412,9 +412,9 @@ class b {
     if (this.started) for (const t of e) this.processMutation(t);
   }
   processMutation(e) {
-    "attributes" == e.type
+    'attributes' == e.type
       ? this.processAttributeChange(e.target, e.attributeName)
-      : "childList" == e.type &&
+      : 'childList' == e.type &&
         (this.processRemovedNodes(e.removedNodes),
         this.processAddedNodes(e.addedNodes));
   }
@@ -825,7 +825,7 @@ class F {
           content: e,
           index: r,
         }));
-    })(e.getAttribute(t) || "", e, t);
+    })(e.getAttribute(t) || '', e, t);
   }
 }
 class B {
@@ -999,7 +999,7 @@ class $ {
   invokeChangedCallback(e, t, s) {
     const r = `${e}Changed`,
       n = this.receiver[r];
-    if ("function" == typeof n) {
+    if ('function' == typeof n) {
       const r = this.valueDescriptorNameMap[e];
       try {
         const e = r.reader(t);
@@ -1238,7 +1238,7 @@ class L {
     const e = new w();
     return (
       this.router.modules.forEach((t) => {
-        S(t.definition.controllerConstructor, "outlets").forEach((s) =>
+        S(t.definition.controllerConstructor, 'outlets').forEach((s) =>
           e.add(s, t.identifier),
         );
       }),
@@ -1295,9 +1295,9 @@ class V {
       (this.targetObserver = new T(this, this)),
       (this.outletObserver = new L(this, this));
     try {
-      this.controller.initialize(), this.logDebugActivity("initialize");
+      this.controller.initialize(), this.logDebugActivity('initialize');
     } catch (e) {
-      this.handleError(e, "initializing controller");
+      this.handleError(e, 'initializing controller');
     }
   }
   connect() {
@@ -1306,9 +1306,9 @@ class V {
       this.targetObserver.start(),
       this.outletObserver.start();
     try {
-      this.controller.connect(), this.logDebugActivity("connect");
+      this.controller.connect(), this.logDebugActivity('connect');
     } catch (e) {
-      this.handleError(e, "connecting controller");
+      this.handleError(e, 'connecting controller');
     }
   }
   refresh() {
@@ -1316,9 +1316,9 @@ class V {
   }
   disconnect() {
     try {
-      this.controller.disconnect(), this.logDebugActivity("disconnect");
+      this.controller.disconnect(), this.logDebugActivity('disconnect');
     } catch (e) {
-      this.handleError(e, "disconnecting controller");
+      this.handleError(e, 'disconnecting controller');
     }
     this.outletObserver.stop(),
       this.targetObserver.stop(),
@@ -1362,7 +1362,7 @@ class V {
   }
   invokeControllerMethod(e, ...t) {
     const s = this.controller;
-    "function" == typeof s[e] && s[e](...t);
+    'function' == typeof s[e] && s[e](...t);
   }
 }
 function K(e) {
@@ -1372,7 +1372,7 @@ function K(e) {
         return I(t).reduce((s, r) => {
           const n = (function (e, t, s) {
             const r = Object.getOwnPropertyDescriptor(e, s);
-            if (!r || !("value" in r)) {
+            if (!r || !('value' in r)) {
               const e = Object.getOwnPropertyDescriptor(t, s).value;
               return (
                 r && ((e.get = r.get || e.get), (e.set = r.set || e.set)), e
@@ -1386,7 +1386,7 @@ function K(e) {
   })(
     e,
     (function (e) {
-      const t = S(e, "blessings");
+      const t = S(e, 'blessings');
       return t.reduce((t, s) => {
         const r = s(e);
         for (const e in r) {
@@ -1399,7 +1399,7 @@ function K(e) {
   );
 }
 const I =
-    "function" == typeof Object.getOwnPropertySymbols
+    'function' == typeof Object.getOwnPropertySymbols
       ? (e) => [
           ...Object.getOwnPropertyNames(e),
           ...Object.getOwnPropertySymbols(e),
@@ -1477,7 +1477,7 @@ class P {
     return this.getAll(e)[0];
   }
   getAll(e) {
-    const t = this.data.get(this.getDataKey(e)) || "";
+    const t = this.data.get(this.getDataKey(e)) || '';
     return t.match(/[^\s]+/g) || [];
   }
   getAttributeName(e) {
@@ -1653,8 +1653,8 @@ class W {
       .filter((s) => this.matchesElement(s, e, t));
   }
   matchesElement(e, t, s) {
-    const r = e.getAttribute(this.scope.schema.controllerAttribute) || "";
-    return e.matches(t) && r.split(" ").includes(s);
+    const r = e.getAttribute(this.scope.schema.controllerAttribute) || '';
+    return e.matches(t) && r.split(' ').includes(s);
   }
 }
 class J {
@@ -1840,30 +1840,30 @@ class Z {
   }
 }
 const G = {
-  controllerAttribute: "data-controller",
-  actionAttribute: "data-action",
-  targetAttribute: "data-target",
+  controllerAttribute: 'data-controller',
+  actionAttribute: 'data-action',
+  targetAttribute: 'data-target',
   targetAttributeForScope: (e) => `data-${e}-target`,
   outletAttributeForScope: (e, t) => `data-${e}-${t}-outlet`,
   keyMappings: Object.assign(
     Object.assign(
       {
-        enter: "Enter",
-        tab: "Tab",
-        esc: "Escape",
-        space: " ",
-        up: "ArrowUp",
-        down: "ArrowDown",
-        left: "ArrowLeft",
-        right: "ArrowRight",
-        home: "Home",
-        end: "End",
-        page_up: "PageUp",
-        page_down: "PageDown",
+        enter: 'Enter',
+        tab: 'Tab',
+        esc: 'Escape',
+        space: ' ',
+        up: 'ArrowUp',
+        down: 'ArrowDown',
+        left: 'ArrowLeft',
+        right: 'ArrowRight',
+        home: 'Home',
+        end: 'End',
+        page_up: 'PageUp',
+        page_down: 'PageDown',
       },
-      Q("abcdefghijklmnopqrstuvwxyz".split("").map((e) => [e, e])),
+      Q('abcdefghijklmnopqrstuvwxyz'.split('').map((e) => [e, e])),
     ),
-    Q("0123456789".split("").map((e) => [e, e])),
+    Q('0123456789'.split('').map((e) => [e, e])),
   ),
 };
 function Q(e) {
@@ -1891,20 +1891,20 @@ class X {
   }
   async start() {
     await new Promise((e) => {
-      "loading" == document.readyState
-        ? document.addEventListener("DOMContentLoaded", () => e())
+      'loading' == document.readyState
+        ? document.addEventListener('DOMContentLoaded', () => e())
         : e();
     }),
-      this.logDebugActivity("application", "starting"),
+      this.logDebugActivity('application', 'starting'),
       this.dispatcher.start(),
       this.router.start(),
-      this.logDebugActivity("application", "start");
+      this.logDebugActivity('application', 'start');
   }
   stop() {
-    this.logDebugActivity("application", "stopping"),
+    this.logDebugActivity('application', 'stopping'),
       this.dispatcher.stop(),
       this.router.stop(),
-      this.logDebugActivity("application", "stop");
+      this.logDebugActivity('application', 'stop');
   }
   register(e, t) {
     this.load({ identifier: e, controllerConstructor: t });
@@ -1931,15 +1931,15 @@ class X {
   }
   handleError(e, t, s) {
     var r;
-    this.logger.error("%s\n\n%o\n\n%o", t, e, s),
+    this.logger.error('%s\n\n%o\n\n%o', t, e, s),
       null === (r = window.onerror) ||
         void 0 === r ||
-        r.call(window, t, "", 0, 0, e);
+        r.call(window, t, '', 0, 0, e);
   }
   logFormattedMessage(e, t, s = {}) {
     (s = Object.assign({ application: this }, s)),
       this.logger.groupCollapsed(`${e} #${t}`),
-      this.logger.log("details:", Object.assign({}, s)),
+      this.logger.log('details:', Object.assign({}, s)),
       this.logger.groupEnd();
   }
 }
@@ -1995,8 +1995,8 @@ function te([e, t], s) {
         return (function (e) {
           const t = se(e);
           if (t) return ne[t];
-          const s = h(e, "default"),
-            r = h(e, "type"),
+          const s = h(e, 'default'),
+            r = h(e, 'type'),
             n = e;
           if (s) return n.default;
           if (r) {
@@ -2018,30 +2018,30 @@ function te([e, t], s) {
 function se(e) {
   switch (e) {
     case Array:
-      return "array";
+      return 'array';
     case Boolean:
-      return "boolean";
+      return 'boolean';
     case Number:
-      return "number";
+      return 'number';
     case Object:
-      return "object";
+      return 'object';
     case String:
-      return "string";
+      return 'string';
   }
 }
 function re(e) {
   switch (typeof e) {
-    case "boolean":
-      return "boolean";
-    case "number":
-      return "number";
-    case "string":
-      return "string";
+    case 'boolean':
+      return 'boolean';
+    case 'number':
+      return 'number';
+    case 'string':
+      return 'string';
   }
   return Array.isArray(e)
-    ? "array"
-    : "[object Object]" === Object.prototype.toString.call(e)
-      ? "object"
+    ? 'array'
+    : '[object Object]' === Object.prototype.toString.call(e)
+      ? 'object'
       : void 0;
 }
 const ne = {
@@ -2053,7 +2053,7 @@ const ne = {
     get object() {
       return {};
     },
-    string: "",
+    string: '',
   },
   ie = {
     array(e) {
@@ -2064,11 +2064,11 @@ const ne = {
         );
       return t;
     },
-    boolean: (e) => !("0" == e || "false" == String(e).toLowerCase()),
-    number: (e) => Number(e.replace(/_/g, "")),
+    boolean: (e) => !('0' == e || 'false' == String(e).toLowerCase()),
+    number: (e) => Number(e.replace(/_/g, '')),
     object(e) {
       const t = JSON.parse(e);
-      if (null === t || "object" != typeof t || Array.isArray(t))
+      if (null === t || 'object' != typeof t || Array.isArray(t))
         throw new TypeError(
           `expected value of type "object" but instead got value "${e}" of type "${re(t)}"`,
         );
@@ -2141,7 +2141,7 @@ class ce {
 }
 (ce.blessings = [
   function (e) {
-    return S(e, "classes").reduce((e, t) => {
+    return S(e, 'classes').reduce((e, t) => {
       return Object.assign(
         e,
         ((s = t),
@@ -2172,7 +2172,7 @@ class ce {
     }, {});
   },
   function (e) {
-    return S(e, "targets").reduce((e, t) => {
+    return S(e, 'targets').reduce((e, t) => {
       return Object.assign(
         e,
         ((s = t),
@@ -2202,7 +2202,7 @@ class ce {
     }, {});
   },
   function (e) {
-    const t = x(e, "values"),
+    const t = x(e, 'values'),
       s = {
         valueDescriptorMap: {
           get() {
@@ -2243,7 +2243,7 @@ class ce {
     );
   },
   function (e) {
-    return S(e, "outlets").reduce(
+    return S(e, 'outlets').reduce(
       (e, t) =>
         Object.assign(
           e,

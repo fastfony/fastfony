@@ -23,27 +23,27 @@
   (function (e) {
     function t(e, t, s) {
       throw new e(
-        "Failed to execute 'requestSubmit' on 'HTMLFormElement': " + t + ".",
+        "Failed to execute 'requestSubmit' on 'HTMLFormElement': " + t + '.',
         s,
       );
     }
-    "function" != typeof e.requestSubmit &&
+    'function' != typeof e.requestSubmit &&
       (e.requestSubmit = function (e) {
         e
           ? (!(function (e, s) {
               e instanceof HTMLElement ||
                 t(TypeError, "parameter 1 is not of type 'HTMLElement'"),
-                "submit" == e.type ||
-                  t(TypeError, "The specified element is not a submit button"),
+                'submit' == e.type ||
+                  t(TypeError, 'The specified element is not a submit button'),
                 e.form == s ||
                   t(
                     DOMException,
-                    "The specified element is not owned by this form element",
-                    "NotFoundError",
+                    'The specified element is not owned by this form element',
+                    'NotFoundError',
                   );
             })(e, this),
             e.click())
-          : (((e = document.createElement("input")).type = "submit"),
+          : (((e = document.createElement('input')).type = 'submit'),
             (e.hidden = !0),
             this.appendChild(e),
             e.click(),
@@ -55,32 +55,32 @@ function t(t) {
   const s = (function (e) {
     const t =
         e instanceof Element ? e : e instanceof Node ? e.parentElement : null,
-      s = t ? t.closest("input, button") : null;
-    return "submit" == (null == s ? void 0 : s.type) ? s : null;
+      s = t ? t.closest('input, button') : null;
+    return 'submit' == (null == s ? void 0 : s.type) ? s : null;
   })(t.target);
   s && s.form && e.set(s.form, s);
 }
 var s, i, r, n, o, a;
 !(function () {
-  if ("submitter" in Event.prototype) return;
+  if ('submitter' in Event.prototype) return;
   let s = window.Event.prototype;
-  if ("SubmitEvent" in window && /Apple Computer/.test(navigator.vendor))
+  if ('SubmitEvent' in window && /Apple Computer/.test(navigator.vendor))
     s = window.SubmitEvent.prototype;
-  else if ("SubmitEvent" in window) return;
-  addEventListener("click", t, !0),
-    Object.defineProperty(s, "submitter", {
+  else if ('SubmitEvent' in window) return;
+  addEventListener('click', t, !0),
+    Object.defineProperty(s, 'submitter', {
       get() {
-        if ("submit" == this.type && this.target instanceof HTMLFormElement)
+        if ('submit' == this.type && this.target instanceof HTMLFormElement)
           return e.get(this.target);
       },
     });
 })(),
   (function (e) {
-    (e.eager = "eager"), (e.lazy = "lazy");
+    (e.eager = 'eager'), (e.lazy = 'lazy');
   })(s || (s = {}));
 class l extends HTMLElement {
   static get observedAttributes() {
-    return ["disabled", "complete", "loading", "src"];
+    return ['disabled', 'complete', 'loading', 'src'];
   }
   constructor() {
     super(),
@@ -97,42 +97,42 @@ class l extends HTMLElement {
     return this.delegate.sourceURLReloaded();
   }
   attributeChangedCallback(e) {
-    "loading" == e
+    'loading' == e
       ? this.delegate.loadingStyleChanged()
-      : "complete" == e
+      : 'complete' == e
         ? this.delegate.completeChanged()
-        : "src" == e
+        : 'src' == e
           ? this.delegate.sourceURLChanged()
           : this.delegate.disabledChanged();
   }
   get src() {
-    return this.getAttribute("src");
+    return this.getAttribute('src');
   }
   set src(e) {
-    e ? this.setAttribute("src", e) : this.removeAttribute("src");
+    e ? this.setAttribute('src', e) : this.removeAttribute('src');
   }
   get loading() {
     return (function (e) {
-      if ("lazy" === e.toLowerCase()) return s.lazy;
+      if ('lazy' === e.toLowerCase()) return s.lazy;
       return s.eager;
-    })(this.getAttribute("loading") || "");
+    })(this.getAttribute('loading') || '');
   }
   set loading(e) {
-    e ? this.setAttribute("loading", e) : this.removeAttribute("loading");
+    e ? this.setAttribute('loading', e) : this.removeAttribute('loading');
   }
   get disabled() {
-    return this.hasAttribute("disabled");
+    return this.hasAttribute('disabled');
   }
   set disabled(e) {
-    e ? this.setAttribute("disabled", "") : this.removeAttribute("disabled");
+    e ? this.setAttribute('disabled', '') : this.removeAttribute('disabled');
   }
   get autoscroll() {
-    return this.hasAttribute("autoscroll");
+    return this.hasAttribute('autoscroll');
   }
   set autoscroll(e) {
     e
-      ? this.setAttribute("autoscroll", "")
-      : this.removeAttribute("autoscroll");
+      ? this.setAttribute('autoscroll', '')
+      : this.removeAttribute('autoscroll');
   }
   get complete() {
     return !this.delegate.isLoading;
@@ -148,7 +148,7 @@ class l extends HTMLElement {
           ? void 0
           : e.documentElement) || void 0 === t
       ? void 0
-      : t.hasAttribute("data-turbo-preview");
+      : t.hasAttribute('data-turbo-preview');
   }
 }
 function h(e) {
@@ -164,8 +164,8 @@ function c(e) {
 }
 function d(e, t) {
   return h(
-    (null == t ? void 0 : t.getAttribute("formaction")) ||
-      e.getAttribute("action") ||
+    (null == t ? void 0 : t.getAttribute('formaction')) ||
+      e.getAttribute('action') ||
       e.action,
   );
 }
@@ -173,14 +173,14 @@ function u(e) {
   return (
     ((function (e) {
       return (function (e) {
-        return e.pathname.split("/").slice(1);
+        return e.pathname.split('/').slice(1);
       })(e).slice(-1)[0];
-    })(e).match(/\.[^.]*$/) || [])[0] || ""
+    })(e).match(/\.[^.]*$/) || [])[0] || ''
   );
 }
 function m(e, t) {
   const s = (function (e) {
-    return (t = e.origin + e.pathname), t.endsWith("/") ? t : t + "/";
+    return (t = e.origin + e.pathname), t.endsWith('/') ? t : t + '/';
     var t;
   })(t);
   return e.href === h(s).href || e.href.startsWith(s);
@@ -229,7 +229,7 @@ class v {
     return this.response.status;
   }
   get contentType() {
-    return this.header("Content-Type");
+    return this.header('Content-Type');
   }
   get responseText() {
     return this.response.clone().text();
@@ -242,10 +242,10 @@ class v {
   }
 }
 function b(e) {
-  if ("false" == e.getAttribute("data-turbo-eval")) return e;
+  if ('false' == e.getAttribute('data-turbo-eval')) return e;
   {
-    const t = document.createElement("script"),
-      s = M("csp-nonce");
+    const t = document.createElement('script'),
+      s = M('csp-nonce');
     return (
       s && (t.nonce = s),
       (t.textContent = e.textContent),
@@ -274,70 +274,70 @@ function w(e, { target: t, cancelable: s, detail: i } = {}) {
 function S() {
   return new Promise((e) => requestAnimationFrame(() => e()));
 }
-function E(e = "") {
-  return new DOMParser().parseFromString(e, "text/html");
+function E(e = '') {
+  return new DOMParser().parseFromString(e, 'text/html');
 }
 function y(e, ...t) {
   const s = (function (e, t) {
-      return e.reduce((e, s, i) => e + s + (null == t[i] ? "" : t[i]), "");
+      return e.reduce((e, s, i) => e + s + (null == t[i] ? '' : t[i]), '');
     })(e, t)
-      .replace(/^\n/, "")
-      .split("\n"),
+      .replace(/^\n/, '')
+      .split('\n'),
     i = s[0].match(/^\s+/),
     r = i ? i[0].length : 0;
-  return s.map((e) => e.slice(r)).join("\n");
+  return s.map((e) => e.slice(r)).join('\n');
 }
 function L() {
   return Array.from({ length: 36 })
     .map((e, t) =>
       8 == t || 13 == t || 18 == t || 23 == t
-        ? "-"
+        ? '-'
         : 14 == t
-          ? "4"
+          ? '4'
           : 19 == t
             ? (Math.floor(4 * Math.random()) + 8).toString(16)
             : Math.floor(15 * Math.random()).toString(16),
     )
-    .join("");
+    .join('');
 }
 function R(e, ...t) {
   for (const s of t.map((t) => (null == t ? void 0 : t.getAttribute(e))))
-    if ("string" == typeof s) return s;
+    if ('string' == typeof s) return s;
   return null;
 }
 function C(...e) {
   for (const t of e)
-    "turbo-frame" == t.localName && t.setAttribute("busy", ""),
-      t.setAttribute("aria-busy", "true");
+    'turbo-frame' == t.localName && t.setAttribute('busy', ''),
+      t.setAttribute('aria-busy', 'true');
 }
 function T(...e) {
   for (const t of e)
-    "turbo-frame" == t.localName && t.removeAttribute("busy"),
-      t.removeAttribute("aria-busy");
+    'turbo-frame' == t.localName && t.removeAttribute('busy'),
+      t.removeAttribute('aria-busy');
 }
 function A(e, t = 2e3) {
   return new Promise((s) => {
     const i = () => {
-      e.removeEventListener("error", i), e.removeEventListener("load", i), s();
+      e.removeEventListener('error', i), e.removeEventListener('load', i), s();
     };
-    e.addEventListener("load", i, { once: !0 }),
-      e.addEventListener("error", i, { once: !0 }),
+    e.addEventListener('load', i, { once: !0 }),
+      e.addEventListener('error', i, { once: !0 }),
       setTimeout(s, t);
   });
 }
 function P(e) {
   switch (e) {
-    case "replace":
+    case 'replace':
       return history.replaceState;
-    case "advance":
-    case "restore":
+    case 'advance':
+    case 'restore':
       return history.pushState;
   }
 }
 function F(...e) {
-  const t = R("data-turbo-action", ...e);
+  const t = R('data-turbo-action', ...e);
   return (function (e) {
-    return "advance" == e || "replace" == e || "restore" == e;
+    return 'advance' == e || 'replace' == e || 'restore' == e;
   })(t)
     ? t
     : null;
@@ -362,11 +362,11 @@ function I(e, t) {
     );
 }
 !(function (e) {
-  (e[(e.get = 0)] = "get"),
-    (e[(e.post = 1)] = "post"),
-    (e[(e.put = 2)] = "put"),
-    (e[(e.patch = 3)] = "patch"),
-    (e[(e.delete = 4)] = "delete");
+  (e[(e.get = 0)] = 'get'),
+    (e[(e.post = 1)] = 'post'),
+    (e[(e.put = 2)] = 'put'),
+    (e[(e.patch = 3)] = 'patch'),
+    (e[(e.delete = 4)] = 'delete');
 })(i || (i = {}));
 class H {
   constructor(e, t, s, i = new URLSearchParams(), r = null) {
@@ -400,7 +400,7 @@ class H {
       const t = await fetch(this.url.href, e);
       return await this.receive(t);
     } catch (e) {
-      if ("AbortError" !== e.name)
+      if ('AbortError' !== e.name)
         throw (
           (this.willDelegateErrorHandling(e) &&
             this.delegate.requestErrored(this, e),
@@ -413,7 +413,7 @@ class H {
   async receive(e) {
     const t = new v(e);
     return (
-      w("turbo:before-fetch-response", {
+      w('turbo:before-fetch-response', {
         cancelable: !0,
         detail: { fetchResponse: t },
         target: this.target,
@@ -429,9 +429,9 @@ class H {
     var e;
     return {
       method: i[this.method].toUpperCase(),
-      credentials: "same-origin",
+      credentials: 'same-origin',
       headers: this.headers,
-      redirect: "follow",
+      redirect: 'follow',
       body: this.isSafe ? null : this.body,
       signal: this.abortSignal,
       referrer:
@@ -439,7 +439,7 @@ class H {
     };
   }
   get defaultHeaders() {
-    return { Accept: "text/html, application/xhtml+xml" };
+    return { Accept: 'text/html, application/xhtml+xml' };
   }
   get isSafe() {
     return this.method === i.get;
@@ -448,11 +448,11 @@ class H {
     return this.abortController.signal;
   }
   acceptResponseType(e) {
-    this.headers.Accept = [e, this.headers.Accept].join(", ");
+    this.headers.Accept = [e, this.headers.Accept].join(', ');
   }
   async allowRequestToBeIntercepted(e) {
     const t = new Promise((e) => (this.resolveRequestPromise = e));
-    w("turbo:before-fetch-request", {
+    w('turbo:before-fetch-request', {
       cancelable: !0,
       detail: {
         fetchOptions: e,
@@ -463,7 +463,7 @@ class H {
     }).defaultPrevented && (await t);
   }
   willDelegateErrorHandling(e) {
-    return !w("turbo:fetch-request-error", {
+    return !w('turbo:fetch-request-error', {
       target: this.target,
       cancelable: !0,
       detail: { request: this, error: e },
@@ -493,10 +493,10 @@ class q {
 }
 class B {
   static wrap(e) {
-    return "string" == typeof e
+    return 'string' == typeof e
       ? new this(
           (function (e) {
-            const t = document.createElement("template");
+            const t = document.createElement('template');
             return (t.innerHTML = e), t.content;
           })(e),
         )
@@ -504,9 +504,9 @@ class B {
   }
   constructor(e) {
     this.fragment = (function (e) {
-      for (const t of e.querySelectorAll("turbo-stream")) {
+      for (const t of e.querySelectorAll('turbo-stream')) {
         const e = document.importNode(t, !0);
-        for (const t of e.templateElement.content.querySelectorAll("script"))
+        for (const t of e.templateElement.content.querySelectorAll('script'))
           t.replaceWith(b(t));
         t.replaceWith(e);
       }
@@ -514,19 +514,19 @@ class B {
     })(e);
   }
 }
-(B.contentType = "text/vnd.turbo-stream.html"),
+(B.contentType = 'text/vnd.turbo-stream.html'),
   (function (e) {
-    (e[(e.initialized = 0)] = "initialized"),
-      (e[(e.requesting = 1)] = "requesting"),
-      (e[(e.waiting = 2)] = "waiting"),
-      (e[(e.receiving = 3)] = "receiving"),
-      (e[(e.stopping = 4)] = "stopping"),
-      (e[(e.stopped = 5)] = "stopped");
+    (e[(e.initialized = 0)] = 'initialized'),
+      (e[(e.requesting = 1)] = 'requesting'),
+      (e[(e.waiting = 2)] = 'waiting'),
+      (e[(e.receiving = 3)] = 'receiving'),
+      (e[(e.stopping = 4)] = 'stopping'),
+      (e[(e.stopped = 5)] = 'stopped');
   })(r || (r = {})),
   (function (e) {
-    (e.urlEncoded = "application/x-www-form-urlencoded"),
-      (e.multipart = "multipart/form-data"),
-      (e.plain = "text/plain");
+    (e.urlEncoded = 'application/x-www-form-urlencoded'),
+      (e.multipart = 'multipart/form-data'),
+      (e.plain = 'text/plain');
   })(n || (n = {}));
 class O {
   static confirmMethod(e, t, s) {
@@ -539,9 +539,9 @@ class O {
       (this.submitter = s),
       (this.formData = (function (e, t) {
         const s = new FormData(e),
-          i = null == t ? void 0 : t.getAttribute("name"),
-          r = null == t ? void 0 : t.getAttribute("value");
-        i && s.append(i, r || "");
+          i = null == t ? void 0 : t.getAttribute('name'),
+          r = null == t ? void 0 : t.getAttribute('value');
+        i && s.append(i, r || '');
         return s;
       })(t, s)),
       (this.location = h(this.action)),
@@ -565,24 +565,24 @@ class O {
     return (
       (function (e) {
         switch (e.toLowerCase()) {
-          case "get":
+          case 'get':
             return i.get;
-          case "post":
+          case 'post':
             return i.post;
-          case "put":
+          case 'put':
             return i.put;
-          case "patch":
+          case 'patch':
             return i.patch;
-          case "delete":
+          case 'delete':
             return i.delete;
         }
       })(
         (
           (null === (e = this.submitter) || void 0 === e
             ? void 0
-            : e.getAttribute("formmethod")) ||
-          this.formElement.getAttribute("method") ||
-          ""
+            : e.getAttribute('formmethod')) ||
+          this.formElement.getAttribute('method') ||
+          ''
         ).toLowerCase(),
       ) || i.get
     );
@@ -590,16 +590,16 @@ class O {
   get action() {
     var e;
     const t =
-      "string" == typeof this.formElement.action
+      'string' == typeof this.formElement.action
         ? this.formElement.action
         : null;
     return (
       null === (e = this.submitter) || void 0 === e
         ? void 0
-        : e.hasAttribute("formaction")
+        : e.hasAttribute('formaction')
     )
-      ? this.submitter.getAttribute("formaction") || ""
-      : this.formElement.getAttribute("action") || t || "";
+      ? this.submitter.getAttribute('formaction') || ''
+      : this.formElement.getAttribute('action') || t || '';
   }
   get body() {
     return this.enctype == n.urlEncoded || this.method == i.get
@@ -620,7 +620,7 @@ class O {
     })(
       (null === (e = this.submitter) || void 0 === e
         ? void 0
-        : e.getAttribute("formenctype")) || this.formElement.enctype,
+        : e.getAttribute('formenctype')) || this.formElement.enctype,
     );
   }
   get isSafe() {
@@ -628,14 +628,14 @@ class O {
   }
   get stringFormData() {
     return [...this.formData].reduce(
-      (e, [t, s]) => e.concat("string" == typeof s ? [[t, s]] : []),
+      (e, [t, s]) => e.concat('string' == typeof s ? [[t, s]] : []),
       [],
     );
   }
   async start() {
     const { initialized: e, requesting: t } = r,
-      s = R("data-turbo-confirm", this.submitter, this.formElement);
-    if ("string" == typeof s) {
+      s = R('data-turbo-confirm', this.submitter, this.formElement);
+    if ('string' == typeof s) {
       if (!(await O.confirmMethod(s, this.formElement, this.submitter))) return;
     }
     if (this.state == e) return (this.state = t), this.fetchRequest.perform();
@@ -650,16 +650,16 @@ class O {
       const t =
         (function (e) {
           if (null != e) {
-            const t = (document.cookie ? document.cookie.split("; ") : []).find(
+            const t = (document.cookie ? document.cookie.split('; ') : []).find(
               (t) => t.startsWith(e),
             );
             if (t) {
-              const e = t.split("=").slice(1).join("=");
+              const e = t.split('=').slice(1).join('=');
               return e ? decodeURIComponent(e) : void 0;
             }
           }
-        })(M("csrf-param")) || M("csrf-token");
-      t && (e.headers["X-CSRF-Token"] = t);
+        })(M('csrf-param')) || M('csrf-token');
+      t && (e.headers['X-CSRF-Token'] = t);
     }
     this.requestAcceptsTurboStreamResponse(e) &&
       e.acceptResponseType(B.contentType);
@@ -669,9 +669,9 @@ class O {
     (this.state = r.waiting),
       null === (t = this.submitter) ||
         void 0 === t ||
-        t.setAttribute("disabled", ""),
+        t.setAttribute('disabled', ''),
       this.setSubmitsWith(),
-      w("turbo:submit-start", {
+      w('turbo:submit-start', {
         target: this.formElement,
         detail: { formSubmission: this },
       }),
@@ -689,7 +689,7 @@ class O {
         return 200 == e.statusCode && !e.redirected;
       })(t)
     ) {
-      const e = new Error("Form responses must redirect to another location");
+      const e = new Error('Form responses must redirect to another location');
       this.delegate.formSubmissionErrored(this, e);
     } else
       (this.state = r.receiving),
@@ -709,9 +709,9 @@ class O {
     (this.state = r.stopped),
       null === (t = this.submitter) ||
         void 0 === t ||
-        t.removeAttribute("disabled"),
+        t.removeAttribute('disabled'),
       this.resetSubmitterText(),
-      w("turbo:submit-end", {
+      w('turbo:submit-end', {
         target: this.formElement,
         detail: Object.assign({ formSubmission: this }, this.result),
       }),
@@ -719,19 +719,19 @@ class O {
   }
   setSubmitsWith() {
     if (this.submitter && this.submitsWith)
-      if (this.submitter.matches("button"))
+      if (this.submitter.matches('button'))
         (this.originalSubmitText = this.submitter.innerHTML),
           (this.submitter.innerHTML = this.submitsWith);
-      else if (this.submitter.matches("input")) {
+      else if (this.submitter.matches('input')) {
         const e = this.submitter;
         (this.originalSubmitText = e.value), (e.value = this.submitsWith);
       }
   }
   resetSubmitterText() {
     if (this.submitter && this.originalSubmitText)
-      if (this.submitter.matches("button"))
+      if (this.submitter.matches('button'))
         this.submitter.innerHTML = this.originalSubmitText;
-      else if (this.submitter.matches("input")) {
+      else if (this.submitter.matches('input')) {
         this.submitter.value = this.originalSubmitText;
       }
   }
@@ -743,14 +743,14 @@ class O {
       !e.isSafe ||
       (function (e, ...t) {
         return t.some((t) => t && t.hasAttribute(e));
-      })("data-turbo-stream", this.submitter, this.formElement)
+      })('data-turbo-stream', this.submitter, this.formElement)
     );
   }
   get submitsWith() {
     var e;
     return null === (e = this.submitter) || void 0 === e
       ? void 0
-      : e.getAttribute("data-turbo-submits-with");
+      : e.getAttribute('data-turbo-submits-with');
   }
 }
 class N {
@@ -773,11 +773,11 @@ class N {
     return this.element.isConnected;
   }
   get firstAutofocusableElement() {
-    for (const e of this.element.querySelectorAll("[autofocus]"))
+    for (const e of this.element.querySelectorAll('[autofocus]'))
       if (
         null ==
         e.closest(
-          "[inert], :disabled, [hidden], details:not([open]), dialog:not([open])",
+          '[inert], :disabled, [hidden], details:not([open]), dialog:not([open])',
         )
       )
         return e;
@@ -803,14 +803,14 @@ function V(e, t) {
   return e.querySelector(`#${t}[data-turbo-permanent]`);
 }
 function W(e) {
-  return e.querySelectorAll("[id][data-turbo-permanent]");
+  return e.querySelectorAll('[id][data-turbo-permanent]');
 }
 class D {
   constructor(e, t) {
     (this.started = !1),
       (this.submitCaptured = () => {
-        this.eventTarget.removeEventListener("submit", this.submitBubbled, !1),
-          this.eventTarget.addEventListener("submit", this.submitBubbled, !1);
+        this.eventTarget.removeEventListener('submit', this.submitBubbled, !1),
+          this.eventTarget.addEventListener('submit', this.submitBubbled, !1);
       }),
       (this.submitBubbled = (e) => {
         if (!e.defaultPrevented) {
@@ -819,17 +819,17 @@ class D {
           t &&
             (function (e, t) {
               const s =
-                (null == t ? void 0 : t.getAttribute("formmethod")) ||
-                e.getAttribute("method");
-              return "dialog" != s;
+                (null == t ? void 0 : t.getAttribute('formmethod')) ||
+                e.getAttribute('method');
+              return 'dialog' != s;
             })(t, s) &&
             (function (e, t) {
               if (
-                (null == t ? void 0 : t.hasAttribute("formtarget")) ||
-                e.hasAttribute("target")
+                (null == t ? void 0 : t.hasAttribute('formtarget')) ||
+                e.hasAttribute('target')
               ) {
                 const s =
-                  (null == t ? void 0 : t.getAttribute("formtarget")) ||
+                  (null == t ? void 0 : t.getAttribute('formtarget')) ||
                   e.target;
                 for (const e of document.getElementsByName(s))
                   if (e instanceof HTMLIFrameElement) return !1;
@@ -848,12 +848,12 @@ class D {
   }
   start() {
     this.started ||
-      (this.eventTarget.addEventListener("submit", this.submitCaptured, !0),
+      (this.eventTarget.addEventListener('submit', this.submitCaptured, !0),
       (this.started = !0));
   }
   stop() {
     this.started &&
-      (this.eventTarget.removeEventListener("submit", this.submitCaptured, !0),
+      (this.eventTarget.removeEventListener('submit', this.submitCaptured, !0),
       (this.started = !1));
   }
 }
@@ -878,11 +878,11 @@ class x {
   }
   focusElement(e) {
     e instanceof HTMLElement &&
-      (e.hasAttribute("tabindex")
+      (e.hasAttribute('tabindex')
         ? e.focus()
-        : (e.setAttribute("tabindex", "-1"),
+        : (e.setAttribute('tabindex', '-1'),
           e.focus(),
-          e.removeAttribute("tabindex")));
+          e.removeAttribute('tabindex')));
   }
   scrollToPosition({ x: e, y: t }) {
     this.scrollRoot.scrollTo(e, t);
@@ -927,8 +927,8 @@ class x {
   }
   markAsPreview(e) {
     e
-      ? this.element.setAttribute("data-turbo-preview", "")
-      : this.element.removeAttribute("data-turbo-preview");
+      ? this.element.setAttribute('data-turbo-preview', '')
+      : this.element.removeAttribute('data-turbo-preview');
   }
   async renderSnapshot(e) {
     await e.render();
@@ -978,27 +978,27 @@ class j {
       (this.element = t);
   }
   start() {
-    this.element.addEventListener("click", this.clickBubbled),
-      document.addEventListener("turbo:click", this.linkClicked),
-      document.addEventListener("turbo:before-visit", this.willVisit);
+    this.element.addEventListener('click', this.clickBubbled),
+      document.addEventListener('turbo:click', this.linkClicked),
+      document.addEventListener('turbo:before-visit', this.willVisit);
   }
   stop() {
-    this.element.removeEventListener("click", this.clickBubbled),
-      document.removeEventListener("turbo:click", this.linkClicked),
-      document.removeEventListener("turbo:before-visit", this.willVisit);
+    this.element.removeEventListener('click', this.clickBubbled),
+      document.removeEventListener('turbo:click', this.linkClicked),
+      document.removeEventListener('turbo:before-visit', this.willVisit);
   }
   respondsToEventTarget(e) {
     const t =
       e instanceof Element ? e : e instanceof Node ? e.parentElement : null;
-    return t && t.closest("turbo-frame, html") == this.element;
+    return t && t.closest('turbo-frame, html') == this.element;
   }
 }
 class $ {
   constructor(e, t) {
     (this.started = !1),
       (this.clickCaptured = () => {
-        this.eventTarget.removeEventListener("click", this.clickBubbled, !1),
-          this.eventTarget.addEventListener("click", this.clickBubbled, !1);
+        this.eventTarget.removeEventListener('click', this.clickBubbled, !1),
+          this.eventTarget.addEventListener('click', this.clickBubbled, !1);
       }),
       (this.clickBubbled = (e) => {
         if (e instanceof MouseEvent && this.clickEventIsSignificant(e)) {
@@ -1007,7 +1007,7 @@ class $ {
           if (
             s &&
             (function (e) {
-              if (e.hasAttribute("target")) {
+              if (e.hasAttribute('target')) {
                 for (const t of document.getElementsByName(e.target))
                   if (t instanceof HTMLIFrameElement) return !1;
                 return !0;
@@ -1026,12 +1026,12 @@ class $ {
   }
   start() {
     this.started ||
-      (this.eventTarget.addEventListener("click", this.clickCaptured, !0),
+      (this.eventTarget.addEventListener('click', this.clickCaptured, !0),
       (this.started = !0));
   }
   stop() {
     this.started &&
-      (this.eventTarget.removeEventListener("click", this.clickCaptured, !0),
+      (this.eventTarget.removeEventListener('click', this.clickCaptured, !0),
       (this.started = !1));
   }
   clickEventIsSignificant(e) {
@@ -1046,10 +1046,10 @@ class $ {
     );
   }
   findLinkFromClickTarget(e) {
-    return I(e, "a[href]:not([target^=_]):not([download])");
+    return I(e, 'a[href]:not([target^=_]):not([download])');
   }
   getLocationForLink(e) {
-    return h(e.getAttribute("href") || "");
+    return h(e.getAttribute('href') || '');
   }
 }
 class z {
@@ -1065,36 +1065,36 @@ class z {
   willFollowLinkToLocation(e, t, s) {
     return (
       this.delegate.willSubmitFormLinkToLocation(e, t, s) &&
-      e.hasAttribute("data-turbo-method")
+      e.hasAttribute('data-turbo-method')
     );
   }
   followedLinkToLocation(e, t) {
-    const s = document.createElement("form");
+    const s = document.createElement('form');
     for (const [e, i] of t.searchParams)
       s.append(
-        Object.assign(document.createElement("input"), {
-          type: "hidden",
+        Object.assign(document.createElement('input'), {
+          type: 'hidden',
           name: e,
           value: i,
         }),
       );
-    const i = Object.assign(t, { search: "" });
-    s.setAttribute("data-turbo", "true"),
-      s.setAttribute("action", i.href),
-      s.setAttribute("hidden", "");
-    const r = e.getAttribute("data-turbo-method");
-    r && s.setAttribute("method", r);
-    const n = e.getAttribute("data-turbo-frame");
-    n && s.setAttribute("data-turbo-frame", n);
+    const i = Object.assign(t, { search: '' });
+    s.setAttribute('data-turbo', 'true'),
+      s.setAttribute('action', i.href),
+      s.setAttribute('hidden', '');
+    const r = e.getAttribute('data-turbo-method');
+    r && s.setAttribute('method', r);
+    const n = e.getAttribute('data-turbo-frame');
+    n && s.setAttribute('data-turbo-frame', n);
     const o = F(e);
-    o && s.setAttribute("data-turbo-action", o);
-    const a = e.getAttribute("data-turbo-confirm");
-    a && s.setAttribute("data-turbo-confirm", a);
-    e.hasAttribute("data-turbo-stream") &&
-      s.setAttribute("data-turbo-stream", ""),
+    o && s.setAttribute('data-turbo-action', o);
+    const a = e.getAttribute('data-turbo-confirm');
+    a && s.setAttribute('data-turbo-confirm', a);
+    e.hasAttribute('data-turbo-stream') &&
+      s.setAttribute('data-turbo-stream', ''),
       this.delegate.submittedFormLinkToLocation(e, t, s),
       document.body.appendChild(s),
-      s.addEventListener("turbo:submit-end", () => s.remove(), { once: !0 }),
+      s.addEventListener('turbo:submit-end', () => s.remove(), { once: !0 }),
       requestAnimationFrame(() => s.requestSubmit());
   }
 }
@@ -1123,10 +1123,10 @@ class _ {
   }
   replaceNewPermanentElementWithPlaceholder(e) {
     const t = (function (e) {
-      const t = document.createElement("meta");
+      const t = document.createElement('meta');
       return (
-        t.setAttribute("name", "turbo-permanent-placeholder"),
-        t.setAttribute("content", e.id),
+        t.setAttribute('name', 'turbo-permanent-placeholder'),
+        t.setAttribute('content', e.id),
         t
       );
     })(e);
@@ -1146,7 +1146,7 @@ class _ {
   get placeholders() {
     return [
       ...document.querySelectorAll(
-        "meta[name=turbo-permanent-placeholder][content]",
+        'meta[name=turbo-permanent-placeholder][content]',
       ),
     ];
   }
@@ -1178,7 +1178,7 @@ class K {
   focusFirstAutofocusableElement() {
     const e = this.connectedSnapshot.firstAutofocusableElement;
     (function (e) {
-      return e && "function" == typeof e.focus;
+      return e && 'function' == typeof e.focus;
     })(e) && e.focus();
   }
   enteringBardo(e) {
@@ -1245,16 +1245,16 @@ class Q extends K {
     if (this.currentElement.autoscroll || this.newElement.autoscroll) {
       const s = this.currentElement.firstElementChild,
         i =
-          ((e = this.currentElement.getAttribute("data-autoscroll-block")),
-          (t = "end"),
-          "end" == e || "start" == e || "center" == e || "nearest" == e
+          ((e = this.currentElement.getAttribute('data-autoscroll-block')),
+          (t = 'end'),
+          'end' == e || 'start' == e || 'center' == e || 'nearest' == e
             ? e
             : t),
         r = (function (e, t) {
-          return "auto" == e || "smooth" == e ? e : t;
+          return 'auto' == e || 'smooth' == e ? e : t;
         })(
-          this.currentElement.getAttribute("data-autoscroll-behavior"),
-          "auto",
+          this.currentElement.getAttribute('data-autoscroll-behavior'),
+          'auto',
         );
       if (s) return s.scrollIntoView({ block: i, behavior: r }), !0;
     }
@@ -1268,7 +1268,7 @@ class Q extends K {
     }
   }
   get newScriptElements() {
-    return this.currentElement.querySelectorAll("script");
+    return this.currentElement.querySelectorAll('script');
   }
 }
 class X {
@@ -1328,8 +1328,8 @@ class X {
     );
   }
   installProgressElement() {
-    (this.progressElement.style.width = "0"),
-      (this.progressElement.style.opacity = "1"),
+    (this.progressElement.style.width = '0'),
+      (this.progressElement.style.opacity = '1'),
       document.documentElement.insertBefore(
         this.progressElement,
         document.body,
@@ -1337,7 +1337,7 @@ class X {
       this.refresh();
   }
   fadeProgressElement(e) {
-    (this.progressElement.style.opacity = "0"),
+    (this.progressElement.style.opacity = '0'),
       setTimeout(e, 1.5 * X.animationDuration);
   }
   uninstallProgressElement() {
@@ -1356,24 +1356,24 @@ class X {
   }
   refresh() {
     requestAnimationFrame(() => {
-      this.progressElement.style.width = 10 + 90 * this.value + "%";
+      this.progressElement.style.width = 10 + 90 * this.value + '%';
     });
   }
   createStylesheetElement() {
-    const e = document.createElement("style");
+    const e = document.createElement('style');
     return (
-      (e.type = "text/css"),
+      (e.type = 'text/css'),
       (e.textContent = X.defaultCSS),
       this.cspNonce && (e.nonce = this.cspNonce),
       e
     );
   }
   createProgressElement() {
-    const e = document.createElement("div");
-    return (e.className = "turbo-progress-bar"), e;
+    const e = document.createElement('div');
+    return (e.className = 'turbo-progress-bar'), e;
   }
   get cspNonce() {
-    return M("csp-nonce");
+    return M('csp-nonce');
   }
 }
 X.animationDuration = 300;
@@ -1385,12 +1385,12 @@ class Y extends N {
           (e) =>
             !(function (e) {
               const t = e.localName;
-              return "noscript" == t;
+              return 'noscript' == t;
             })(e),
         )
         .map((e) =>
           (function (e) {
-            e.hasAttribute("nonce") && e.setAttribute("nonce", "");
+            e.hasAttribute('nonce') && e.setAttribute('nonce', '');
             return e;
           })(e),
         )
@@ -1407,13 +1407,13 @@ class Y extends N {
   get trackedElementSignature() {
     return Object.keys(this.detailsByOuterHTML)
       .filter((e) => this.detailsByOuterHTML[e].tracked)
-      .join("");
+      .join('');
   }
   getScriptElementsNotInSnapshot(e) {
-    return this.getElementsMatchingTypeNotInSnapshot("script", e);
+    return this.getElementsMatchingTypeNotInSnapshot('script', e);
   }
   getStylesheetElementsNotInSnapshot(e) {
-    return this.getElementsMatchingTypeNotInSnapshot("stylesheet", e);
+    return this.getElementsMatchingTypeNotInSnapshot('stylesheet', e);
   }
   getElementsMatchingTypeNotInSnapshot(e, t) {
     return Object.keys(this.detailsByOuterHTML)
@@ -1434,7 +1434,7 @@ class Y extends N {
   }
   getMetaValue(e) {
     const t = this.findMetaElementByName(e);
-    return t ? t.getAttribute("content") : null;
+    return t ? t.getAttribute('content') : null;
   }
   findMetaElementByName(e) {
     return Object.keys(this.detailsByOuterHTML).reduce(
@@ -1444,7 +1444,7 @@ class Y extends N {
         } = this.detailsByOuterHTML[s];
         return (function (e, t) {
           const s = e.localName;
-          return "meta" == s && e.getAttribute("name") == t;
+          return 'meta' == s && e.getAttribute('name') == t;
         })(i, e)
           ? i
           : t;
@@ -1456,24 +1456,24 @@ class Y extends N {
 function J(e) {
   return (function (e) {
     const t = e.localName;
-    return "script" == t;
+    return 'script' == t;
   })(e)
-    ? "script"
+    ? 'script'
     : (function (e) {
           const t = e.localName;
           return (
-            "style" == t ||
-            ("link" == t && "stylesheet" == e.getAttribute("rel"))
+            'style' == t ||
+            ('link' == t && 'stylesheet' == e.getAttribute('rel'))
           );
         })(e)
-      ? "stylesheet"
+      ? 'stylesheet'
       : void 0;
 }
 function G(e) {
-  return "reload" == e.getAttribute("data-turbo-track");
+  return 'reload' == e.getAttribute('data-turbo-track');
 }
 class Z extends N {
-  static fromHTMLString(e = "") {
+  static fromHTMLString(e = '') {
     return this.fromDocument(E(e));
   }
   static fromElement(e) {
@@ -1487,14 +1487,14 @@ class Z extends N {
   }
   clone() {
     const e = this.element.cloneNode(!0),
-      t = this.element.querySelectorAll("select"),
-      s = e.querySelectorAll("select");
+      t = this.element.querySelectorAll('select'),
+      s = e.querySelectorAll('select');
     for (const [e, i] of t.entries()) {
       const t = s[e];
       for (const e of t.selectedOptions) e.selected = !1;
       for (const e of i.selectedOptions) t.options[e.index].selected = !0;
     }
-    for (const t of e.querySelectorAll('input[type="password"]')) t.value = "";
+    for (const t of e.querySelectorAll('input[type="password"]')) t.value = '';
     return new Z(e, this.headSnapshot);
   }
   get headElement() {
@@ -1502,39 +1502,39 @@ class Z extends N {
   }
   get rootLocation() {
     var e;
-    return h(null !== (e = this.getSetting("root")) && void 0 !== e ? e : "/");
+    return h(null !== (e = this.getSetting('root')) && void 0 !== e ? e : '/');
   }
   get cacheControlValue() {
-    return this.getSetting("cache-control");
+    return this.getSetting('cache-control');
   }
   get isPreviewable() {
-    return "no-preview" != this.cacheControlValue;
+    return 'no-preview' != this.cacheControlValue;
   }
   get isCacheable() {
-    return "no-cache" != this.cacheControlValue;
+    return 'no-cache' != this.cacheControlValue;
   }
   get isVisitable() {
-    return "reload" != this.getSetting("visit-control");
+    return 'reload' != this.getSetting('visit-control');
   }
   getSetting(e) {
     return this.headSnapshot.getMetaValue(`turbo-${e}`);
   }
 }
 !(function (e) {
-  (e.visitStart = "visitStart"),
-    (e.requestStart = "requestStart"),
-    (e.requestEnd = "requestEnd"),
-    (e.visitEnd = "visitEnd");
+  (e.visitStart = 'visitStart'),
+    (e.requestStart = 'requestStart'),
+    (e.requestEnd = 'requestEnd'),
+    (e.visitEnd = 'visitEnd');
 })(o || (o = {})),
   (function (e) {
-    (e.initialized = "initialized"),
-      (e.started = "started"),
-      (e.canceled = "canceled"),
-      (e.failed = "failed"),
-      (e.completed = "completed");
+    (e.initialized = 'initialized'),
+      (e.started = 'started'),
+      (e.canceled = 'canceled'),
+      (e.failed = 'failed'),
+      (e.completed = 'completed');
   })(a || (a = {}));
 const ee = {
-  action: "advance",
+  action: 'advance',
   historyChanged: !1,
   visitCachedSnapshot: () => {},
   willRender: !0,
@@ -1544,9 +1544,9 @@ const ee = {
 };
 var te, se;
 !(function (e) {
-  (e[(e.networkFailure = 0)] = "networkFailure"),
-    (e[(e.timeoutFailure = -1)] = "timeoutFailure"),
-    (e[(e.contentTypeMismatch = -2)] = "contentTypeMismatch");
+  (e[(e.networkFailure = 0)] = 'networkFailure'),
+    (e[(e.timeoutFailure = -1)] = 'timeoutFailure'),
+    (e[(e.contentTypeMismatch = -2)] = 'contentTypeMismatch');
 })(te || (te = {}));
 class ie {
   constructor(e, t, s, i = {}) {
@@ -1641,7 +1641,7 @@ class ie {
       const t = P(
         this.location.href ===
           (null === (e = this.referrer) || void 0 === e ? void 0 : e.href)
-          ? "replace"
+          ? 'replace'
           : this.action,
       );
       this.history.update(t, this.location, this.restorationIdentifier),
@@ -1705,7 +1705,7 @@ class ie {
     if (
       e &&
       (!c(this.location) || e.hasAnchor(c(this.location))) &&
-      ("restore" == this.action || e.isPreviewable)
+      ('restore' == this.action || e.isPreviewable)
     )
       return e;
   }
@@ -1737,7 +1737,7 @@ class ie {
       !this.followedRedirect &&
       (null === (e = this.response) || void 0 === e ? void 0 : e.redirected) &&
       (this.adapter.visitProposedToLocation(this.redirectedToLocation, {
-        action: "replace",
+        action: 'replace',
         response: this.response,
         shouldCacheSnapshot: !1,
         willRender: !1,
@@ -1790,7 +1790,7 @@ class ie {
   performScroll() {
     this.scrolled ||
       this.view.forceReloaded ||
-      ("restore" == this.action
+      ('restore' == this.action
         ? this.scrollToRestoredPosition() ||
           this.scrollToAnchor() ||
           this.view.scrollToTop()
@@ -1818,20 +1818,20 @@ class ie {
   }
   getHistoryMethodForAction(e) {
     switch (e) {
-      case "replace":
+      case 'replace':
         return history.replaceState;
-      case "advance":
-      case "restore":
+      case 'advance':
+      case 'restore':
         return history.pushState;
     }
   }
   hasPreloadedResponse() {
-    return "object" == typeof this.response;
+    return 'object' == typeof this.response;
   }
   shouldIssueRequest() {
     return (
       !this.isSamePage &&
-      ("restore" == this.action ? !this.hasCachedSnapshot() : this.willRender)
+      ('restore' == this.action ? !this.hasCachedSnapshot() : this.willRender)
     );
   }
   cacheSnapshot() {
@@ -1879,7 +1879,7 @@ class ne {
   }
   visitRequestStarted(e) {
     this.progressBar.setValue(0),
-      e.hasCachedSnapshot() || "restore" != e.action
+      e.hasCachedSnapshot() || 'restore' != e.action
         ? this.showVisitProgressBarAfterDelay()
         : this.showProgressBar();
   }
@@ -1892,7 +1892,7 @@ class ne {
       case te.timeoutFailure:
       case te.contentTypeMismatch:
         return this.reload({
-          reason: "request_failed",
+          reason: 'request_failed',
           context: { statusCode: t },
         });
       default:
@@ -1941,7 +1941,7 @@ class ne {
   }
   reload(e) {
     var t;
-    w("turbo:reload", { detail: e }),
+    w('turbo:reload', { detail: e }),
       (window.location.href =
         (null === (t = this.location) || void 0 === t
           ? void 0
@@ -1953,8 +1953,8 @@ class ne {
 }
 class oe {
   constructor() {
-    (this.selector = "[data-turbo-temporary]"),
-      (this.deprecatedSelector = "[data-turbo-cache=false]"),
+    (this.selector = '[data-turbo-temporary]'),
+      (this.deprecatedSelector = '[data-turbo-cache=false]'),
       (this.started = !1),
       (this.removeTemporaryElements = (e) => {
         for (const e of this.temporaryElements) e.remove();
@@ -1963,13 +1963,13 @@ class oe {
   start() {
     this.started ||
       ((this.started = !0),
-      addEventListener("turbo:before-cache", this.removeTemporaryElements, !1));
+      addEventListener('turbo:before-cache', this.removeTemporaryElements, !1));
   }
   stop() {
     this.started &&
       ((this.started = !1),
       removeEventListener(
-        "turbo:before-cache",
+        'turbo:before-cache',
         this.removeTemporaryElements,
         !1,
       ));
@@ -2013,7 +2013,7 @@ class ae {
   }
   willSubmitForm(e, t) {
     return (
-      null == e.closest("turbo-frame") &&
+      null == e.closest('turbo-frame') &&
       this.shouldSubmit(e, t) &&
       this.shouldRedirect(e, t)
     );
@@ -2027,7 +2027,7 @@ class ae {
     const i = d(e, t),
       r = this.element.ownerDocument.querySelector('meta[name="turbo-root"]'),
       n = h(
-        null !== (s = null == r ? void 0 : r.content) && void 0 !== s ? s : "/",
+        null !== (s = null == r ? void 0 : r.content) && void 0 !== s ? s : '/',
       );
     return this.shouldRedirect(e, t) && p(i, n);
   }
@@ -2038,15 +2038,15 @@ class ae {
         : this.session.elementIsNavigatable(e)
     ) {
       const s = this.findFrameElement(e, t);
-      return !!s && s != e.closest("turbo-frame");
+      return !!s && s != e.closest('turbo-frame');
     }
     return !1;
   }
   findFrameElement(e, t) {
     const s =
-      (null == t ? void 0 : t.getAttribute("data-turbo-frame")) ||
-      e.getAttribute("data-turbo-frame");
-    if (s && "_top" != s) {
+      (null == t ? void 0 : t.getAttribute('data-turbo-frame')) ||
+      e.getAttribute('data-turbo-frame');
+    if (s && '_top' != s) {
       const e = this.element.querySelector(`#${s}:not([disabled])`);
       if (e instanceof l) return e;
     }
@@ -2079,15 +2079,15 @@ class le {
   }
   start() {
     this.started ||
-      (addEventListener("popstate", this.onPopState, !1),
-      addEventListener("load", this.onPageLoad, !1),
+      (addEventListener('popstate', this.onPopState, !1),
+      addEventListener('load', this.onPageLoad, !1),
       (this.started = !0),
       this.replace(new URL(window.location.href)));
   }
   stop() {
     this.started &&
-      (removeEventListener("popstate", this.onPopState, !1),
-      removeEventListener("load", this.onPageLoad, !1),
+      (removeEventListener('popstate', this.onPopState, !1),
+      removeEventListener('load', this.onPageLoad, !1),
       (this.started = !1));
   }
   push(e, t) {
@@ -2098,7 +2098,7 @@ class le {
   }
   update(e, t, s = L()) {
     const i = { turbo: { restorationIdentifier: s } };
-    e.call(history, i, "", t.href),
+    e.call(history, i, '', t.href),
       (this.location = t),
       (this.restorationIdentifier = s);
   }
@@ -2114,8 +2114,8 @@ class le {
     var e;
     this.previousScrollRestoration ||
       ((this.previousScrollRestoration =
-        null !== (e = history.scrollRestoration) && void 0 !== e ? e : "auto"),
-      (history.scrollRestoration = "manual"));
+        null !== (e = history.scrollRestoration) && void 0 !== e ? e : 'auto'),
+      (history.scrollRestoration = 'manual'));
   }
   relinquishControlOfScrollRestoration() {
     this.previousScrollRestoration &&
@@ -2126,7 +2126,7 @@ class le {
     return this.pageIsLoaded();
   }
   pageIsLoaded() {
-    return this.pageLoaded || "complete" == document.readyState;
+    return this.pageLoaded || 'complete' == document.readyState;
   }
 }
 class he {
@@ -2170,7 +2170,7 @@ class he {
     return this.delegate.history;
   }
   formSubmissionStarted(e) {
-    "function" == typeof this.adapter.formSubmissionStarted &&
+    'function' == typeof this.adapter.formSubmissionStarted &&
       this.adapter.formSubmissionStarted(e);
   }
   async formSubmissionSucceededWithResponse(e, t) {
@@ -2204,7 +2204,7 @@ class he {
     console.error(t);
   }
   formSubmissionFinished(e) {
-    "function" == typeof this.adapter.formSubmissionFinished &&
+    'function' == typeof this.adapter.formSubmissionFinished &&
       this.adapter.formSubmissionFinished(e);
   }
   visitStarted(e) {
@@ -2216,9 +2216,9 @@ class he {
   locationWithActionIsSamePage(e, t) {
     const s = c(e),
       i = c(this.view.lastRenderedLocation),
-      r = "restore" === t && void 0 === s;
+      r = 'restore' === t && void 0 === s;
     return (
-      "replace" !== t &&
+      'replace' !== t &&
       g(e) === g(this.view.lastRenderedLocation) &&
       (r || (null != s && s !== i))
     );
@@ -2233,14 +2233,14 @@ class he {
     return this.history.restorationIdentifier;
   }
   getActionForFormSubmission({ submitter: e, formElement: t }) {
-    return F(e, t) || "advance";
+    return F(e, t) || 'advance';
   }
 }
 !(function (e) {
-  (e[(e.initial = 0)] = "initial"),
-    (e[(e.loading = 1)] = "loading"),
-    (e[(e.interactive = 2)] = "interactive"),
-    (e[(e.complete = 3)] = "complete");
+  (e[(e.initial = 0)] = 'initial'),
+    (e[(e.loading = 1)] = 'loading'),
+    (e[(e.interactive = 2)] = 'interactive'),
+    (e[(e.complete = 3)] = 'complete');
 })(se || (se = {}));
 class ce {
   constructor(e) {
@@ -2248,9 +2248,9 @@ class ce {
       (this.started = !1),
       (this.interpretReadyState = () => {
         const { readyState: e } = this;
-        "interactive" == e
+        'interactive' == e
           ? this.pageIsInteractive()
-          : "complete" == e && this.pageIsComplete();
+          : 'complete' == e && this.pageIsComplete();
       }),
       (this.pageWillUnload = () => {
         this.delegate.pageWillUnload();
@@ -2261,21 +2261,21 @@ class ce {
     this.started ||
       (this.stage == se.initial && (this.stage = se.loading),
       document.addEventListener(
-        "readystatechange",
+        'readystatechange',
         this.interpretReadyState,
         !1,
       ),
-      addEventListener("pagehide", this.pageWillUnload, !1),
+      addEventListener('pagehide', this.pageWillUnload, !1),
       (this.started = !0));
   }
   stop() {
     this.started &&
       (document.removeEventListener(
-        "readystatechange",
+        'readystatechange',
         this.interpretReadyState,
         !1,
       ),
-      removeEventListener("pagehide", this.pageWillUnload, !1),
+      removeEventListener('pagehide', this.pageWillUnload, !1),
       (this.started = !1));
   }
   pageIsInteractive() {
@@ -2301,13 +2301,13 @@ class de {
   }
   start() {
     this.started ||
-      (addEventListener("scroll", this.onScroll, !1),
+      (addEventListener('scroll', this.onScroll, !1),
       this.onScroll(),
       (this.started = !0));
   }
   stop() {
     this.started &&
-      (removeEventListener("scroll", this.onScroll, !1), (this.started = !1));
+      (removeEventListener('scroll', this.onScroll, !1), (this.started = !1));
   }
   updatePosition(e) {
     this.delegate.scrollPositionChanged(e);
@@ -2322,7 +2322,7 @@ class ue {
           s = {};
         for (const i of t) {
           const { id: t } = i;
-          for (const r of e.querySelectorAll("turbo-stream")) {
+          for (const r of e.querySelectorAll('turbo-stream')) {
             const e = V(r.templateElement.content, t);
             e && (s[t] = [i, e]);
           }
@@ -2351,14 +2351,14 @@ class me {
         t &&
           (function (e) {
             var t;
-            const s = null !== (t = e.contentType) && void 0 !== t ? t : "";
+            const s = null !== (t = e.contentType) && void 0 !== t ? t : '';
             return s.startsWith(B.contentType);
           })(t) &&
           (e.preventDefault(), this.receiveMessageResponse(t));
       }),
       (this.receiveMessageEvent = (e) => {
         this.started &&
-          "string" == typeof e.data &&
+          'string' == typeof e.data &&
           this.receiveMessageHTML(e.data);
       }),
       (this.delegate = e);
@@ -2367,7 +2367,7 @@ class me {
     this.started ||
       ((this.started = !0),
       addEventListener(
-        "turbo:before-fetch-response",
+        'turbo:before-fetch-response',
         this.inspectFetchResponse,
         !1,
       ));
@@ -2376,7 +2376,7 @@ class me {
     this.started &&
       ((this.started = !1),
       removeEventListener(
-        "turbo:before-fetch-response",
+        'turbo:before-fetch-response',
         this.inspectFetchResponse,
         !1,
       ));
@@ -2384,12 +2384,12 @@ class me {
   connectStreamSource(e) {
     this.streamSourceIsConnected(e) ||
       (this.sources.add(e),
-      e.addEventListener("message", this.receiveMessageEvent, !1));
+      e.addEventListener('message', this.receiveMessageEvent, !1));
   }
   disconnectStreamSource(e) {
     this.streamSourceIsConnected(e) &&
       (this.sources.delete(e),
-      e.removeEventListener("message", this.receiveMessageEvent, !1));
+      e.removeEventListener('message', this.receiveMessageEvent, !1));
   }
   streamSourceIsConnected(e) {
     return this.sources.has(e);
@@ -2428,7 +2428,7 @@ class pe extends K {
     return this.newSnapshot.headSnapshot.element;
   }
   get scriptElements() {
-    return document.documentElement.querySelectorAll("script");
+    return document.documentElement.querySelectorAll('script');
   }
 }
 class ge extends K {
@@ -2444,8 +2444,8 @@ class ge extends K {
     return this.newSnapshot.isVisitable
       ? this.trackedElementsAreIdentical
         ? void 0
-        : { reason: "tracked_element_mismatch" }
-      : { reason: "turbo_visit_control_is_reload" };
+        : { reason: 'tracked_element_mismatch' }
+      : { reason: 'turbo_visit_control_is_reload' };
   }
   async prepareToRender() {
     await this.mergeHead();
@@ -2499,8 +2499,8 @@ class ge extends K {
   }
   isCurrentElementInElementList(e, t) {
     for (const [s, i] of t.entries()) {
-      if ("TITLE" == e.tagName) {
-        if ("TITLE" != i.tagName) continue;
+      if ('TITLE' == e.tagName) {
+        if ('TITLE' != i.tagName) continue;
         if (e.innerHTML == i.innerHTML) return t.splice(s, 1), !0;
       }
       if (i.isEqualNode(e)) return t.splice(s, 1), !0;
@@ -2544,7 +2544,7 @@ class ge extends K {
     return this.newHeadSnapshot.provisionalElements;
   }
   get newBodyScriptElements() {
-    return this.newElement.querySelectorAll("script");
+    return this.newElement.querySelectorAll('script');
   }
 }
 class fe {
@@ -2623,14 +2623,14 @@ class ve extends x {
 }
 class be {
   constructor(e) {
-    (this.selector = "a[data-turbo-preload]"), (this.delegate = e);
+    (this.selector = 'a[data-turbo-preload]'), (this.delegate = e);
   }
   get snapshotCache() {
     return this.delegate.navigator.view.snapshotCache;
   }
   start() {
-    if ("loading" === document.readyState)
-      return document.addEventListener("DOMContentLoaded", () => {
+    if ('loading' === document.readyState)
+      return document.addEventListener('DOMContentLoaded', () => {
         this.preloadOnLoadLinksForView(document.body);
       });
     this.preloadOnLoadLinksForView(document.body);
@@ -2643,7 +2643,7 @@ class be {
     if (!this.snapshotCache.has(t))
       try {
         const e = await fetch(t.toString(), {
-            headers: { "VND.PREFETCH": "true", Accept: "text/html" },
+            headers: { 'VND.PREFETCH': 'true', Accept: 'text/html' },
           }),
           s = await e.text(),
           i = Z.fromHTMLString(s);
@@ -2694,7 +2694,7 @@ const Ee = {
     },
     update() {
       this.targetElements.forEach((e) => {
-        (e.innerHTML = ""), e.append(this.templateContent);
+        (e.innerHTML = ''), e.append(this.templateContent);
       });
     },
   },
@@ -2718,7 +2718,7 @@ const Ee = {
         (this.enabled = !0),
         (this.progressBarDelay = 500),
         (this.started = !1),
-        (this.formMode = "on");
+        (this.formMode = 'on');
     }
     start() {
       this.started ||
@@ -2787,10 +2787,10 @@ const Ee = {
     historyPoppedToLocationWithRestorationIdentifier(e, t) {
       this.enabled
         ? this.navigator.startVisit(e, t, {
-            action: "restore",
+            action: 'restore',
             historyChanged: !0,
           })
-        : this.adapter.pageInvalidated({ reason: "turbo_disabled" });
+        : this.adapter.pageInvalidated({ reason: 'turbo_disabled' });
     }
     scrollPositionChanged(e) {
       this.history.updateRestorationData({ scrollPosition: e });
@@ -2808,7 +2808,7 @@ const Ee = {
     }
     followedLinkToLocation(e, t) {
       const s = this.getActionForLink(e),
-        i = e.hasAttribute("data-turbo-stream");
+        i = e.hasAttribute('data-turbo-stream');
       this.visit(t.href, { action: s, acceptsStreamResponse: i });
     }
     allowsVisitingLocationWithAction(e, t) {
@@ -2899,74 +2899,74 @@ const Ee = {
       return !this.notifyApplicationBeforeVisitingLocation(e).defaultPrevented;
     }
     notifyApplicationAfterClickingLinkToLocation(e, t, s) {
-      return w("turbo:click", {
+      return w('turbo:click', {
         target: e,
         detail: { url: t.href, originalEvent: s },
         cancelable: !0,
       });
     }
     notifyApplicationBeforeVisitingLocation(e) {
-      return w("turbo:before-visit", {
+      return w('turbo:before-visit', {
         detail: { url: e.href },
         cancelable: !0,
       });
     }
     notifyApplicationAfterVisitingLocation(e, t) {
-      return w("turbo:visit", { detail: { url: e.href, action: t } });
+      return w('turbo:visit', { detail: { url: e.href, action: t } });
     }
     notifyApplicationBeforeCachingSnapshot() {
-      return w("turbo:before-cache");
+      return w('turbo:before-cache');
     }
     notifyApplicationBeforeRender(e, t) {
-      return w("turbo:before-render", {
+      return w('turbo:before-render', {
         detail: Object.assign({ newBody: e }, t),
         cancelable: !0,
       });
     }
     notifyApplicationAfterRender() {
-      return w("turbo:render");
+      return w('turbo:render');
     }
     notifyApplicationAfterPageLoad(e = {}) {
-      return w("turbo:load", {
+      return w('turbo:load', {
         detail: { url: this.location.href, timing: e },
       });
     }
     notifyApplicationAfterVisitingSamePageLocation(e, t) {
       dispatchEvent(
-        new HashChangeEvent("hashchange", {
+        new HashChangeEvent('hashchange', {
           oldURL: e.toString(),
           newURL: t.toString(),
         }),
       );
     }
     notifyApplicationAfterFrameLoad(e) {
-      return w("turbo:frame-load", { target: e });
+      return w('turbo:frame-load', { target: e });
     }
     notifyApplicationAfterFrameRender(e, t) {
-      return w("turbo:frame-render", {
+      return w('turbo:frame-render', {
         detail: { fetchResponse: e },
         target: t,
         cancelable: !0,
       });
     }
     submissionIsNavigatable(e, t) {
-      if ("off" == this.formMode) return !1;
+      if ('off' == this.formMode) return !1;
       {
         const s = !t || this.elementIsNavigatable(t);
-        return "optin" == this.formMode
+        return 'optin' == this.formMode
           ? s && null != e.closest('[data-turbo="true"]')
           : s && this.elementIsNavigatable(e);
       }
     }
     elementIsNavigatable(e) {
-      const t = I(e, "[data-turbo]"),
-        s = I(e, "turbo-frame");
+      const t = I(e, '[data-turbo]'),
+        s = I(e, 'turbo-frame');
       return this.drive || s
-        ? !t || "false" != t.getAttribute("data-turbo")
-        : !!t && "true" == t.getAttribute("data-turbo");
+        ? !t || 'false' != t.getAttribute('data-turbo')
+        : !!t && 'true' == t.getAttribute('data-turbo');
     }
     getActionForLink(e) {
-      return F(e) || "advance";
+      return F(e) || 'advance';
     }
     get snapshot() {
       return this.view.snapshot;
@@ -2980,23 +2980,23 @@ const Ee = {
       this.session.clearCache();
     }
     resetCacheControl() {
-      this.setCacheControl("");
+      this.setCacheControl('');
     }
     exemptPageFromCache() {
-      this.setCacheControl("no-cache");
+      this.setCacheControl('no-cache');
     }
     exemptPageFromPreview() {
-      this.setCacheControl("no-preview");
+      this.setCacheControl('no-preview');
     }
     setCacheControl(e) {
       !(function (e, t) {
         let s = k(e);
         s ||
-          ((s = document.createElement("meta")),
-          s.setAttribute("name", e),
+          ((s = document.createElement('meta')),
+          s.setAttribute('name', e),
           document.head.appendChild(s)),
-          s.setAttribute("content", t);
-      })("turbo-cache-control", e);
+          s.setAttribute('content', t);
+      })('turbo-cache-control', e);
     }
   })(ye),
   { navigator: Re } = ye;
@@ -3020,7 +3020,7 @@ function ke(e) {
 }
 function Me() {
   console.warn(
-    "Please replace `Turbo.clearCache()` with `Turbo.cache.clear()`. The top-level function is deprecated and will be removed in a future version of Turbo.`",
+    'Please replace `Turbo.clearCache()` with `Turbo.cache.clear()`. The top-level function is deprecated and will be removed in a future version of Turbo.`',
   ),
     ye.clearCache();
 }
@@ -3062,7 +3062,7 @@ function Ne(e) {
 }
 function Ve(e, t) {
   if (e) {
-    const i = e.getAttribute("src");
+    const i = e.getAttribute('src');
     if (null != i && null != t && ((s = t), h(i).href == h(s).href))
       throw new Error(
         `Matching <turbo-frame id="${e.id}"> element has a source URL which references itself`,
@@ -3123,37 +3123,37 @@ class We extends HTMLElement {
     if (this.action) {
       const e = Ee[this.action];
       if (e) return e;
-      this.raise("unknown action");
+      this.raise('unknown action');
     }
-    this.raise("action attribute is missing");
+    this.raise('action attribute is missing');
   }
   get targetElements() {
     return this.target
       ? this.targetElementsById
       : this.targets
         ? this.targetElementsByQuery
-        : void this.raise("target or targets attribute is missing");
+        : void this.raise('target or targets attribute is missing');
   }
   get templateContent() {
     return this.templateElement.content.cloneNode(!0);
   }
   get templateElement() {
     if (null === this.firstElementChild) {
-      const e = this.ownerDocument.createElement("template");
+      const e = this.ownerDocument.createElement('template');
       return this.appendChild(e), e;
     }
     if (this.firstElementChild instanceof HTMLTemplateElement)
       return this.firstElementChild;
-    this.raise("first child element must be a <template> element");
+    this.raise('first child element must be a <template> element');
   }
   get action() {
-    return this.getAttribute("action");
+    return this.getAttribute('action');
   }
   get target() {
-    return this.getAttribute("target");
+    return this.getAttribute('target');
   }
   get targets() {
-    return this.getAttribute("targets");
+    return this.getAttribute('targets');
   }
   raise(e) {
     throw new Error(`${this.description}: ${e}`);
@@ -3165,10 +3165,10 @@ class We extends HTMLElement {
         null !== (e = this.outerHTML.match(/<[^>]+>/)) && void 0 !== e ? e : []
       )[0]) && void 0 !== t
       ? t
-      : "<turbo-stream>";
+      : '<turbo-stream>';
   }
   get beforeRenderEvent() {
-    return new CustomEvent("turbo:before-stream-render", {
+    return new CustomEvent('turbo:before-stream-render', {
       bubbles: !0,
       cancelable: !0,
       detail: { newStream: this, render: We.renderElement },
@@ -3205,7 +3205,7 @@ class De extends HTMLElement {
     this.streamSource && Fe(this.streamSource);
   }
   get src() {
-    return this.getAttribute("src") || "";
+    return this.getAttribute('src') || '';
   }
 }
 (l.delegateConstructor = class {
@@ -3218,7 +3218,7 @@ class De extends HTMLElement {
       (this.ignoredAttributes = new Set()),
       (this.action = null),
       (this.visitCachedSnapshot = ({ element: e }) => {
-        const t = e.querySelector("#" + this.element.id);
+        const t = e.querySelector('#' + this.element.id);
         t &&
           this.previousFrameElement &&
           t.replaceChildren(...this.previousFrameElement.children),
@@ -3254,7 +3254,7 @@ class De extends HTMLElement {
     this.loadingStyle == s.eager && this.loadSourceURL();
   }
   sourceURLChanged() {
-    this.isIgnoringChangesTo("src") ||
+    this.isIgnoringChangesTo('src') ||
       (this.element.isConnected && (this.complete = !1),
       (this.loadingStyle == s.eager || this.hasBeenLoaded) &&
         this.loadSourceURL());
@@ -3262,8 +3262,8 @@ class De extends HTMLElement {
   sourceURLReloaded() {
     const { src: e } = this.element;
     return (
-      this.ignoringChangesToAttribute("complete", () => {
-        this.element.removeAttribute("complete");
+      this.ignoringChangesToAttribute('complete', () => {
+        this.element.removeAttribute('complete');
       }),
       (this.element.src = null),
       (this.element.src = e),
@@ -3271,7 +3271,7 @@ class De extends HTMLElement {
     );
   }
   completeChanged() {
-    this.isIgnoringChangesTo("complete") || this.loadSourceURL();
+    this.isIgnoringChangesTo('complete') || this.loadSourceURL();
   }
   loadingStyleChanged() {
     this.loadingStyle == s.lazy
@@ -3311,7 +3311,7 @@ class De extends HTMLElement {
   }
   submittedFormLinkToLocation(e, t, s) {
     const i = this.findFrameElement(e);
-    i && s.setAttribute("data-turbo-frame", i.id);
+    i && s.setAttribute('data-turbo-frame', i.id);
   }
   shouldInterceptLinkClick(e, t, s) {
     return this.shouldInterceptNavigation(e);
@@ -3321,7 +3321,7 @@ class De extends HTMLElement {
   }
   willSubmitForm(e, t) {
     return (
-      e.closest("turbo-frame") == this.element &&
+      e.closest('turbo-frame') == this.element &&
       this.shouldInterceptNavigation(e, t)
     );
   }
@@ -3333,10 +3333,10 @@ class De extends HTMLElement {
   }
   prepareRequest(e) {
     var t;
-    (e.headers["Turbo-Frame"] = this.id),
+    (e.headers['Turbo-Frame'] = this.id),
       (null === (t = this.currentNavigationElement) || void 0 === t
         ? void 0
-        : t.hasAttribute("data-turbo-stream")) &&
+        : t.hasAttribute('data-turbo-stream')) &&
         e.acceptResponseType(B.contentType);
   }
   requestStarted(e) {
@@ -3376,7 +3376,7 @@ class De extends HTMLElement {
     T(e, this.findFrameElement(e));
   }
   allowsImmediateRender({ element: e }, t) {
-    const s = w("turbo:before-frame-render", {
+    const s = w('turbo:before-frame-render', {
         target: this.element,
         detail: Object.assign({ newFrame: e }, t),
         cancelable: !0,
@@ -3465,7 +3465,7 @@ class De extends HTMLElement {
       const e = P(this.action);
       ye.history.update(
         e,
-        h(this.element.src || ""),
+        h(this.element.src || ''),
         this.restorationIdentifier,
       );
     }
@@ -3477,9 +3477,9 @@ class De extends HTMLElement {
       await this.visitResponse(e.response);
   }
   willHandleFrameMissingFromResponse(e) {
-    this.element.setAttribute("complete", "");
+    this.element.setAttribute('complete', '');
     const t = e.response;
-    return !w("turbo:frame-missing", {
+    return !w('turbo:frame-missing', {
       target: this.element,
       detail: {
         response: t,
@@ -3509,7 +3509,7 @@ class De extends HTMLElement {
     var s;
     return null !==
       (s = Ne(
-        R("data-turbo-frame", t, e) || this.element.getAttribute("target"),
+        R('data-turbo-frame', t, e) || this.element.getAttribute('target'),
       )) && void 0 !== s
       ? s
       : this.element;
@@ -3538,10 +3538,10 @@ class De extends HTMLElement {
   }
   shouldInterceptNavigation(e, t) {
     const s =
-      R("data-turbo-frame", t, e) || this.element.getAttribute("target");
+      R('data-turbo-frame', t, e) || this.element.getAttribute('target');
     if (e instanceof HTMLFormElement && !this.formActionIsVisitable(e, t))
       return !1;
-    if (!this.enabled || "_top" == s) return !1;
+    if (!this.enabled || '_top' == s) return !1;
     if (s) {
       const e = Ne(s);
       if (e) return !e.disabled;
@@ -3558,7 +3558,7 @@ class De extends HTMLElement {
     if (this.element.src) return this.element.src;
   }
   set sourceURL(e) {
-    this.ignoringChangesToAttribute("src", () => {
+    this.ignoringChangesToAttribute('src', () => {
       this.element.src = null != e ? e : null;
     });
   }
@@ -3571,13 +3571,13 @@ class De extends HTMLElement {
     );
   }
   get complete() {
-    return this.element.hasAttribute("complete");
+    return this.element.hasAttribute('complete');
   }
   set complete(e) {
-    this.ignoringChangesToAttribute("complete", () => {
+    this.ignoringChangesToAttribute('complete', () => {
       e
-        ? this.element.setAttribute("complete", "")
-        : this.element.removeAttribute("complete");
+        ? this.element.setAttribute('complete', '')
+        : this.element.removeAttribute('complete');
     });
   }
   get isActive() {
@@ -3589,7 +3589,7 @@ class De extends HTMLElement {
       'meta[name="turbo-root"]',
     );
     return h(
-      null !== (e = null == t ? void 0 : t.content) && void 0 !== e ? e : "/",
+      null !== (e = null == t ? void 0 : t.content) && void 0 !== e ? e : '/',
     );
   }
   isIgnoringChangesTo(e) {
@@ -3604,15 +3604,15 @@ class De extends HTMLElement {
       delete this.currentNavigationElement;
   }
 }),
-  void 0 === customElements.get("turbo-frame") &&
-    customElements.define("turbo-frame", l),
-  void 0 === customElements.get("turbo-stream") &&
-    customElements.define("turbo-stream", We),
-  void 0 === customElements.get("turbo-stream-source") &&
-    customElements.define("turbo-stream-source", De),
+  void 0 === customElements.get('turbo-frame') &&
+    customElements.define('turbo-frame', l),
+  void 0 === customElements.get('turbo-stream') &&
+    customElements.define('turbo-stream', We),
+  void 0 === customElements.get('turbo-stream-source') &&
+    customElements.define('turbo-stream-source', De),
   (() => {
     let e = document.currentScript;
-    if (e && !e.hasAttribute("data-turbo-suppress-warning"))
+    if (e && !e.hasAttribute('data-turbo-suppress-warning'))
       for (e = e.parentElement; e; ) {
         if (e == document.body)
           return console.warn(

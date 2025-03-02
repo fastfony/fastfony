@@ -1,17 +1,17 @@
 <script setup>
-import axios from "axios";
-import { onMounted, ref } from "vue";
+import axios from 'axios';
+import { onMounted, ref } from 'vue';
 
-import { useToast } from "vue-toastification";
+import { useToast } from 'vue-toastification';
 const toast = useToast();
 
-import { useI18n } from "vue-i18n";
+import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
 const parameters = ref([]);
 
 onMounted(() => {
-  axios.get("/api/parameters").then((response) => {
+  axios.get('/api/parameters').then((response) => {
     // We sort the parameters by their category
     parameters.value = response.data.member.reduce((data, parameter) => {
       if (!data[parameter.category]) {
@@ -27,12 +27,12 @@ const patchParameter = (parameter, event) => {
   if (event.target.checkValidity()) {
     axios
       .patch(
-        parameter["@id"],
+        parameter['@id'],
         { value: parameter.value },
-        { headers: { "Content-Type": "application/merge-patch+json" } },
+        { headers: { 'Content-Type': 'application/merge-patch+json' } },
       )
       .then((response) => {
-        toast.success(t("toast.parameter.updated"), {
+        toast.success(t('toast.parameter.updated'), {
           timeout: 2000,
         });
       });
@@ -62,8 +62,8 @@ const patchParameter = (parameter, event) => {
           class="select select-bordered w-full validator"
           @change="patchParameter(parameter, $event)"
         >
-          <option value="1">{{ $t("Yes") }}</option>
-          <option value="0">{{ $t("No") }}</option>
+          <option value="1">{{ $t('Yes') }}</option>
+          <option value="0">{{ $t('No') }}</option>
         </select>
         <input
           v-else
