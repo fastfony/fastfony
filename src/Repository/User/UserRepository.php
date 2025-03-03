@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Repository;
+namespace App\Repository\User;
 
-use App\Entity\Group;
-use App\Entity\User;
+use App\Entity\User\Group;
+use App\Entity\User\User;
+use App\Repository\SaveAndRemoveMethodTrait;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\EntityNotFoundException;
 use Doctrine\Persistence\ManagerRegistry;

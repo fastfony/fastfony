@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller\Page;
 
-use App\Entity\Page;
+use App\Entity\Page\Page;
 use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

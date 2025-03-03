@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\EnvProcessor;
 
-use App\Repository\ParameterRepository;
+use App\Repository\Parameter\ParameterRepository;
 use Symfony\Component\DependencyInjection\EnvVarProcessorInterface;
 
 class Database implements EnvVarProcessorInterface

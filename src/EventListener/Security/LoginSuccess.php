@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\EventListener\Security;
 
-use App\Entity\User;
-use App\Repository\UserRepository;
+use App\Entity\User\User;
+use App\Repository\User\UserRepository;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\Security\Http\Event\LoginSuccessEvent;

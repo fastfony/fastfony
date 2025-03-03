@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Validator;
 
-use App\Entity\Page;
-use App\Repository\PageRepository;
+use App\Entity\Page\Page;
+use App\Repository\Page\PageRepository;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;

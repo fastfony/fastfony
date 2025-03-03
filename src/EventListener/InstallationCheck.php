@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\EventListener;
 
 use App\HealthCheck\All;
-use App\Repository\UserRepository;
+use App\Repository\User\UserRepository;
 use Doctrine\DBAL\Exception\ConnectionException;
 use Doctrine\DBAL\Exception\TableNotFoundException;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;

@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace App\Repository;
+namespace App\Repository\User;
 
-use App\Entity\Page;
+use App\Entity\User\Group;
+use App\Repository\SaveAndRemoveMethodTrait;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Page>
+ * @extends ServiceEntityRepository<Group>
  */
-class PageRepository extends ServiceEntityRepository
+class GroupRepository extends ServiceEntityRepository
 {
     use SaveAndRemoveMethodTrait;
 
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Page::class);
+        parent::__construct($registry, Group::class);
     }
 }

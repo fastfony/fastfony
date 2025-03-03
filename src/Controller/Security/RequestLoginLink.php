@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Controller\Security;
 
 use App\Form\LoginFormType;
-use App\Repository\UserRepository;
+use App\Repository\User\UserRepository;
 use App\Security\LoginLink;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

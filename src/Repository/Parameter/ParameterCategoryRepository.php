@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Repository;
+namespace App\Repository\Parameter;
 
-use App\Entity\ParameterCategory;
+use App\Entity\Parameter\ParameterCategory;
+use App\Repository\SaveAndRemoveMethodTrait;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

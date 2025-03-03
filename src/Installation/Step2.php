@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Installation;
 
 use App\DataFixtures\Installation;
-use App\Repository\ParameterRepository;
+use App\Repository\Parameter\ParameterRepository;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;

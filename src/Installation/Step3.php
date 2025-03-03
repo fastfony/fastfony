@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Installation;
 
-use App\Repository\UserRepository;
+use App\Repository\User\UserRepository;
 use App\Security\LoginLink;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;

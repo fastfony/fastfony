@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Entity;
+namespace App\Entity\Page;
 
-use App\Repository\PageRepository;
+use App\Entity\BlameableEntity;
+use App\Entity\CommonProperties;
+use App\Repository\Page\PageRepository;
 use App\Validator\UniqueHomepage;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;

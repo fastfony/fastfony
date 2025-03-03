@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
-use App\Entity\User as UserEntity;
+use App\Entity\User\User;
 use App\Security\LoginLink;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminAction;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
@@ -29,7 +29,7 @@ class UserCrud extends AbstractCrudController
 
     public static function getEntityFqcn(): string
     {
-        return UserEntity::class;
+        return User::class;
     }
 
     public function configureCrud(Crud $crud): Crud
@@ -51,6 +51,9 @@ class UserCrud extends AbstractCrudController
                 ])
                 ->hideOnIndex(),
             BooleanField::new('enabled'),
+            AssociationField::new('profile')
+                ->renderAsEmbeddedForm()
+                ->hideOnIndex(),
         ];
     }
 

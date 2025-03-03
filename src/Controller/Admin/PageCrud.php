@@ -6,7 +6,7 @@ namespace App\Controller\Admin;
 
 use App\Admin\Field\Editorjs;
 use App\Admin\Field\Json;
-use App\Entity\Page;
+use App\Entity\Page\Page;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;

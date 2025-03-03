@@ -8,7 +8,7 @@ use App\Form\LoginFormType;
 use App\HealthCheck\All;
 use App\Installation\Step2;
 use App\Installation\Step3;
-use App\Repository\UserRepository;
+use App\Repository\User\UserRepository;
 use Doctrine\DBAL\Exception\ConnectionException;
 use Doctrine\DBAL\Exception\TableNotFoundException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Entity\Page;
-use App\Repository\PageRepository;
+use App\Entity\Page\Page;
+use App\Repository\Page\PageRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
