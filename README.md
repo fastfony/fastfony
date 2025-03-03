@@ -23,13 +23,14 @@ If you want to change the domain name, you can edit the `.symfony.local.yaml` fi
 - Simple pages SEO friendly (front and backoffice)
 - Register and received a login link by email
 - Login form with email that send a login link by email
+- Users management with Profile (and Groups, Roles)
 - Settings panel
 - Toasts notifications (flash messages from Symfony and others with [vue-toastification](https://vue-toastification.maronato.dev/))
 - DaisyUI themes chooser
 - API Platform 4
-- EasyAdmin (with Bootstrap 5) and CRUD controllers for : Users, Parameters, Parameter categories
-- Webpack Encore, Vue.js, Tailwind CSS & DaisyUI
-- Taskfile for easy commands
+- EasyAdmin (with Bootstrap 5) and CRUD controllers for : Parameters, Parameter categories etc...
+- Webpack Encore, Vue.js 3, Tailwind CSS 4 & DaisyUI 5
+- Taskfile for easy install & start commands (just `task start` and develop)
 
 ## Docs
 
