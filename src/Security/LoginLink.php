@@ -11,6 +11,7 @@ use Symfony\Component\Notifier\NotifierInterface;
 use Symfony\Component\Notifier\Recipient\Recipient;
 use Symfony\Component\Security\Http\LoginLink\LoginLinkHandlerInterface;
 use Symfony\Component\Security\Http\LoginLink\LoginLinkNotification;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class LoginLink
 {
@@ -18,10 +19,11 @@ class LoginLink
     private const MAX_ASK = 3;
 
     public function __construct(
-        private NotifierInterface $notifier,
-        private LoginLinkHandlerInterface $loginLinkHandler,
-        private CacheItemPoolInterface $cache,
-        private ?string $subjectEmailLoginLink = null,
+        private readonly NotifierInterface $notifier,
+        private readonly LoginLinkHandlerInterface $loginLinkHandler,
+        private readonly CacheItemPoolInterface $cache,
+        private readonly TranslatorInterface $translator,
+        private readonly string $companyName,
     ) {
     }
 
@@ -34,7 +36,7 @@ class LoginLink
 
         $notification = new LoginLinkNotification(
             $this->loginLinkHandler->createLoginLink($user, null, self::LIFETIME),
-            $this->subjectEmailLoginLink ?? 'Your login link',
+            $this->translator->trans('login.email.subject', ['%companyName%' => $this->companyName]),
         );
         $recipient = new Recipient($user->getEmail());
         try {

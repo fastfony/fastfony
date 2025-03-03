@@ -9,6 +9,7 @@
   "installation.error": "An error occurred. Please verify the configuration and retry.",
   "label.email": "Email address",
   "login.create_account": "Get started for free",
+  "login.email.subject": "Your login link to connect %companyName%",
   "login.link_sent_validity": "If you have an account a login link has been sent to your email address. This link is valid for 5 minutes.",
   "login.no_account": "Not a member?",
   "login.title": "Log in to your account",
