@@ -18,7 +18,7 @@
 
                     <p class="mt-2 text-sm/6">
                         {{ 'register.already_account'|trans }}
-                        <a href="{{ path('login') }}" class="link link-hover link-accent">
+                        <a href="{{ path('request_login_link') }}" class="link link-hover link-accent">
                             {{ 'register.login'|trans }}
                         </a>
                     </p>
@@ -30,7 +30,7 @@
                             {{ form_start(form) }}
                             <label class="floating-label my-8">
                                 <span>{{ 'label.email'|trans }}</span>
-                                {{ form_widget(form.email, {attr: {class: 'input w-full', placeholder: ''}}) }}
+                                {{ form_widget(form.email, {attr: {class: 'input w-full'}}) }}
                                 {{ form_errors(form.email) }}
                             </label>
 

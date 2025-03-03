@@ -29,6 +29,7 @@ class RoleCrud extends AbstractCrudController
     {
         return [
             TextField::new('name'),
+            TextField::new('description'),
         ];
     }
 

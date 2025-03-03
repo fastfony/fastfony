@@ -8,7 +8,6 @@
   "input.admin_email": "Your email",
   "installation.error": "An error occurred. Please verify the configuration and retry.",
   "label.email": "Email address",
-  "login.button": "Send me a login link",
   "login.create_account": "Get started for free",
   "login.link_sent_validity": "If you have an account a login link has been sent to your email address. This link is valid for 5 minutes.",
   "login.no_account": "Not a member?",
@@ -18,5 +17,6 @@
   "register.button": "Create an account",
   "register.link_sent_validity": "A login link has been sent to your email address. This link is valid for 5 minutes.",
   "register.login": "Log In",
-  "register.title": "Join us!"
+  "register.title": "Join us!",
+  "request_login_link.button": "Send me a login link"
 }

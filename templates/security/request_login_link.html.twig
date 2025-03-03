@@ -29,7 +29,7 @@
                             <div class="mt-2">
                                 <label class="floating-label">
                                     <span>{{ 'label.email'|trans }}</span>
-                                    {{ form_widget(form.email, {attr: {class: 'input w-full', placeholder: ''}}) }}
+                                    {{ form_widget(form.email, {attr: {class: 'input w-full'}}) }}
                                     {{ form_errors(form.email) }}
                                 </label>
                             </div>
@@ -37,7 +37,7 @@
 
                         <div class="mb-4">
                             <button type="submit" class="btn btn-primary w-full">
-                                {{ 'login.button'|trans }}
+                                {{ 'request_login_link.button'|trans }}
                             </button>
                         </div>
                     {{ form_end(form) }}

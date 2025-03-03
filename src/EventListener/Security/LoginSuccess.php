@@ -22,8 +22,9 @@ class LoginSuccess
     public function __invoke(LoginSuccessEvent $event): void
     {
         $user = $this->security->getUser();
+        // We can be not enabled and successfully login only with login link
         if ($user instanceof User && !$user->isEnabled()) {
-            // We can enable the user here
+            // So we can enable the user here
             $user->setEnabled(true);
             $this->userRepository->save($user);
         }

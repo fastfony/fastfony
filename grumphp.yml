@@ -34,6 +34,7 @@ grumphp:
             is_run_task: true
         git_commit_message:
             enforce_capitalized_subject: false
+            max_subject_width: 100
             type_scope_conventions:
                 types:
                     - fix
