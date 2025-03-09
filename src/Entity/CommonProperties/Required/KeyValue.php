@@ -13,8 +13,7 @@ trait KeyValue
     #[ORM\Column(name: '`key`', length: 255)]
     private string $key;
 
-    #[Assert\NotBlank]
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private string $value;
 
     public function getKey(): string
@@ -29,12 +28,12 @@ trait KeyValue
         return $this;
     }
 
-    public function getValue(): string
+    public function getValue(): ?string
     {
         return $this->value;
     }
 
-    public function setValue(string $value): static
+    public function setValue(?string $value): static
     {
         $this->value = $value;
 

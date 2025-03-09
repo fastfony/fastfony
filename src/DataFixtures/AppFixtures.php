@@ -9,6 +9,8 @@ use Doctrine\Persistence\ObjectManager;
 
 class AppFixtures extends Fixture
 {
+    public const GROUP_INSTALL = 'install';
+
     public function load(ObjectManager $manager): void
     {
         // $product = new Product();

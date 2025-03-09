@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Installation;
 
-use App\DataFixtures\Installation;
+use App\DataFixtures\AppFixtures;
 use App\Repository\Parameter\ParameterRepository;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -28,7 +28,7 @@ class Step2
         );
         $this->runCommand(
             'doctrine:fixtures:load',
-            ['--group' => [Installation::GROUP_INSTALL], '--no-interaction' => true],
+            ['--group' => [AppFixtures::GROUP_INSTALL], '--no-interaction' => true],
         );
 
         try {

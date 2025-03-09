@@ -4,20 +4,15 @@ declare(strict_types=1);
 
 namespace App\DataFixtures;
 
-use App\Entity\Page\Page;
 use App\Entity\Parameter\Parameter;
 use App\Entity\Parameter\ParameterCategory;
-use App\Entity\User\Group;
-use App\Entity\User\Role;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-class Installation extends Fixture implements FixtureGroupInterface
+class Parameters extends Fixture implements FixtureGroupInterface
 {
-    public const GROUP_INSTALL = 'install';
-
     private const EMAIL_PARAMETER_CATEGORY = 'Email';
     private const COMPANY_PARAMETER_CATEGORY = 'Company';
     private const LOGIN_PARAMETER_CATEGORY = 'Login';
@@ -37,14 +32,12 @@ class Installation extends Fixture implements FixtureGroupInterface
     public function load(ObjectManager $manager): void
     {
         $this->createParameters($manager);
-        $this->createHomepage($manager);
-        $this->createGroupsAndRoles($manager);
         $manager->flush();
     }
 
     public static function getGroups(): array
     {
-        return [self::GROUP_INSTALL];
+        return [AppFixtures::GROUP_INSTALL];
     }
 
     private function createParameters(ObjectManager $manager): void
@@ -112,76 +105,20 @@ class Installation extends Fixture implements FixtureGroupInterface
         foreach ($parameters as $key => $values) {
             $parameter = (new Parameter())
                 ->setKey($key)
-                ->setValue($values['value'])
                 ->setType($values['type'])
                 ->setLabel($values['label'])
                 ->setHelp($values['help'] ?? null)
             ;
+
+            if (isset($values['value'])) {
+                $parameter->setValue($values['value']);
+            }
 
             if (isset($values['category'])) {
                 $parameter->setCategory($values['category']);
             }
 
             $manager->persist($parameter);
-        }
-    }
-
-    private function createHomepage(ObjectManager $manager): void
-    {
-        $homepage = (new Page())
-            ->setHomepage(true)
-            ->setName('Homepage')
-            ->setTitle('Welcome on Fastfony!')
-            ->setEnabled(true)
-        ;
-        $manager->persist($homepage);
-    }
-
-    private function createGroupsAndRoles(ObjectManager $manager): void
-    {
-        $roles = [
-            'ROLE_USER' => 'User',
-            'ROLE_ADMIN' => 'Administrator',
-            'ROLE_ALLOWED_TO_SWITCH' => 'Allowed to switch',
-            'ROLE_SUPER_ADMIN' => 'Super Administrator',
-        ];
-
-        foreach ($roles as $key => $description) {
-            $role = (new Role())
-                ->setName($key)
-                ->setDescription($description);
-            $manager->persist($role);
-            $this->addReference(
-                $key,
-                $role
-            );
-        }
-
-        $groups = [
-            'User' => [
-                $this->getReference('ROLE_USER', Role::class),
-            ],
-            'Administrator' => [
-                $this->getReference('ROLE_USER', Role::class),
-                $this->getReference('ROLE_ADMIN', Role::class),
-            ],
-            Group::SUPER_ADMIN_NAME => [
-                $this->getReference('ROLE_USER', Role::class),
-                $this->getReference('ROLE_ADMIN', Role::class),
-                $this->getReference('ROLE_ALLOWED_TO_SWITCH', Role::class),
-                $this->getReference('ROLE_SUPER_ADMIN', Role::class),
-            ],
-        ];
-
-        foreach ($groups as $key => $roles) {
-            $group = (new Group())
-                ->setName($key)
-                ->setOnRegistration('User' === $key);
-
-            foreach ($roles as $role) {
-                $group->addRole($role);
-            }
-            $manager->persist($group);
         }
     }
 }
