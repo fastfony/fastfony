@@ -12,6 +12,7 @@
   "Group": "Group",
   "Groups": "Groups",
   "Help": "Help",
+  "help.content": "You can drag & drop or copy / paste an image.",
   "help.meta_robots": "Default configuration is `index follow`.",
   "help.noarchive": "Prevents search engines from storing a cached copy of the page.",
   "help.nofollow": "Prevents search engines from following the links on the page.",
@@ -68,5 +69,6 @@
   "user_crud.action.send_login_link_email": "Send a login link",
   "Users": "Users",
   "Version": "Version number",
-  "View Log Entries": "Show versions"
+  "View Log Entries": "Show versions",
+  "View or preview": "View or preview"
 }

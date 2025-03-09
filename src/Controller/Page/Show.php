@@ -18,6 +18,10 @@ class Show extends AbstractController
     public function __invoke(
         #[MapEntity(mapping: ['pageSlug' => 'slug'])] Page $page,
     ): array {
+        if (!$page->isEnabled() && !$this->isGranted('ROLE_ADMIN')) {
+            throw $this->createNotFoundException();
+        }
+
         return [
             'page' => $page,
         ];

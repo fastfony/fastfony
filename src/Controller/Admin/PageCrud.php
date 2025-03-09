@@ -65,10 +65,20 @@ class PageCrud extends AbstractCrudController
 //            )
         ;
 
+        $viewAction = Action::new('view', 'View or preview')
+            ->linkToRoute('page_show', function (Page $page): array {
+                return ['pageSlug' => $page->getSlug()];
+            })
+            ->setIcon('fa fa-eye')
+            ->setHtmlAttributes(['target' => '_blank'])
+        ;
+
         $actions
             ->add(Crud::PAGE_EDIT, $viewLogEntriesAction)
+            ->add(Crud::PAGE_EDIT, $viewAction)
             ->add(Crud::PAGE_INDEX, $viewLogEntriesAction)
-            ->reorder(Crud::PAGE_INDEX, [Crud::PAGE_EDIT, 'viewLogEntries'])
+            ->add(Crud::PAGE_INDEX, $viewAction)
+            ->reorder(Crud::PAGE_INDEX, ['view', Crud::PAGE_EDIT, 'viewLogEntries'])
         ;
 
         return $actions;
@@ -88,7 +98,8 @@ class PageCrud extends AbstractCrudController
                 ->hideOnIndex(),
             Editorjs::new('content')
                 ->setColumns(12)
-                ->hideOnIndex(),
+                ->hideOnIndex()
+                ->setHelp('help.content'),
             FormField::addTab('SEO'),
             FormField::addColumn(6),
             BooleanField::new('homepage'),

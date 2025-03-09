@@ -20,6 +20,11 @@
 {% endblock %}
 
 {% block main %}
+    {% if not page.enabled %}
+        <div class="alert alert-warning">
+            {{ 'pages.preview'|trans }}
+        </div>
+    {% endif %}
     <div class="prose py-16 lg:py-32">
         <h1 class="text-primary">{{ page.title }}</h1>
 
