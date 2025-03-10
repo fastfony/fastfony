@@ -13,12 +13,12 @@ trait BlameableEntity
     #[ORM\ManyToOne(targetEntity: User::class)]
     #[ORM\JoinColumn(onDelete: 'SET NULL')]
     #[Gedmo\Blameable]
-    private ?User $createdBy;
+    private User $createdBy;
 
     #[ORM\ManyToOne(targetEntity: User::class)]
     #[ORM\JoinColumn(onDelete: 'SET NULL')]
     #[Gedmo\Blameable]
-    private ?User $updatedBy;
+    private User $updatedBy;
 
     public function setCreatedBy(User $createdBy): static
     {
@@ -27,7 +27,7 @@ trait BlameableEntity
         return $this;
     }
 
-    public function getCreatedBy(): ?User
+    public function getCreatedBy(): User
     {
         return $this->createdBy;
     }
@@ -39,7 +39,7 @@ trait BlameableEntity
         return $this;
     }
 
-    public function getUpdatedBy(): ?User
+    public function getUpdatedBy(): User
     {
         return $this->updatedBy;
     }

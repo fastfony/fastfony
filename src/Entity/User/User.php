@@ -110,10 +110,10 @@ class User implements UserInterface
         return $this->profile;
     }
 
-    public function setProfile(Profile $profile): static
+    public function setProfile(?Profile $profile): static
     {
         // set the owning side of the relation if necessary
-        if ($profile->getUser() !== $this) {
+        if ($profile && $profile->getUser() !== $this) {
             $profile->setUser($this);
         }
 
