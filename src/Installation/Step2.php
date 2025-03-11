@@ -44,7 +44,7 @@ class Step2
     }
 
     /**
-     * @param array<string, string> $options
+     * @param array<string, mixed> $options
      *
      * @throws \Exception
      */

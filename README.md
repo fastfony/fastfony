@@ -16,7 +16,12 @@ If you want to change the domain name, you can edit the `.symfony.local.yaml` fi
 
 ## Execute tests
 
-- Run `task tests`
+- Run `task tests` or `task coverage`
+
+## Execute analytics
+
+- Run `./vendor/bin/phpstan analyse src tests` for PHPStan
+- Run `./vendor/bin/phpinsights` for PHPInsights
 
 ## Features
 
