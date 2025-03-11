@@ -63,4 +63,4 @@ tasks:
         desc: Run tests with coverage (required Xdebug)
         cmds:
             - task: setup_tests
-            - XDEBUG_MODE=coverage symfony php bin/phpunit --coverage-html=docs/coverage
+            - XDEBUG_MODE=coverage php bin/phpunit --coverage-html=docs/coverage
