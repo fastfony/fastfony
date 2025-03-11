@@ -68,6 +68,7 @@ return [
         NunoMaduro\PhpInsights\Domain\Insights\ForbiddenNormalClasses::class,
         NunoMaduro\PhpInsights\Domain\Insights\ForbiddenTraits::class,
         SlevomatCodingStandard\Sniffs\TypeHints\DisallowMixedTypeHintSniff::class,
+        PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterNotSniff::class,
     ],
 
     'config' => [
