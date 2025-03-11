@@ -77,6 +77,7 @@ return (new PhpCsFixer\Config)
         'phpdoc_to_return_type' => true,
         'binary_operator_spaces' => ['operators' => ['|' => null]],
         'single_line_throw' => false,
+        'php_unit_test_annotation' => false,
     ])
     ->setFinder($finder)
 ;
