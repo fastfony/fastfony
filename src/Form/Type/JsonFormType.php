@@ -13,7 +13,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-class JsonType extends AbstractType
+class JsonFormType extends AbstractType
 {
     public function __construct(
         private readonly ValidatorInterface $validator,

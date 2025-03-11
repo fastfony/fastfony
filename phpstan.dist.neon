@@ -1,0 +1,16 @@
+parameters:
+    level: 5
+    paths:
+        - bin/
+        - config/
+        - public/
+        - src/
+        - tests/
+    ignoreErrors:
+        -
+            identifier: nullCoalesce.offset
+        -
+            identifier: isset.offset
+
+includes:
+    - vendor/symplify/phpstan-rules/config/symfony-rules.neon

@@ -9,6 +9,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Symfony\Component\String\Inflector\EnglishInflector;
 
 use function Symfony\Component\String\u;
 
@@ -23,12 +24,15 @@ class EntitiesTest extends KernelTestCase
     public function testGettersAndSetters(ClassMetadata $classMetadata): void
     {
         $entity = $classMetadata->newInstance();
+        if (method_exists($entity, '__construct')) {
+            $entity->__construct();
+        }
         $entityMock = $this->createMock($classMetadata->getName());
 
         // An entity must have the ORM\Entity attribute
         $reflectionClass = new \ReflectionClass($classMetadata->getName());
         $attributes = $reflectionClass->getAttributes(Entity::class);
-        self::assertNotEmpty($attributes);
+        $this->assertNotEmpty($attributes);
 
         $properties = [];
         $reflectionProperties = array_filter(
@@ -38,14 +42,36 @@ class EntitiesTest extends KernelTestCase
             }
         );
 
+        $inflector = new EnglishInflector();
         foreach ($reflectionProperties as $reflectionProperty) {
             $fieldName = ucfirst($reflectionProperty->getName());
-
             foreach (['get', 'is'] as $getter) {
                 $getterMethod = $getter.$fieldName;
                 if (method_exists($entity, $getterMethod)) {
                     $properties[$reflectionProperty->getName()]['getter'] = $getterMethod;
                     break;
+                }
+            }
+
+            $addMethod = 'add'.ucfirst($inflector->singularize($reflectionProperty->getName())[0]);
+            if (method_exists($entity, $addMethod)) {
+                $reflectionMethod = new \ReflectionMethod($entity::class, $addMethod);
+
+                $parameters = $reflectionMethod->getParameters();
+                $childType = $parameters[0]->getType();
+                $child = $this->createMock($childType->__toString());
+
+                $entity->$addMethod($child);
+
+                $methodName = 'get'.ucfirst($reflectionProperty->getName());
+                $this->assertContains($child, $entity->$methodName());
+
+                $removeMethod = 'remove'.ucfirst($inflector->singularize($reflectionProperty->getName())[0]);
+                if (method_exists($entity, $removeMethod)) {
+                    $entity->$removeMethod($child);
+
+                    $methodName = 'get'.ucfirst($reflectionProperty->getName());
+                    $this->assertEmpty($entity->$methodName());
                 }
             }
 
@@ -69,11 +95,11 @@ class EntitiesTest extends KernelTestCase
             $setter = $classMetadata->getReflectionClass()->getMethod($property['setter']);
 
             // If return type is not the same as the setter param type then it's specific and we don't test it here
-            if ($getter->getReturnType()?->getName() !== $setter->getParameters()[0]->getType()?->getName()) {
+            if ($getter->getReturnType()?->__toString() !== $setter->getParameters()[0]->getType()?->__toString()) {
                 continue;
             }
 
-            if (u($getter->getReturnType()->getName())->containsAny('DateTime')) {
+            if (u($getter->getReturnType()->__toString())->containsAny('DateTime')) {
                 // The mock does not handle datetime automatically
                 $value = new \DateTime();
             } else {
@@ -81,7 +107,7 @@ class EntitiesTest extends KernelTestCase
             }
 
             $entity->{$property['setter']}($value);
-            self::assertEquals($value, $entity->{$property['getter']}());
+            $this->assertEquals($value, $entity->{$property['getter']}());
         }
     }
 
@@ -107,6 +133,6 @@ class EntitiesTest extends KernelTestCase
      */
     public function testGetRoles(): void
     {
-        self::assertEquals((new User())->getRoles(), ['ROLE_USER']);
+        $this->assertEquals((new User())->getRoles(), ['ROLE_USER']);
     }
 }

@@ -7,6 +7,7 @@ namespace App\Repository\Page;
 use App\Entity\Page\Page;
 use App\Repository\SaveAndRemoveMethodTrait;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -19,5 +20,18 @@ class PageRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Page::class);
+    }
+
+    /**
+     * @throws NonUniqueResultException
+     */
+    public function findHomepage(): ?Page
+    {
+        return $this->createQueryBuilder('page')
+            ->where('page.enabled = true')
+            ->andWhere('page.homepage = true')
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
     }
 }

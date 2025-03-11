@@ -6,7 +6,6 @@ namespace App\EventListener\Security;
 
 use App\Entity\User\User;
 use App\Repository\User\UserRepository;
-use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\Security\Http\Event\LoginSuccessEvent;
 
@@ -14,14 +13,13 @@ use Symfony\Component\Security\Http\Event\LoginSuccessEvent;
 class LoginSuccess
 {
     public function __construct(
-        private Security $security,
         private UserRepository $userRepository,
     ) {
     }
 
     public function __invoke(LoginSuccessEvent $event): void
     {
-        $user = $this->security->getUser();
+        $user = $event->getUser();
         // We can be not enabled and successfully login only with login link
         if ($user instanceof User && !$user->isEnabled()) {
             // So we can enable the user here

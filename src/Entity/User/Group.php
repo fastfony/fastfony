@@ -19,7 +19,7 @@ class Group
     public const SUPER_ADMIN_NAME = 'Super Admin';
 
     #[ORM\Column(options: ['default' => false])]
-    private ?bool $onRegistration = false;
+    private bool $onRegistration = false;
 
     /**
      * @var Collection<int, User>

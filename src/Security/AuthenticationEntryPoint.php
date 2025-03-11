@@ -20,6 +20,7 @@ class AuthenticationEntryPoint implements AuthenticationEntryPointInterface
     public function start(Request $request, ?AuthenticationException $authException = null): RedirectResponse
     {
         // add a custom flash message and redirect to the login page
+        /* @phpstan-ignore method.notFound */
         $request->getSession()->getFlashBag()->add('note', 'flash.require_login');
 
         return new RedirectResponse($this->urlGenerator->generate('request_login_link'));

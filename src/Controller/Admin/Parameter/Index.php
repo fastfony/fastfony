@@ -8,12 +8,12 @@ use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/admin/parameters', name: 'admin_parameters')]
-#[Template('admin/parameters/index.html.twig')]
 class Index extends AbstractController
 {
+    #[Route('/admin/parameters', name: 'admin_parameters')]
+    #[Template('admin/parameters/index.html.twig')]
     public function __invoke(
-    ) {
+    ): array {
         /* See assets/vue/controllers/Parameters.vue */
         return [];
     }

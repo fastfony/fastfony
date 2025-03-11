@@ -31,6 +31,9 @@ If you want to change the domain name, you can edit the `.symfony.local.yaml` fi
 - EasyAdmin (with Bootstrap 5) and CRUD controllers for : Parameters, Parameter categories etc...
 - Webpack Encore, Vue.js 3, Tailwind CSS 4 & DaisyUI 5
 - Taskfile for easy install & start commands (just `task start` and develop)
+- GrumPHP for manage pre-hook commit
+- PHPUnit and its tests
+- phpstan (level 5, [symfony simplify rules](https://github.com/symplify/phpstan-rules) and [symfony extension](https://github.com/phpstan/phpstan-symfony)), phpinsights
 
 ## Docs
 

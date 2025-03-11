@@ -8,6 +8,7 @@ use App\Entity\Page\Page;
 use App\Repository\Page\PageRepository;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
+use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;
 
 class UniqueHomepageValidator extends ConstraintValidator
@@ -19,6 +20,10 @@ class UniqueHomepageValidator extends ConstraintValidator
 
     public function validate($value, Constraint $constraint): void
     {
+        if (!$constraint instanceof UniqueHomepage) {
+            throw new UnexpectedTypeException($constraint, UniqueHomepage::class);
+        }
+
         if (!$value instanceof Page) {
             throw new UnexpectedValueException($value, Page::class);
         }

@@ -37,7 +37,10 @@ class Parameters extends Fixture implements FixtureGroupInterface
 
     public static function getGroups(): array
     {
-        return [AppFixtures::GROUP_INSTALL];
+        return [
+            AppFixtures::GROUP_INSTALL,
+            AppFixtures::GROUP_TEST,
+        ];
     }
 
     private function createParameters(ObjectManager $manager): void
@@ -52,9 +55,10 @@ class Parameters extends Fixture implements FixtureGroupInterface
             );
         }
 
+        $domain = $this->requestStack->getMainRequest()?->getHost() ?? 'domain.tld';
         $parameters = [
             'MAILER_SENDER' => [
-                'value' => 'noreply@'.$this->requestStack->getMainRequest()->getHost(),
+                'value' => 'noreply@'.$domain,
                 'type' => 'email',
                 'label' => 'Sender email address',
                 'help' => 'This e-mail must be authorize by server configure on MAILER_DSN in .env.local',
@@ -108,15 +112,9 @@ class Parameters extends Fixture implements FixtureGroupInterface
                 ->setType($values['type'])
                 ->setLabel($values['label'])
                 ->setHelp($values['help'] ?? null)
+                ->setValue($values['value'] ?? null)
+                ->setCategory($values['category'] ?? null)
             ;
-
-            if (isset($values['value'])) {
-                $parameter->setValue($values['value']);
-            }
-
-            if (isset($values['category'])) {
-                $parameter->setCategory($values['category']);
-            }
 
             $manager->persist($parameter);
         }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Admin\Field;
 
-use App\Form\Type\JsonType;
+use App\Form\Type\JsonFormType;
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FieldTrait;
 
@@ -17,7 +17,7 @@ class Json implements FieldInterface
         return (new self())
             ->setProperty($propertyName)
             ->setLabel($label)
-            ->setFormType(JsonType::class)
+            ->setFormType(JsonFormType::class)
         ;
     }
 }

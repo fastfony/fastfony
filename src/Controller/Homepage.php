@@ -12,9 +12,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
 
-// Le slug peut être vide pour la homepage
-#[Route('/', name: 'homepage', methods: ['GET'])]
-#[Template('pages/show.html.twig')]
 class Homepage extends AbstractController
 {
     public function __construct(
@@ -22,6 +19,9 @@ class Homepage extends AbstractController
     ) {
     }
 
+    // Le slug peut être vide pour la homepage
+    #[Route('/', name: 'homepage', methods: ['GET'])]
+    #[Template('pages/show.html.twig')]
     public function __invoke(
         Request $request,
     ): array {
@@ -33,8 +33,7 @@ class Homepage extends AbstractController
     private function getHomepage(): ?Page
     {
         try {
-            return $this->pageRepository
-                ->findOneBy(['homepage' => true]);
+            return $this->pageRepository->findHomepage();
         } catch (NonUniqueResultException $exception) {
             throw $this->createNotFoundException(
                 'You have multiple homepages configured.',

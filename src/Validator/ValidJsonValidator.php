@@ -6,11 +6,16 @@ namespace App\Validator;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
+use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 class ValidJsonValidator extends ConstraintValidator
 {
     public function validate($value, Constraint $constraint): void
     {
+        if (!$constraint instanceof ValidJson) {
+            throw new UnexpectedTypeException($constraint, ValidJson::class);
+        }
+
         if (null === $value || '' === $value) {
             return;
         }

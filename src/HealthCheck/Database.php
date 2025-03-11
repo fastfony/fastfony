@@ -16,7 +16,7 @@ class Database
     public function check(): bool
     {
         try {
-            $this->entityManager->getConnection()->connect();
+            $this->entityManager->getConnection()->getNativeConnection();
         } catch (\Exception) {
             return false;
         }

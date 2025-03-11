@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Admin\Field;
 
-use App\Form\Type\EditorjsType;
+use App\Form\Type\EditorjsFormType;
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FieldTrait;
 
@@ -17,7 +17,7 @@ class Editorjs implements FieldInterface
         return (new self())
             ->setProperty($propertyName)
             ->setLabel($label)
-            ->setFormType(EditorjsType::class)
+            ->setFormType(EditorjsFormType::class)
             // required also the easyadmin entry in webpack.config.js
         ;
     }

@@ -5,12 +5,15 @@ declare(strict_types=1);
 namespace App\Security;
 
 use App\Entity\User\User;
-use Psr\Cache\CacheItemPoolInterface;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+use Symfony\Component\Messenger\Exception\HandlerFailedException;
+use Symfony\Component\Mime\Exception\RfcComplianceException;
 use Symfony\Component\Notifier\Exception\TransportExceptionInterface;
 use Symfony\Component\Notifier\NotifierInterface;
 use Symfony\Component\Notifier\Recipient\Recipient;
 use Symfony\Component\Security\Http\LoginLink\LoginLinkHandlerInterface;
 use Symfony\Component\Security\Http\LoginLink\LoginLinkNotification;
+use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class LoginLink
@@ -18,10 +21,13 @@ class LoginLink
     private const LIFETIME = 300;
     private const MAX_ASK = 3;
 
+    /**
+     * @param FilesystemAdapter $cache
+     */
     public function __construct(
         private readonly NotifierInterface $notifier,
         private readonly LoginLinkHandlerInterface $loginLinkHandler,
-        private readonly CacheItemPoolInterface $cache,
+        private readonly CacheInterface $cache,
         private readonly TranslatorInterface $translator,
         private readonly string $companyName,
     ) {
@@ -45,7 +51,7 @@ class LoginLink
             $this->saveAskTimeInCache($user);
 
             return true;
-        } catch (TransportExceptionInterface $e) {
+        } catch (HandlerFailedException|RfcComplianceException|TransportExceptionInterface $e) {
             return false;
         }
     }

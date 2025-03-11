@@ -10,6 +10,7 @@ use Doctrine\Persistence\ObjectManager;
 class AppFixtures extends Fixture
 {
     public const GROUP_INSTALL = 'install';
+    public const GROUP_TEST = 'test';
 
     public function load(ObjectManager $manager): void
     {

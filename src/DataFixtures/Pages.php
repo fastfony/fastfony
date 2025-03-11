@@ -19,7 +19,10 @@ class Pages extends Fixture implements FixtureGroupInterface
 
     public static function getGroups(): array
     {
-        return [AppFixtures::GROUP_INSTALL];
+        return [
+            AppFixtures::GROUP_INSTALL,
+            AppFixtures::GROUP_TEST,
+        ];
     }
 
     private function createHomepage(ObjectManager $manager): void

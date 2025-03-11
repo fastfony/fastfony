@@ -20,8 +20,6 @@ use Symfony\Component\Routing\Attribute\Route;
  * After installation proceed, you can remove this controller, the class EventListener/InstallationCheck.php, the
  * directory Installation with its files and templates in templates/installation (if here yet...).
  */
-#[Route('/installation', name: 'installation')]
-#[Route('/installation/{step}', name: 'installation_step', requirements: ['step' => '2|3'])]
 class Installation extends AbstractController
 {
     public function __construct(
@@ -35,10 +33,12 @@ class Installation extends AbstractController
         }
     }
 
+    #[Route('/installation', name: 'installation')]
+    #[Route('/installation/{step}', name: 'installation_step', requirements: ['step' => '2|3'])]
     public function __invoke(
         Request $request,
         int $step = 1,
-    ) {
+    ): Response {
         // We always check if the installation is already done
         try {
             if (0 < $this->userRepository->countEnabled()) {

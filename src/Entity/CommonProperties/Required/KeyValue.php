@@ -14,7 +14,7 @@ trait KeyValue
     private string $key;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private string $value;
+    private ?string $value = null;
 
     public function getKey(): string
     {

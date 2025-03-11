@@ -34,7 +34,7 @@ tasks:
             - symfony console doctrine:database:drop --force --env=test
             - symfony console doctrine:database:create --env=test
             - symfony console doctrine:schema:create --env=test
-            - symfony console doctrine:fixtures:load --no-interaction --env=test
+            - symfony console doctrine:fixtures:load --group=test --no-interaction --env=test
             - symfony console cache:clear --env=test
             - symfony console cache:warmup --env=test
 
@@ -63,4 +63,4 @@ tasks:
         desc: Run tests with coverage (required Xdebug)
         cmds:
             - task: setup_tests
-            - symfony php -dpcov.enabled=1 bin/phpunit --coverage-html=docs/coverage
+            - XDEBUG_MODE=coverage symfony php bin/phpunit --coverage-html=docs/coverage

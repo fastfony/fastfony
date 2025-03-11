@@ -63,8 +63,10 @@
     },
     "config": {
         "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "php-http/discovery": true,
             "phpro/grumphp": true,
+            "phpstan/extension-installer": true,
             "symfony/flex": true,
             "symfony/runtime": true
         },
@@ -113,7 +115,11 @@
         }
     },
     "require-dev": {
+        "nunomaduro/phpinsights": "^2.12",
         "phpro/grumphp": "^2.11",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-symfony": "^2.0",
         "phpunit/phpunit": "^9.6.22",
         "symfony/browser-kit": "7.2.*",
         "symfony/css-selector": "7.2.*",
@@ -122,6 +128,7 @@
         "symfony/phpunit-bridge": "^7.2",
         "symfony/stopwatch": "7.2.*",
         "symfony/web-profiler-bundle": "7.2.*",
+        "symplify/phpstan-rules": "^14.3",
         "vincentlanglet/twig-cs-fixer": "^3.5.1"
     }
 }

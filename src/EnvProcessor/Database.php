@@ -18,7 +18,7 @@ class Database implements EnvVarProcessorInterface
     {
         try {
             // When database does not exist, it will throw an exception
-            $config = $this->parameterRepository->findOneByKey($name);
+            $config = $this->parameterRepository->findOneBy(['key' => $name]);
 
             if (null === $config) {
                 return null;
