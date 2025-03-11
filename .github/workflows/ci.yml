@@ -9,8 +9,14 @@ on:
       - '**'
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
+    
+    services:
+      mailpit:
+        image: axllent/mailpit
+        ports:
+          - 1025:1025
 
     steps:
       - name: Checkout code
