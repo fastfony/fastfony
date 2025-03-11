@@ -22,12 +22,17 @@ jobs:
           php-version: 8.4
           extensions: mbstring, intl, pdo_sqlite, xdebug
           coverage: xdebug
+          
+      - name: Install Task
+        uses: arduino/setup-task@v2
+        with:
+          version: 3.x
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
 
-      - name: Run PHPUnit
-        run: XDEBUG_MODE=coverage vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-html=docs/coverage
+      - name: Run PHPUnit with coverage
+        run: task coverage
 
       - name: Run PHPStan
         run: vendor/bin/phpstan analyse
