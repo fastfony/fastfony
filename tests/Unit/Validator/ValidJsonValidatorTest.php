@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace App\Tests\Unit\Validator;
 
+use App\Validator\UniqueHomepage;
 use App\Validator\ValidJson;
 use App\Validator\ValidJsonValidator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 class ValidJsonValidatorTest extends TestCase
 {
@@ -26,5 +28,9 @@ class ValidJsonValidatorTest extends TestCase
         $executionContextInterface->expects(self::once())
             ->method('buildViolation');
         $validJsonValidator->validate('json invalid', $constraint);
+
+        $this->expectException(UnexpectedTypeException::class);
+        $otherConstraint = new UniqueHomepage();
+        $validJsonValidator->validate('{"id": 42}', $otherConstraint);
     }
 }

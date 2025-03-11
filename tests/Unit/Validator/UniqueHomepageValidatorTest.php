@@ -9,8 +9,10 @@ use App\Entity\Parameter\Parameter;
 use App\Repository\Page\PageRepository;
 use App\Validator\UniqueHomepage;
 use App\Validator\UniqueHomepageValidator;
+use App\Validator\ValidJson;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;
 
 class UniqueHomepageValidatorTest extends TestCase
@@ -39,5 +41,9 @@ class UniqueHomepageValidatorTest extends TestCase
 
         self::expectException(UnexpectedValueException::class);
         $uniqueHomepageValidator->validate(new Parameter(), $constraint);
+
+        $this->expectException(UnexpectedTypeException::class);
+        $otherConstraint = new ValidJson();
+        $uniqueHomepageValidator->validate($value, $otherConstraint);
     }
 }
