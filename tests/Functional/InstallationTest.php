@@ -33,7 +33,7 @@ class InstallationTest extends WebTestCase
     /**
      * We add depends tests here in order to be the lasts tests.
      *
-     * @depends testApp\Tests\Functional\Security\RegisterTest::testRegistrationDisabled
+     * @Depends App\Tests\Functional\Security\RegisterTest::testRegistrationDisabled
      */
     public function testFailedSteps(): void
     {

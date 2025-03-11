@@ -47,7 +47,7 @@ class RegisterTest extends WebTestCase
     {
         $parameterRepository = static::getContainer()->get(ParameterRepository::class);
         $parameter = $parameterRepository->findOneBy(['key' => 'REGISTRATION_ENABLED']);
-        $parameter->setValue(false);
+        $parameter->setValue('0');
         $parameterRepository->save($parameter);
 
         $this->client->request('GET', '/register');
