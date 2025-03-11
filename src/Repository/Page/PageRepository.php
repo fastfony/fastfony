@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Repository\Page;
 
 use App\Entity\Page\Page;
-use App\Repository\SaveAndRemoveMethodTrait;
+use App\Repository\SaveAndRemoveMethod;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
@@ -15,7 +15,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class PageRepository extends ServiceEntityRepository
 {
-    use SaveAndRemoveMethodTrait;
+    use SaveAndRemoveMethod;
 
     public function __construct(ManagerRegistry $registry)
     {

@@ -20,6 +20,10 @@ class Homepage extends AbstractController
     }
 
     // Le slug peut être vide pour la homepage
+
+    /**
+     * @return array<string, mixed>
+     */
     #[Route('/', name: 'homepage', methods: ['GET'])]
     #[Template('pages/show.html.twig')]
     public function __invoke(

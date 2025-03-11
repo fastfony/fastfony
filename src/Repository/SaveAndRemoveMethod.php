@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Repository;
 
-trait SaveAndRemoveMethodTrait
+trait SaveAndRemoveMethod
 {
     public function save(object $entity): void
     {

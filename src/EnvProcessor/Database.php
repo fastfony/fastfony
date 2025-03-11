@@ -30,6 +30,9 @@ class Database implements EnvVarProcessorInterface
         }
     }
 
+    /**
+     * @return array<string, string>
+     */
     public static function getProvidedTypes(): array
     {
         return [

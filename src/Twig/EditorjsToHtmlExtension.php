@@ -10,6 +10,9 @@ use Twig\TwigFunction;
 
 class EditorjsToHtmlExtension extends AbstractExtension
 {
+    /**
+     * @return array<TwigFunction>
+     */
     public function getFunctions(): array
     {
         return [

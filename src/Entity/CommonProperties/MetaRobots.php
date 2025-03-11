@@ -105,6 +105,9 @@ trait MetaRobots
         return $this;
     }
 
+    /**
+     * @return array<string>
+     */
     public function getMetaRobotsDirectives(): array
     {
         $directives = [

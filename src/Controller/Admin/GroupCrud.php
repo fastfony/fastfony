@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
+use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
@@ -28,6 +29,9 @@ class GroupCrud extends AbstractCrudController
         return Group::class;
     }
 
+    /**
+     * @return iterable<FieldInterface>
+     */
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -55,10 +59,11 @@ class GroupCrud extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         $rolesCrudAction = Action::new('roles', 'Roles')
-            ->linkToUrl($this->adminUrlGenerator
-                ->setController(RoleCrud::class)
-                ->setAction(Action::INDEX)
-                ->generateUrl()
+            ->linkToUrl(
+                $this->adminUrlGenerator
+                    ->setController(RoleCrud::class)
+                    ->setAction(Action::INDEX)
+                    ->generateUrl()
             )
             ->createAsGlobalAction();
 

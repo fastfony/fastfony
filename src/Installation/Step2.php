@@ -43,6 +43,11 @@ class Step2
         return true;
     }
 
+    /**
+     * @param array<string, string> $options
+     *
+     * @throws \Exception
+     */
     private function runCommand(string $command, array $options = []): void
     {
         $application = new Application($this->kernel);

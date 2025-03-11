@@ -12,6 +12,9 @@ use Symfony\Component\Validator\Constraints\Email;
 
 class LoginFormType extends AbstractType
 {
+    /**
+     * @param array<string, mixed> $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder

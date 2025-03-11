@@ -20,12 +20,15 @@ class JsonFormType extends AbstractType
     ) {
     }
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->addModelTransformer(
                 new CallbackTransformer(
-                    function ($value): string {
+                    static function ($value): string {
                         if (null === $value) {
                             return '';
                         }
@@ -33,7 +36,7 @@ class JsonFormType extends AbstractType
                         // transform the array to a json string
                         return json_encode($value, \JSON_PRETTY_PRINT);
                     },
-                    function ($value): ?array {
+                    static function ($value): ?array {
                         if (null === $value) {
                             return null;
                         }

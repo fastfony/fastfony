@@ -6,7 +6,7 @@ namespace App\Repository\User;
 
 use App\Entity\User\Group;
 use App\Entity\User\User;
-use App\Repository\SaveAndRemoveMethodTrait;
+use App\Repository\SaveAndRemoveMethod;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\EntityNotFoundException;
 use Doctrine\Persistence\ManagerRegistry;
@@ -16,7 +16,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class UserRepository extends ServiceEntityRepository
 {
-    use SaveAndRemoveMethodTrait;
+    use SaveAndRemoveMethod;
 
     public function __construct(ManagerRegistry $registry)
     {

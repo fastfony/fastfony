@@ -28,7 +28,8 @@ class Mailer
             ->from('noreply@'.$request->getHost())
             ->to('install@fastfony.com')
             ->subject('Fastfony install test email')
-            ->text('This is a test email. Fastfony is installed on '.gethostname().' in '.getcwd().' and the host is '.$request->getHost());
+            ->text('This is a test email. Fastfony is installed on '
+                .gethostname().' in '.getcwd().' and the host is '.$request->getHost());
 
         try {
             $this->mailer->send($email);

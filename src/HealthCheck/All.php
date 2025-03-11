@@ -20,6 +20,9 @@ class All
     ) {
     }
 
+    /**
+     * @return array<string, bool>
+     */
     public function checks(): array
     {
         $checks = [];

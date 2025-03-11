@@ -10,6 +10,9 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class Index extends AbstractController
 {
+    /**
+     * @return array<string, mixed>
+     */
     #[Route('/admin/parameters', name: 'admin_parameters')]
     #[Template('admin/parameters/index.html.twig')]
     public function __invoke(

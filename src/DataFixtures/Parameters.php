@@ -35,6 +35,9 @@ class Parameters extends Fixture implements FixtureGroupInterface
         $manager->flush();
     }
 
+    /**
+     * @return array<string>
+     */
     public static function getGroups(): array
     {
         return [
@@ -43,7 +46,7 @@ class Parameters extends Fixture implements FixtureGroupInterface
         ];
     }
 
-    private function createParameters(ObjectManager $manager): void
+    private function createParameterCategories(ObjectManager $manager): void
     {
         foreach (self::PARAMETER_CATEGORIES as $category) {
             $parameterCategory = (new ParameterCategory())
@@ -54,7 +57,10 @@ class Parameters extends Fixture implements FixtureGroupInterface
                 $parameterCategory
             );
         }
+    }
 
+    private function createParameters(ObjectManager $manager): void
+    {
         $domain = $this->requestStack->getMainRequest()?->getHost() ?? 'domain.tld';
         $parameters = [
             'MAILER_SENDER' => [
@@ -95,7 +101,7 @@ class Parameters extends Fixture implements FixtureGroupInterface
                 ),
             ],
             'BACKGROUND_LOGIN_IMAGE_URL' => [
-                'value' => 'https://images.unsplash.com/photo-1496917756835-20cb06e75b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1908&q=80',
+                'value' => 'https://images.unsplash.com/photo-1496917756835-20cb06e75b4e',
                 'type' => 'url',
                 'label' => 'Background Image URL',
                 'help' => 'An URL with https://',

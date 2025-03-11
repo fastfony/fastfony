@@ -10,6 +10,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class RegisterFormType extends AbstractType
 {
+    /**
+     * @param array<string, mixed> $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder

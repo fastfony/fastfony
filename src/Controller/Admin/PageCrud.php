@@ -10,6 +10,7 @@ use App\Entity\Page\Page;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
@@ -40,14 +41,15 @@ class PageCrud extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         $viewLogEntriesAction = Action::new('viewLogEntries', 'View Log Entries')
-            ->linkToUrl(function (Page $entity) {
-                return $this->adminUrlGenerator
-                    ->setController(PageLogEntryCrud::class)
-                    ->setAction(Action::INDEX)
-                    ->set('filters[objectId][comparison]', '=')
-                    ->set('filters[objectId][value]', $entity->getId())
-                    ->generateUrl();
-            }
+            ->linkToUrl(
+                function (Page $entity) {
+                    return $this->adminUrlGenerator
+                        ->setController(PageLogEntryCrud::class)
+                        ->setAction(Action::INDEX)
+                        ->set('filters[objectId][comparison]', '=')
+                        ->set('filters[objectId][value]', $entity->getId())
+                        ->generateUrl();
+                }
             )
             // https://github.com/EasyCorp/EasyAdminBundle/issues/6652
             // We use AdminUrlGenerator instead of directly using the route name
@@ -66,7 +68,7 @@ class PageCrud extends AbstractCrudController
         ;
 
         $viewAction = Action::new('view', 'View or preview')
-            ->linkToRoute('page_show', function (Page $page): array {
+            ->linkToRoute('page_show', static function (Page $page): array {
                 return ['pageSlug' => $page->getSlug()];
             })
             ->setIcon('fa fa-eye')
@@ -84,6 +86,9 @@ class PageCrud extends AbstractCrudController
         return $actions;
     }
 
+    /**
+     * @return iterable<FieldInterface>
+     */
     public function configureFields(string $pageName): iterable
     {
         return [

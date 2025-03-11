@@ -17,6 +17,9 @@ class Pages extends Fixture implements FixtureGroupInterface
         $manager->flush();
     }
 
+    /**
+     * @return array<string>
+     */
     public static function getGroups(): array
     {
         return [

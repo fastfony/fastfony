@@ -12,6 +12,9 @@ use Doctrine\Persistence\ObjectManager;
 
 class Users extends Fixture implements FixtureGroupInterface
 {
+    /**
+     * @return array<string>
+     */
     public static function getGroups(): array
     {
         return [AppFixtures::GROUP_TEST];

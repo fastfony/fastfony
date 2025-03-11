@@ -61,6 +61,11 @@ class LoginLink
         return \count($this->getUserRecentlyAskLoginTime($user)) >= self::MAX_ASK;
     }
 
+    /**
+     * @throws \Psr\Cache\InvalidArgumentException
+     *
+     * @return array<int>
+     */
     private function getUserRecentlyAskLoginTime(User $user): array
     {
         $this->cache->prune();

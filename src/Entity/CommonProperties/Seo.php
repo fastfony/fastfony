@@ -18,6 +18,9 @@ trait Seo
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $metaDescription = null;
 
+    /**
+     * @var array<string, string>|null
+     */
     #[Gedmo\Versioned]
     #[ORM\Column(nullable: true)]
     private ?array $richSnippets = null;
@@ -46,6 +49,9 @@ trait Seo
         return $this;
     }
 
+    /**
+     * @return array<string, string>|null
+     */
     public function getRichSnippets(): ?array
     {
         return $this->richSnippets;

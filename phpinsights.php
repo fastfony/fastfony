@@ -50,7 +50,7 @@ return [
     */
 
     'exclude' => [
-        //  'path/to/directory-or-file'
+        'src/DataFixtures',
     ],
 
     'add' => [
@@ -62,12 +62,30 @@ return [
     'remove' => [
         SlevomatCodingStandard\Sniffs\ControlStructures\DisallowYodaComparisonSniff::class,
         NunoMaduro\PhpInsights\Domain\Sniffs\ForbiddenSetterSniff::class,
+        SlevomatCodingStandard\Sniffs\Classes\ForbiddenPublicPropertySniff::class,
+        PHP_CodeSniffer\Standards\Generic\Sniffs\CodeAnalysis\EmptyStatementSniff::class,
+        SlevomatCodingStandard\Sniffs\Functions\UnusedParameterSniff::class,
+        NunoMaduro\PhpInsights\Domain\Insights\ForbiddenNormalClasses::class,
+        NunoMaduro\PhpInsights\Domain\Insights\ForbiddenTraits::class,
+        SlevomatCodingStandard\Sniffs\TypeHints\DisallowMixedTypeHintSniff::class,
     ],
 
     'config' => [
-        //  ExampleInsight::class => [
-        //      'key' => 'value',
-        //  ],
+        NunoMaduro\PhpInsights\Domain\Insights\CyclomaticComplexityIsHigh::class => [
+            'maxComplexity' => 15,
+        ],
+        SlevomatCodingStandard\Sniffs\Functions\FunctionLengthSniff::class => [
+            'maxLinesLength' => 50,
+            'maxLinesLimit' => 50,
+        ],
+        PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff::class => [
+            'lineLimit' => 120,
+            'absoluteLineLimit' => 120,
+        ],
+        SlevomatCodingStandard\Sniffs\Files\LineLengthSniff::class => [
+            'lineLimit' => 120,
+            'absoluteLineLimit' => 120,
+        ],
     ],
 
     /*

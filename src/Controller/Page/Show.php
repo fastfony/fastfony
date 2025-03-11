@@ -13,10 +13,19 @@ use Symfony\Component\Routing\Requirement\Requirement;
 
 class Show extends AbstractController
 {
-    #[Route('/pages/{pageSlug}', name: 'page_show', requirements: ['slug' => Requirement::ASCII_SLUG], methods: ['GET'])]
+    /**
+     * @return array<string, mixed>
+     */
+    #[Route(
+        '/pages/{pageSlug}',
+        name: 'page_show',
+        requirements: ['slug' => Requirement::ASCII_SLUG],
+        methods: ['GET'],
+    )]
     #[Template('pages/show.html.twig')]
     public function __invoke(
-        #[MapEntity(mapping: ['pageSlug' => 'slug'])] Page $page,
+        #[MapEntity(mapping: ['pageSlug' => 'slug'])]
+        Page $page,
     ): array {
         if (!$page->isEnabled() && !$this->isGranted('ROLE_ADMIN')) {
             throw $this->createNotFoundException();

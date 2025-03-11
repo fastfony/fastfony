@@ -11,16 +11,19 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class EditorjsFormType extends AbstractType
 {
+    /**
+     * @param array<string, mixed> $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->addModelTransformer(
                 new CallbackTransformer(
-                    function ($value): string {
+                    static function ($value): string {
                         // transform the array to a json string
                         return json_encode($value);
                     },
-                    function ($value): ?array {
+                    static function ($value): ?array {
                         // transform the json string to a php array
                         return json_decode($value, true);
                     }

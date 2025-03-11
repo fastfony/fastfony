@@ -12,6 +12,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard as EasyAdminDashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
+use EasyCorp\Bundle\EasyAdminBundle\Contracts\Menu\MenuItemInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\HttpFoundation\Response;
@@ -54,6 +55,9 @@ class Dashboard extends AbstractDashboardController
         ;
     }
 
+    /**
+     * @return iterable<MenuItemInterface>
+     */
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('menu.dashboard', 'fa fa-home');
