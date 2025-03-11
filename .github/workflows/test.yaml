@@ -54,3 +54,4 @@ jobs:
 
       - name: Run PHP Insights
         run: vendor/bin/phpinsights --no-interaction --ansi
+        

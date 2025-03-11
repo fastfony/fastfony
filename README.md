@@ -1,5 +1,7 @@
 # Fastfony : pragmatic boilerplate and starter kit for fastly develop a project or launch a SaaS idea with Symfony 7
 
+<a href="https://github.com/fastfony/fastfony/actions/workflows/test.yaml"><img src="https://github.com/fastfony/fastfony/actions/workflows/test.yaml/badge.svg" alt="Unit & Functional Tests"></a>
+
 ## Getting Started
 
 1. If not already, [install PHP](https://www.php.net/manual/en/install.php), [install Composer](https://getcomposer.org) [install Symfony CLI](https://symfony.com/download), [install Node](https://nodejs.org/en/download), [install Docker Compose](https://docs.docker.com/compose/install/) and [install Taskfile](https://taskfile.dev/installation/)
