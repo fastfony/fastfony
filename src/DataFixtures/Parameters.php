@@ -31,6 +31,7 @@ class Parameters extends Fixture implements FixtureGroupInterface
 
     public function load(ObjectManager $manager): void
     {
+        $this->createParameterCategories($manager);
         $this->createParameters($manager);
         $manager->flush();
     }

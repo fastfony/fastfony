@@ -36,7 +36,7 @@ class JsonFormType extends AbstractType
                         // transform the array to a json string
                         return json_encode($value, \JSON_PRETTY_PRINT);
                     },
-                    static function ($value): ?array {
+                    function ($value): ?array {
                         if (null === $value) {
                             return null;
                         }
