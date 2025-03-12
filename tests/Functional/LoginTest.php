@@ -58,13 +58,13 @@ class LoginTest extends WebTestCase
         // It's a success and an email is sent
         $this->assertSelectorExists('svg.size-12.text-green-600');
         $this->assertEmailCount(1);
+        // Here 3 emails are sent, the limit is reached
 
         // Try to spam the login form request
-        // It's a real then fake success and only 3 emails has sent
         for ($i = 0; $i < 10; ++$i) {
             $this->sendFormLoginLink('superadmin@fastfony.com');
-            $this->assertSelectorExists('svg.size-12.text-green-600');
-            $this->assertEmailCount($i < 1 ? 1 : 0); // After 3 emails, no more email is sent
+            $this->assertSelectorExists('svg.size-12.text-green-600'); // Fake success
+            $this->assertEmailCount(0); // After 3 emails, no more email is sent
         }
     }
 

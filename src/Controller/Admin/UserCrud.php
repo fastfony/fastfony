@@ -92,7 +92,7 @@ class UserCrud extends AbstractCrudController
         ;
     }
 
-    #[AdminAction(routePath: '/send-login-link', routeName: 'send_login_link')]
+    #[AdminAction(routePath: '/{entityId}/send-login-link', routeName: 'send_login_link')]
     public function sendLoginLinkEmail(
         AdminContext $adminContext,
         LoginLink $loginLink,
