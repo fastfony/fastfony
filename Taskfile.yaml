@@ -64,3 +64,13 @@ tasks:
         cmds:
             - task: setup_tests
             - XDEBUG_MODE=coverage php bin/phpunit --coverage-html=docs/coverage
+
+    phpstan:
+        desc: Run PHPStan
+        cmds:
+            - vendor/bin/phpstan analyse src tests
+                
+    phpinsights:
+        desc: Run PHP Insights
+        cmds:
+            - vendor/bin/phpinsights
