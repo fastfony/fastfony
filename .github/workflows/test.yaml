@@ -54,3 +54,19 @@ jobs:
 
             - name: Run PHP Insights
               run: vendor/bin/phpinsights --no-interaction --ansi
+    
+            - name: Make code coverage badge
+              uses: timkrase/phpunit-coverage-badge@v1.2.1
+              with:
+                  coverage_badge_path: output/coverage.svg
+                  report: output/coverage.xml
+                  push_badge: false
+
+            - name: Git push to image-data branch
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  publish_dir: ./output
+                  publish_branch: badges
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  user_name: 'github-actions[bot]'
+                  user_email: 'github-actions[bot]@users.noreply.github.com'

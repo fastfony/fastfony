@@ -1,6 +1,7 @@
 # Fastfony : pragmatic boilerplate for fastly develop a project with Symfony 7
 
 <a href="https://github.com/fastfony/fastfony/actions/workflows/test.yaml"><img src="https://github.com/fastfony/fastfony/actions/workflows/test.yaml/badge.svg" alt="Unit & Functional Tests"></a>
+[![Test Coverage](https://raw.githubusercontent.com/fastfony/fastfony/badges/output/coverage.svg)](https://github.com/fastfony/fastfony)
 
 ## Getting Started
 
