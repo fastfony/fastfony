@@ -40,10 +40,10 @@ If you want to change the domain name, you can edit the `.symfony.local.yaml` fi
 
 - Symfony 7.2
 - API Platform 4.1
-- EasyAdmin 4 (with Bootstrap 5) 
+- EasyAdmin 4 (with Bootstrap 5)
 - Vue.js 3 & Bootstrap 5 for EasyAdmin & Admin
 - Vue.js 3 & Tailwind CSS 4 & DaisyUI 5 for Front (and you can use also React!)
-- Webpack Encore 
+- Webpack Encore
 - Taskfile for easy install & start commands (just `task start` and develop)
 - GrumPHP for manage pre-hook commit
 - PHPUnit and its unit and functional tests

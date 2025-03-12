@@ -1,57 +1,56 @@
 name: tests
 
 on:
-  push:
-    branches:
-      - '**'
-  pull_request:
-    branches:
-      - '**'
+    push:
+        branches:
+            - '**'
+    pull_request:
+        branches:
+            - '**'
 
 jobs:
-  tests:
-    runs-on: ubuntu-latest
-    
-    services:
-      mailpit:
-        image: axllent/mailpit
-        ports:
-          - 1025:1025
+    tests:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        services:
+            mailpit:
+                image: axllent/mailpit
+                ports:
+                    - 1025:1025
 
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.4
-          extensions: mbstring, intl, pdo_sqlite, xdebug
-          coverage: xdebug
-          
-      - name: Install Task
-        uses: arduino/setup-task@v2
-        with:
-          version: 3.x
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+            - name: Set up PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: 8.4
+                  extensions: mbstring, intl, pdo_sqlite, xdebug
+                  coverage: xdebug
 
-      - name: Nodejs install
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - run: npm install
+            - name: Install Task
+              uses: arduino/setup-task@v2
+              with:
+                  version: 3.x
 
-      - name: Npm build
-        run: npm run build
+            - name: Install dependencies
+              run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
 
-      - name: Run PHPUnit with coverage
-        run: task coverage
+            - name: Nodejs install
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+            - run: npm install
 
-      - name: Run PHPStan
-        run: vendor/bin/phpstan analyse
+            - name: Npm build
+              run: npm run build
 
-      - name: Run PHP Insights
-        run: vendor/bin/phpinsights --no-interaction --ansi
-        
+            - name: Run PHPUnit with coverage
+              run: task coverage
+
+            - name: Run PHPStan
+              run: vendor/bin/phpstan analyse
+
+            - name: Run PHP Insights
+              run: vendor/bin/phpinsights --no-interaction --ansi

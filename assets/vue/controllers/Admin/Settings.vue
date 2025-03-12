@@ -42,7 +42,11 @@ const patchParameter = (parameter, event) => {
 
 <template>
   <div class="row">
-    <div class="col-12 col-md-6 col-xxl-3" v-for="(parameters, category) in parameters" :key="category">
+    <div
+      class="col-12 col-md-6 col-xxl-3"
+      v-for="(parameters, category) in parameters"
+      :key="category"
+    >
       <div class="card mb-4">
         <div class="card-header">
           {{ $t(category) }}
@@ -51,8 +55,8 @@ const patchParameter = (parameter, event) => {
           <li class="list-group-item" v-for="parameter in parameters">
             <div class="field-text form-group">
               <label class="form-control-label">{{
-                  $t(parameter.label) ?? $t(parameter.key)
-                }}</label>
+                $t(parameter.label) ?? $t(parameter.key)
+              }}</label>
               <div class="form-widget">
                 <select
                   v-if="'bool' === parameter.type"
@@ -71,7 +75,7 @@ const patchParameter = (parameter, event) => {
                   required
                   @change="patchParameter(parameter, $event)"
                 />
-                <small class="form-text form-help" v-if="parameter.help" >
+                <small class="form-text form-help" v-if="parameter.help">
                   {{ $t(parameter.help) }}
                 </small>
               </div>
