@@ -32,15 +32,23 @@ If you want to change the domain name, you can edit the `.symfony.local.yaml` fi
 - Login form with email that send a login link by email
 - Users management with Profile (and Groups, Roles)
 - Settings panel
-- Toasts notifications (flash messages from Symfony and others with [vue-toastification](https://vue-toastification.maronato.dev/))
 - DaisyUI themes chooser
-- API Platform 4
-- EasyAdmin (with Bootstrap 5) and CRUD controllers for : Parameters, Parameter categories etc...
-- Webpack Encore, Vue.js 3, Tailwind CSS 4 & DaisyUI 5
+- Toasts notifications (flash messages from Symfony and others with [vue-toastification](https://vue-toastification.maronato.dev/))
+- CRUD controllers for : Parameters, Parameter categories etc...
+
+## Technical stack
+
+- Symfony 7.2
+- API Platform 4.1
+- EasyAdmin 4 (with Bootstrap 5) 
+- Vue.js 3 & Bootstrap 5 for EasyAdmin & Admin
+- Vue.js 3 & Tailwind CSS 4 & DaisyUI 5 for Front (and you can use also React!)
+- Webpack Encore 
 - Taskfile for easy install & start commands (just `task start` and develop)
 - GrumPHP for manage pre-hook commit
-- PHPUnit and its tests
-- phpstan (level 5, [symfony simplify rules](https://github.com/symplify/phpstan-rules) and [symfony extension](https://github.com/phpstan/phpstan-symfony)), phpinsights
+- PHPUnit and its unit and functional tests
+- PHPStan (level 5, [symfony simplify rules](https://github.com/symplify/phpstan-rules) and [symfony extension](https://github.com/phpstan/phpstan-symfony))
+- PHP Insights
 
 ## Docs
 

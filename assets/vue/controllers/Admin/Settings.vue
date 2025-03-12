@@ -41,42 +41,44 @@ const patchParameter = (parameter, event) => {
 </script>
 
 <template>
-  <div class="grid xl:grid-cols-3 gap-4">
-    <fieldset
-      v-for="(parameters, category) in parameters"
-      :key="category"
-      class="fieldset bg-base-200 border border-base-300 p-5 rounded-box"
-    >
-      <legend class="fieldset-legend">{{ $t(category) }}</legend>
-
-      <div
-        v-for="parameter in parameters"
-        class="form-control flex flex-col gap-1 my-2"
-      >
-        <label class="fieldset-label text-sm font-semibold mb-2">{{
-          $t(parameter.label) ?? $t(parameter.key)
-        }}</label>
-        <select
-          v-if="'bool' === parameter.type"
-          v-model="parameter.value"
-          class="select select-bordered w-full validator"
-          @change="patchParameter(parameter, $event)"
-        >
-          <option value="1">{{ $t('Yes') }}</option>
-          <option value="0">{{ $t('No') }}</option>
-        </select>
-        <input
-          v-else
-          v-model="parameter.value"
-          :type="parameter.type"
-          class="input w-full validator"
-          required
-          @change="patchParameter(parameter, $event)"
-        />
-        <p v-if="parameter.help" class="text-info ms-3">
-          {{ $t(parameter.help) }}
-        </p>
+  <div class="row">
+    <div class="col-12 col-md-6 col-xxl-3" v-for="(parameters, category) in parameters" :key="category">
+      <div class="card mb-4">
+        <div class="card-header">
+          {{ $t(category) }}
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" v-for="parameter in parameters">
+            <div class="field-text form-group">
+              <label class="form-control-label">{{
+                  $t(parameter.label) ?? $t(parameter.key)
+                }}</label>
+              <div class="form-widget">
+                <select
+                  v-if="'bool' === parameter.type"
+                  v-model="parameter.value"
+                  class="form-select"
+                  @change="patchParameter(parameter, $event)"
+                >
+                  <option value="1">{{ $t('Yes') }}</option>
+                  <option value="0">{{ $t('No') }}</option>
+                </select>
+                <input
+                  v-else
+                  v-model="parameter.value"
+                  :type="parameter.type"
+                  class="form-control"
+                  required
+                  @change="patchParameter(parameter, $event)"
+                />
+                <small class="form-text form-help" v-if="parameter.help" >
+                  {{ $t(parameter.help) }}
+                </small>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
-    </fieldset>
+    </div>
   </div>
 </template>

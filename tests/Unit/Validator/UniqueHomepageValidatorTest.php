@@ -39,11 +39,17 @@ class UniqueHomepageValidatorTest extends TestCase
 
         $uniqueHomepageValidator->validate($value, $constraint);
 
-        self::expectException(UnexpectedValueException::class);
+        $this->expectException(UnexpectedValueException::class);
         $uniqueHomepageValidator->validate(new Parameter(), $constraint);
+    }
+
+    public function testFailedValidate(): void
+    {
+        $pageRepository = $this->createMock(PageRepository::class);
+        $uniqueHomepageValidator = new UniqueHomepageValidator($pageRepository);
 
         $this->expectException(UnexpectedTypeException::class);
         $otherConstraint = new ValidJson();
-        $uniqueHomepageValidator->validate($value, $otherConstraint);
+        $uniqueHomepageValidator->validate(new Page(), $otherConstraint);
     }
 }
