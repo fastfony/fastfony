@@ -128,7 +128,7 @@
         "symfony/phpunit-bridge": "^7.2",
         "symfony/stopwatch": "7.2.*",
         "symfony/web-profiler-bundle": "7.2.*",
-        "symplify/phpstan-rules": "^14.3.5",
+        "symplify/phpstan-rules": "^14.4.1",
         "vincentlanglet/twig-cs-fixer": "^3.5.1"
     }
 }
