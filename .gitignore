@@ -32,6 +32,7 @@ assets/vue/controllers/Test.vue
 .task/
 
 docs/coverage/
+output/
 
 ###> phpstan/phpstan ###
 phpstan.neon
