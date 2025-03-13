@@ -54,7 +54,7 @@ jobs:
 
             - name: Run PHP Insights
               run: vendor/bin/phpinsights --no-interaction --ansi
-    
+
             - name: Make code coverage badge
               uses: timkrase/phpunit-coverage-badge@v1.2.1
               with:
