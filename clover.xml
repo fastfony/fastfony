@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1741817985">
-  <project timestamp="1741817985">
+<coverage generated="1741851670">
+  <project timestamp="1741851670">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Editorjs.php">
       <class name="App\Admin\Field\Editorjs" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
@@ -1012,23 +1012,27 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Form/Type/EditorjsFormType.php">
       <class name="App\Form\Type\EditorjsFormType" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="14" coveredelements="14"/>
+        <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="18" coveredelements="18"/>
       </class>
-      <line num="17" type="method" name="buildForm" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="19" type="stmt" count="2"/>
+      <line num="18" type="method" name="buildForm" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="20" type="stmt" count="2"/>
       <line num="21" type="stmt" count="2"/>
       <line num="22" type="stmt" count="2"/>
-      <line num="24" type="stmt" count="2"/>
+      <line num="23" type="stmt" count="2"/>
       <line num="25" type="stmt" count="2"/>
       <line num="26" type="stmt" count="2"/>
-      <line num="28" type="stmt" count="2"/>
+      <line num="27" type="stmt" count="2"/>
       <line num="29" type="stmt" count="2"/>
       <line num="30" type="stmt" count="2"/>
       <line num="31" type="stmt" count="2"/>
-      <line num="34" type="method" name="getParent" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="36" type="stmt" count="2"/>
-      <metrics loc="39" ncloc="34" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="14" coveredelements="14"/>
+      <line num="32" type="stmt" count="2"/>
+      <line num="35" type="method" name="configureOptions" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="37" type="stmt" count="2"/>
+      <line num="38" type="stmt" count="2"/>
+      <line num="39" type="stmt" count="2"/>
+      <line num="42" type="method" name="getParent" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="44" type="stmt" count="2"/>
+      <metrics loc="47" ncloc="42" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="18" coveredelements="18"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Form/Type/JsonFormType.php">
       <class name="App\Form\Type\JsonFormType" namespace="global">
@@ -1384,6 +1388,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="62" loc="3246" ncloc="3066" classes="60" methods="207" coveredmethods="201" conditionals="0" coveredconditionals="0" statements="804" coveredstatements="778" elements="1011" coveredelements="979"/>
+    <metrics files="62" loc="3254" ncloc="3074" classes="60" methods="208" coveredmethods="202" conditionals="0" coveredconditionals="0" statements="807" coveredstatements="781" elements="1015" coveredelements="983"/>
   </project>
 </coverage>
