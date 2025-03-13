@@ -18,7 +18,7 @@ class Editorjs implements FieldInterface
             ->setProperty($propertyName)
             ->setLabel($label)
             ->setFormType(EditorjsFormType::class)
-            // required also the easyadmin entry in webpack.config.js
+            // required also the admin entry in webpack.config.js
         ;
     }
 }

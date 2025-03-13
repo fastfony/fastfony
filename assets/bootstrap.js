@@ -1,5 +1,4 @@
 import './js/loader.js';
-import './js/theme.js';
 
 /* Symfony ux-stimulus */
 import { startStimulusApp } from '@symfony/stimulus-bridge';
