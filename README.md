@@ -2,6 +2,7 @@
 
 <a href="https://github.com/fastfony/fastfony/actions/workflows/test.yaml"><img src="https://github.com/fastfony/fastfony/actions/workflows/test.yaml/badge.svg" alt="Unit & Functional Tests"></a>
 [![Test Coverage](https://raw.githubusercontent.com/fastfony/fastfony/refs/heads/badges/coverage.svg)](https://github.com/fastfony/fastfony)
+[![Wakapi.dev](https://wakapi.dev/api/badge/neothone/interval:any/project:fastfony)](https://github.com/fastfony/fastfony)
 
 ## Getting Started
 
