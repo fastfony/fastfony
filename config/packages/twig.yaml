@@ -3,7 +3,7 @@ twig:
     globals:
         company_name: '%env(database:COMPANY_NAME)%'
         company_icon_filepath: '%env(database:COMPANY_ICON_FILEPATH)%'
-        background_login_image_url: '%env(database:BACKGROUND_LOGIN_IMAGE_URL)%'
+        registration_background_image_url: '%env(database:REGISTRATION_BACKGROUND_IMAGE_URL)%'
         registration_enabled: '%env(default:default_registration_enabled:bool:database:REGISTRATION_ENABLED)%'
 
 when@test:

@@ -15,11 +15,11 @@ class Parameters extends Fixture implements FixtureGroupInterface
 {
     private const EMAIL_PARAMETER_CATEGORY = 'Email';
     private const COMPANY_PARAMETER_CATEGORY = 'Company';
-    private const LOGIN_PARAMETER_CATEGORY = 'Login';
+    private const REGISTER_PARAMETER_CATEGORY = 'Registration';
     private const PARAMETER_CATEGORIES = [
         self::EMAIL_PARAMETER_CATEGORY,
         self::COMPANY_PARAMETER_CATEGORY,
-        self::LOGIN_PARAMETER_CATEGORY,
+        self::REGISTER_PARAMETER_CATEGORY,
     ];
 
     private const PARAMETER_CATEGORY_REFERENCE_SUFFIX = '_PARAMETER_CATEGORY_REFERENCE';
@@ -97,17 +97,17 @@ class Parameters extends Fixture implements FixtureGroupInterface
                 'type' => 'bool',
                 'label' => 'Registration authorized',
                 'category' => $this->getReference(
-                    self::LOGIN_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
+                    self::REGISTER_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
                     ParameterCategory::class
                 ),
             ],
-            'BACKGROUND_LOGIN_IMAGE_URL' => [
+            'REGISTRATION_BACKGROUND_IMAGE_URL' => [
                 'value' => 'https://images.unsplash.com/photo-1496917756835-20cb06e75b4e',
                 'type' => 'url',
-                'label' => 'Background Image URL',
+                'label' => 'Background image URL',
                 'help' => 'An URL with https://',
                 'category' => $this->getReference(
-                    self::LOGIN_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
+                    self::REGISTER_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
                     ParameterCategory::class
                 ),
             ],
