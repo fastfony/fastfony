@@ -31,7 +31,6 @@ class Step3
         $installationForm->handleRequest($request);
 
         if ($installationForm->getData()['autoGenerateLicenceKey']) {
-            // TODO : call the licence key generator
             $installationForm->getData()['autoGenerateLicenceKey'] =
                 $this->licenceChecker->generate($installationForm->getData()['email']);
         }

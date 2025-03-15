@@ -58,6 +58,11 @@ class Fastfony extends AbstractDataCollector
         return !empty($this->data['licenceKey']) && $this->data['licenceKeyValidity'];
     }
 
+    public function getName(): string
+    {
+        return 'fastfony';
+    }
+
     private function checkLicenceKeyValidity(?string $licenceKey): bool
     {
         if (empty($licenceKey)) {
@@ -87,10 +92,5 @@ class Fastfony extends AbstractDataCollector
         }
 
         return $versionState;
-    }
-
-    public function getName(): string
-    {
-        return 'fastfony';
     }
 }
