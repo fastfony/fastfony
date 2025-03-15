@@ -22,6 +22,11 @@ class FastfonyTest extends TestCase
         $this->assertEquals(Kernel::FF_VERSION, $fastfony->getFastfonyVersion());
     }
 
+    public function testGetTemplate(): void
+    {
+        $this->assertEquals('data_collector/fastfony.html.twig', Fastfony::getTemplate());
+    }
+
     public function testGetFastfonyState(): void
     {
         $fastfony = $this->getFastfony(null);

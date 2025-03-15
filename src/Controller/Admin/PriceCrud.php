@@ -4,18 +4,20 @@ declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
-use App\Entity\User\Profile;
+use App\Entity\Product\Price;
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CurrencyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class ProfileCrud extends AbstractCrudController
+class PriceCrud extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Profile::class;
+        return Price::class;
     }
 
     /**
@@ -25,9 +27,11 @@ class ProfileCrud extends AbstractCrudController
     {
         return [
             FormField::addColumn(8),
-            TextField::new('firstName'),
-            TextField::new('lastName'),
-            TelephoneField::new('phoneNumber'),
+            TextField::new('id')
+                ->setDisabled(true),
+            NumberField::new('unitAmount'),
+            CurrencyField::new('currency'),
+            BooleanField::new('enabled'),
         ];
     }
 }

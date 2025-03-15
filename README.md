@@ -30,6 +30,7 @@ If you want to change the domain name, you can edit the `.symfony.local.yaml` fi
 ## Features
 
 - Simple pages SEO friendly (front and backoffice)
+- Simple products with prices SEO ready (backoffice only)
 - Register and received a login link by email
 - Login form with email that send a login link by email
 - Users management with Profile (and Groups, Roles)

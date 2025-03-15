@@ -31,7 +31,7 @@ class Step3
         $installationForm->handleRequest($request);
 
         if ($installationForm->getData()['autoGenerateLicenceKey']) {
-            $installationForm->getData()['autoGenerateLicenceKey'] =
+            $installationForm->getData()['licenceKey'] =
                 $this->licenceChecker->generate($installationForm->getData()['email']);
         }
 
