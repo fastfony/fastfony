@@ -26,14 +26,14 @@ class FastfonyTest extends TestCase
     {
         $fastfony = $this->getFastfony(null);
 
-        $this->assertIsString($fastfony->getFastfonyState());
+        $this->assertContains($fastfony->getFastfonyState(), ['eol', 'eom', 'dev', 'stable']);
     }
 
     public function testGetFastfonyVersion(): void
     {
         $fastfony = $this->getFastfony(null);
 
-        $this->assertIsString($fastfony->getFastfonyVersion());
+        $this->assertEquals(Kernel::FF_VERSION, $fastfony->getFastfonyVersion());
     }
 
     public function testGetLicenceKey(): void

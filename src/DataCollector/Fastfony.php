@@ -79,6 +79,7 @@ class Fastfony extends AbstractDataCollector
             $versionState = 'eol';
         } elseif ($now > $eom) {
             $versionState = 'eom';
+        /* @phpstan-ignore notIdentical.alwaysTrue */
         } elseif ('' !== Kernel::FF_EXTRA_VERSION) {
             $versionState = 'dev';
         } else {
