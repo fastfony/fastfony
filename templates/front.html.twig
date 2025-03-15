@@ -16,10 +16,10 @@
                         href="{{ path('homepage') }}"
                         class="group inline-flex items-center gap-2 text-lg font-bold tracking-wide"
                     >
-                        {% if company_icon_filepath %}
-                            <img class="h-8 w-auto" src="{{ asset(company_icon_filepath) }}" alt="{{ company_name }}">
+                        {% if app_icon_filepath %}
+                            <img class="h-8 w-auto" src="{{ asset(app_icon_filepath) }}" alt="{{ app_name }}">
                         {% endif %}
-                        <span>{{ company_name }}</span>
+                        <span>{{ app_name }}</span>
                     </a>
                 </div>
                 <nav class="space-x-3 md:space-x-6">

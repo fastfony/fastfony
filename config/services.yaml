@@ -4,7 +4,7 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
-    default_company_name: 'Fastfony'
+    default_app_name: 'Fastfony'
     default_registration_enabled: true
 
 services:
@@ -13,7 +13,7 @@ services:
         autowire: true # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
         bind:
-            $companyName: '%env(default:default_company_name:database:COMPANY_NAME)%'
+            $appName: '%env(default:default_app_name:database:APP_NAME)%'
             $registrationEnabled: '%env(default:default_registration_enabled:bool:database:REGISTRATION_ENABLED)%'
 
     # makes classes in src/ available to be used as services
@@ -25,5 +25,13 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\DataCollector\Fastfony:
+        arguments:
+            $licenceKey: '%env(database:FASTFONY_LICENCE_KEY)%'
+        tags:
+            -
+                name: data_collector
+                id: 'fastfony'
+                
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

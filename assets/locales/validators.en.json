@@ -1,4 +1,5 @@
 {
+  "The licence key is unknow or unvalid.": "The licence key is unknow or unvalid.",
   "The role name must start with 'ROLE_'.": "The role name must start with 'ROLE_'.",
   "The string contains a syntax error and it is not encodable to JSON.": "The string contains a syntax error and it is not encodable to JSON.",
   "There can only be one homepage.": "There can only be one homepage."

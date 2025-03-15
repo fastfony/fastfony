@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Form\LoginFormType;
+use App\Form\InstallationFormType;
 use App\HealthCheck\All;
 use App\Installation\Step2;
 use App\Installation\Step3;
@@ -48,7 +48,7 @@ class Installation extends AbstractController
             // If the database is not created, a "normal" exception is thrown, we catch and continue
         }
 
-        $loginForm = $this->createForm(LoginFormType::class);
+        $installationForm = $this->createForm(InstallationFormType::class);
         // If step 2 and all checks are passed
         if (2 === $step && !$this->allHealthChecks->hasPreviouslyErrors()) {
             if (!$this->step2->do()) {
@@ -59,8 +59,8 @@ class Installation extends AbstractController
 
         // If step 3 and form is submitted
         if (3 === $step && $request->isMethod('POST')) {
-            $step3 = $this->step3->do($loginForm, $request);
-            if ($step3 && $loginForm->isValid()) {
+            $step3 = $this->step3->do($installationForm, $request);
+            if ($step3 && $installationForm->isValid()) {
                 return $this->render(
                     'installation/step'.$step.'.html.twig',
                     [],
@@ -74,7 +74,7 @@ class Installation extends AbstractController
         return $this->render(
             'installation/step'.$step.'.html.twig',
             [
-                'login_form' => $loginForm->createView(),
+                'installation_form' => $installationForm,
             ]
         );
     }

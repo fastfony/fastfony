@@ -61,6 +61,9 @@
             "ref": "b131e6cbfe1b898a508987851963fff485986285"
         }
     },
+    "fastfony/licence-bundle": {
+        "version": "dev-main"
+    },
     "friendsofphp/php-cs-fixer": {
         "version": "3.71",
         "recipe": {

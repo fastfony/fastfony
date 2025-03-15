@@ -1,0 +1,2 @@
+fastfony_licence:
+    key: '%env(database:FASTFONY_LICENCE_KEY)%'

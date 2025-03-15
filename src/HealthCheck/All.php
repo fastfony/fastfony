@@ -9,12 +9,14 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class All
 {
     public const SENSORS = [
+        'internet',
         'database',
         'mailer',
     ];
 
     public function __construct(
         private RequestStack $requestStack,
+        private Internet $internet,
         private Database $database,
         private Mailer $mailer,
     ) {

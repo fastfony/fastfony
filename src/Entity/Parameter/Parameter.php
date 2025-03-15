@@ -58,7 +58,7 @@ class Parameter
     }
 
     #[Groups(['parameter:read'])]
-    public function getValue(): string
+    public function getValue(): ?string
     {
         return $this->traitGetValue();
     }

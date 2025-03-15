@@ -14,11 +14,11 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class Parameters extends Fixture implements FixtureGroupInterface
 {
     private const EMAIL_PARAMETER_CATEGORY = 'Email';
-    private const COMPANY_PARAMETER_CATEGORY = 'Company';
+    private const APP_PARAMETER_CATEGORY = 'App';
     private const REGISTER_PARAMETER_CATEGORY = 'Registration';
     private const PARAMETER_CATEGORIES = [
         self::EMAIL_PARAMETER_CATEGORY,
-        self::COMPANY_PARAMETER_CATEGORY,
+        self::APP_PARAMETER_CATEGORY,
         self::REGISTER_PARAMETER_CATEGORY,
     ];
 
@@ -74,21 +74,30 @@ class Parameters extends Fixture implements FixtureGroupInterface
                     ParameterCategory::class
                 ),
             ],
-            'COMPANY_ICON_FILEPATH' => [
-                'value' => '/images/Fastfony-icon.png',
+            'FASTFONY_LICENCE_KEY' => [
                 'type' => 'text',
-                'label' => 'Icon filepath',
+                'label' => 'Licence key',
+                'help' => 'Your Fastfony licence key is required to use the software. Get it on <a href="https://fastfony.com" target="_blank">fastfony.com</a>',
                 'category' => $this->getReference(
-                    self::COMPANY_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
+                    self::APP_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
                     ParameterCategory::class
                 ),
             ],
-            'COMPANY_NAME' => [
+            'APP_NAME' => [
                 'value' => 'Fastfony',
                 'type' => 'text',
                 'label' => 'Name',
                 'category' => $this->getReference(
-                    self::COMPANY_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
+                    self::APP_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
+                    ParameterCategory::class
+                ),
+            ],
+            'APP_ICON_FILEPATH' => [
+                'value' => '/images/Fastfony-icon.png',
+                'type' => 'text',
+                'label' => 'Icon filepath',
+                'category' => $this->getReference(
+                    self::APP_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
                     ParameterCategory::class
                 ),
             ],

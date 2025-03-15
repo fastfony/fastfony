@@ -4,31 +4,47 @@ declare(strict_types=1);
 
 namespace App\Installation;
 
+use App\Repository\Parameter\ParameterRepository;
 use App\Repository\User\UserRepository;
 use App\Security\LoginLink;
+use Fastfony\LicenceBundle\Security\LicenceChecker;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class Step3
 {
     public function __construct(
-        private UserRepository $userRepository,
-        private LoginLink $loginLink,
+        private readonly UserRepository $userRepository,
+        private readonly LoginLink $loginLink,
+        #[Autowire(service: 'fastfony_licence.security.licence_checker')]
+        private readonly LicenceChecker $licenceChecker,
+        private readonly ParameterRepository $parameterRepository,
     ) {
     }
 
     public function do(
-        FormInterface $loginForm,
+        FormInterface $installationForm,
         Request $request,
     ): bool {
         $success = false;
-        $loginForm->handleRequest($request);
+        $installationForm->handleRequest($request);
 
-        if ($loginForm->isSubmitted() && $loginForm->isValid()) {
+        if ($installationForm->getData()['autoGenerateLicenceKey']) {
+            // TODO : call the licence key generator
+            $installationForm->getData()['autoGenerateLicenceKey'] =
+                $this->licenceChecker->generate($installationForm->getData()['email']);
+        }
+
+        if ($installationForm->isSubmitted() && $installationForm->isValid()) {
+            $installationForm->getData()['licenceKey'];
+            $this->parameterRepository->findOneBy(['key' => 'FASTFONY_LICENCE_KEY'])
+                ->setValue($installationForm->getData()['licenceKey']);
+
             try {
                 // We create the first admin user
                 $user = $this->userRepository->createSuperAdmin(
-                    $loginForm->getData()['email'],
+                    $installationForm->getData()['email'],
                     true,
                 );
             } catch (\Exception $e) {

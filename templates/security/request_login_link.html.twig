@@ -6,9 +6,9 @@
         <div class="justify-center items-center w-full card lg:flex max-w-md bg-base-200 mb-32">
             <div class="w-full card-body">
                 {% if form is defined %}
-                    {% if company_icon_filepath %}
+                    {% if app_icon_filepath %}
                         <a href="{{ path('homepage') }}">
-                            <img class="h-25 mx-auto" src="{{ asset(company_icon_filepath) }}" alt="{{ company_name }}">
+                            <img class="h-25 mx-auto" src="{{ asset(app_icon_filepath) }}" alt="{{ app_name }}">
                         </a>
                     {% endif %}
 

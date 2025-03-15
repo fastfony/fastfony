@@ -21,7 +21,7 @@ use Symfony\Component\HttpFoundation\Response;
 class Dashboard extends AbstractDashboardController
 {
     public function __construct(
-        private string $companyName,
+        private string $appName,
     ) {
     }
 
@@ -35,7 +35,7 @@ class Dashboard extends AbstractDashboardController
     public function configureDashboard(): EasyAdminDashboard
     {
         return EasyAdminDashboard::new()
-            ->setTitle($this->companyName)
+            ->setTitle($this->appName)
             ->setFaviconPath('favicon.ico')
             ->setTranslationDomain('admin')
         ;

@@ -40,7 +40,8 @@ class InstallationTest extends WebTestCase
         $this->client->followRedirects();
         $this->client->request('GET', '/installation/2');
         $this->client->submitForm('Create super admin user', [
-            'login_form[email]' => 'test',
+            'installation_form[email]' => 'test',
+            'installation_form[licenceKey]' => 'test',
         ]);
 
         $this->assertSelectorExists('#toast-container .alert.alert-error');
@@ -58,7 +59,8 @@ class InstallationTest extends WebTestCase
 
         $this->client->request('GET', '/installation/2');
         $this->client->submitForm('Create super admin user', [
-            'login_form[email]' => 'test@test.com',
+            'installation_form[email]' => 'test@test.com',
+            'installation_form[licenceKey]' => 'test',
         ]);
         $this->assertResponseStatusCodeSame(303);
         $this->assertSelectorCount(3, '.step.step-primary');

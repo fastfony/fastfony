@@ -29,7 +29,7 @@ class LoginLink
         private readonly LoginLinkHandlerInterface $loginLinkHandler,
         private readonly CacheInterface $cache,
         private readonly TranslatorInterface $translator,
-        private readonly string $companyName,
+        private readonly string $appName,
     ) {
     }
 
@@ -42,7 +42,7 @@ class LoginLink
 
         $notification = new LoginLinkNotification(
             $this->loginLinkHandler->createLoginLink($user, null, self::LIFETIME),
-            $this->translator->trans('login.email.subject', ['%companyName%' => $this->companyName]),
+            $this->translator->trans('login.email.subject', ['%appName%' => $this->appName]),
         );
         $recipient = new Recipient($user->getEmail());
         try {
