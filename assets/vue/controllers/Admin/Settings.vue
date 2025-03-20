@@ -72,12 +72,13 @@ const patchParameter = (parameter, event) => {
                   v-model="parameter.value"
                   :type="parameter.type"
                   class="form-control"
-                  required
                   @change="patchParameter(parameter, $event)"
                 />
-                <small class="form-text form-help" v-if="parameter.help">
-                  {{ $t(parameter.help) }}
-                </small>
+                <small
+                  class="form-text form-help"
+                  v-if="parameter.help"
+                  v-html="$t(parameter.help)"
+                ></small>
               </div>
             </div>
           </li>

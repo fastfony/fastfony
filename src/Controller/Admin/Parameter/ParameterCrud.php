@@ -72,6 +72,11 @@ class ParameterCrud extends AbstractCrudController
     {
         $categoryCrud = Action::new('categoryCrud', 'Categories', 'fa fa-gear')
             ->linkToUrl($this->router->generate('admin_parameter_category_crud_index'))
+            // https://github.com/EasyCorp/EasyAdminBundle/issues/6652
+            // We use Router instead of directly using the route name
+//            ->linkToRoute(
+//                'admin_parameter_category_crud_index',
+//            )
             ->createAsGlobalAction();
 
         return $actions

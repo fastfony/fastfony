@@ -13,12 +13,14 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 class Parameters extends Fixture implements FixtureGroupInterface
 {
-    private const EMAIL_PARAMETER_CATEGORY = 'Email';
+    private const FASTFONY_PARAMETER_CATEGORY = 'Fastfony';
     private const APP_PARAMETER_CATEGORY = 'App';
+    private const EMAIL_PARAMETER_CATEGORY = 'Email';
     private const REGISTER_PARAMETER_CATEGORY = 'Registration';
     private const PARAMETER_CATEGORIES = [
-        self::EMAIL_PARAMETER_CATEGORY,
+        self::FASTFONY_PARAMETER_CATEGORY,
         self::APP_PARAMETER_CATEGORY,
+        self::EMAIL_PARAMETER_CATEGORY,
         self::REGISTER_PARAMETER_CATEGORY,
     ];
 
@@ -64,22 +66,12 @@ class Parameters extends Fixture implements FixtureGroupInterface
     {
         $domain = $this->requestStack->getMainRequest()?->getHost() ?? 'domain.tld';
         $parameters = [
-            'MAILER_SENDER' => [
-                'value' => 'noreply@'.$domain,
-                'type' => 'email',
-                'label' => 'Sender email address',
-                'help' => 'This e-mail must be authorize by server configure on MAILER_DSN in .env.local',
-                'category' => $this->getReference(
-                    self::EMAIL_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
-                    ParameterCategory::class
-                ),
-            ],
             'FASTFONY_LICENCE_KEY' => [
                 'type' => 'text',
                 'label' => 'Licence key',
                 'help' => 'Your Fastfony licence key is required to use the software. Get it on <a href="https://fastfony.com" target="_blank">fastfony.com</a>',
                 'category' => $this->getReference(
-                    self::APP_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
+                    self::FASTFONY_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
                     ParameterCategory::class
                 ),
             ],
@@ -98,6 +90,16 @@ class Parameters extends Fixture implements FixtureGroupInterface
                 'label' => 'Icon filepath',
                 'category' => $this->getReference(
                     self::APP_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
+                    ParameterCategory::class
+                ),
+            ],
+            'MAILER_SENDER' => [
+                'value' => 'noreply@'.$domain,
+                'type' => 'email',
+                'label' => 'Sender email address',
+                'help' => 'This e-mail must be authorize by server configure on MAILER_DSN in .env.local',
+                'category' => $this->getReference(
+                    self::EMAIL_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
                     ParameterCategory::class
                 ),
             ],

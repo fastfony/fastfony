@@ -48,6 +48,11 @@ class Fastfony extends AbstractDataCollector
         return $this->data['fastfonyVersion'];
     }
 
+    public function getFastfonyExtraVersion(): ?string
+    {
+        return Kernel::FF_EXTRA_VERSION;
+    }
+
     public function getLicenceKey(): ?string
     {
         return $this->data['licenceKey'];
@@ -84,8 +89,7 @@ class Fastfony extends AbstractDataCollector
             $versionState = 'eol';
         } elseif ($now > $eom) {
             $versionState = 'eom';
-        /* @phpstan-ignore notIdentical.alwaysTrue */
-        } elseif ('' !== Kernel::FF_EXTRA_VERSION) {
+        } elseif ('' !== $this->getFastfonyExtraVersion()) {
             $versionState = 'dev';
         } else {
             $versionState = 'stable';

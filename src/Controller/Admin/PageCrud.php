@@ -17,11 +17,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
+use Symfony\Component\Routing\RouterInterface;
 
 class PageCrud extends AbstractCrudController
 {
     public function __construct(
         private AdminUrlGenerator $adminUrlGenerator,
+        private RouterInterface $router,
     ) {
     }
 
@@ -68,9 +70,15 @@ class PageCrud extends AbstractCrudController
         ;
 
         $viewAction = Action::new('view', 'View or preview')
-            ->linkToRoute('page_show', static function (Page $page): array {
-                return ['pageSlug' => $page->getSlug()];
-            })
+            ->linkToUrl(
+                function (Page $entity) {
+                    if ($entity->isHomepage()) {
+                        return $this->router->generate('homepage');
+                    }
+
+                    return $this->router->generate('page_show', ['slug' => $entity->getSlug()]);
+                }
+            )
             ->setIcon('fa fa-eye')
             ->setHtmlAttributes(['target' => '_blank'])
         ;

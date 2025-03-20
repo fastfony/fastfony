@@ -1,16 +1,21 @@
 {
   "An URL with https://": "An URL with https://",
+  "App": "App",
+  "Background image URL": "Background image URL",
   "Background Image URL": "Background Image URL",
   "Company": "Company",
   "Email": "Email",
   "Icon filepath": "Icon filepath",
+  "Licence key": "Licence key",
   "Login": "Login",
   "Name": "Name",
   "No": "No",
+  "Registration": "Registration",
   "Registration authorized": "Registration authorized",
   "Sender email address": "Sender email address",
   "This e-mail must be authorize by server configure on MAILER_DSN in .env.local": "This e-mail must be authorize by server configure on MAILER_DSN in .env.local",
   "toast.error": "An error occured.Please retry.",
   "toast.parameter.updated": "New value is saved.",
-  "Yes": "Yes"
+  "Yes": "Yes",
+  "Your Fastfony licence key is required to use the software. Get it on <a href=\"https://fastfony.com\" target=\"_blank\">fastfony.com</a>": "Your Fastfony licence key is required to use the software. Get it on <a href=\"https://fastfony.com\" target=\"_blank\">fastfony.com</a>"
 }

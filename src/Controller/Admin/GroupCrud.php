@@ -65,6 +65,11 @@ class GroupCrud extends AbstractCrudController
                     ->setAction(Action::INDEX)
                     ->generateUrl()
             )
+            // https://github.com/EasyCorp/EasyAdminBundle/issues/6652
+            // We use AdminUrlGenerator instead of directly using the route name
+//            ->linkToRoute(
+//                'admin_role_crud_index',
+//            )
             ->createAsGlobalAction();
 
         return $actions
