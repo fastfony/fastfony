@@ -1,21 +1,38 @@
-MIT License
+Proprietary License
 
-Copyright (c) [2025] [neothone]
+Copyright (c) [2025] [Minuit 11 SARL]
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This software is licensed, not sold. By using this software, you agree to the following terms and conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. License Grant
+   Minuit 11 SARL grants you a non-exclusive, non-transferable license to use this software, provided that you have purchased a valid license key. The license key is required to activate and use the software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. Restrictions
+   You can:
+   - Modify the software.
+   You may not:
+   - Reverse engineer, decompile, or disassemble the software
+   - Remove or alter any proprietary notices or labels on the software.
+   - Remove licence checker from the software.
+   - Distribute, rent, lease, or lend the software to any third party.
+   - Use the software for any illegal or unauthorized purpose.
+
+3. Ownership
+   The software is the intellectual property of Minuit 11 SARL. All rights, title, and interest in and to the software, including all intellectual property rights, remain with Minuit 11 SARL.
+
+4. Termination
+   This license is effective until terminated. Your rights under this license will terminate automatically without notice if you fail to comply with any of the terms and conditions. Upon termination, you must cease all use of the software and destroy all copies in your possession.
+
+5. Disclaimer of Warranties
+   The software is provided "as is" without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. Minuit 11 SARL does not warrant that the software will meet your requirements or that the operation of the software will be uninterrupted or error-free.
+
+6. Limitation of Liability
+   In no event shall Minuit 11 SARL be liable for any damages whatsoever (including, without limitation, damages for loss of business profits, business interruption, loss of business information, or any other pecuniary loss) arising out of the use or inability to use this software, even if Minuit 11 SARL has been advised of the possibility of such damages.
+
+7. Governing Law
+   This license shall be governed by and construed in accordance with the laws of France, without regard to its conflict of laws principles.
+
+8. Entire Agreement
+   This license constitutes the entire agreement between you and Minuit 11 SARL with respect to the software and supersedes all prior or contemporaneous understandings regarding such subject matter.
+
+If you have any questions about this license, please contact Minuit 11 SARL at proprietary-licence@fastfony.com.

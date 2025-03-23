@@ -6,6 +6,7 @@
 parameters:
     default_app_name: 'Fastfony'
     default_registration_enabled: true
+    feature_flags: '%env(json:FEATURE_FLAGS)%'
 
 services:
     # default configuration for services in *this* file

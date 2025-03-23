@@ -6,26 +6,24 @@
 
 ## Getting Started
 
-1. If not already, [install PHP](https://www.php.net/manual/en/install.php), [install Composer](https://getcomposer.org), [install Symfony CLI](https://symfony.com/download), [install Node](https://nodejs.org/en/download), [install Docker Compose](https://docs.docker.com/compose/install/) and [install Taskfile](https://taskfile.dev/installation/)
-2. First time, run `task fixtures`
-3. Run `task start`
-4. Open `https://fastfony.wip/` (if you have setting up the [Symfony local proxy](https://symfony.com/doc/current/setup/symfony_server.html#setting-up-the-local-proxy)) or `https://127.0.0.1:9876` in your favorite web browser
+1. If not already:
+   1. [install PHP](https://www.php.net/manual/en/install.php), 
+   2. [install Composer](https://getcomposer.org), 
+   3. [install Symfony CLI](https://symfony.com/download) (version **5.11** minimum), 
+   4. [install Node](https://nodejs.org/en/download), 
+   5. [install Docker Compose](https://docs.docker.com/compose/install/) and 
+   6. [install Taskfile](https://taskfile.dev/installation/)
+2. Run `task start`
+3. Open `https://fastfony.wip/` (if you have setting up the [Symfony local proxy](https://symfony.com/doc/current/setup/symfony_server.html#setting-up-the-local-proxy)) or `https://127.0.0.1:9876` in your favorite web browser
+4. Develop your project!
 
-If you want to change the domain name, you can edit the `.symfony.local.yaml` file and change the `proxy.domains` variable.
+- If you want to change the domain name, you can edit the `.symfony.local.yaml` file and change the `proxy.domains` variable.
+- If you want to change the default port, you can edit the `.symfony.local.yaml` file and change the `http.port` variable.
 
 ## Start & stop
 
 - Start : just run `task start`
 - Stop : just run `task stop` (Thanks to Taskfile!)
-
-## Execute tests
-
-- Run `task tests` or `task coverage`
-
-## Execute analytics
-
-- Run `task phpstan` for PHPStan
-- Run `task phpinsights` for PHPInsights
 
 ## Features
 
@@ -44,8 +42,8 @@ If you want to change the domain name, you can edit the `.symfony.local.yaml` fi
 - Symfony 7.2
 - API Platform 4.1
 - EasyAdmin 4 (with Bootstrap 5)
-- Vue.js 3 & Bootstrap 5 for EasyAdmin & Admin
-- Vue.js 3 & Tailwind CSS 4 & DaisyUI 5 for Front (and you can use also React!)
+- Vue.js 3 & Bootstrap 5 for admin (with EasyAdmin)
+- Vue.js 3 & Tailwind CSS 4 & DaisyUI 5 for front (and you can use also React or another frontend framework!)
 - Webpack Encore
 - Taskfile for easy install & start commands (just `task start` and develop)
 - GrumPHP for manage pre-hook commit
@@ -53,12 +51,18 @@ If you want to change the domain name, you can edit the `.symfony.local.yaml` fi
 - PHPStan (level 5, [symfony simplify rules](https://github.com/symplify/phpstan-rules) and [symfony extension](https://github.com/phpstan/phpstan-symfony))
 - PHP Insights
 
+## Execute tests
+
+- Run `task tests` or `task coverage`
+
+## Execute analytics
+
+- Run `task phpstan` for PHPStan
+- Run `task phpinsights` for PHPInsights
+
 ## Docs
 
-1. [Coding Style](docs/coding_style.md)
-2. [Entities](docs/entities.md)
-3. [Repositories](docs/repositories.md)
-4. [CSS Theme](docs/css_theme.md)
+Documentation is available on [docs.fastfony.com](https://docs.fastfony.com/).
 
 # Updating Your Project
 
@@ -83,10 +87,6 @@ You can contribute to Fastfony by creating a pull request on the GitHub reposito
 This repository use the git plugin [git-flow](https://github.com/nvie/gitflow), so please create your feature branch from the `develop` branch and install [git-flow](https://git-flow.readthedocs.io/fr/latest/index.html).
 
 The Conventional Commits specification is a lightweight convention on top of commit messages. Fastfony uses it. You can find more information on the [Conventional Commits website](https://www.conventionalcommits.org/en/v1.0.0/).
-
-## License
-
-Fastfony is available under the MIT License.
 
 ## Special thanks
 

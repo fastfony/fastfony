@@ -8,4 +8,4 @@ http:
 workers:
     docker_compose: ~
     npm_encore_watch:
-        cmd: ['npx', 'encore', 'dev-server']
+        cmd: ['npm', 'encore', 'dev-server']
