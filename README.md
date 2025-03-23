@@ -7,12 +7,12 @@
 ## Getting Started
 
 1. If not already:
-   1. [install PHP](https://www.php.net/manual/en/install.php), 
-   2. [install Composer](https://getcomposer.org), 
-   3. [install Symfony CLI](https://symfony.com/download) (version **5.11** minimum), 
-   4. [install Node](https://nodejs.org/en/download), 
-   5. [install Docker Compose](https://docs.docker.com/compose/install/) and 
-   6. [install Taskfile](https://taskfile.dev/installation/)
+    1. [install PHP](https://www.php.net/manual/en/install.php),
+    2. [install Composer](https://getcomposer.org),
+    3. [install Symfony CLI](https://symfony.com/download) (version **5.11** minimum),
+    4. [install Node](https://nodejs.org/en/download),
+    5. [install Docker Compose](https://docs.docker.com/compose/install/) and
+    6. [install Taskfile](https://taskfile.dev/installation/)
 2. Run `task start`
 3. Open `https://fastfony.wip/` (if you have setting up the [Symfony local proxy](https://symfony.com/doc/current/setup/symfony_server.html#setting-up-the-local-proxy)) or `https://127.0.0.1:9876` in your favorite web browser
 4. Develop your project!
