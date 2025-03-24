@@ -1,5 +1,7 @@
 # Fastfony : pragmatic boilerplate for fastly develop a project with Symfony 7
 
+You go fast, you earn precious time.
+
 <a href="https://github.com/fastfony/fastfony/actions/workflows/test.yaml"><img src="https://github.com/fastfony/fastfony/actions/workflows/test.yaml/badge.svg" alt="Unit & Functional Tests"></a>
 [![Test Coverage](https://raw.githubusercontent.com/fastfony/fastfony/refs/heads/badges/coverage.svg)](https://github.com/fastfony/fastfony)
 [![Wakapi.dev](https://wakapi.dev/api/badge/neothone/interval:any/project:fastfony)](https://github.com/fastfony/fastfony)
@@ -9,21 +11,24 @@
 1. If not already:
     1. [install PHP](https://www.php.net/manual/en/install.php),
     2. [install Composer](https://getcomposer.org),
-    3. [install Symfony CLI](https://symfony.com/download) (version **5.11** minimum),
+    3. [install Symfony CLI](https://symfony.com/download),
     4. [install Node](https://nodejs.org/en/download),
     5. [install Docker Compose](https://docs.docker.com/compose/install/) and
     6. [install Taskfile](https://taskfile.dev/installation/)
 2. Run `task start`
-3. Open `https://fastfony.wip/` (if you have setting up the [Symfony local proxy](https://symfony.com/doc/current/setup/symfony_server.html#setting-up-the-local-proxy)) or `https://127.0.0.1:9876` in your favorite web browser
-4. Develop your project!
+3. Enjoy!
 
-- If you want to change the domain name, you can edit the `.symfony.local.yaml` file and change the `proxy.domains` variable.
-- If you want to change the default port, you can edit the `.symfony.local.yaml` file and change the `http.port` variable.
+Be careful to the minimum versions requirements for:
+- PHP: 8.2
+- Symfony CLI: 5.11
+- Node: 22 with npm and _npx_
 
 ## Start & stop
 
 - Start : just run `task start`
-- Stop : just run `task stop` (Thanks to Taskfile!)
+- Stop : just run `task stop` 
+
+Thanks to Taskfile!
 
 ## Features
 
@@ -36,6 +41,7 @@
 - DaisyUI themes chooser
 - Toasts notifications (flash messages from Symfony and others with [vue-toastification](https://vue-toastification.maronato.dev/))
 - CRUD controllers for : Parameters, Parameter categories etc...
+- And more features in **[Pro version](https://fastfony.com/pro)!**
 
 ## Technical stack
 
@@ -80,14 +86,6 @@ curl -sSL https://raw.githubusercontent.com/coopTilleuls/template-sync/main/temp
 
 For more advanced options, refer to [the documentation of _template sync_](https://github.com/coopTilleuls/template-sync#template-sync).
 
-## Contribute
-
-You can contribute to Fastfony by creating a pull request on the GitHub repository.
-
-This repository use the git plugin [git-flow](https://github.com/nvie/gitflow), so please create your feature branch from the `develop` branch and install [git-flow](https://git-flow.readthedocs.io/fr/latest/index.html).
-
-The Conventional Commits specification is a lightweight convention on top of commit messages. Fastfony uses it. You can find more information on the [Conventional Commits website](https://www.conventionalcommits.org/en/v1.0.0/).
-
 ## Special thanks
 
 Without the following projects, Fastfony would not exist:
@@ -101,8 +99,8 @@ Without the following projects, Fastfony would not exist:
 - [DaisyUI](https://daisyui.com)
 - [Taskfile](https://taskfile.dev)
 - [Editorjs](https://editorjs.io)
-- and many others... \*Thank you!
+- and many others...
 
 ## Credits
 
-- Fastfony is created by [Mathieu Dumoutier](https://mathieu.dumoutier.fr) and sponsored by [Minuit 11](https://minuit11.fr).
+Fastfony is created by [Minuit 11](https://minuit11.fr) a french development company.

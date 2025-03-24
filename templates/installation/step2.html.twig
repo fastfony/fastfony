@@ -31,17 +31,17 @@
         </div>
         <div class="col-span-2">
             <div class="card shadow-lg">
-                {{ form_start(installation_form, {attr: {action: path('installation_step', {step: 3}), class: 'card-body'}}) }}
+                {{ form_start(form, {attr: {action: path('installation_step_3'), class: 'card-body', 'data-turbo': 'false'}}) }}
                     <h2 class="card-title mb-4">{{ 'step2.title'|trans }}</h2>
 
-                    {{ form_errors(installation_form) }}
+                    {{ form_errors(form) }}
 
                     <fieldset class="fieldset bg-base-200 border border-base-300 p-4 rounded-box">
                         <legend class="fieldset-legend">{{ 'step2.your_licence_key'|trans }}</legend>
-                        {{ form_widget(installation_form.licenceKey, {attr: {placeholder: 'input.licence_key', class: 'textarea'}}) }}
-                        {{ form_errors(installation_form.licenceKey) }}
+                        {{ form_widget(form.licenceKey, {attr: {placeholder: 'input.licence_key', class: 'textarea'}}) }}
+                        {{ form_errors(form.licenceKey) }}
                         <label class="fieldset-label">
-                            {{ form_widget(installation_form.autoGenerateLicenceKey, {attr: {class: 'checkbox'}}) }}
+                            {{ form_widget(form.autoGenerateLicenceKey, {attr: {class: 'checkbox'}}) }}
 
                             {{ 'step2.auto_generate_licence_key'|trans }}
                         </label>
@@ -50,8 +50,8 @@
 
                     <fieldset class="fieldset bg-base-200 border border-base-300 p-4 rounded-box">
                         <legend class="fieldset-legend">{{ 'step2.choose_login'|trans }}</legend>
-                        {{ form_widget(installation_form.email, {attr: {placeholder: 'input.admin_email', class: 'input'}}) }}
-                        {{ form_errors(installation_form.email) }}
+                        {{ form_widget(form.email, {attr: {placeholder: 'input.admin_email', class: 'input'}}) }}
+                        {{ form_errors(form.email) }}
                         <p class="fieldset-label">{{ 'step2.help_email'|trans|raw }}</p>
                     </fieldset>
 
@@ -65,7 +65,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811V8.69ZM12.75 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061a1.125 1.125 0 0 1-1.683-.977V8.69Z"></path>
                         </svg>
                     </button>
-                {{ form_end(installation_form) }}
+                {{ form_end(form) }}
             </div>
         </div>
     </div>

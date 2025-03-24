@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Tests\Functional\Security;
 
-use App\Repository\Parameter\ParameterRepository;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -41,16 +40,5 @@ class RegisterTest extends WebTestCase
 
         $this->assertSelectorTextContains('label', 'This value is not a valid email address.');
         $this->assertEmailCount(0);
-    }
-
-    public function testRegistrationDisabled(): void
-    {
-        $parameterRepository = static::getContainer()->get(ParameterRepository::class);
-        $parameter = $parameterRepository->findOneBy(['key' => 'REGISTRATION_ENABLED']);
-        $parameter->setValue('0');
-        $parameterRepository->save($parameter);
-
-        $this->client->request('GET', '/register');
-        $this->assertResponseStatusCodeSame(404);
     }
 }

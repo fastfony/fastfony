@@ -24,26 +24,25 @@ class Step3
     }
 
     public function do(
-        FormInterface $installationForm,
+        FormInterface $form,
         Request $request,
     ): bool {
         $success = false;
-        $installationForm->handleRequest($request);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            if ($form->getData()['autoGenerateLicenceKey']) {
+                $form->getData()['licenceKey'] =
+                    $this->licenceChecker->generate($form->getData()['email']);
+            }
 
-        if ($installationForm->getData()['autoGenerateLicenceKey']) {
-            $installationForm->getData()['licenceKey'] =
-                $this->licenceChecker->generate($installationForm->getData()['email']);
-        }
-
-        if ($installationForm->isSubmitted() && $installationForm->isValid()) {
-            $installationForm->getData()['licenceKey'];
+            $form->getData()['licenceKey'];
             $this->parameterRepository->findOneBy(['key' => 'FASTFONY_LICENCE_KEY'])
-                ->setValue($installationForm->getData()['licenceKey']);
+                ->setValue($form->getData()['licenceKey']);
 
             try {
                 // We create the first admin user
                 $user = $this->userRepository->createSuperAdmin(
-                    $installationForm->getData()['email'],
+                    $form->getData()['email'],
                     true,
                 );
             } catch (\Exception $e) {

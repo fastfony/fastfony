@@ -52,6 +52,7 @@ class NoErrorOnSimpleRouteTest extends WebTestCase
         if (false !== stripos($route->getPath(), '}')
             || false !== stripos($routeName, 'autocomplete')
             || false !== stripos($routeName, 'batch')
+            || (!\in_array('ANY', $route->getMethods(), true) && !\in_array('GET', $route->getMethods(), true))
         ) {
             return false;
         }

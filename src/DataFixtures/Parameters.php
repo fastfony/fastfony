@@ -103,15 +103,6 @@ class Parameters extends Fixture implements FixtureGroupInterface
                     ParameterCategory::class
                 ),
             ],
-            'REGISTRATION_ENABLED' => [
-                'value' => '1',
-                'type' => 'bool',
-                'label' => 'Registration authorized',
-                'category' => $this->getReference(
-                    self::REGISTER_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
-                    ParameterCategory::class
-                ),
-            ],
             'REGISTRATION_BACKGROUND_IMAGE_URL' => [
                 'value' => 'https://images.unsplash.com/photo-1496917756835-20cb06e75b4e',
                 'type' => 'url',

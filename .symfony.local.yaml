@@ -7,5 +7,6 @@ http:
 
 workers:
     docker_compose: ~
+    #messenger_consume_async: ~
     npm_encore_watch:
-        cmd: ['npm', 'encore', 'dev-server']
+        cmd: ['npx', 'encore', 'dev-server']

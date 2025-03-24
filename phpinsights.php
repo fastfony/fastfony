@@ -71,6 +71,7 @@ return [
         PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterNotSniff::class,
         PHP_CodeSniffer\Standards\Generic\Sniffs\PHP\NoSilencedErrorsSniff::class,
         SlevomatCodingStandard\Sniffs\ControlStructures\DisallowEmptySniff::class,
+        PHP_CodeSniffer\Standards\Generic\Sniffs\Strings\UnnecessaryStringConcatSniff::class,
     ],
 
     'config' => [

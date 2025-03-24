@@ -18,7 +18,8 @@ readonly class InstallationCheck
 {
     private const EXCLUDE_ROUTES = [
         'installation',
-        'installation_step',
+        'installation_step_2',
+        'installation_step_3',
         '_profiler',
         '_profiler_home',
         '_wdt',

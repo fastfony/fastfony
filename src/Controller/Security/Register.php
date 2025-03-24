@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Controller\Security;
 
 use App\Form\RegisterFormType;
+use App\Handler\FeatureFlag;
+use App\Handler\Features;
 use App\Repository\User\UserRepository;
 use App\Security\LoginLink;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,7 +19,7 @@ class Register extends AbstractController
     public function __construct(
         private LoginLink $loginLink,
         private UserRepository $userRepository,
-        private bool $registrationEnabled,
+        private FeatureFlag $featureFlag,
     ) {
     }
 
@@ -25,7 +27,7 @@ class Register extends AbstractController
     public function __invoke(
         Request $request,
     ): Response {
-        if (!$this->registrationEnabled) {
+        if (!$this->featureFlag->isEnabled(Features::REGISTRATION->value)) {
             throw $this->createNotFoundException();
         }
 

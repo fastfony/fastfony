@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Form\FeaturesFormType;
 use App\Form\InstallationFormType;
+use App\Handler\FeatureFlag;
 use App\HealthCheck\All;
+use App\Installation\Step1;
 use App\Installation\Step2;
 use App\Installation\Step3;
 use App\Repository\User\UserRepository;
@@ -18,13 +21,14 @@ use Symfony\Component\Routing\Attribute\Route;
 
 /**
  * After installation proceed, you can remove this controller, the class EventListener/InstallationCheck.php, the
- * directory Installation with its files and templates in templates/installation (if here yet...).
+ * directory Installation with its files and templates in templates/installation.
  */
 class Installation extends AbstractController
 {
     public function __construct(
         private UserRepository $userRepository,
         private All $allHealthChecks,
+        private Step1 $step1,
         private Step2 $step2,
         private Step3 $step3,
     ) {
@@ -33,48 +37,74 @@ class Installation extends AbstractController
         }
     }
 
+    /** @phpstan-ignore symfony.requireInvokableController */
     #[Route('/installation', name: 'installation')]
-    #[Route('/installation/{step}', name: 'installation_step', requirements: ['step' => '2|3'])]
-    public function __invoke(
-        Request $request,
-        int $step = 1,
-    ): Response {
+    public function step1(): Response
+    {
         // We always check if the installation is already done
         try {
             if (0 < $this->userRepository->countEnabled()) {
-                return $this->redirectToRoute('admin');
+                return $this->redirectToRoute('homepage');
             }
         } catch (ConnectionException|TableNotFoundException $e) {
             // If the database is not created, a "normal" exception is thrown, we catch and continue
         }
 
-        $installationForm = $this->createForm(InstallationFormType::class);
-        // If step 2 and all checks are passed
-        if (2 === $step && !$this->allHealthChecks->hasPreviouslyErrors()) {
-            if (!$this->step2->do()) {
-                --$step;
-                $this->addFlash('error', 'installation.error');
-            }
-        }
-
-        // If step 3 and form is submitted
-        if (3 === $step && $request->isMethod('POST')) {
-            $step3 = $this->step3->do($installationForm, $request);
-            if ($step3 && $installationForm->isValid()) {
-                return $this->render(
-                    'installation/step'.$step.'.html.twig',
-                    [],
-                    new Response(null, Response::HTTP_SEE_OTHER), // This is for turbo
-                );
-            }
-            --$step;
+        if ($this->allHealthChecks->hasPreviouslyErrors() || !$this->step1->do()) {
             $this->addFlash('error', 'installation.error');
         }
 
         return $this->render(
-            'installation/step'.$step.'.html.twig',
+            'installation/step1.html.twig',
             [
-                'installation_form' => $installationForm,
+                'form' => $this->createForm(
+                    FeaturesFormType::class,
+                    ['features' => FeatureFlag::FEATURES],
+                ),
+            ],
+        );
+    }
+
+    /** @phpstan-ignore symfony.requireInvokableController */
+    #[Route('/installation/2', name: 'installation_step_2', methods: ['POST'])]
+    public function step2(Request $request): Response
+    {
+        $form = $this->createForm(FeaturesFormType::class);
+        if (!$this->step2->do($form, $request)) {
+            $this->addFlash('error', 'installation.error');
+
+            return $this->render(
+                'installation/step1.html.twig',
+                [
+                    'form' => $form,
+                ],
+            );
+        }
+
+        // If step 2 is OK, we display the form of step 3
+        return $this->render(
+            'installation/step2.html.twig',
+            [
+                'form' => $this->createForm(InstallationFormType::class),
+            ]
+        );
+    }
+
+    /** @phpstan-ignore symfony.requireInvokableController */
+    #[Route('/installation/3', name: 'installation_step_3', methods: ['POST'])]
+    public function step3(Request $request): Response
+    {
+        $form = $this->createForm(InstallationFormType::class);
+        if ($this->step3->do($form, $request)) {
+            return $this->render('installation/step3.html.twig');
+        }
+
+        $this->addFlash('error', 'installation.error');
+
+        return $this->render(
+            'installation/step2.html.twig',
+            [
+                'form' => $form,
             ]
         );
     }

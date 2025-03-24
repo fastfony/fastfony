@@ -14,7 +14,7 @@
 
                     <h2 class="mt-4 text-2xl/9 font-bold tracking-tight">{{ 'login.title'|trans }}</h2>
 
-                    {% if registration_enabled %}
+                    {% if feature_enabled('registration') %}
                         <p class="mt-4 text-sm/6">
                             {{ 'login.no_account'|trans }}
                             <a href="{{ path('register') }}" class="link link-hover link-accent">

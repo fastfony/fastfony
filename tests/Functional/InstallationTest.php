@@ -7,6 +7,7 @@ namespace App\Tests\Functional;
 use App\Repository\User\UserRepository;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\Process\Process;
 
 class InstallationTest extends WebTestCase
 {
@@ -33,36 +34,30 @@ class InstallationTest extends WebTestCase
     /**
      * We add depends tests here in order to be the lasts tests.
      *
-     * @depends App\Tests\Functional\Security\RegisterTest::testRegistrationDisabled
+     * @depends App\Tests\Functional\Security\RegisterTest::testRegisterFailed
      */
-    public function testFailedSteps(): void
+    public function testFailedAndSuccessSteps(): void
     {
-        $this->client->followRedirects();
-        $this->client->request('GET', '/installation/2');
+        $this->client->request('GET', '/installation');
+        $this->assertResponseIsSuccessful();
+        $this->client->submitForm('It\'s OK', [
+            'features_form[features]' => [
+                'users_management',
+            ],
+        ]);
+
         $this->client->submitForm('Create super admin user', [
             'installation_form[email]' => 'test',
             'installation_form[licenceKey]' => 'test',
         ]);
 
         $this->assertSelectorExists('#toast-container .alert.alert-error');
-    }
 
-    /**
-     * We add depends tests here in order to be the lasts tests.
-     *
-     * @depends testFailedSteps
-     */
-    public function testSuccessSteps(): void
-    {
-        $this->client->request('GET', '/installation');
-        $this->assertResponseIsSuccessful();
-
-        $this->client->request('GET', '/installation/2');
         $this->client->submitForm('Create super admin user', [
             'installation_form[email]' => 'test@test.com',
             'installation_form[licenceKey]' => 'test',
         ]);
-        $this->assertResponseStatusCodeSame(303);
+        $this->assertResponseIsSuccessful();
         $this->assertSelectorCount(3, '.step.step-primary');
     }
 }

@@ -8,3 +8,26 @@
     <div class="flex-fill"></div>
     <p class="text-muted">{{ help|trans }}</p>
 {% endblock %}
+
+{% block _features_form_features_widget %}
+    <ul>
+    {% for choice in choices %}
+        <li>
+            <label
+                class="fieldset-label my-2"
+                for="{{ id }}_{{ loop.index0 }}"
+            >
+                <input
+                    id="{{ id }}_{{ loop.index0 }}"
+                    name="{{ full_name }}[]"
+                    type="checkbox"
+                    {{ choice.value in data ? 'checked="checked"' : '' }}
+                    class="toggle"
+                    value="{{ choice.value }}"
+                />
+                {{ ('feature.' ~ choice.label)|trans }}
+            </label>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
