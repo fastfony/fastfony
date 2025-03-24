@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Controller\Admin;
 
 use App\Entity\User\Group;
+use App\Handler\FeatureFlag;
+use App\Handler\Features;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -16,11 +18,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class GroupCrud extends AbstractCrudController
 {
     public function __construct(
         private readonly AdminUrlGenerator $adminUrlGenerator,
+        private readonly FeatureFlag $featureFlag,
     ) {
     }
 
@@ -58,6 +62,10 @@ class GroupCrud extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
+        if (!$this->featureFlag->isEnabled(Features::USERS_MANAGEMENT->value)) {
+            throw new NotFoundHttpException();
+        }
+
         $rolesCrudAction = Action::new('roles', 'Roles')
             ->linkToUrl(
                 $this->adminUrlGenerator

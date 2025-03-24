@@ -6,16 +6,22 @@ namespace App\HealthCheck;
 
 class Internet
 {
+    public function __construct(
+        private string $domain1 = 'google.com',
+        private string $domain2 = 'fastfony.com',
+    ) {
+    }
+
     public function check(): bool
     {
-        $connection = @fsockopen('google.com', 443);
+        $connection = @fsockopen($this->domain1, 443);
         if ($connection) {
             fclose($connection);
 
             return true;
         }
 
-        $connection = @fsockopen('fastfony.com', 443);
+        $connection = @fsockopen($this->domain2, 443);
         if ($connection) {
             fclose($connection);
 

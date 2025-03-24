@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Controller\Admin;
 
 use App\Entity\Product\Product;
+use App\Handler\FeatureFlag;
+use App\Handler\Features;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
@@ -14,9 +16,15 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ProductCrud extends AbstractCrudController
 {
+    public function __construct(
+        private readonly FeatureFlag $featureFlag,
+    ) {
+    }
+
     public static function getEntityFqcn(): string
     {
         return Product::class;
@@ -27,6 +35,10 @@ class ProductCrud extends AbstractCrudController
      */
     public function configureFields(string $pageName): iterable
     {
+        if (!$this->featureFlag->isEnabled(Features::PRODUCTS->value)) {
+            throw new NotFoundHttpException();
+        }
+
         return [
             FormField::addTab('General'),
             FormField::addColumn(8),

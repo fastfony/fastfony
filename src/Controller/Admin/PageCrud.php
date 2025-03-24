@@ -7,6 +7,8 @@ namespace App\Controller\Admin;
 use App\Admin\Field\Editorjs;
 use App\Admin\Field\Json;
 use App\Entity\Page\Page;
+use App\Handler\FeatureFlag;
+use App\Handler\Features;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -17,6 +19,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\RouterInterface;
 
 class PageCrud extends AbstractCrudController
@@ -24,6 +27,7 @@ class PageCrud extends AbstractCrudController
     public function __construct(
         private AdminUrlGenerator $adminUrlGenerator,
         private RouterInterface $router,
+        private readonly FeatureFlag $featureFlag,
     ) {
     }
 
@@ -42,6 +46,10 @@ class PageCrud extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
+        if (!$this->featureFlag->isEnabled(Features::PAGES->value)) {
+            throw new NotFoundHttpException();
+        }
+
         $viewLogEntriesAction = Action::new('viewLogEntries', 'View Log Entries')
             ->linkToUrl(
                 function (Page $entity) {

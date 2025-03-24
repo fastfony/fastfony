@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Controller\Admin;
 
 use App\Entity\User\User;
+use App\Handler\FeatureFlag;
+use App\Handler\Features;
 use App\Security\LoginLink;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminAction;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
@@ -20,11 +22,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class UserCrud extends AbstractCrudController
 {
     public function __construct(
         private readonly AdminUrlGenerator $adminUrlGenerator,
+        private readonly FeatureFlag $featureFlag,
     ) {
     }
 
@@ -72,6 +76,10 @@ class UserCrud extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
+        if (!$this->featureFlag->isEnabled(Features::USERS_MANAGEMENT->value)) {
+            throw new NotFoundHttpException();
+        }
+
         $sendLoginLinkAction = Action::new('sendLoginLinkEmail', 'user_crud.action.send_login_link_email')
             ->linkToCrudAction('sendLoginLinkEmail')
             ->displayIf(static fn ($entity) => $entity->isEnabled());

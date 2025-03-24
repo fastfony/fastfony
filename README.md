@@ -19,6 +19,7 @@ You go fast, you earn precious time.
 3. Enjoy!
 
 Be careful to the minimum versions requirements for:
+
 - PHP: 8.2
 - Symfony CLI: 5.11
 - Node: 22 with npm and _npx_
@@ -26,7 +27,7 @@ Be careful to the minimum versions requirements for:
 ## Start & stop
 
 - Start : just run `task start`
-- Stop : just run `task stop` 
+- Stop : just run `task stop`
 
 Thanks to Taskfile!
 

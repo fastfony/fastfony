@@ -29,7 +29,7 @@ services:
         tags:
             - name: data_collector
               id: 'fastfony'
-              
+
     App\Handler\FeatureFlag:
         arguments:
             $features: '%env(json:FEATURE_FLAGS)%'

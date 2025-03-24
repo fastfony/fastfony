@@ -6,6 +6,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\Page\Page;
 use App\Entity\Page\PageLogEntry;
+use App\Handler\FeatureFlag;
+use App\Handler\Features;
 use App\Repository\Page\PageLogEntryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminAction;
@@ -22,6 +24,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class PageLogEntryCrud extends AbstractCrudController
 {
@@ -29,6 +32,7 @@ class PageLogEntryCrud extends AbstractCrudController
         private readonly RequestStack $requestStack,
         private readonly EntityManagerInterface $entityManager,
         private readonly AdminUrlGenerator $adminUrlGenerator,
+        private readonly FeatureFlag $featureFlag,
     ) {
     }
 
@@ -47,6 +51,10 @@ class PageLogEntryCrud extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
+        if (!$this->featureFlag->isEnabled(Features::PAGES->value)) {
+            throw new NotFoundHttpException();
+        }
+
         $referer = $this->requestStack->getCurrentRequest()->headers->get('referer');
 
         if (null !== $referer && str_contains($referer, 'page-crud')) {

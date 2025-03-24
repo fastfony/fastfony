@@ -4,7 +4,7 @@ twig:
         app_name: '%env(database:APP_NAME)%'
         app_icon_filepath: '%env(database:APP_ICON_FILEPATH)%'
         registration_background_image_url: '%env(database:REGISTRATION_BACKGROUND_IMAGE_URL)%'
-        
+
     form_themes:
         - 'form/custom_errors.html.twig'
         - 'form/custom_types.html.twig'
