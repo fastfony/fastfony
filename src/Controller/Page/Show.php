@@ -5,12 +5,19 @@ declare(strict_types=1);
 namespace App\Controller\Page;
 
 use App\Entity\Page\Page;
+use App\Handler\FeatureFlag;
+use App\Handler\Features;
 use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Attribute\Route;
 
 class Show extends AbstractController
 {
+    public function __construct(
+        private readonly FeatureFlag $featureFlag,
+    ) {
+    }
+
     /**
      * @return array<string, mixed>
      */
@@ -24,7 +31,8 @@ class Show extends AbstractController
     public function __invoke(
         Page $page,
     ): array {
-        if (!$page->isEnabled() && !$this->isGranted('ROLE_ADMIN')) {
+        if (!$this->featureFlag->isEnabled(Features::PAGES->value)
+            || (!$page->isEnabled() && !$this->isGranted('ROLE_ADMIN'))) {
             throw $this->createNotFoundException();
         }
 

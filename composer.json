@@ -1,10 +1,10 @@
 {
     "type": "project",
-    "license": "MIT",
+    "license": "proprietary",
     "authors": [
         {
-            "name": "neothone",
-            "email": "neothone@fastfony.com"
+            "name": "Minuit 11",
+            "email": "fastfony@minuit11.fr"
         }
     ],
     "minimum-stability": "stable",
