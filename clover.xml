@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1742831233">
-  <project timestamp="1742831233">
+<coverage generated="1742844881">
+  <project timestamp="1742844881">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Editorjs.php">
       <class name="App\Admin\Field\Editorjs" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
@@ -666,15 +666,18 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Page/Show.php">
       <class name="App\Controller\Page\Show" namespace="global">
-        <metrics complexity="3" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
+        <metrics complexity="5" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="9" coveredelements="9"/>
       </class>
-      <line num="17" type="method" name="__invoke" visibility="public" complexity="3" crap="3" count="2"/>
-      <line num="27" type="stmt" count="2"/>
-      <line num="28" type="stmt" count="1"/>
-      <line num="31" type="stmt" count="2"/>
-      <line num="32" type="stmt" count="2"/>
-      <line num="33" type="stmt" count="2"/>
-      <metrics loc="36" ncloc="33" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
+      <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="19" type="stmt" count="2"/>
+      <line num="24" type="method" name="__invoke" visibility="public" complexity="4" crap="4" count="2"/>
+      <line num="34" type="stmt" count="2"/>
+      <line num="35" type="stmt" count="2"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="2"/>
+      <line num="40" type="stmt" count="2"/>
+      <line num="41" type="stmt" count="2"/>
+      <metrics loc="44" ncloc="41" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="9" coveredelements="9"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Security/Register.php">
       <class name="App\Controller\Security\Register" namespace="global">
@@ -1803,6 +1806,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="78" loc="4204" ncloc="3979" classes="74" methods="260" coveredmethods="235" conditionals="0" coveredconditionals="0" statements="1077" coveredstatements="1006" elements="1337" coveredelements="1241"/>
+    <metrics files="78" loc="4212" ncloc="3987" classes="74" methods="261" coveredmethods="236" conditionals="0" coveredconditionals="0" statements="1079" coveredstatements="1008" elements="1340" coveredelements="1244"/>
   </project>
 </coverage>
