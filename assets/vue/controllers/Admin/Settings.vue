@@ -43,7 +43,7 @@ const patchParameter = (parameter, event) => {
 <template>
   <div class="row">
     <div
-      class="col-12 col-md-6 col-xxl-3"
+      class="col-12 col-xxl-3"
       v-for="(parameters, category) in parameters"
       :key="category"
     >

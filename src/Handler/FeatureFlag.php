@@ -32,6 +32,14 @@ class FeatureFlag
     }
 
     /**
+     * @return array <string>
+     */
+    public function getEnabled(): array
+    {
+        return array_keys($this->features);
+    }
+
+    /**
      * @param array <int, string> $enabledFeatures
      */
     public function save(array $enabledFeatures): void

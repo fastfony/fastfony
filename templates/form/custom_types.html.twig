@@ -10,11 +10,11 @@
 {% endblock %}
 
 {% block _features_form_features_widget %}
-    <ul>
+    <ul class="list-unstyled">
     {% for choice in choices %}
         <li>
             <label
-                class="fieldset-label my-2"
+                class="fieldset-label form-check form-switch ps-0"
                 for="{{ id }}_{{ loop.index0 }}"
             >
                 <input
@@ -22,7 +22,7 @@
                     name="{{ full_name }}[]"
                     type="checkbox"
                     {{ choice.value in data ? 'checked="checked"' : '' }}
-                    class="toggle"
+                    class="toggle form-check-input"
                     value="{{ choice.value }}"
                 />
                 {{ ('feature.' ~ choice.label)|trans }}

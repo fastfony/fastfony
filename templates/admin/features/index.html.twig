@@ -1,0 +1,34 @@
+{% extends '@EasyAdmin/layout.html.twig' %}
+
+{% trans_default_domain 'admin' %}
+
+{% block content_title %}
+    {{ 'Features'|trans }}
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-12 col-lg-6 col-xxl-3">
+            <form action="" method="POST">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        {{ 'settings.block.features'|trans }}
+                    </div>
+                    <ul class="list-group list-group-flush list-unstyled">
+                        <li class="list-group-item">
+                            {{ form_widget(feature_flag_form.features) }}
+                            {{ form_errors(feature_flag_form.features) }}
+                        </li>
+                    </ul>
+                    <div class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-end p-1">
+                            <button type="submit" class="btn btn-primary">
+                                {{ 'button.save'|trans }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {{ form_end(feature_flag_form) }}
+        </div>
+    </div>
+{% endblock %}
