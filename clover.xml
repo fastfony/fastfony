@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1742827338">
-  <project timestamp="1742827338">
+<coverage generated="1742831175">
+  <project timestamp="1742831175">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Editorjs.php">
       <class name="App\Admin\Field\Editorjs" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
@@ -28,7 +28,7 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Admin/Dashboard.php">
       <class name="App\Controller\Admin\Dashboard" namespace="global">
-        <metrics complexity="9" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="25" elements="32" coveredelements="30"/>
+        <metrics complexity="9" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="26" elements="33" coveredelements="31"/>
       </class>
       <line num="25" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="29" type="stmt" count="3"/>
@@ -62,7 +62,30 @@
       <line num="83" type="stmt" count="2"/>
       <line num="84" type="stmt" count="2"/>
       <line num="85" type="stmt" count="2"/>
-      <metrics loc="88" ncloc="85" classes="1" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="25" elements="32" coveredelements="30"/>
+      <line num="86" type="stmt" count="2"/>
+      <metrics loc="89" ncloc="86" classes="1" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="26" elements="33" coveredelements="31"/>
+    </file>
+    <file name="/home/runner/work/fastfony/fastfony/src/Controller/Admin/Feature/Index.php">
+      <class name="App\Controller\Admin\Feature\Index" namespace="global">
+        <metrics complexity="5" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="16" coveredelements="0"/>
+      </class>
+      <line num="18" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="22" type="stmt" count="0"/>
+      <line num="27" type="method" name="__invoke" visibility="public" complexity="4" crap="20" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="46" type="stmt" count="0"/>
+      <line num="50" type="stmt" count="0"/>
+      <line num="51" type="stmt" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <metrics loc="55" ncloc="51" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="16" coveredelements="0"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Admin/GroupCrud.php">
       <class name="App\Controller\Admin\GroupCrud" namespace="global">
@@ -1354,32 +1377,34 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Handler/FeatureFlag.php">
       <class name="App\Handler\FeatureFlag" namespace="global">
-        <metrics complexity="7" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="23" coveredelements="23"/>
+        <metrics complexity="8" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="20" elements="25" coveredelements="23"/>
       </class>
       <line num="23" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="25"/>
       <line num="27" type="stmt" count="25"/>
       <line num="29" type="method" name="isEnabled" visibility="public" complexity="2" crap="2" count="9"/>
       <line num="31" type="stmt" count="9"/>
-      <line num="37" type="method" name="save" visibility="public" complexity="4" crap="4" count="2"/>
-      <line num="39" type="stmt" count="2"/>
-      <line num="40" type="stmt" count="2"/>
-      <line num="41" type="stmt" count="2"/>
-      <line num="42" type="stmt" count="2"/>
-      <line num="45" type="stmt" count="2"/>
-      <line num="46" type="stmt" count="2"/>
-      <line num="47" type="stmt" count="1"/>
+      <line num="37" type="method" name="getEnabled" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="45" type="method" name="save" visibility="public" complexity="4" crap="4" count="2"/>
+      <line num="47" type="stmt" count="2"/>
+      <line num="48" type="stmt" count="2"/>
+      <line num="49" type="stmt" count="2"/>
       <line num="50" type="stmt" count="2"/>
-      <line num="51" type="stmt" count="2"/>
-      <line num="52" type="stmt" count="2"/>
       <line num="53" type="stmt" count="2"/>
       <line num="54" type="stmt" count="2"/>
-      <line num="55" type="stmt" count="2"/>
+      <line num="55" type="stmt" count="1"/>
       <line num="58" type="stmt" count="2"/>
+      <line num="59" type="stmt" count="2"/>
       <line num="60" type="stmt" count="2"/>
-      <line num="62" type="stmt" count="1"/>
-      <line num="63" type="stmt" count="1"/>
-      <line num="64" type="stmt" count="1"/>
-      <metrics loc="68" ncloc="60" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="23" coveredelements="23"/>
+      <line num="61" type="stmt" count="2"/>
+      <line num="62" type="stmt" count="2"/>
+      <line num="63" type="stmt" count="2"/>
+      <line num="66" type="stmt" count="2"/>
+      <line num="68" type="stmt" count="2"/>
+      <line num="70" type="stmt" count="1"/>
+      <line num="71" type="stmt" count="1"/>
+      <line num="72" type="stmt" count="1"/>
+      <metrics loc="76" ncloc="65" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="20" elements="25" coveredelements="23"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Handler/Features.php">
       <metrics loc="15" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -1778,6 +1803,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="77" loc="4140" ncloc="3922" classes="73" methods="257" coveredmethods="235" conditionals="0" coveredconditionals="0" statements="1061" coveredstatements="1005" elements="1318" coveredelements="1240"/>
+    <metrics files="78" loc="4204" ncloc="3979" classes="74" methods="260" coveredmethods="235" conditionals="0" coveredconditionals="0" statements="1077" coveredstatements="1006" elements="1337" coveredelements="1241"/>
   </project>
 </coverage>
