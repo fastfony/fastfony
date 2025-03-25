@@ -11,12 +11,12 @@ trait KeyValue
 {
     #[Assert\NotBlank]
     #[ORM\Column(name: '`key`', length: 255)]
-    private string $key;
+    private ?string $key = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $value = null;
 
-    public function getKey(): string
+    public function getKey(): ?string
     {
         return $this->key;
     }

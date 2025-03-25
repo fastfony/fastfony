@@ -29,7 +29,7 @@ class Product
     #[Gedmo\Slug(fields: ['name'], updatable: false)]
     #[Gedmo\Versioned]
     #[ORM\Column(length: 255, nullable: true)]
-    private string $slug;
+    private ?string $slug = null;
 
     /**
      * @var Collection<int, Price>
@@ -47,7 +47,7 @@ class Product
         $this->prices = new ArrayCollection();
     }
 
-    public function getSlug(): string
+    public function getSlug(): ?string
     {
         return $this->slug;
     }

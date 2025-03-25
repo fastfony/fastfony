@@ -12,9 +12,9 @@ trait Email
 {
     #[Assert\Email]
     #[ORM\Column(length: 180)]
-    private string $email;
+    private ?string $email = null;
 
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }

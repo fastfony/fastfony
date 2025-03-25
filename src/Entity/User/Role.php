@@ -21,14 +21,14 @@ class Role
     )]
     #[Assert\NotBlank]
     #[ORM\Column(length: 60)]
-    private string $name;
+    private ?string $name = null;
 
     public function __toString(): string
     {
         return $this->getDescription();
     }
 
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }

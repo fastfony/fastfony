@@ -52,7 +52,7 @@ class Parameter
     private ?ParameterCategory $category = null;
 
     #[Groups(['parameter:read'])]
-    public function getKey(): string
+    public function getKey(): ?string
     {
         return $this->traitGetKey();
     }

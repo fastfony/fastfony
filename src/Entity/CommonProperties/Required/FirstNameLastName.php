@@ -12,13 +12,13 @@ trait FirstNameLastName
 {
     #[Assert\NotBlank]
     #[ORM\Column(length: 255)]
-    private string $firstName;
+    private ?string $firstName = null;
 
     #[Assert\NotBlank]
     #[ORM\Column(length: 255)]
-    private string $lastName;
+    private ?string $lastName = null;
 
-    public function getFirstName(): string
+    public function getFirstName(): ?string
     {
         return $this->firstName;
     }
@@ -30,7 +30,7 @@ trait FirstNameLastName
         return $this;
     }
 
-    public function getLastName(): string
+    public function getLastName(): ?string
     {
         return $this->lastName;
     }

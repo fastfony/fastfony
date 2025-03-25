@@ -21,14 +21,14 @@ class Price
     use TimestampableEntity;
 
     #[ORM\Column]
-    private float $unitAmount;
+    private ?float $unitAmount = null;
 
     #[ORM\Column(length: 3)]
-    private string $currency;
+    private ?string $currency = null;
 
     #[ORM\ManyToOne(inversedBy: 'prices')]
     #[ORM\JoinColumn(nullable: false)]
-    private Product $product;
+    private ?Product $product = null;
 
     public function __toString(): string
     {
@@ -36,7 +36,7 @@ class Price
             .(new IntlExtension())->formatCurrency($this->getUnitAmount(), $this->getCurrency());
     }
 
-    public function getUnitAmount(): float
+    public function getUnitAmount(): ?float
     {
         return $this->unitAmount;
     }
@@ -48,7 +48,7 @@ class Price
         return $this;
     }
 
-    public function getCurrency(): string
+    public function getCurrency(): ?string
     {
         return $this->currency;
     }
@@ -60,7 +60,7 @@ class Price
         return $this;
     }
 
-    public function getProduct(): Product
+    public function getProduct(): ?Product
     {
         return $this->product;
     }
