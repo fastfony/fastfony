@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1742845935">
-  <project timestamp="1742845935">
+<coverage generated="1742919028">
+  <project timestamp="1742919028">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Editorjs.php">
       <class name="App\Admin\Field\Editorjs" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
@@ -802,19 +802,19 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/BlameableEntity.php">
       <class name="App\Entity\BlameableEntity" namespace="global">
-        <metrics complexity="4" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
+        <metrics complexity="4" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="10" coveredelements="0"/>
       </class>
-      <line num="23" type="method" name="setCreatedBy" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="25" type="stmt" count="3"/>
-      <line num="27" type="stmt" count="3"/>
-      <line num="30" type="method" name="getCreatedBy" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="32" type="stmt" count="3"/>
-      <line num="35" type="method" name="setUpdatedBy" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="37" type="stmt" count="3"/>
-      <line num="39" type="stmt" count="3"/>
-      <line num="42" type="method" name="getUpdatedBy" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="44" type="stmt" count="3"/>
-      <metrics loc="47" ncloc="47" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
+      <line num="23" type="method" name="setCreatedBy" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="30" type="method" name="getCreatedBy" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="35" type="method" name="setUpdatedBy" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="42" type="method" name="getUpdatedBy" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <metrics loc="47" ncloc="47" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/CommonProperties/Description.php">
       <class name="App\Entity\CommonProperties\Description" namespace="global">
@@ -889,11 +889,11 @@
       <class name="App\Entity\CommonProperties\Required\Email" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
       </class>
-      <line num="17" type="method" name="getEmail" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="19" type="stmt" count="8"/>
-      <line num="22" type="method" name="setEmail" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="24" type="stmt" count="8"/>
-      <line num="26" type="stmt" count="8"/>
+      <line num="17" type="method" name="getEmail" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="19" type="stmt" count="7"/>
+      <line num="22" type="method" name="setEmail" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="24" type="stmt" count="7"/>
+      <line num="26" type="stmt" count="7"/>
       <metrics loc="29" ncloc="28" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/CommonProperties/Required/Enabled.php">
@@ -909,29 +909,29 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/CommonProperties/Required/FirstNameLastName.php">
       <class name="App\Entity\CommonProperties\Required\FirstNameLastName" namespace="global">
-        <metrics complexity="4" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
+        <metrics complexity="4" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="10" coveredelements="0"/>
       </class>
-      <line num="21" type="method" name="getFirstName" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="23" type="stmt" count="1"/>
-      <line num="26" type="method" name="setFirstName" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="28" type="stmt" count="1"/>
-      <line num="30" type="stmt" count="1"/>
-      <line num="33" type="method" name="getLastName" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="35" type="stmt" count="1"/>
-      <line num="38" type="method" name="setLastName" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="40" type="stmt" count="1"/>
-      <line num="42" type="stmt" count="1"/>
-      <metrics loc="45" ncloc="44" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
+      <line num="21" type="method" name="getFirstName" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="23" type="stmt" count="0"/>
+      <line num="26" type="method" name="setFirstName" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="33" type="method" name="getLastName" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="38" type="method" name="setLastName" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="42" type="stmt" count="0"/>
+      <metrics loc="45" ncloc="44" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/CommonProperties/Required/KeyValue.php">
       <class name="App\Entity\CommonProperties\Required\KeyValue" namespace="global">
         <metrics complexity="4" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
       </class>
-      <line num="19" type="method" name="getKey" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="21" type="stmt" count="2"/>
-      <line num="24" type="method" name="setKey" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="26" type="stmt" count="2"/>
-      <line num="28" type="stmt" count="2"/>
+      <line num="19" type="method" name="getKey" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="24" type="method" name="setKey" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
       <line num="31" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="26"/>
       <line num="33" type="stmt" count="26"/>
       <line num="36" type="method" name="setValue" visibility="public" complexity="1" crap="1" count="4"/>
@@ -943,11 +943,11 @@
       <class name="App\Entity\CommonProperties\Required\Name" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
       </class>
-      <line num="16" type="method" name="getName" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="18" type="stmt" count="8"/>
-      <line num="21" type="method" name="setName" visibility="public" complexity="1" crap="1" count="10"/>
-      <line num="23" type="stmt" count="10"/>
-      <line num="25" type="stmt" count="10"/>
+      <line num="16" type="method" name="getName" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="18" type="stmt" count="4"/>
+      <line num="21" type="method" name="setName" visibility="public" complexity="1" crap="1" count="6"/>
+      <line num="23" type="stmt" count="6"/>
+      <line num="25" type="stmt" count="6"/>
       <metrics loc="28" ncloc="28" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/CommonProperties/Seo.php">
@@ -1001,8 +1001,8 @@
       <class name="App\Entity\Parameter\Parameter" namespace="global">
         <metrics complexity="11" methods="11" coveredmethods="11" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="26" coveredelements="26"/>
       </class>
-      <line num="54" type="method" name="getKey" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="57" type="stmt" count="2"/>
+      <line num="54" type="method" name="getKey" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="57" type="stmt" count="1"/>
       <line num="60" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="26"/>
       <line num="63" type="stmt" count="26"/>
       <line num="66" type="method" name="getLabel" visibility="public" complexity="1" crap="1" count="2"/>
@@ -1053,39 +1053,39 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/Product/Price.php">
       <class name="App\Entity\Product\Price" namespace="global">
-        <metrics complexity="8" methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="9" elements="18" coveredelements="15"/>
+        <metrics complexity="8" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="18" coveredelements="0"/>
       </class>
       <line num="33" type="method" name="__toString" visibility="public" complexity="2" crap="6" count="0"/>
       <line num="35" type="stmt" count="0"/>
       <line num="36" type="stmt" count="0"/>
-      <line num="39" type="method" name="getUnitAmount" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="41" type="stmt" count="1"/>
-      <line num="44" type="method" name="setUnitAmount" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="46" type="stmt" count="1"/>
-      <line num="48" type="stmt" count="1"/>
-      <line num="51" type="method" name="getCurrency" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="53" type="stmt" count="1"/>
-      <line num="56" type="method" name="setCurrency" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="58" type="stmt" count="1"/>
-      <line num="60" type="stmt" count="1"/>
-      <line num="63" type="method" name="getProduct" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="65" type="stmt" count="1"/>
-      <line num="68" type="method" name="setProduct" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="70" type="stmt" count="1"/>
-      <line num="72" type="stmt" count="1"/>
-      <metrics loc="75" ncloc="75" classes="1" methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="9" elements="18" coveredelements="15"/>
+      <line num="39" type="method" name="getUnitAmount" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <line num="44" type="method" name="setUnitAmount" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="46" type="stmt" count="0"/>
+      <line num="48" type="stmt" count="0"/>
+      <line num="51" type="method" name="getCurrency" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="53" type="stmt" count="0"/>
+      <line num="56" type="method" name="setCurrency" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="58" type="stmt" count="0"/>
+      <line num="60" type="stmt" count="0"/>
+      <line num="63" type="method" name="getProduct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="65" type="stmt" count="0"/>
+      <line num="68" type="method" name="setProduct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="70" type="stmt" count="0"/>
+      <line num="72" type="stmt" count="0"/>
+      <metrics loc="75" ncloc="75" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="18" coveredelements="0"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/Product/Product.php">
       <class name="App\Entity\Product\Product" namespace="global">
-        <metrics complexity="7" methods="6" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="4" elements="17" coveredelements="7"/>
+        <metrics complexity="7" methods="6" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="1" elements="17" coveredelements="2"/>
       </class>
       <line num="45" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="47" type="stmt" count="1"/>
-      <line num="50" type="method" name="getSlug" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="52" type="stmt" count="1"/>
-      <line num="55" type="method" name="setSlug" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="57" type="stmt" count="1"/>
-      <line num="59" type="stmt" count="1"/>
+      <line num="50" type="method" name="getSlug" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <line num="55" type="method" name="setSlug" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="57" type="stmt" count="0"/>
+      <line num="59" type="stmt" count="0"/>
       <line num="65" type="method" name="getPrices" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="67" type="stmt" count="0"/>
       <line num="70" type="method" name="addPrice" visibility="public" complexity="2" crap="6" count="0"/>
@@ -1096,7 +1096,7 @@
       <line num="80" type="method" name="removePrice" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="82" type="stmt" count="0"/>
       <line num="84" type="stmt" count="0"/>
-      <metrics loc="87" ncloc="81" classes="1" methods="6" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="4" elements="17" coveredelements="7"/>
+      <metrics loc="87" ncloc="81" classes="1" methods="6" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="1" elements="17" coveredelements="2"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/User/Group.php">
       <class name="App\Entity\User\Group" namespace="global">
@@ -1154,11 +1154,11 @@
       </class>
       <line num="26" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="28" type="stmt" count="2"/>
-      <line num="31" type="method" name="getName" visibility="public" complexity="1" crap="1" count="6"/>
-      <line num="33" type="stmt" count="6"/>
-      <line num="36" type="method" name="setName" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="38" type="stmt" count="3"/>
-      <line num="40" type="stmt" count="3"/>
+      <line num="31" type="method" name="getName" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="33" type="stmt" count="5"/>
+      <line num="36" type="method" name="setName" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="38" type="stmt" count="2"/>
+      <line num="40" type="stmt" count="2"/>
       <metrics loc="43" ncloc="43" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/User/User.php">
@@ -1806,6 +1806,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="78" loc="4212" ncloc="3987" classes="74" methods="261" coveredmethods="236" conditionals="0" coveredconditionals="0" statements="1079" coveredstatements="1008" elements="1340" coveredelements="1244"/>
+    <metrics files="78" loc="4212" ncloc="3987" classes="74" methods="261" coveredmethods="220" conditionals="0" coveredconditionals="0" statements="1079" coveredstatements="984" elements="1340" coveredelements="1204"/>
   </project>
 </coverage>
