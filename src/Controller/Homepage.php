@@ -6,9 +6,11 @@ namespace App\Controller;
 
 use App\Entity\Page\Page;
 use App\Repository\Page\PageRepository;
+use App\Repository\User\UserRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
 
@@ -16,10 +18,9 @@ class Homepage extends AbstractController
 {
     public function __construct(
         private readonly PageRepository $pageRepository,
+        private readonly UserRepository $userRepository,
     ) {
     }
-
-    // Le slug peut être vide pour la homepage
 
     /**
      * @return array<string, mixed>
@@ -28,7 +29,13 @@ class Homepage extends AbstractController
     #[Template('pages/show.html.twig')]
     public function __invoke(
         Request $request,
-    ): array {
+    ): array|RedirectResponse {
+        // If Fastfony is not yet installed, redirect to the installer
+        $users = $this->userRepository->countEnabled();
+        if (0 === $users) {
+            return $this->redirectToRoute('installation');
+        }
+
         return [
             'page' => $this->getHomepage(),
         ];

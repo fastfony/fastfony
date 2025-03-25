@@ -6,6 +6,7 @@ namespace App\Command;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
@@ -31,14 +32,18 @@ class Install extends Command
 
         $io->title('Welcome on Fastfony!');
         $this->configureDatabase($io, $envContent);
+        $this->createDatabaseAndFixtures($output);
+
         $this->configureMailerDsn($io, $envContent);
 
-        // Generate APP_SECRET
+        // Generate APP_SECRET and FEATURE_FLAGS empty
         $appSecret = bin2hex(random_bytes(16));
         $envContent[] = \sprintf('APP_SECRET="%s"', $appSecret);
+        $envContent[] = "FEATURE_FLAGS='{}'";
 
         // Write to .env.local
         file_put_contents('.env.local', implode("\n", $envContent));
+        chmod('.env.local', 0666);
 
         $io->success('Installation completed!');
         $io->info(
@@ -84,6 +89,37 @@ class Install extends Command
                 $dbVersion,
             );
         }
+    }
+
+    private function createDatabaseAndFixtures(OutputInterface $output): void
+    {
+        $this->getApplication()->doRun(
+            new ArrayInput([
+                'command' => 'doctrine:database:create',
+                '--env' => 'dev',
+            ]),
+            $output,
+        );
+
+        $this->getApplication()->doRun(
+            new ArrayInput([
+                'command' => 'doctrine:schema:update',
+                '--force' => true,
+                '--env' => 'dev',
+            ]),
+            $output,
+        );
+
+        $input = new ArrayInput([
+            'command' => 'doctrine:fixtures:load',
+            '--group' => ['install'],
+            '--env' => 'dev',
+        ]);
+        $input->setInteractive(false);
+        $this->getApplication()->doRun(
+            $input,
+            $output,
+        );
     }
 
     /**

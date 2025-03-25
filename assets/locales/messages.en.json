@@ -20,6 +20,8 @@
   "login.link_sent_validity": "If you have an account a login link has been sent to your email address. This link is valid for 5 minutes.",
   "login.no_account": "Not a member?",
   "login.title": "Log in to your account",
+  "maintenance.description": "Our Enterprise administrators are performing scheduled maintenance.",
+  "maintenance.title": "Under Maintenance",
   "pages.preview": "This is a preview of your page.",
   "register.agree_with_terms": "By clicking on \"Create an account\" I accept the terms and conditions of use and I have read the confidentiality policy. ",
   "register.already_account": "Already have an Account?",

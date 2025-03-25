@@ -75,6 +75,16 @@ class Parameters extends Fixture implements FixtureGroupInterface
                     ParameterCategory::class
                 ),
             ],
+            'FASTFONY_MAINTENANCE_MODE' => [
+                'type' => 'bool',
+                'value' => '0',
+                'label' => 'Maintenance mode',
+                'help' => 'If yes, the website will be in maintenance mode and show the template maintenance.html.twig (expect for administrator users)',
+                'category' => $this->getReference(
+                    self::FASTFONY_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
+                    ParameterCategory::class
+                ),
+            ],
             'APP_NAME' => [
                 'value' => 'Fastfony',
                 'type' => 'text',
