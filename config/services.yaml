@@ -25,7 +25,7 @@ services:
 
     App\DataCollector\Fastfony:
         arguments:
-            $licenceKey: '%env(database:FASTFONY_LICENCE_KEY)%'
+            $licenseKey: '%env(database:FASTFONY_LICENSE_KEY)%'
         tags:
             - name: data_collector
               id: 'fastfony'

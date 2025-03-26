@@ -7,7 +7,7 @@
   "Email": "Email",
   "Icon filepath": "Icon filepath",
   "If yes, the website will be in maintenance mode and show the template maintenance.html.twig (expect for administrator users)": "If yes, the website will be in maintenance mode and show the template maintenance.html.twig (expect for administrator users)",
-  "Licence key": "Licence key",
+  "License key": "License key",
   "Login": "Login",
   "Maintenance mode": "Maintenance mode",
   "Name": "Name",
@@ -19,5 +19,5 @@
   "toast.error": "An error occured.Please retry.",
   "toast.parameter.updated": "New value is saved.",
   "Yes": "Yes",
-  "Your Fastfony licence key is required to use the software. Get it on <a href=\"https://fastfony.com\" target=\"_blank\">fastfony.com</a>": "Your Fastfony licence key is required to use the software. Get it on <a href=\"https://fastfony.com\" target=\"_blank\">fastfony.com</a>"
+  "Your Fastfony license key is required to use the software. Get it on <a href=\"https://fastfony.com\" target=\"_blank\">fastfony.com</a>": "Your Fastfony license key is required to use the software. Get it on <a href=\"https://fastfony.com\" target=\"_blank\">fastfony.com</a>"
 }

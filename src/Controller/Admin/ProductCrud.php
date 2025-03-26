@@ -43,10 +43,12 @@ class ProductCrud extends AbstractCrudController
             FormField::addTab('General'),
             FormField::addColumn(8),
             TextField::new('name'),
+            TextField::new('buttonLabel'),
             FormField::addColumn(4)
                 ->addCssClass('text-right pt-4 pe-5'),
             BooleanField::new('enabled'),
             FormField::addColumn(12),
+            TextField::new('shortDescription'),
             TextareaField::new('description')
                 ->hideOnIndex(),
             FormField::addTab('Prices'),

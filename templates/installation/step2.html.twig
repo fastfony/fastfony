@@ -37,15 +37,15 @@
                     {{ form_errors(form) }}
 
                     <fieldset class="fieldset bg-base-200 border border-base-300 p-4 rounded-box">
-                        <legend class="fieldset-legend">{{ 'step2.your_licence_key'|trans }}</legend>
-                        {{ form_widget(form.licenceKey, {attr: {placeholder: 'input.licence_key', class: 'textarea'}}) }}
-                        {{ form_errors(form.licenceKey) }}
+                        <legend class="fieldset-legend">{{ 'step2.your_license_key'|trans }}</legend>
+                        {{ form_widget(form.licenseKey, {attr: {placeholder: 'input.license_key', class: 'textarea'}}) }}
+                        {{ form_errors(form.licenseKey) }}
                         <label class="fieldset-label">
-                            {{ form_widget(form.autoGenerateLicenceKey, {attr: {class: 'checkbox'}}) }}
+                            {{ form_widget(form.autoGenerateLicenseKey, {attr: {class: 'checkbox'}}) }}
 
-                            {{ 'step2.auto_generate_licence_key'|trans }}
+                            {{ 'step2.auto_generate_license_key'|trans }}
                         </label>
-                        <p class="fieldset-label">{{ 'step2.help_licence_key'|trans|raw }}</p>
+                        <p class="fieldset-label">{{ 'step2.help_license_key'|trans|raw }}</p>
                     </fieldset>
 
                     <fieldset class="fieldset bg-base-200 border border-base-300 p-4 rounded-box">

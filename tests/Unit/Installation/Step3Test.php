@@ -9,7 +9,7 @@ use App\Installation\Step3;
 use App\Repository\Parameter\ParameterRepository;
 use App\Repository\User\UserRepository;
 use App\Security\LoginLink;
-use Fastfony\LicenceBundle\Security\LicenceChecker;
+use Fastfony\LicenseBundle\Security\LicenseChecker;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,7 +23,7 @@ class Step3Test extends TestCase
         $step3 = new Step3(
             $userRepository,
             $this->createMock(LoginLink::class),
-            $this->createMock(LicenceChecker::class),
+            $this->createMock(LicenseChecker::class),
             $parameterRepository,
         );
 
@@ -35,9 +35,9 @@ class Step3Test extends TestCase
 
         $installationForm->method('getData')
             ->willReturn([
-                'autoGenerateLicenceKey' => false,
+                'autoGenerateLicenseKey' => false,
                 'email' => 'test@test.com',
-                'licenceKey' => 'test-licence-key',
+                'licenseKey' => 'test-license-key',
             ]);
 
         $installationForm->method('isSubmitted')

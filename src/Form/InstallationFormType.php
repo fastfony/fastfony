@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Form;
 
-use Fastfony\LicenceBundle\Validator\ValidLicenceKey;
+use Fastfony\LicenseBundle\Validator\ValidLicenseKey;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -22,18 +22,18 @@ class InstallationFormType extends AbstractType
     ): void {
         $builder
             ->add(
-                'licenceKey',
+                'licenseKey',
                 TextareaType::class,
                 [
-                    'required' => false, // Will be required if autoGenerateLicenceKey is not checked
+                    'required' => false, // Will be required if autoGenerateLicenseKey is not checked
                     'constraints' => [
                         new NotBlank(),
-                        new ValidLicenceKey(),
+                        new ValidLicenseKey(),
                     ],
                 ],
             )
             ->add(
-                'autoGenerateLicenceKey',
+                'autoGenerateLicenseKey',
                 CheckboxType::class,
                 [
                     'required' => false,

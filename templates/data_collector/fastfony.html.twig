@@ -18,7 +18,7 @@
         {% set fastfony_version_status = '' %}
     {% endif %}
 
-    {% if not collector.licenceKey or not collector.licenceKeyValidity %}
+    {% if not collector.licenseKey or not collector.licenseKeyValidity %}
         {% set block_status = 'red' %}
     {% endif %}
 
@@ -40,23 +40,23 @@
         {% endif %}
 
         <div class="sf-toolbar-info-piece">
-            <b>Licence Key</b>
-            {% if collector.licenceKey %}
-                <span class="sf-toolbar-status sf-toolbar-status-{{ collector.licenceKeyValidity ? 'green' : 'red' }}">
-                    {{ collector.licenceKey }}
+            <b>License Key</b>
+            {% if collector.licenseKey %}
+                <span class="sf-toolbar-status sf-toolbar-status-{{ collector.licenseKeyValidity ? 'green' : 'red' }}">
+                    {{ collector.licenseKey }}
                 </span>
             {% else %}
                 <span class="sf-toolbar-status sf-toolbar-status-red">
-                    No licence key found.
+                    No license key found.
                 </span>
             {% endif %}
         </div>
 
-        {% if not collector.licenceKeyValidity %}
+        {% if not collector.licenseKeyValidity %}
             <div class="sf-toolbar-info-piece">
                 <span>
                     <a href="{{ path('admin_parameters') }}" target="_blank">Add</a> or
-                    <a href="https://fastfony.com" target="_blank">get</a> your licence key.
+                    <a href="https://fastfony.com" target="_blank">get</a> your license key.
                 </span>
             </div>
         {% endif %}

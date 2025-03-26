@@ -48,14 +48,14 @@ class InstallationTest extends WebTestCase
 
         $this->client->submitForm('Create super admin user', [
             'installation_form[email]' => 'test',
-            'installation_form[licenceKey]' => 'test',
+            'installation_form[licenseKey]' => 'test',
         ]);
 
         $this->assertSelectorExists('#toast-container .alert.alert-error');
 
         $this->client->submitForm('Create super admin user', [
             'installation_form[email]' => 'test@test.com',
-            'installation_form[licenceKey]' => 'test',
+            'installation_form[licenseKey]' => 'test',
         ]);
         $this->assertResponseIsSuccessful();
         $this->assertSelectorCount(3, '.step.step-primary');

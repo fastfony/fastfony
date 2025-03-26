@@ -31,6 +31,12 @@ class Product
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $slug = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $shortDescription = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $buttonLabel = null;
+
     /**
      * @var Collection<int, Price>
      */
@@ -55,6 +61,30 @@ class Product
     public function setSlug(string $slug): static
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getShortDescription(): ?string
+    {
+        return $this->shortDescription;
+    }
+
+    public function setShortDescription(?string $shortDescription): static
+    {
+        $this->shortDescription = $shortDescription;
+
+        return $this;
+    }
+
+    public function getButtonLabel(): ?string
+    {
+        return $this->buttonLabel;
+    }
+
+    public function setButtonLabel(?string $buttonLabel): static
+    {
+        $this->buttonLabel = $buttonLabel;
 
         return $this;
     }

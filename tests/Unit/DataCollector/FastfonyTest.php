@@ -6,7 +6,7 @@ namespace App\Tests\Unit\DataCollector;
 
 use App\DataCollector\Fastfony;
 use App\Kernel;
-use Fastfony\LicenceBundle\Security\LicenceChecker;
+use Fastfony\LicenseBundle\Security\LicenseChecker;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,10 +15,10 @@ class FastfonyTest extends TestCase
 {
     public function testCollect(): void
     {
-        $fastfony = $this->getFastfony('test-licence-key');
+        $fastfony = $this->getFastfony('test-license-key');
 
-        $this->assertEquals('test-licence-key', $fastfony->getLicenceKey());
-        $this->assertFalse($fastfony->getLicenceKeyValidity());
+        $this->assertEquals('test-license-key', $fastfony->getLicenseKey());
+        $this->assertFalse($fastfony->getLicenseKeyValidity());
         $this->assertEquals(Kernel::FF_VERSION, $fastfony->getFastfonyVersion());
     }
 
@@ -41,25 +41,25 @@ class FastfonyTest extends TestCase
         $this->assertEquals(Kernel::FF_VERSION, $fastfony->getFastfonyVersion());
     }
 
-    public function testGetLicenceKey(): void
+    public function testGetLicenseKey(): void
     {
-        $fastfony = $this->getFastfony('test-licence-key');
+        $fastfony = $this->getFastfony('test-license-key');
 
-        $this->assertEquals('test-licence-key', $fastfony->getLicenceKey());
+        $this->assertEquals('test-license-key', $fastfony->getLicenseKey());
     }
 
-    public function testGetLicenceKeyValidity(): void
+    public function testGetLicenseKeyValidity(): void
     {
-        $fastfony = $this->getFastfony('test-licence-key');
+        $fastfony = $this->getFastfony('test-license-key');
 
-        $this->assertFalse($fastfony->getLicenceKeyValidity());
+        $this->assertFalse($fastfony->getLicenseKeyValidity());
     }
 
-    private function getFastfony(?string $licenceKey): Fastfony
+    private function getFastfony(?string $licenseKey): Fastfony
     {
         $fastfony = new Fastfony(
-            $licenceKey,
-            $this->createMock(LicenceChecker::class),
+            $licenseKey,
+            $this->createMock(LicenseChecker::class),
         );
 
         $request = new Request();

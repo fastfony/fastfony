@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\DataCollector;
 
 use App\Kernel;
-use Fastfony\LicenceBundle\Security\LicenceChecker;
+use Fastfony\LicenseBundle\Security\LicenseChecker;
 use Symfony\Bundle\FrameworkBundle\DataCollector\AbstractDataCollector;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,9 +14,9 @@ use Symfony\Component\HttpFoundation\Response;
 class Fastfony extends AbstractDataCollector
 {
     public function __construct(
-        private readonly ?string $licenceKey,
-        #[Autowire(service: 'fastfony_licence.security.licence_checker')]
-        private readonly LicenceChecker $licenceChecker,
+        private readonly ?string $licenseKey,
+        #[Autowire(service: 'fastfony_license.security.license_checker')]
+        private readonly LicenseChecker $licenseChecker,
     ) {
     }
 
@@ -28,8 +28,8 @@ class Fastfony extends AbstractDataCollector
         $this->data = [
             'fastfonyVersion' => Kernel::FF_VERSION,
             'fastfonyState' => $this->determineFastfonyState(),
-            'licenceKey' => $this->licenceKey,
-            'licenceKeyValidity' => $this->checkLicenceKeyValidity($this->licenceKey),
+            'licenseKey' => $this->licenseKey,
+            'licenseKeyValidity' => $this->checkLicenseKeyValidity($this->licenseKey),
         ];
     }
 
@@ -53,14 +53,14 @@ class Fastfony extends AbstractDataCollector
         return Kernel::FF_EXTRA_VERSION;
     }
 
-    public function getLicenceKey(): ?string
+    public function getLicenseKey(): ?string
     {
-        return $this->data['licenceKey'];
+        return $this->data['licenseKey'];
     }
 
-    public function getLicenceKeyValidity(): bool
+    public function getLicenseKeyValidity(): bool
     {
-        return !empty($this->data['licenceKey']) && $this->data['licenceKeyValidity'];
+        return !empty($this->data['licenseKey']) && $this->data['licenseKeyValidity'];
     }
 
     public function getName(): string
@@ -68,13 +68,13 @@ class Fastfony extends AbstractDataCollector
         return 'fastfony';
     }
 
-    private function checkLicenceKeyValidity(?string $licenceKey): bool
+    private function checkLicenseKeyValidity(?string $licenseKey): bool
     {
-        if (empty($licenceKey)) {
+        if (empty($licenseKey)) {
             return false;
         }
 
-        return $this->licenceChecker->isValid($licenceKey);
+        return $this->licenseChecker->isValid($licenseKey);
     }
 
     private function determineFastfonyState(): string
