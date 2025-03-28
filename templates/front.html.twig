@@ -2,6 +2,13 @@
 
 {% trans_default_domain 'front' %}
 
+{% block javascripts %}
+    {{ parent() }}
+    {% if feature_enabled('theme_chooser') %}
+        <script type="text/javascript">document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') ?? 'light');</script>
+    {% endif %}
+{% endblock %}
+
 {% block body %}
     <!-- Section: Centered with Simple Header -->
     <div class="relative overflow-hidden">
