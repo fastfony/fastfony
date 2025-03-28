@@ -57,7 +57,7 @@ class InstallationTest extends WebTestCase
             'installation_form[email]' => 'test@test.com',
             'installation_form[licenseKey]' => 'test',
         ]);
-        $this->assertResponseIsSuccessful();
-        $this->assertSelectorCount(3, '.step.step-primary');
+
+        $this->assertSelectorCount(1, '.text-error');
     }
 }

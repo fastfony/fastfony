@@ -9,7 +9,6 @@ use App\Installation\Step3;
 use App\Repository\Parameter\ParameterRepository;
 use App\Repository\User\UserRepository;
 use App\Security\LoginLink;
-use Fastfony\LicenseBundle\Security\LicenseChecker;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,7 +22,6 @@ class Step3Test extends TestCase
         $step3 = new Step3(
             $userRepository,
             $this->createMock(LoginLink::class),
-            $this->createMock(LicenseChecker::class),
             $parameterRepository,
         );
 
