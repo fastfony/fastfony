@@ -11,7 +11,9 @@
 {% endblock %}
 
 {% block javascripts %}
+    {{ parent() }}
     {{ encore_entry_script_tags('install') }}
+    <script type="text/javascript">document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') ?? 'light');</script>
 {% endblock %}
 
 {% block body %}
@@ -33,6 +35,7 @@
                     </svg>
                     {{ 'button.reload'|trans }}
                 </a>
+                {{ include('_choose_theme.html.twig') }}
             </div>
         </div>
 

@@ -5,6 +5,7 @@
   "Background Image URL": "Background Image URL",
   "Company": "Company",
   "Email": "Email",
+  "Fastfony": "Fastfony",
   "Icon filepath": "Icon filepath",
   "If yes, the website will be in maintenance mode and show the template maintenance.html.twig (expect for administrator users)": "If yes, the website will be in maintenance mode and show the template maintenance.html.twig (expect for administrator users)",
   "License key": "License key",

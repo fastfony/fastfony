@@ -37,5 +37,20 @@ class Pages extends Fixture implements FixtureGroupInterface
             ->setEnabled(true)
         ;
         $manager->persist($homepage);
+
+        $company = (new Page())
+            ->setName('Company')
+            ->setTitle('About us')
+            ->setSlug('company')
+            ->setEnabled(true);
+
+        $manager->persist($company);
+
+        $privacyPolicy = (new Page())
+            ->setName('Privacy policy')
+            ->setTitle('Privacy policy')
+            ->setEnabled(true);
+
+        $manager->persist($privacyPolicy);
     }
 }

@@ -32,6 +32,8 @@
                     </div>
                 {% endfor %}
             {% endfor %}
+            <!-- List class alert for include in css compilation -->
+            <div class="alert alert-danger alert-success alert-error alert-warning alert-info bg-red-600 bg-white/10 backdrop-blur-sm hidden"></div>
         </div>
 
         <div id="loader" class="fixed z-50 w-full h-full hidden">
@@ -42,5 +44,7 @@
         </div>
 
         {% block body %}{% endblock %}
+
+        {% block footer %}{% endblock %}
     </body>
 </html>

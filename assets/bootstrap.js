@@ -12,6 +12,15 @@ export const app = startStimulusApp(
   ),
 );
 
+/* DaisyUI theme chooser */
+document.querySelectorAll('input[data-choose-theme]').forEach((input) => {
+  input.addEventListener('change', (e) => {
+    const theme = e.target.value;
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  });
+});
+
 /* Symfony ux-vue */
 import { registerVueControllerComponents } from '@symfony/ux-vue';
 registerVueControllerComponents(
