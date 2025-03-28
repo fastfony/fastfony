@@ -1,0 +1,19 @@
+<footer class="bg-base-200 text-base-content p-10">
+    <div class="footer mx-auto px-4 lg:px-8 xl:max-w-7xl sm:footer-horizontal">
+        <aside>
+            <a
+                href="{{ path('homepage') }}"
+                class="group inline-flex items-center font-bold gap-2 text-xl tracking-wide"
+            >
+                {% if app_icon_filepath %}
+                    <img class="h-10 w-auto" src="{{ asset(app_icon_filepath) }}" alt="{{ app_name }}">
+                {% endif %}
+                <span>{{ app_name }}</span>
+            </a>
+
+            <p>
+                &copy; 2025 {{ app_name }}<br>
+            </p>
+        </aside>
+    </div>
+</footer>

@@ -1,0 +1,60 @@
+<footer class="bg-base-200 text-base-content p-10">
+    <div class="footer mx-auto px-4 lg:px-8 xl:max-w-7xl sm:footer-horizontal">
+        <nav>
+            <h6 class="footer-title">{{ 'footer.title.support'|trans }}</h6>
+            <a
+                href="https://github.com/fastfony/fastfony/issues"
+                target="_blank"
+                class="link link-hover"
+            >
+                {{ 'footer.title.support.submit_ticket'|trans }}
+            </a>
+            <a
+                href="https://docs.fastfony.com"
+                target="_blank"
+                class="link link-hover"
+            >
+                {{ 'footer.title.support.documentation'|trans }}
+            </a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">{{ 'footer.title.about'|trans }}</h6>
+            <a href="{{ path('page_show', {slug: 'company'}) }}" class="link link-hover">
+                {{ 'footer.title.about.company'|trans }}
+            </a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">{{ 'footer.title.legal'|trans }}</h6>
+            <a href="{{ path('page_show', {slug: 'privacy-policy'}) }}" class="link link-hover">
+                {{ 'footer.title.legal.privacy_policy'|trans }}
+            </a>
+        </nav>
+        <aside>
+            <a
+                href="{{ path('homepage') }}"
+                class="group inline-flex items-center font-bold gap-2 text-xl tracking-wide"
+            >
+                {% if app_icon_filepath %}
+                    <img class="h-10 w-auto" src="{{ asset(app_icon_filepath) }}" alt="{{ app_name }}">
+                {% endif %}
+                <span>{{ app_name }}</span>
+            </a>
+            <div class="flex gap-x-6 my-8">
+                <a href="https://github.com/fastfony" class="link link-hover" target="_blank">
+                    <span class="sr-only">GitHub</span>
+                    <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="https://app.daily.dev/squads/fastfony" class="link link-hover" target="_blank">
+                    <span class="sr-only">Daily.dev</span>
+                    <svg fill="currentColor" aria-hidden="true" viewBox="0 0 35 20" xmlns="http://www.w3.org/2000/svg" class="size-6"><g fill-rule="nonzero"><path d="M29.5925 9.99823L25.7884 6.1862L27.6895 2.37549L33.8703 8.5693C34.6579 9.35848 34.6579 10.638 33.8703 11.4272L26.2629 19.0506C25.4753 19.8398 24.1985 19.8398 23.411 19.0506C22.6234 18.2614 22.6234 16.9819 23.411 16.1927L29.5925 9.99823Z" fill-opacity="0.64"></path><path d="M23.4118 0.947675C24.1993 0.158497 25.4765 0.158828 26.264 0.948006L27.6903 2.37727L11.05 19.0524C10.2625 19.8415 8.98533 19.8412 8.1978 19.052L6.77152 17.6228L23.4118 0.947675ZM16.28 6.18864L13.4275 9.04718L9.62342 5.23514L4.86849 10L8.67256 13.8121L6.77152 17.6228L0.590647 11.429C-0.196882 10.6398 -0.196882 9.36026 0.590647 8.57108L8.1978 0.948006C8.98533 0.158828 10.2625 0.158497 11.05 0.947675L16.28 6.18864Z"></path></g></svg>
+                </a>
+            </div>
+
+            <p>
+                &copy; 2025 {{ app_name }}<br>
+            </p>
+        </aside>
+    </div>
+</footer>
