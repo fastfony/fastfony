@@ -17,9 +17,9 @@
         "ext-intl": "*",
         "ext-openssl": "*",
         "ext-pdo_sqlite": "*",
-        "api-platform/doctrine-orm": "^4.1.4",
-        "api-platform/symfony": "^4.1.4",
-        "aws/aws-sdk-php": "^3.342.16",
+        "api-platform/doctrine-orm": "^4.1.5",
+        "api-platform/symfony": "^4.1.5",
+        "aws/aws-sdk-php": "^3.342.21",
         "doctrine/dbal": "^3.9.4",
         "doctrine/doctrine-bundle": "^2.14.0",
         "doctrine/doctrine-fixtures-bundle": "^4.1",
@@ -64,12 +64,12 @@
         "symfony/scheduler": "7.2.*",
         "symfony/security-bundle": "7.2.*",
         "symfony/serializer": "7.2.*",
-        "symfony/stimulus-bundle": "^2.23",
+        "symfony/stimulus-bundle": "^2.24",
         "symfony/string": "7.2.*",
         "symfony/translation": "7.2.*",
         "symfony/twig-bundle": "7.2.*",
-        "symfony/ux-turbo": "^2.23",
-        "symfony/ux-vue": "^2.23",
+        "symfony/ux-turbo": "^2.24",
+        "symfony/ux-vue": "^2.24",
         "symfony/validator": "7.2.*",
         "symfony/web-link": "7.2.*",
         "symfony/webpack-encore-bundle": "^2.2",
@@ -80,7 +80,7 @@
         "twig/intl-extra": "^3.20",
         "twig/markdown-extra": "^3.20",
         "twig/twig": "^2.12|^3.20",
-        "vich/uploader-bundle": "^2.6.0"
+        "vich/uploader-bundle": "^2.6.1"
     },
     "config": {
         "allow-plugins": {
@@ -137,12 +137,12 @@
     },
     "require-dev": {
         "dg/bypass-finals": "^1.9",
-        "nunomaduro/phpinsights": "^2.12",
+        "nunomaduro/phpinsights": "^2.13.1",
         "phpro/grumphp": "^2.12",
         "phpstan/extension-installer": "^1.4.3",
         "phpstan/phpstan": "^2.1.11",
         "phpstan/phpstan-symfony": "^2.0.4",
-        "phpunit/phpunit": "^10.0",
+        "phpunit/phpunit": "^10.5.45",
         "symfony/browser-kit": "7.2.*",
         "symfony/css-selector": "7.2.*",
         "symfony/debug-bundle": "7.2.*",
@@ -150,7 +150,7 @@
         "symfony/phpunit-bridge": "^7.2",
         "symfony/stopwatch": "7.2.*",
         "symfony/web-profiler-bundle": "7.2.*",
-        "symplify/phpstan-rules": "^14.5.1",
+        "symplify/phpstan-rules": "^14.5.3",
         "vincentlanglet/twig-cs-fixer": "^3.5.1"
     }
 }

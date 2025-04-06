@@ -65,7 +65,7 @@
         "version": "dev-main"
     },
     "friendsofphp/php-cs-fixer": {
-        "version": "3.71",
+        "version": "3.75",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "main",
@@ -165,7 +165,7 @@
         ]
     },
     "squizlabs/php_codesniffer": {
-        "version": "3.11",
+        "version": "3.12",
         "recipe": {
             "repo": "github.com/symfony/recipes-contrib",
             "branch": "main",

@@ -110,7 +110,7 @@ return [
         //        'min-complexity' => 0,
         //        'min-architecture' => 0,
         //        'min-style' => 0,
-        'disable-security-check' => true, // https://github.com/nunomaduro/phpinsights/issues/704
+        //        'disable-security-check' => false,
     ],
 
     /*
