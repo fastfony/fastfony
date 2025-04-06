@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="flex flex-col w-full overflow-hidden relative min-h-screen items-center justify-center g-0 px-4">
+
+        <div class="justify-center items-center w-full card lg:flex max-w-md bg-base-200 mb-32">
+            <div class="w-full card-body">
+                {% block main %}{% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

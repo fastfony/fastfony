@@ -1,0 +1,24 @@
+{% extends 'installation/layout.html.twig' %}
+
+{% trans_default_domain 'installation' %}
+
+{% block content %}
+    <div class="grid grid-flow-row-dense grid-cols-3 grid-rows-1 py-12 px-8">
+        <div class="">
+            <ul class="steps steps-vertical">
+                <li class="step step-primary">{{ 'stepper.item.1'|trans }}</li>
+                <li class="step step-primary">{{ 'stepper.item.2'|trans }}</li>
+                <li class="step step-primary">{{ 'stepper.item.3'|trans }}</li>
+            </ul>
+        </div>
+        <div class="col-span-2">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">{{ 'step3.title'|trans }}</h2>
+
+                    <p>{{ 'step3.instruction'|trans|raw }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

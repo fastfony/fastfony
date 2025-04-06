@@ -1,0 +1,17 @@
+vich_uploader:
+    db_driver: orm
+    storage: flysystem
+    use_flysystem_to_resolve_uri: true
+
+    metadata:
+        type: attribute
+
+    mappings:
+        profile_photo:
+            uri_prefix: '/uploads/profiles/photos'
+            upload_destination: profile_photo.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true

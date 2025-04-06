@@ -1,0 +1,13 @@
+{% extends '@EasyAdmin/layout.html.twig' %}
+
+{% trans_default_domain 'admin' %}
+
+{% block content_title %}
+    {{ 'title.dashboard'|trans({'%userIdentifier%': app.user.userIdentifier}) }}
+{% endblock %}
+
+{% block main %}
+    <p class="mb-4">
+        {{ 'help.dashboard'|trans|raw }}
+    </p>
+{% endblock %}

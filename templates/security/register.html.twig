@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block html_class %}h-full bg-white{% endblock %}
+{% block body_class %}h-full{% endblock %}
+
+{% block body %}
+    <div class="flex min-h-full">
+        <div class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+            <div class="mx-auto w-full max-w-sm lg:w-96">
+                {% if form is defined %}
+                    {% if app_icon_filepath %}
+                        <a href="{{ path('homepage') }}">
+                            <img class="h-20 w-auto" src="{{ asset(app_icon_filepath) }}" alt="{{ app_name }}">
+                        </a>
+                    {% endif %}
+
+                    <h2 class="mt-8 text-2xl/9 font-bold tracking-tight">{{ 'register.title'|trans }}</h2>
+
+                    <p class="mt-2 text-sm/6">
+                        {{ 'register.already_account'|trans }}
+                        <a href="{{ path('request_login_link') }}" class="link link-hover link-accent">
+                            {{ 'register.login'|trans }}
+                        </a>
+                    </p>
+                {% endif %}
+
+                <div class="mt-10">
+                    {% if form is defined %}
+                        <div>
+                            {{ form_start(form) }}
+                            <label class="floating-label my-8">
+                                <span>{{ 'label.email'|trans }}</span>
+                                {{ form_widget(form.email, {attr: {class: 'input w-full'}}) }}
+                                {{ form_errors(form.email) }}
+                            </label>
+
+                            <div class="my-12">
+                                <label class="label whitespace-normal text-sm cursor-pointer">
+                                    {{ form_widget(form.agreeWithTerms, {attr: {class: 'checkbox me-3'}}) }}
+                                    <span class="label-text">{{ 'register.agree_with_terms'|trans|raw }}</span>
+                                </label>
+                            </div>
+
+                            <div class="grid my-8">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ 'register.button'|trans }}
+                                </button>
+                            </div>
+
+                            {{ form_end(form) }}
+                        </div>
+
+                    {% else %}
+                        <div class="py-10">
+                            <div class="mx-auto flex size-20 items-center justify-center rounded-full bg-green-100">
+                                <svg class="size-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"></path>
+                                </svg>
+                            </div>
+
+                            <p class="m-8 text-gray-500">{{ 'register.link_sent_validity'|trans }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            {{ include('pro/security/_oauth_clients.html.twig') }}
+        </div>
+        {% if registration_background_image_url %}
+            <div class="relative hidden w-0 flex-1 lg:block">
+                <img class="absolute inset-0 size-full object-cover" src="{{ registration_background_image_url }}" alt="">
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

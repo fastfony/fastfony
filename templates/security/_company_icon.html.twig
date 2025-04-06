@@ -1,0 +1,5 @@
+{% if app_icon_filepath %}
+    <a href="{{ path('homepage') }}">
+        <img class="h-25 mx-auto" src="{{ asset(app_icon_filepath) }}" alt="{{ app_name }}">
+    </a>
+{% endif %}

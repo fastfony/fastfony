@@ -1,0 +1,44 @@
+{% extends 'front.html.twig' %}
+
+{% trans_default_domain 'front' %}
+
+{% block main %}
+    <div class="py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-4xl text-center">
+                <h2 class="text-base/7 font-semibold text-primary">{{ 'title.products'|trans }}</h2>
+                <p class="mt-2 text-5xl font-semibold tracking-tight text-balance sm:text-6xl">
+                    {{ 'paragraph.products_marketing1'|trans }}
+                </p>
+            </div>
+            <p class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty opacity-50 sm:text-xl/8">
+                {{ 'paragraph.products_marketing2'|trans }}
+            </p>
+            <div class="mt-16 flex justify-center">
+                <fieldset aria-label="Payment frequency">
+                    <div class="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs/5 font-semibold ring-1 ring-gray-200 ring-inset">
+                        <!-- Checked: "bg-indigo-600 text-white", Not Checked: "text-gray-500" -->
+                        <label class="cursor-pointer rounded-full px-2.5 py-1">
+                            <input type="radio" name="frequency" value="monthly" class="sr-only">
+                            <span>Monthly</span>
+                        </label>
+                        <!-- Checked: "bg-indigo-600 text-white", Not Checked: "text-gray-500" -->
+                        <label class="cursor-pointer rounded-full px-2.5 py-1">
+                            <input type="radio" name="frequency" value="annually" class="sr-only">
+                            <span>Annually</span>
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+            {% if products|length > 0 %}
+                <ul class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                    {% for product in products %}
+                        <li class="">
+                            {{ include('product/_product_card.html.twig', {product: product}) }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

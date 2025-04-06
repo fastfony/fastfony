@@ -1,0 +1,19 @@
+{% trans_default_domain 'front' %}
+
+{% if stripe_enabled and price.stripeId is not null %}
+    <a
+        href="{{ path('product_buy', {id: price.id}) }}"
+        class="mt-6 btn btn-outline"
+        aria-describedby="{{ price.product.slug }}"
+        data-turbo="false"
+    >
+        {% if product is defined and product.buttonLabel is not null %}
+            {{ product.buttonLabel|trans }}
+        {% else %}
+            {{ 'button.buy'|trans }}
+        {% endif %}
+        {% if with_price is defined and with_price %}
+            {{ price.unitAmount|format_currency(price.currency) }}
+        {% endif %}
+    </a>
+{% endif %}

@@ -1,0 +1,5 @@
+{% if entity.instance.failureOutputObject %}
+    <blockquote><strong>{{ entity.instance.failureOutputObject['message'] }}</strong></blockquote>
+
+    <pre>{{ entity.instance.failureOutputObject['trace']|trim }}</pre>
+{% endif %}

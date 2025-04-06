@@ -1,0 +1,22 @@
+league_oauth2_server:
+    authorization_server:
+        private_key: '%env(resolve:OAUTH_PRIVATE_KEY)%'
+        private_key_passphrase: '%env(resolve:OAUTH_PASSPHRASE)%'
+        encryption_key: '%env(resolve:OAUTH_ENCRYPTION_KEY)%'
+        enable_password_grant: false
+        enable_refresh_token_grant: false
+    resource_server:
+        public_key: '%env(resolve:OAUTH_PUBLIC_KEY)%'
+    scopes:
+        available: ['email', 'roles', 'profile']
+        default: ['email', 'roles', 'profile']
+    client:
+        classname: App\Pro\Entity\OAuth2Server\Client
+    persistence:
+        doctrine:
+            entity_manager: default
+
+when@test:
+    league_oauth2_server:
+        persistence:
+            in_memory: null

@@ -1,0 +1,18 @@
+twig:
+    file_name_pattern: '*.twig'
+    globals:
+        app_name: '%env(database:APP_NAME)%'
+        app_icon_filepath: '%env(database:APP_ICON_FILEPATH)%'
+        registration_background_image_url: '%env(database:REGISTRATION_BACKGROUND_IMAGE_URL)%'
+        oauth_clients_enabled:
+            google: '%env(database:GOOGLE_CLIENT_ID)%'
+            github: '%env(database:GITHUB_CLIENT_ID)%'
+        stripe_enabled: '%env(bool:database:STRIPE_ENABLED)%'
+
+    form_themes:
+        - 'form/custom_errors.html.twig'
+        - 'form/custom_types.html.twig'
+
+when@test:
+    twig:
+        strict_variables: true

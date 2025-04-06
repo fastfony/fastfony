@@ -1,0 +1,14 @@
+{% trans_default_domain 'front' %}
+
+<li>
+    <a href="https://docs.fastfony.com" target="_blank">
+        {{ 'link.documentation'|trans }}
+    </a>
+</li>
+{% if feature_enabled('products') %}
+    <li>
+        <a href="{{ path('product_index') }}">
+            <span>{{ 'link.products'|trans }}</span>
+        </a>
+    </li>
+{% endif %}
