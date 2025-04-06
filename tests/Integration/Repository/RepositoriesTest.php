@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Integration\Repository;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\DBAL\Exception\NotNullConstraintViolationException;
 use Doctrine\ORM\EntityManagerInterface;
@@ -14,9 +15,7 @@ use function Symfony\Component\String\u;
 
 class RepositoriesTest extends KernelTestCase
 {
-    /**
-     * @dataProvider getEntities
-     */
+    #[DataProvider('getEntities')]
     public function testSaveFindAndRemoveMethods(ClassMetadata $classMetadata): void
     {
         $entity = $classMetadata->newInstance();

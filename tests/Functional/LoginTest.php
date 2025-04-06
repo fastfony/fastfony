@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Functional;
 
+use PHPUnit\Framework\Attributes\Depends;
 use Symfony\Bridge\Twig\Mime\NotificationEmail;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -34,9 +35,8 @@ class LoginTest extends WebTestCase
     /**
      * In order to not use the email limits for the testSendAndUserLoginLink test, this one must be in last
      * Be careful, this test is not isolated and can be affected results due to the cache system for the email limits.
-     *
-     * @depends testSendAndUseLoginLink
      */
+    #[Depends('testSendAndUseLoginLink')]
     public function testAccessAdminWithoutAuthentification(): void
     {
         $this->client->followRedirects(); // The admin page is redirected to the login page

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Unit\Entity;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use App\Entity\User\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\ClassMetadata;
@@ -23,9 +24,7 @@ class EntitiesTest extends KernelTestCase
         'App\Pro\Entity\OAuth2Server\Client',
     ];
 
-    /**
-     * @dataProvider getEntities
-     */
+    #[DataProvider('getEntities')]
     public function testGettersAndSetters(ClassMetadata $classMetadata): void
     {
         if (\in_array($classMetadata->getName(), self::EXCLUDED_ENTITIES, true)) {

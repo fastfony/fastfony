@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Functional;
 
+use PHPUnit\Framework\Attributes\Depends;
 use App\Repository\User\UserRepository;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -33,9 +34,8 @@ class InstallationTest extends WebTestCase
 
     /**
      * We add depends tests here in order to be the lasts tests.
-     *
-     * @depends App\Tests\Functional\Security\RegisterTest::testRegisterFailed
      */
+    #[Depends('App\Tests\Functional\Security\RegisterTest::testRegisterFailed')]
     public function testFailedAndSuccessSteps(): void
     {
         $this->client->request('GET', '/installation');
