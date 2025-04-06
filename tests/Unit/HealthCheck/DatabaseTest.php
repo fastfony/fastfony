@@ -9,7 +9,7 @@ use Doctrine\DBAL\ConnectionException;
 use Doctrine\ORM\EntityManagerInterface;
 use PHPUnit\Framework\TestCase;
 
-class DatabaseTest extends TestCase
+final class DatabaseTest extends TestCase
 {
     public function testCheck(): void
     {

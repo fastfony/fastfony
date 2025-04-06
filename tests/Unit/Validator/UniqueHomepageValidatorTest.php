@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;
 
-class UniqueHomepageValidatorTest extends TestCase
+final class UniqueHomepageValidatorTest extends TestCase
 {
     public function testValidate(): void
     {

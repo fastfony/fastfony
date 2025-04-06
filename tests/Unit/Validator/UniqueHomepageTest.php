@@ -7,7 +7,7 @@ namespace App\Tests\Unit\Validator;
 use App\Validator\UniqueHomepage;
 use PHPUnit\Framework\TestCase;
 
-class UniqueHomepageTest extends TestCase
+final class UniqueHomepageTest extends TestCase
 {
     public function testGetTargets(): void
     {

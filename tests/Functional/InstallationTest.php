@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\Process\Process;
 
-class InstallationTest extends WebTestCase
+final class InstallationTest extends WebTestCase
 {
     private KernelBrowser $client;
 

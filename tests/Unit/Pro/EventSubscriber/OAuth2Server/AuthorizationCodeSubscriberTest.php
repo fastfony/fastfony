@@ -12,7 +12,7 @@ use League\Bundle\OAuth2ServerBundle\Event\AuthorizationRequestResolveEvent;
 use League\Bundle\OAuth2ServerBundle\OAuth2Events;
 use PHPUnit\Framework\TestCase;
 
-class AuthorizationCodeSubscriberTest extends TestCase
+final class AuthorizationCodeSubscriberTest extends TestCase
 {
     public function testGetSubscribedEvents(): void
     {

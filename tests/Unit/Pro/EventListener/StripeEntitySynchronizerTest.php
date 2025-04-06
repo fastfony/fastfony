@@ -23,7 +23,7 @@ class MockStripeClient extends StripeClient
 {
 }
 
-class StripeEntitySynchronizerTest extends TestCase
+final class StripeEntitySynchronizerTest extends TestCase
 {
     private Stripe|MockObject $stripeClient;
 

@@ -12,7 +12,7 @@ use League\OAuth2\Client\Provider\GoogleUser;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-class UserFactoryTest extends TestCase
+final class UserFactoryTest extends TestCase
 {
     private UserRepository|MockObject $userRepository;
     private UserFactory $userFactory;

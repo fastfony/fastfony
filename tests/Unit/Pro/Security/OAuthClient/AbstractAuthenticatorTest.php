@@ -21,7 +21,7 @@ use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\SelfValidatingPassport;
 
-class AbstractAuthenticatorTest extends TestCase
+final class AbstractAuthenticatorTest extends TestCase
 {
     private AbstractAuthenticator|MockObject $authenticator;
     private ClientRegistry|MockObject $clientRegistry;

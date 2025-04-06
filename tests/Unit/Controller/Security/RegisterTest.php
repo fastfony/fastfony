@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class RegisterTest extends TestCase
+final class RegisterTest extends TestCase
 {
     public function testRegisterDisabled(): void
     {

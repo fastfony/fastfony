@@ -8,7 +8,7 @@ use App\Installation\Step1;
 use App\Repository\Parameter\ParameterRepository;
 use PHPUnit\Framework\TestCase;
 
-class Step1Test extends TestCase
+final class Step1Test extends TestCase
 {
     public function testFailedCheckIfParamExist(): void
     {

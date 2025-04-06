@@ -10,7 +10,7 @@ use App\Repository\User\UserRepository;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Security\Http\Event\LoginSuccessEvent;
 
-class LoginSuccessTest extends TestCase
+final class LoginSuccessTest extends TestCase
 {
     public function testLoginSuccessEventListener(): void
     {

@@ -8,7 +8,7 @@ use App\Entity\Parameter\Parameter;
 use App\Entity\Parameter\ParameterCategory;
 use PHPUnit\Framework\TestCase;
 
-class ParameterTest extends TestCase
+final class ParameterTest extends TestCase
 {
     public function testGetCategoryName(): void
     {

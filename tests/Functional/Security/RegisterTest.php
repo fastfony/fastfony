@@ -7,7 +7,7 @@ namespace App\Tests\Functional\Security;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class RegisterTest extends WebTestCase
+final class RegisterTest extends WebTestCase
 {
     private KernelBrowser $client;
 

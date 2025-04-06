@@ -8,7 +8,7 @@ use App\Entity\User\Role;
 use App\Tests\Unit\Entity\ToStringTestTrait;
 use PHPUnit\Framework\TestCase;
 
-class RoleTest extends TestCase
+final class RoleTest extends TestCase
 {
     use ToStringTestTrait;
 

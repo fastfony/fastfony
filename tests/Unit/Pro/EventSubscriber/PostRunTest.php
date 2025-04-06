@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Scheduler\Event\PostRunEvent;
 use Symfony\Component\Scheduler\Generator\MessageContext;
 
-class PostRunTest extends TestCase
+final class PostRunTest extends TestCase
 {
     public function testGetSubscribedEvents(): void
     {

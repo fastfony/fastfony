@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 use Stripe\StripeObject;
 use Symfony\Bundle\SecurityBundle\Security;
 
-class CustomerManagementTest extends TestCase
+final class CustomerManagementTest extends TestCase
 {
     private CustomerManagement $customerManagement;
     private UserRepository|MockObject $userRepository;

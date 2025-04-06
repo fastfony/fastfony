@@ -9,7 +9,7 @@ use App\Entity\Parameter\ParameterCategory;
 use App\Tests\Unit\Entity\ToStringTestTrait;
 use PHPUnit\Framework\TestCase;
 
-class ParameterCategoryTest extends TestCase
+final class ParameterCategoryTest extends TestCase
 {
     use ToStringTestTrait;
 

@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Vich\UploaderBundle\Storage\StorageInterface;
 
-class ProfilePhotoNormalizerTest extends TestCase
+final class ProfilePhotoNormalizerTest extends TestCase
 {
     private ProfilePhotoNormalizer $normalizer;
     private NormalizerInterface|MockObject $decoratedNormalizer;

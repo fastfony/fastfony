@@ -7,7 +7,7 @@ namespace App\Tests\Unit\HealthCheck;
 use App\HealthCheck\Internet;
 use PHPUnit\Framework\TestCase;
 
-class InternetTest extends TestCase
+final class InternetTest extends TestCase
 {
     public function testCheck(): void
     {

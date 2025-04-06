@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Scheduler\Event\FailureEvent;
 use Symfony\Component\Scheduler\Generator\MessageContext;
 
-class FailureTest extends TestCase
+final class FailureTest extends TestCase
 {
     public function testGetSubscribedEvents(): void
     {

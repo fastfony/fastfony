@@ -11,7 +11,7 @@ use App\Entity\User\User;
 use App\Tests\Unit\Entity\ToStringTestTrait;
 use PHPUnit\Framework\TestCase;
 
-class UserTest extends TestCase
+final class UserTest extends TestCase
 {
     use ToStringTestTrait;
 

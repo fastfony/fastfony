@@ -8,7 +8,7 @@ use App\Pro\Entity\Product\Price;
 use App\Pro\Event\BuySuccess;
 use PHPUnit\Framework\TestCase;
 
-class BuySuccessTest extends TestCase
+final class BuySuccessTest extends TestCase
 {
     public function testGetPrice(): void
     {

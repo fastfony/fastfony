@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 use function Symfony\Component\String\u;
 
-class RepositoriesTest extends KernelTestCase
+final class RepositoriesTest extends KernelTestCase
 {
     #[DataProvider('getEntities')]
     public function testSaveFindAndRemoveMethods(ClassMetadata $classMetadata): void

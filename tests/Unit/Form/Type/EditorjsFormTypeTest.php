@@ -7,7 +7,7 @@ namespace App\Tests\Unit\Form\Type;
 use App\Form\Type\EditorjsFormType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
-class EditorjsFormTypeTest extends TypeTestCase
+final class EditorjsFormTypeTest extends TypeTestCase
 {
     public function testSubmitValidData(): void
     {

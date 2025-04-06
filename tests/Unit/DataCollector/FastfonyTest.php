@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class FastfonyTest extends TestCase
+final class FastfonyTest extends TestCase
 {
     public function testCollect(): void
     {

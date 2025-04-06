@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Mailer\Exception\TransportException;
 use Symfony\Component\Mailer\MailerInterface;
 
-class MailerTest extends TestCase
+final class MailerTest extends TestCase
 {
     private MailerInterface|MockObject $mailerInterface;
     private RequestStack|MockObject $requestStack;

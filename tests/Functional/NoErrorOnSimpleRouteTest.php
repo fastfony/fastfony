@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\RouterInterface;
 
-class NoErrorOnSimpleRouteTest extends WebTestCase
+final class NoErrorOnSimpleRouteTest extends WebTestCase
 {
     public function testAllRoutes(): void
     {

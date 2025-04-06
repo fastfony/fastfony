@@ -7,7 +7,7 @@ namespace App\Tests\Integration\Repository\User;
 use App\Repository\User\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-class UserRepositoryTest extends KernelTestCase
+final class UserRepositoryTest extends KernelTestCase
 {
     private UserRepository $userRepository;
 

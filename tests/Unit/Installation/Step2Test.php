@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 
-class Step2Test extends TestCase
+final class Step2Test extends TestCase
 {
     public function testFalseDo(): void
     {

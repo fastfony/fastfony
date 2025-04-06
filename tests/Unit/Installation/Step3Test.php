@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 
-class Step3Test extends TestCase
+final class Step3Test extends TestCase
 {
     public function testFailedDo(): void
     {

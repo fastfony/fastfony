@@ -8,7 +8,7 @@ use App\Entity\Page\Page;
 use App\Repository\Page\PageRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class HomepageTest extends WebTestCase
+final class HomepageTest extends WebTestCase
 {
     protected function setUp(): void
     {

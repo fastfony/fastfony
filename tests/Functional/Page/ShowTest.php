@@ -9,7 +9,7 @@ use App\Repository\User\UserRepository;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class ShowTest extends WebTestCase
+final class ShowTest extends WebTestCase
 {
     private KernelBrowser $client;
 

@@ -11,7 +11,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
-class GoogleAuthenticatorTest extends TestCase
+final class GoogleAuthenticatorTest extends TestCase
 {
     private GoogleAuthenticator $authenticator;
     private ClientRegistry|MockObject $clientRegistry;

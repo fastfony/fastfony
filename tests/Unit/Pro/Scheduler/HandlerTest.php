@@ -13,7 +13,7 @@ use Symfony\Component\Scheduler\Schedule;
 use Symfony\Component\Scheduler\ScheduleProviderInterface;
 use Symfony\Component\Scheduler\Trigger\MessageProviderInterface;
 
-class HandlerTest extends TestCase
+final class HandlerTest extends TestCase
 {
     private function createHandlerWithMocks(
         ?MessageBusInterface $bus = null,

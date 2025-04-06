@@ -8,7 +8,7 @@ use App\Repository\Parameter\ParameterRepository;
 use App\Repository\User\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class MaintenanceTest extends WebTestCase
+final class MaintenanceTest extends WebTestCase
 {
     public function testMaintenancePageWhenDisabled(): void
     {

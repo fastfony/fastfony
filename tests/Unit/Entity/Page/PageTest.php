@@ -7,7 +7,7 @@ namespace App\Tests\Unit\Entity\Page;
 use App\Entity\Page\Page;
 use PHPUnit\Framework\TestCase;
 
-class PageTest extends TestCase
+final class PageTest extends TestCase
 {
     public function testGetId(): void
     {

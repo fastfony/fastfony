@@ -10,7 +10,7 @@ use App\State\SelfUserProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\SecurityBundle\Security;
 
-class SelfUserProviderTest extends TestCase
+final class SelfUserProviderTest extends TestCase
 {
     public function testProvide(): void
     {

@@ -18,7 +18,7 @@ use function Symfony\Component\String\u;
 /*
  * Thanks to Julien Sambon for this share
  */
-class EntitiesTest extends KernelTestCase
+final class EntitiesTest extends KernelTestCase
 {
     private const EXCLUDED_ENTITIES = [
         'App\Pro\Entity\OAuth2Server\Client',

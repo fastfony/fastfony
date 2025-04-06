@@ -8,7 +8,7 @@ use App\Entity\User\Group;
 use App\Tests\Unit\Entity\ToStringTestTrait;
 use PHPUnit\Framework\TestCase;
 
-class GroupTest extends TestCase
+final class GroupTest extends TestCase
 {
     use ToStringTestTrait;
 

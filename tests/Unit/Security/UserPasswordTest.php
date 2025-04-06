@@ -11,7 +11,7 @@ use App\Security\UserPassword;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
-class UserPasswordTest extends TestCase
+final class UserPasswordTest extends TestCase
 {
     public function testChange(): void
     {

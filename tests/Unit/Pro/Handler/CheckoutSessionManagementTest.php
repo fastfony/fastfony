@@ -26,7 +26,7 @@ class MockCheckoutServiceFactory extends CheckoutServiceFactory
 {
 }
 
-class CheckoutSessionManagementTest extends TestCase
+final class CheckoutSessionManagementTest extends TestCase
 {
     public function testCreate(): void
     {

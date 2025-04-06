@@ -14,7 +14,7 @@ use Symfony\Component\Notifier\NotifierInterface;
 use Symfony\Component\Security\Http\LoginLink\LoginLinkHandlerInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-class LoginLinkTest extends TestCase
+final class LoginLinkTest extends TestCase
 {
     public function testSend(): void
     {

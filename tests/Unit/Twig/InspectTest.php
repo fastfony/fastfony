@@ -7,7 +7,7 @@ namespace App\Tests\Unit\Twig;
 use App\Twig\Inspect;
 use PHPUnit\Framework\TestCase;
 
-class InspectTest extends TestCase
+final class InspectTest extends TestCase
 {
     public function testInspect(): void
     {

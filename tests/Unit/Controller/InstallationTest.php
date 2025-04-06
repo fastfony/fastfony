@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Twig\Error\RuntimeError;
 
-class InstallationTest extends KernelTestCase
+final class InstallationTest extends KernelTestCase
 {
     private Installation $installation;
     private UserRepository|MockObject $userRepository;

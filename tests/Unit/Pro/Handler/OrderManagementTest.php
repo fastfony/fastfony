@@ -14,7 +14,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Stripe\Checkout\Session;
 
-class OrderManagementTest extends TestCase
+final class OrderManagementTest extends TestCase
 {
     private OrderManagement $orderManagement;
     private CustomerManagement|MockObject $customerManagement;

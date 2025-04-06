@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
-class ValidJsonValidatorTest extends TestCase
+final class ValidJsonValidatorTest extends TestCase
 {
     public function testValidate(): void
     {

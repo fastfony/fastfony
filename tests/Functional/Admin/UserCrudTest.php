@@ -7,7 +7,7 @@ namespace App\Tests\Functional\Admin;
 use App\Repository\User\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class UserCrudTest extends WebTestCase
+final class UserCrudTest extends WebTestCase
 {
     public function testSendLoginLinkEmail(): void
     {

@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 
-class CrudTest extends TestCase
+final class CrudTest extends TestCase
 {
     public function testGetEntityFqcn(): void
     {

@@ -7,7 +7,7 @@ namespace App\Tests\Unit\Twig;
 use App\Twig\EditorjsToHtmlExtension;
 use PHPUnit\Framework\TestCase;
 
-class EditorjsToHtmlExtensionTest extends TestCase
+final class EditorjsToHtmlExtensionTest extends TestCase
 {
     public function testGetFunctions(): void
     {

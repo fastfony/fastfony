@@ -8,7 +8,7 @@ use App\Pro\Client\Stripe;
 use PHPUnit\Framework\TestCase;
 use Stripe\StripeClient;
 
-class StripeTest extends TestCase
+final class StripeTest extends TestCase
 {
     public function testGetClient(): void
     {

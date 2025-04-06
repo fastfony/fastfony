@@ -11,7 +11,7 @@ use Symfony\Component\Form\Test\TypeTestCase;
 use Symfony\Component\Validator\Validation;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-class JsonFormTypeTest extends TypeTestCase
+final class JsonFormTypeTest extends TypeTestCase
 {
     private ValidatorInterface|MockObject $validator;
 

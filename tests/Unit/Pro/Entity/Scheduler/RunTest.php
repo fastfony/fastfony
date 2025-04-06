@@ -7,7 +7,7 @@ namespace App\Tests\Unit\Pro\Entity\Scheduler;
 use App\Pro\Entity\Scheduler\Run;
 use PHPUnit\Framework\TestCase;
 
-class RunTest extends TestCase
+final class RunTest extends TestCase
 {
     public function testGetRunDateFormatted(): void
     {

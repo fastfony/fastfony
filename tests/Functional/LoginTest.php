@@ -9,7 +9,7 @@ use Symfony\Bridge\Twig\Mime\NotificationEmail;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class LoginTest extends WebTestCase
+final class LoginTest extends WebTestCase
 {
     private KernelBrowser $client;
 

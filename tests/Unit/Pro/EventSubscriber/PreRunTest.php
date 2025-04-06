@@ -11,7 +11,7 @@ use Symfony\Component\Scheduler\Event\PreRunEvent;
 use Symfony\Component\Scheduler\Generator\MessageContext;
 use Symfony\Component\Scheduler\Trigger\CronExpressionTrigger;
 
-class PreRunTest extends TestCase
+final class PreRunTest extends TestCase
 {
     public function testGetSubscribedEvents(): void
     {

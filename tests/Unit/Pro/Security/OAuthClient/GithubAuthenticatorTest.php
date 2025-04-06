@@ -11,7 +11,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
-class GithubAuthenticatorTest extends TestCase
+final class GithubAuthenticatorTest extends TestCase
 {
     private GithubAuthenticator $authenticator;
     private ClientRegistry|MockObject $clientRegistry;

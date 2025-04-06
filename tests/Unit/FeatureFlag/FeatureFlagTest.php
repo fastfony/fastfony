@@ -8,7 +8,7 @@ use App\Handler\FeatureFlag;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpKernel\KernelInterface;
 
-class FeatureFlagTest extends TestCase
+final class FeatureFlagTest extends TestCase
 {
     public function testSave(): void
     {
