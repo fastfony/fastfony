@@ -6,7 +6,6 @@
          backupGlobals="false"
          colors="true"
          bootstrap="tests/bootstrap.php"
-         convertDeprecationsToExceptions="false"
 >
     <php>
         <ini name="display_errors" value="1" />
@@ -23,7 +22,13 @@
         </testsuite>
     </testsuites>
 
-    <coverage processUncoveredFiles="true">
+    <coverage>
+        <report>
+            <clover outputFile="output/clover.xml" />
+        </report>
+    </coverage>
+
+    <source>
         <include>
             <directory suffix=".php">src</directory>
         </include>
@@ -32,15 +37,9 @@
             <directory>src/DataFixtures</directory>
             <file>src/MessageHandler/ExampleHandler.php</file>
             <file>src/Scheduler/Example.php</file>
+            <file>src/Kernel.php</file>
         </exclude>
-        <report>
-            <clover outputFile="output/clover.xml" />
-        </report>
-    </coverage>
-
-    <listeners>
-        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
-    </listeners>
+    </source>
 
     <extensions>
     </extensions>
