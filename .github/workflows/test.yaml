@@ -1,0 +1,75 @@
+name: tests
+
+on:
+    push:
+        branches:
+            - '**'
+    pull_request:
+        branches:
+            - '**'
+
+jobs:
+    tests:
+        runs-on: ubuntu-latest
+
+        services:
+            mailpit:
+                image: axllent/mailpit
+                ports:
+                    - 1025:1025
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Set up PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: 8.4
+                  extensions: mbstring, intl, pdo_sqlite, xdebug
+                  coverage: xdebug
+
+            - name: Install Task
+              uses: arduino/setup-task@v2
+              with:
+                  version: 3.x
+
+            - name: Install dependencies
+              run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+            - name: Nodejs install
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+            - run: npm install
+
+            - name: Npm build
+              run: npm run build
+
+            - name: Init OAuth2 server
+              run: task oauth2-server-init
+
+            - name: Run PHPUnit with coverage
+              run: task coverage
+
+            - name: Run PHPStan
+              run: vendor/bin/phpstan analyse
+
+            - name: Run PHP Insights
+              run: vendor/bin/phpinsights --no-interaction --ansi
+
+            - name: Make code coverage badge
+              uses: timkrase/phpunit-coverage-badge@v1.2.1
+              with:
+                  coverage_badge_path: output/coverage.svg
+                  report: output/clover.xml
+                  push_badge: false
+
+            - name: Git push to badges branch
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  publish_dir: ./output
+                  publish_branch: badges
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  user_name: 'github-actions[bot]'
+                  user_email: 'github-actions[bot]@users.noreply.github.com'
