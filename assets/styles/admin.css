@@ -1,0 +1,12 @@
+@import './admin/editorjs.css';
+
+/* see vendor/easycorp/easyadmin-bundle/assets/css/easyadmin-theme/variables-theme.scss for other vars */
+
+:root {
+    /* make the backend contents as wide as the browser window */
+    --body-max-width: 100%;
+}
+
+.ea-dark-scheme {
+    --bs-border-color: var(--bs-border-color-translucent);
+}

@@ -1,0 +1,33 @@
+{% block editorjs_row %}
+    <div class="{{ ea_crud_form.ea_field.columns }}">
+        {{ form_label(form) }}
+        <div id="editorjs" class="editorjs" data-field-id="{{ id }}"></div>
+        <input type="hidden" name="{{ full_name }}" id="{{ id }}" value="{{ value }}" />
+        {{ form_errors(form) }}
+    </div>
+    <div class="flex-fill"></div>
+    <p class="text-muted">{{ help|trans }}</p>
+{% endblock %}
+
+{% block _features_form_features_widget %}
+    <ul class="list-unstyled">
+    {% for choice in choices %}
+        <li>
+            <label
+                class="fieldset-label form-check form-switch ps-0"
+                for="{{ id }}_{{ loop.index0 }}"
+            >
+                <input
+                    id="{{ id }}_{{ loop.index0 }}"
+                    name="{{ full_name }}[]"
+                    type="checkbox"
+                    {{ choice.value in data ? 'checked="checked"' : '' }}
+                    class="toggle form-check-input"
+                    value="{{ choice.value }}"
+                />
+                {{ ('feature.' ~ choice.label)|trans }}
+            </label>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

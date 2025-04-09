@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'front' %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% if feature_enabled('theme_chooser') %}
+        <script type="text/javascript">document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') ?? 'light');</script>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="relative overflow-hidden">
+        <header class="navbar bg-base-100 mx-auto px-4 lg:px-8 xl:max-w-7xl">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                    </div>
+                    <ul
+                        tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        {{ include('_main_menu.html.twig') }}
+                    </ul>
+                </div>
+                <a
+                    href="{{ path('homepage') }}"
+                    class="btn btn-ghost text-xl"
+                >
+                    {% if app_icon_filepath %}
+                        <img class="h-10 w-auto" src="{{ asset(app_icon_filepath) }}" alt="{{ app_name }}">
+                    {% endif %}
+                    <span>{{ app_name }}</span>
+                </a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    {{ include('_main_menu.html.twig') }}
+                </ul>
+            </div>
+            <div class="navbar-end">
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a
+                        href="{{ path('admin') }}"
+                        class="link link-hover"
+                    >
+                        <span>{{ 'link.admin'|trans }}</span>
+                    </a>
+                {% endif %}
+
+                {% if app.user %}
+                    <a
+                        href="{{ path('_logout_main') }}"
+                        class="link link-hover mx-2"
+                        data-turbo="false"
+                    >
+                        <span>{{ 'link.logout'|trans }}</span>
+                    </a>
+                {% else %}
+                    <a
+                        href="{{ path('request_login_link') }}"
+                        class="btn-sm btn-ghost"
+                    >
+                        <span>{{ 'link.login'|trans }}</span>
+                    </a>
+                {% endif %}
+
+                {% if feature_enabled('theme_chooser') %}
+                    {{ include('_choose_theme.html.twig') }}
+                {% endif %}
+            </div>
+        </header>
+
+        <div class="mx-auto px-4 lg:px-8 xl:max-w-7xl flex">
+            {% block main %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ include('_simple_footer.html.twig') }}
+    {# You can also use _footer.html.twig that it's more complex and customize it #}
+{% endblock %}

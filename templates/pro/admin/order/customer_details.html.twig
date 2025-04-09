@@ -1,0 +1,12 @@
+<ul>
+    {% for key, value in field.value %}
+        <li>
+            {{ key }} :
+            {% if value is iterable %}
+                {{ include('pro/admin/order/customer_details.html.twig', {field: {value: value}}) }}
+            {% else %}
+                {{ value }}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

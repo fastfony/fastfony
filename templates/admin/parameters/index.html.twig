@@ -1,0 +1,15 @@
+{% extends '@EasyAdmin/layout.html.twig' %}
+
+{% trans_default_domain 'admin' %}
+
+{% block content_title %}
+    {{ 'Settings'|trans }}
+{% endblock %}
+
+{% block main %}
+    <p class="mb-4">
+        {{ 'settings.description'|trans|raw }}
+    </p>
+
+    <div {{ vue_component('Admin/Settings') }}></div>
+{% endblock %}

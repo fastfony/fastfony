@@ -1,0 +1,50 @@
+{% extends '@EasyAdmin/layout.html.twig' %}
+
+{% trans_default_domain 'admin' %}
+
+{% block page_actions %}
+    <div class="global-actions">
+        <a class="btn action-groups" href="{{ path('admin_group_crud_index') }}" data-action-name="groups">
+        <span class="icon action-icon">
+            <i class="fa fa-users"></i>
+        </span>
+            <span class="action-label">{{ 'Groups'|trans }}</span>
+        </a>
+        <a class="btn action-groups" href="{{ path('admin_role_crud_index') }}" data-action-name="roles">
+        <span class="icon action-icon">
+            <i class="fa fa-tags"></i>
+        </span>
+            <span class="action-label">{{ 'Roles'|trans }}</span>
+        </a>
+    </div>
+{% endblock %}
+
+{% block main %}
+    {% set groups = [] %}
+    {% for group in group_entities %}
+        {% set groups = [{
+            id: group.id,
+            name: group.name,
+        }]|merge(groups) %}
+    {% endfor %}
+
+    {% set roles = [] %}
+    {% for role in role_entities %}
+        {% set roles = [{
+            id: role.id,
+            category: role.category ? role.category.name : null,
+            name: role.name,
+            description: role.description,
+            groups: role.groups|map(g => g.id),
+        }]|merge(roles) %}
+    {% endfor %}
+
+    <div class="alert alert-warning my-4" role="alert">
+        {{ 'warning-matrix'|trans|raw }}
+    </div>
+
+    <div {{ vue_component('Pro/Admin/GroupRole/Matrix', {
+        groups: groups,
+        roles: roles,
+    }) }}></div>
+{% endblock %}

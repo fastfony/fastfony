@@ -1,0 +1,9 @@
+{% block form_errors %}
+    {%- if errors|length > 0 -%}
+        {%- for error in errors -%}
+            <div class="my-2 text-sm text-error">
+                {{ error.message }}
+            </div>
+        {%- endfor -%}
+    {%- endif %}
+{% endblock %}

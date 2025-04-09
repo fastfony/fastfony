@@ -1,0 +1,19 @@
+api_platform:
+    title: Fastfony API (public & internal)
+    version: 0.0.1
+    formats:
+        jsonld: ['application/ld+json']
+        json: ['application/json']
+    defaults:
+        stateless: false # API is used by admin (stateful) and also by others users (stateless)
+        cache_headers:
+            vary: ['Content-Type', 'Authorization', 'Origin']
+    oauth:
+        enabled: true
+        clientId: ''
+        clientSecret: ''
+        type: 'oauth2'
+        flow: 'authorizationCode'
+        tokenUrl: '/token'
+        authorizationUrl: '/authorize'
+        scopes: { email: 'email', roles: 'roles', profile: 'profile' }

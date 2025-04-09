@@ -1,0 +1,48 @@
+{% extends '@EasyAdmin/layout.html.twig' %}
+
+{% trans_default_domain 'admin' %}
+
+{% block content_title %}
+    {{ 'scheduler.title'|trans }}
+{% endblock %}
+
+{% block main %}
+    <p>
+        {{ 'scheduler.description'|trans|raw }}
+    </p>
+    <div class="overflow-x-auto">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>{{ 'scheduler.table.trigger'|trans }}</th>
+                    <th>{{ 'scheduler.table.scheduler'|trans }}</th>
+                    <th>{{ 'scheduler.table.provider'|trans }}</th>
+                    <th>{{ 'scheduler.table.next_run_date'|trans }}</th>
+                    <th>{{ 'scheduler.table.actions'|trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for message in schedule_messages %}
+                    <tr>
+                        <td>{{ message.id }}</td>
+                        <td>{{ message.trigger }}</td>
+                        <td>{{ message.scheduler }}</td>
+                        <td>{{ message.provider }}</td>
+                        <td>{{ message.nextRunDate|format_datetime }}</td>
+                        <td>
+                            <a href="{{ path('admin_run_crud_index', {'filters[messageContextId][comparison]': '=', 'filters[messageContextId][value]': message.id}) }}"
+                               class="btn btn-sm btn-soft btn-neutral">
+                                {{ 'scheduler.link.history'|trans }}
+                            </a>
+                            <a href="{{ path('admin_scheduler_force_run', {recurringMessageId: message.id}) }}"
+                               class="btn btn-sm btn-soft btn-secondary">
+                                {{ 'scheduler.link.force_run'|trans }}
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

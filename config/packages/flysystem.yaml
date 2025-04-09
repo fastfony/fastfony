@@ -1,0 +1,19 @@
+# Read the documentation at https://github.com/thephpleague/flysystem-bundle/blob/master/docs/1-getting-started.md
+flysystem:
+    storages:
+        default.storage:
+            adapter: 'local'
+            options:
+                directory: '%kernel.project_dir%/var/storage/default'
+
+        profile_photo.storage:
+            adapter: 'local'
+            options:
+                directory: '%kernel.project_dir%/public/uploads/profiles/photos'
+#            adapter: 'aws'
+#            visibility: public
+#            options:
+#                client: Aws\S3\S3Client
+#                bucket: '%env(AWS_S3_BUCKET_NAME)%'
+#                prefix: 'profiles/photos/'
+#                streamReads: true

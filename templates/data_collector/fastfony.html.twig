@@ -1,0 +1,66 @@
+{% extends '@WebProfiler/Profiler/layout.html.twig' %}
+
+{% block toolbar %}
+    {% if 'unknown' == collector.fastfonyState %}
+        {% set block_status = '' %}
+        {% set fastfony_version_status = 'Unable to retrieve information about the Fastfony version.' %}
+    {% elseif 'eol' == collector.fastfonyState %}
+        {% set block_status = 'red' %}
+        {% set fastfony_version_status = 'This Fastfony version will no longer receive security fixes.' %}
+    {% elseif 'eom' == collector.fastfonyState %}
+        {% set block_status = 'yellow' %}
+        {% set fastfony_version_status = 'This Fastfony version will only receive security fixes.' %}
+    {% elseif 'dev' == collector.fastfonyState %}
+        {% set block_status = 'yellow' %}
+        {% set fastfony_version_status = 'This Fastfony version is still in the development phase.' %}
+    {% else %}
+        {% set block_status = '' %}
+        {% set fastfony_version_status = '' %}
+    {% endif %}
+
+    {% if not collector.licenseKey or not collector.licenseKeyValidity %}
+        {% set block_status = 'red' %}
+    {% endif %}
+
+    {% set icon %}
+        <span class=sf-toolbar-label>
+            {{ source('Icon/fastfony.svg') }}
+        </span>
+        <span class="sf-toolbar-value">{{ collector.fastfonyState is defined ? collector.fastfonyVersion : 'n/a' }}</span>
+    {% endset %}
+
+    {% set text %}
+        {% if fastfony_version_status %}
+            <div class="sf-toolbar-info-group">
+                <div class="sf-toolbar-info-piece">
+                    <span>{{ fastfony_version_status }}</span>
+                </div>
+            </div>
+            <span class="sf-toolbar-value">{{ collector.fastfonyState is defined ? collector.fastfonyversion : 'n/a' }}</span>
+        {% endif %}
+
+        <div class="sf-toolbar-info-piece">
+            <b>License Key</b>
+            {% if collector.licenseKey %}
+                <span class="sf-toolbar-status sf-toolbar-status-{{ collector.licenseKeyValidity ? 'green' : 'red' }}">
+                    {{ collector.licenseKey }}
+                </span>
+            {% else %}
+                <span class="sf-toolbar-status sf-toolbar-status-red">
+                    No license key found.
+                </span>
+            {% endif %}
+        </div>
+
+        {% if not collector.licenseKeyValidity %}
+            <div class="sf-toolbar-info-piece">
+                <span>
+                    <a href="{{ path('admin_parameters') }}" target="_blank">Add</a> or
+                    <a href="https://fastfony.com" target="_blank">get</a> your license key.
+                </span>
+            </div>
+        {% endif %}
+    {% endset %}
+
+    {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', {link: false, name: 'config', status: block_status, additional_classes: 'sf-toolbar-block-right'}) }}
+{% endblock %}
