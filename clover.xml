@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1744204454">
-  <project timestamp="1744204454">
+<coverage generated="1744212754">
+  <project timestamp="1744212754">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Editorjs.php">
       <class name="App\Admin\Field\Editorjs" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
@@ -44,7 +44,7 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Admin/Dashboard.php">
       <class name="App\Controller\Admin\Dashboard" namespace="global">
-        <metrics complexity="10" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="30" elements="39" coveredelements="34"/>
+        <metrics complexity="10" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="31" elements="40" coveredelements="35"/>
       </class>
       <line num="27" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="31" type="stmt" count="3"/>
@@ -85,7 +85,8 @@
       <line num="94" type="stmt" count="2"/>
       <line num="95" type="stmt" count="2"/>
       <line num="96" type="stmt" count="2"/>
-      <metrics loc="99" ncloc="96" classes="1" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="30" elements="39" coveredelements="34"/>
+      <line num="97" type="stmt" count="2"/>
+      <metrics loc="100" ncloc="97" classes="1" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="31" elements="40" coveredelements="35"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Admin/Feature/Index.php">
       <class name="App\Controller\Admin\Feature\Index" namespace="global">
@@ -3671,6 +3672,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="153" loc="8489" ncloc="8006" classes="142" methods="528" coveredmethods="359" conditionals="0" coveredconditionals="0" statements="2236" coveredstatements="1607" elements="2764" coveredelements="1966"/>
+    <metrics files="153" loc="8490" ncloc="8007" classes="142" methods="528" coveredmethods="359" conditionals="0" coveredconditionals="0" statements="2237" coveredstatements="1608" elements="2765" coveredelements="1967"/>
   </project>
 </coverage>
