@@ -22,6 +22,7 @@ tasks:
     vendor:
         cmds:
             - composer install
+            - vendor/bin/grumphp git:init
         sources:
             - composer.lock
         generates:
