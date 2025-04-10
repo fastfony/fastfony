@@ -24,11 +24,17 @@ onMounted(() => {
 });
 
 const patchParameter = (parameter, event) => {
+  let value = event.target.value;
+  // If value is a secret, we don't want to send it
+  if (value.includes('**')) {
+    return;
+  }
+
   if (event.target.checkValidity()) {
     axios
       .patch(
         '/api/internal/parameters/' + parameter['id'],
-        { value: parameter.value },
+        { value: value },
         { headers: { 'Content-Type': 'application/merge-patch+json' } },
       )
       .then((response) => {
@@ -69,7 +75,7 @@ const patchParameter = (parameter, event) => {
                 </select>
                 <input
                   v-else
-                  v-model="parameter.value"
+                  :value="parameter.value && 0 < parameter.value.length ? ('secret' === parameter.type ? '*************' : parameter.value) : ''"
                   :type="parameter.type"
                   class="form-control"
                   @change="patchParameter(parameter, $event)"

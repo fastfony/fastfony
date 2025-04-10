@@ -65,7 +65,7 @@ class OAuth2Parameters extends Fixture implements FixtureGroupInterface
                 ),
             ],
             'GITHUB_CLIENT_SECRET' => [
-                'type' => 'text',
+                'type' => 'secret',
                 'label' => 'Github Client Secret',
                 'category' => $this->getReference(
                     self::OAUTH_GITHUB_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
@@ -81,7 +81,7 @@ class OAuth2Parameters extends Fixture implements FixtureGroupInterface
                 ),
             ],
             'GOOGLE_CLIENT_SECRET' => [
-                'type' => 'text',
+                'type' => 'secret',
                 'label' => 'Google Client Secret',
                 'category' => $this->getReference(
                     self::OAUTH_GOOGLE_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,

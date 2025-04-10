@@ -67,7 +67,7 @@ class Parameters extends Fixture implements FixtureGroupInterface
         $domain = $this->requestStack->getMainRequest()?->getHost() ?? 'domain.tld';
         $parameters = [
             'FASTFONY_LICENSE_KEY' => [
-                'type' => 'text',
+                'type' => 'secret',
                 'label' => 'License key',
                 'help' => 'Your Fastfony license key is required to use the software. Get it on <a href="https://fastfony.com" target="_blank">fastfony.com</a>',
                 'category' => $this->getReference(

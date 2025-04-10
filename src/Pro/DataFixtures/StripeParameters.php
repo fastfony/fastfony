@@ -65,7 +65,7 @@ class StripeParameters extends Fixture implements FixtureGroupInterface
                 ),
             ],
             'STRIPE_API_KEY' => [
-                'type' => 'text',
+                'type' => 'secret',
                 'label' => 'API Key',
                 'help' => 'This is required if Stripe is enabled.',
                 'category' => $this->getReference(

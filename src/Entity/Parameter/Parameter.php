@@ -36,6 +36,7 @@ class Parameter
 
     public const LIST_TYPES = [
         'text',
+        'secret',
         'bool',
         'email',
         'url',
