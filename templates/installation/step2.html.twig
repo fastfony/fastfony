@@ -49,6 +49,13 @@
                     </fieldset>
 
                     <fieldset class="fieldset bg-base-200 border border-base-300 p-4 rounded-box">
+                        <legend class="fieldset-legend">{{ 'step2.mailer_sender'|trans }}</legend>
+                        {{ form_widget(form.mailerSender, {attr: {placeholder: 'input.mailer_sender', class: 'input'}}) }}
+                        {{ form_errors(form.mailerSender) }}
+                        <p class="fieldset-label">{{ 'This e-mail must be authorize by server configure on MAILER_DSN in .env.local'|trans({}, 'app') }}</p>
+                    </fieldset>
+
+                    <fieldset class="fieldset bg-base-200 border border-base-300 p-4 rounded-box">
                         <legend class="fieldset-legend">{{ 'step2.choose_login'|trans }}</legend>
                         {{ form_widget(form.email, {attr: {placeholder: 'input.admin_email', class: 'input'}}) }}
                         {{ form_errors(form.email) }}

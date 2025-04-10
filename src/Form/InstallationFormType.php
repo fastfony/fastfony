@@ -9,10 +9,12 @@ use Fastfony\LicenseBundle\Validator\ValidLicenseKey;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
 class InstallationFormType extends AbstractType
@@ -31,6 +33,16 @@ class InstallationFormType extends AbstractType
         array $options,
     ): void {
         $builder
+            ->add(
+                'mailerSender',
+                EmailType::class,
+                [
+                    'constraints' => [
+                        new NotBlank(),
+                        new Email(),
+                    ],
+                ],
+            )
             ->add(
                 'licenseKey',
                 TextareaType::class,

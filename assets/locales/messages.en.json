@@ -23,6 +23,7 @@
   "forgot_password.title": "Reset your password",
   "input.admin_email": "Your email",
   "input.license_key": "Copy/paste your license key here",
+  "input.mailer_sender": "Sender email address",
   "installation.error": "An error occurred. Please verify the configuration and retry.",
   "label.email": "Email address",
   "label.password": "Password",

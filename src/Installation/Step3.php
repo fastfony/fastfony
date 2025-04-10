@@ -30,6 +30,10 @@ class Step3
                 ->setValue($form->getData()['licenseKey']);
 
             try {
+                // We set the MAILER_SENDER parameter
+                $this->parameterRepository->findOneBy(['key' => 'MAILER_SENDER'])
+                    ->setValue($form->getData()['mailerSender']);
+
                 // We create the first admin user
                 $user = $this->userRepository->createSuperAdmin(
                     $form->getData()['email'],
