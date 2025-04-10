@@ -9,11 +9,13 @@ use League\Bundle\OAuth2ServerBundle\Model\AbstractClient;
 use League\Bundle\OAuth2ServerBundle\ValueObject\Grant;
 use League\Bundle\OAuth2ServerBundle\ValueObject\RedirectUri;
 use League\Bundle\OAuth2ServerBundle\ValueObject\Scope;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity]
 #[ORM\Table('oauth2_client')]
 class Client extends AbstractClient
 {
+    #[Assert\NotBlank]
     #[ORM\Id]
     #[ORM\Column(type: 'string', length: 32)]
     public string $identifier;

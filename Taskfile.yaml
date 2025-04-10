@@ -54,6 +54,7 @@ tasks:
             - chmod -R 777 public/uploads/
             - bin/console app:install --env=dev
             - bin/console doctrine:schema:update --force  --env=dev
+            - npm run dev
             - symfony proxy:start
             - symfony server:start -d
 

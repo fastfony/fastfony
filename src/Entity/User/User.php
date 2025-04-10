@@ -44,9 +44,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     use Stripe\User;
     use TimestampableEntity;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $name = null;
-
     /**
      * @var string|null The hashed password
      */
@@ -98,7 +95,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function __toString(): string
     {
-        return $this->getName() ?? $this->getUserIdentifier();
+        return $this->getProfile()?->getFullName() ?? $this->getUserIdentifier();
     }
 
     /**
@@ -187,22 +184,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
-    }
-
-    public function getName(): ?string
-    {
-        if (null === $this->name && $this->getProfile()) {
-            return $this->getProfile()->getFullName();
-        }
-
-        return $this->name;
-    }
-
-    public function setName(?string $name): static
-    {
-        $this->name = $name;
-
-        return $this;
     }
 
     /**

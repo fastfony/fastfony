@@ -44,6 +44,7 @@ class Page
     #[ORM\Column(nullable: true)]
     private ?array $content = null;
 
+    #[Gedmo\Versioned]
     #[ORM\Column(options: ['default' => false])]
     private bool $homepage = false;
 

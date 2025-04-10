@@ -11,6 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 trait Email
 {
     #[Assert\Email]
+    #[Assert\NotBlank]
     #[ORM\Column(length: 180)]
     private ?string $email = null;
 

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Handler;
 
+use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpKernel\KernelInterface;
-use Symfony\Component\Process\Process;
 
 class FeatureFlag
 {
@@ -51,7 +51,7 @@ class FeatureFlag
         ));
 
         // Update .env.local file
-        $envContent = "\nFEATURE_FLAGS='{$featureJson}'";
+        $envContent = "\nFEATURE_FLAGS='{$featureJson}'\n";
         if (file_exists('../.env.local')) {
             $envContent = file_get_contents('../.env.local');
         }
@@ -66,11 +66,7 @@ class FeatureFlag
 
         file_put_contents('../.env.local', $envContent);
 
-        if ('test' !== $this->kernel->getEnvironment()) {
-            // Clear cache to reload environment variables
-            $process = new Process(['bin/console', 'cache:clear']);
-            $process->setWorkingDirectory($this->kernel->getProjectDir());
-            $process->run();
-        }
+        $dotenv = new Dotenv();
+        $dotenv->loadEnv($this->kernel->getProjectDir(). '/.env');
     }
 }

@@ -1,4 +1,5 @@
 {
+  "button.buy": "Buy",
   "footer.title.about": "About",
   "footer.title.about.company": "Your company",
   "footer.title.legal": "Legal",
@@ -6,7 +7,6 @@
   "footer.title.support": "Fastfony support",
   "footer.title.support.documentation": "Documentation",
   "footer.title.support.submit_ticket": "Submit ticket",
-  "button.buy": "Buy",
   "link.admin": "Admin",
   "link.documentation": "Docs",
   "link.login": "Login",

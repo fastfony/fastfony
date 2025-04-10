@@ -22,12 +22,8 @@ final class FeatureFlagTest extends TestCase
         );
 
         $kernelInterface->expects($this->once())
-            ->method('getEnvironment')
-            ->willReturn('prod');
-
-        $kernelInterface->expects($this->once())
             ->method('getProjectDir')
-            ->willReturn(__DIR__.'/../../');
+            ->willReturn(__DIR__.'/../../..');
 
         $featureFlag->save(['feature1']);
     }

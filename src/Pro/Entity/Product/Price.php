@@ -27,18 +27,22 @@ class Price
     use Stripe\Price;
     use TimestampableEntity;
 
+    #[Assert\GreaterThanOrEqual(0)]
     #[ORM\Column]
     private ?float $unitAmount = null;
 
+    #[Assert\Currency]
     #[ORM\Column(length: 3)]
     private ?string $currency = null;
 
     #[ORM\Column(nullable: true, enumType: RecurringInterval::class)]
     private ?RecurringInterval $recurringInterval = null;
 
+    #[Assert\GreaterThanOrEqual(1)]
     #[ORM\Column(nullable: true)]
     private ?int $recurringIntervalCount = null;
 
+    #[Assert\GreaterThanOrEqual(1)]
     #[ORM\Column(nullable: true)]
     private ?int $recurringTrialPeriodDays = null;
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity\CommonProperties;
 
+use App\Validator\ValidJson;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;

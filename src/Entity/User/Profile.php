@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Serializer\Attribute\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ProfileRepository::class)]
@@ -35,6 +36,7 @@ class Profile
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
+    #[Assert\Image]
     #[Vich\UploadableField(mapping: 'profile_photo', fileNameProperty: 'photo', size: 'photoSize')]
     private ?File $photoFile = null;
 

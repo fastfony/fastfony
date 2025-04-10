@@ -12,6 +12,7 @@ use App\Repository\Parameter\ParameterRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Serializer\Attribute\SerializedName;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ApiResource(
     operations: [
@@ -50,6 +51,7 @@ class Parameter
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $help = null;
 
+    #[Assert\NotBlank]
     #[Groups(['internal:parameter:read'])]
     #[ORM\Column(length: 255)]
     private ?string $type = null;
