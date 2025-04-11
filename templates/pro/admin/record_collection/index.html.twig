@@ -1,0 +1,16 @@
+{% extends '@EasyAdmin/layout.html.twig' %}
+
+{% trans_default_domain 'admin' %}
+
+{% block content_title %}
+    {{ 'record_collection.title'|trans }}
+{% endblock %}
+
+{% block main %}
+    <p>
+        {{ 'record_collection.description'|trans|raw }}
+    </p>
+    <div class="overflow-x-auto">
+
+    </div>
+{% endblock %}

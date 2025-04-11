@@ -68,6 +68,8 @@ class Dashboard extends AbstractDashboardController
 
         yield MenuItem::section('menu.objects');
 
+        yield MenuItem::linkToRoute('menu.collections', 'fas fa-database', 'admin_record_collection_index');
+
         if ($this->featureFlag->isEnabled(Features::PAGES->value)) {
             yield MenuItem::linkToCrud('menu.crud.pages', 'fas fa-file', Page::class);
         }
