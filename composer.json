@@ -39,6 +39,7 @@
         "nelmio/cors-bundle": "^2.5",
         "phpdocumentor/reflection-docblock": "^5.6.2",
         "phpstan/phpdoc-parser": "^2.1.0",
+        "sqkhor/editorjs-html": "^1.0",
         "stof/doctrine-extensions-bundle": "^1.13",
         "stripe/stripe-php": "^16.6",
         "symfony/asset": "7.2.*",

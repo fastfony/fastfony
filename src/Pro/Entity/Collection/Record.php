@@ -4,12 +4,16 @@ namespace App\Pro\Entity\Collection;
 
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Delete;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Link;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Put;
 use App\Entity\BlameableEntity;
 use App\Entity\CommonProperties;
 use App\Pro\Repository\Collection\RecordRepository;
+use App\Pro\State\PublishedRecordProvider;
 use App\Pro\State\RecordProcessor;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -22,6 +26,24 @@ use Symfony\Component\Uid\Uuid;
 
 #[ApiResource(
     operations: [
+        new Get(
+            uriTemplate: '/public/records/{id}',
+            normalizationContext: ['groups' => ['public:record:list']],
+            security: "is_granted('PUBLIC_ACCESS')",
+            provider: PublishedRecordProvider::class,
+        ),
+        new GetCollection(
+            uriTemplate: '/public/record_collections/{collectionId}/records',
+            uriVariables: [
+                'collectionId' => new Link(
+                    fromProperty: 'records',
+                    fromClass: RecordCollection::class,
+                ),
+            ],
+            normalizationContext: ['groups' => ['public:record:list']],
+            security: 'is_granted("PUBLIC_ACCESS")',
+            provider: PublishedRecordProvider::class,
+        ),
         new Post(
             uriTemplate: '/internal/records',
             security: "is_granted('ROLE_ADMIN')",
@@ -54,6 +76,7 @@ class Record
     #[Groups([
         'record:read',
         'record:list',
+        'public:record:list',
     ])]
     #[ORM\Id]
     #[ORM\Column(type: UuidType::NAME, unique: true)]
@@ -155,6 +178,29 @@ class Record
         $fields = [];
         foreach ($this->fields as $field) {
             $fields[$field->getField()->getName()] = $field->getValue();
+        }
+
+        return $fields;
+    }
+
+    #[SerializedName('fields')]
+    #[Groups([
+        'public:record:list',
+    ])]
+    public function getPresentableArrayFields(): array
+    {
+        $fields = [];
+        foreach ($this->fields as $field) {
+            if ($field->getField()->isPresentable()) {
+                if ('richEditor' === $field->getField()->getType()) {
+                    $fields[$field->getField()->getName()] = [
+                        'html' => implode('', \edjsHTML::parse($field->getValue())),
+                        'value' => json_decode($field->getValue(), true),
+                    ];
+                    continue;
+                }
+                $fields[$field->getField()->getName()] = $field->getValue();
+            }
         }
 
         return $fields;

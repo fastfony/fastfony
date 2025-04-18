@@ -16,7 +16,7 @@ security:
             pattern: ^/token$
             security: false
         api:
-            pattern: ^\/api\/(?!internal\/|docs$).*
+            pattern: ^\/api\/(?!internal\/|public\/|docs$).*
             security: true
             stateless: true
             oauth2: true

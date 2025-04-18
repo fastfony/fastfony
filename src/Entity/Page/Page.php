@@ -4,15 +4,38 @@ declare(strict_types=1);
 
 namespace App\Entity\Page;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Entity\BlameableEntity;
 use App\Entity\CommonProperties;
 use App\Repository\Page\PageRepository;
+use App\State\PublishedPageProvider;
 use App\Validator\UniqueHomepage;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new Get(
+            uriTemplate: '/public/pages/{id}',
+            normalizationContext: ['groups' => ['public:page:read']],
+            security: 'is_granted("PUBLIC_ACCESS")',
+            provider: PublishedPageProvider::class,
+        ),
+        new GetCollection(),
+        new GetCollection(
+            uriTemplate: '/public/pages',
+            normalizationContext: ['groups' => ['public:page:list']],
+            security: 'is_granted("PUBLIC_ACCESS")',
+            provider: PublishedPageProvider::class,
+        ),
+    ]
+)]
 #[ORM\Entity(repositoryClass: PageRepository::class)]
 #[ORM\Index(columns: ['slug'])]
 #[Gedmo\Loggable(logEntryClass: PageLogEntry::class)]
@@ -28,11 +51,19 @@ class Page
     use CommonProperties\Seo;
     use TimestampableEntity;
 
+    #[Groups([
+        'public:page:read',
+        'public:page:list',
+    ])]
     #[Assert\NotBlank]
     #[Gedmo\Versioned]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[Groups([
+        'public:page:read',
+        'public:page:list',
+    ])]
     #[Gedmo\Slug(fields: ['title'], updatable: false)]
     #[Gedmo\Versioned]
     #[ORM\Column(length: 255, nullable: true)]
@@ -41,13 +72,29 @@ class Page
     /**
      * @var array<string, string>|null
      */
+    #[Groups([
+        'public:page:read',
+    ])]
     #[Gedmo\Versioned]
     #[ORM\Column(nullable: true)]
     private ?array $content = null;
 
+    #[Groups([
+        'public:page:read',
+        'public:page:list',
+    ])]
     #[Gedmo\Versioned]
     #[ORM\Column(options: ['default' => false])]
     private bool $homepage = false;
+
+    #[Groups([
+        'public:page:read',
+        'public:page:list',
+    ])]
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
     public function getTitle(): ?string
     {
@@ -67,6 +114,20 @@ class Page
     public function getContent(): ?array
     {
         return $this->content;
+    }
+
+    #[Groups([
+        'public:page:read',
+        'public:page:list',
+    ])]
+    public function getHtmlContent(): ?string
+    {
+        if (!$this->getContent()) {
+            return null;
+        }
+
+        // Join for output
+        return implode('', \edjsHTML::parse($this->getContent()));
     }
 
     public function setContent(?array $content): static

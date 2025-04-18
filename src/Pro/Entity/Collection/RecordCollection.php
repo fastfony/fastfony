@@ -6,6 +6,7 @@ use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Link;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Put;
 use App\Entity\BlameableEntity;
@@ -66,6 +67,7 @@ class RecordCollection
      */
     #[Groups([
         'record:list',
+        'public:record:list',
     ])]
     #[ORM\OneToMany(targetEntity: Record::class, mappedBy: 'collection', orphanRemoval: true)]
     private Collection $records;
@@ -74,6 +76,7 @@ class RecordCollection
      * @var Collection<int, Field>
      */
     #[Assert\Valid]
+    #[Link(toProperty: 'collection')]
     #[Groups([
         'record_collection:read',
         'record_collection:write',
