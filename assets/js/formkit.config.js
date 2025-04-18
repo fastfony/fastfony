@@ -1,6 +1,6 @@
 import { en } from '@formkit/i18n';
 import { createInput } from '@formkit/vue';
-import EditorJs from '../vue/components/Pro/EditorJs.vue';
+import RichTextEditor from '../vue/components/Pro/RichTextEditor.vue';
 
 const config = {
   locales: { en },
@@ -12,7 +12,7 @@ const config = {
     },
   },
   inputs: {
-    editorJs: createInput(EditorJs),
+    richTextEditor: createInput(RichTextEditor),
   },
 };
 

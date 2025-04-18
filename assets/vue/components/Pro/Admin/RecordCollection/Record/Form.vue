@@ -59,7 +59,7 @@ function getFormKitType(type) {
     case 'plainText':
       return 'text';
     case 'richEditor':
-      return 'editorJs';
+      return 'richTextEditor';
     case 'number':
       return 'number';
     case 'boolean':

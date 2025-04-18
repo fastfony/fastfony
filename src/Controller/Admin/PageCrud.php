@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
-use App\Admin\Field\Editorjs;
 use App\Admin\Field\Json;
+use App\Admin\Field\RichTextEditor;
 use App\Entity\Page\Page;
 use App\Handler\FeatureFlag;
 use App\Handler\Features;
@@ -122,10 +122,9 @@ class PageCrud extends AbstractCrudController
             TextField::new('name'),
             TextField::new('title')
                 ->hideOnIndex(),
-            Editorjs::new('content')
+            RichTextEditor::new('content')
                 ->setColumns(12)
-                ->hideOnIndex()
-                ->setHelp('help.content'),
+                ->hideOnIndex(),
             ...$this->getSeoTabFields(),
             FormField::addTab('Rich Snippets'),
             Json::new('richSnippets')

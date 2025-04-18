@@ -132,5 +132,5 @@ Without the following projects, Fastfony would not exist:
 - [Tailwind CSS](https://tailwindcss.com)
 - [DaisyUI](https://daisyui.com)
 - [Taskfile](https://taskfile.dev)
-- [Editorjs](https://editorjs.io)
+- [Quill](https://quilljs.com)
 - and many others...

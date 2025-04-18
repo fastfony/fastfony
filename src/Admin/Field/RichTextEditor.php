@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Admin\Field;
 
-use App\Form\Type\EditorjsFormType;
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FieldTrait;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
-class Editorjs implements FieldInterface
+class RichTextEditor implements FieldInterface
 {
     use FieldTrait;
 
@@ -17,8 +17,8 @@ class Editorjs implements FieldInterface
         return (new self())
             ->setProperty($propertyName)
             ->setLabel($label)
-            ->setFormType(EditorjsFormType::class)
-            // required also the admin entry in webpack.config.js
+            ->setFormType(TextareaType::class)
+            ->setHtmlAttribute('class', 'rich-text-editor')
         ;
     }
 }

@@ -69,15 +69,12 @@ class Page
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $slug = null;
 
-    /**
-     * @var array<string, string>|null
-     */
     #[Groups([
         'public:page:read',
     ])]
     #[Gedmo\Versioned]
     #[ORM\Column(nullable: true)]
-    private ?array $content = null;
+    private ?string $content = null;
 
     #[Groups([
         'public:page:read',
@@ -108,29 +105,12 @@ class Page
         return $this;
     }
 
-    /**
-     * @return array<string, string>|null
-     */
-    public function getContent(): ?array
+    public function getContent(): ?string
     {
         return $this->content;
     }
 
-    #[Groups([
-        'public:page:read',
-        'public:page:list',
-    ])]
-    public function getHtmlContent(): ?string
-    {
-        if (!$this->getContent()) {
-            return null;
-        }
-
-        // Join for output
-        return implode('', \edjsHTML::parse($this->getContent()));
-    }
-
-    public function setContent(?array $content): static
+    public function setContent(?string $content): static
     {
         $this->content = $content;
 

@@ -27,6 +27,10 @@ use Symfony\Component\Uid\Uuid;
 #[ApiResource(
     operations: [
         new Get(
+            uriTemplate: '/internal/records/{id}',
+            security: "is_granted('ROLE_ADMIN')",
+        ),
+        new Get(
             uriTemplate: '/public/records/{id}',
             normalizationContext: ['groups' => ['public:record:list']],
             security: "is_granted('PUBLIC_ACCESS')",
@@ -192,13 +196,6 @@ class Record
         $fields = [];
         foreach ($this->fields as $field) {
             if ($field->getField()->isPresentable()) {
-                if ('richEditor' === $field->getField()->getType()) {
-                    $fields[$field->getField()->getName()] = [
-                        'html' => implode('', \edjsHTML::parse($field->getValue())),
-                        'value' => json_decode($field->getValue(), true),
-                    ];
-                    continue;
-                }
                 $fields[$field->getField()->getName()] = $field->getValue();
             }
         }
