@@ -29,12 +29,10 @@ function getCollections() {
         );
         if (collection) {
           store.selected = collection;
-          console.log(collection);
           return;
         }
       }
 
-      console.log('sans hash ou sans collection');
       store.selected = collections.value[0];
     })
     .catch((error) => {

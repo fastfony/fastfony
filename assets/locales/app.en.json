@@ -27,6 +27,7 @@
   "Github Client Secret": "Github Client Secret",
   "Google Client ID": "Google Client ID",
   "Google Client Secret": "Google Client Secret",
+  "help.published_records": "When a record is published, its presentable fields are publics via the API",
   "Hidden": "Hidden",
   "Icon filepath": "Icon filepath",
   "If yes, the website will be in maintenance mode and show the template maintenance.html.twig (expect for administrator users)": "If yes, the website will be in maintenance mode and show the template maintenance.html.twig (expect for administrator users)",
@@ -45,6 +46,8 @@
   "OAuth Google": "OAuth Google",
   "Plain Text": "Plain text",
   "Presentable": "Presentable",
+  "Published": "Published",
+  "Published and actions": "Published and actions",
   "record_collections.title": "Collections /",
   "Refresh collection": "Refresh collection",
   "Registration": "Registration",
@@ -64,6 +67,7 @@
   "Type": "Type",
   "Update": "Update",
   "URL": "URL",
+  "Uuid": "Unique identifier",
   "Yes": "Yes",
   "Your Fastfony license key is required to use the software. Get it on <a href=\"https://fastfony.com\" target=\"_blank\">fastfony.com</a>": "Your Fastfony license key is required to use the software. Get it on <a href=\"https://fastfony.com\" target=\"_blank\">fastfony.com</a>"
 }

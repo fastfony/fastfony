@@ -4,9 +4,11 @@ namespace App\Pro\Entity\Collection;
 
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Delete;
+use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Put;
 use App\Entity\BlameableEntity;
+use App\Entity\CommonProperties;
 use App\Pro\Repository\Collection\RecordRepository;
 use App\Pro\State\RecordProcessor;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -30,6 +32,10 @@ use Symfony\Component\Uid\Uuid;
             security: "is_granted('ROLE_ADMIN')",
             processor: RecordProcessor::class,
         ),
+        new Patch(
+            uriTemplate: '/internal/records/{id}',
+            security: "is_granted('ROLE_ADMIN')",
+        ),
         new Delete(
             uriTemplate: '/internal/records/{id}',
             security: "is_granted('ROLE_ADMIN')",
@@ -42,6 +48,7 @@ use Symfony\Component\Uid\Uuid;
 class Record
 {
     use BlameableEntity;
+    use CommonProperties\Required\Published;
     use TimestampableEntity;
 
     #[Groups([
@@ -81,6 +88,24 @@ class Record
     public function getId(): ?Uuid
     {
         return $this->id;
+    }
+
+    #[Groups([
+        'record:list',
+    ])]
+    public function isPublished(): bool
+    {
+        return $this->published;
+    }
+
+    #[Groups([
+        'record:write',
+    ])]
+    public function setPublished(bool $published): static
+    {
+        $this->published = $published;
+
+        return $this;
     }
 
     public function getCollection(): ?RecordCollection

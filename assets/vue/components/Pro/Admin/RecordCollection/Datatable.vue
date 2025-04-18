@@ -16,6 +16,8 @@ ModuleRegistry.registerModules([ClientSideRowModelModule, TextFilterModule]);
 import { AgGridVue } from 'ag-grid-vue3';
 import Uuid from './Record/Uuid.vue';
 import { reset } from '@formkit/core';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 
 const columns = ref([]);
 const rows = ref([]);
@@ -65,7 +67,7 @@ function buildColumns() {
       });
 
     columns.value.unshift({
-      headerName: 'Uuid',
+      headerName: t('Uuid'),
       field: 'id',
       cellRenderer: Uuid,
       minWidth: 320,
@@ -74,12 +76,11 @@ function buildColumns() {
 
     columns.value.push({
       colId: 'actions',
-      headerName: 'Actions',
+      headerName: t('Published and actions'),
       sortable: false,
       field: '@id',
       cellRenderer: Actions,
-      minWidth: 120,
-      flex: 1,
+      width: 250,
     });
   }
 }
@@ -93,6 +94,7 @@ function buildRows(records) {
 
     row.id = record['id'];
     row['@id'] = record['@id'];
+    row['published'] = record['published'];
 
     return row;
   });
@@ -161,6 +163,10 @@ function buildRows(records) {
       </ag-grid-vue>
 
       <Drawer @update:records="getRecords()" />
+
+      <p class="text-muted mt-3">
+        {{ $t('help.published_records') }}
+      </p>
     </div>
   </main>
 </template>

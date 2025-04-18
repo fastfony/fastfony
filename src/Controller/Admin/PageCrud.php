@@ -110,12 +110,16 @@ class PageCrud extends AbstractCrudController
     {
         return [
             FormField::addTab('Content'),
-            FormField::addColumn(8),
-            TextField::new('name'),
-            FormField::addColumn(4)
-                ->addCssClass('text-right pt-4 pe-5'),
-            BooleanField::new('enabled'),
+            FormField::addColumn(6),
+            BooleanField::new('enabled')
+                ->setHelp('help.enabled')
+                ->addCssClass('pt-4 pe-5'),
+            FormField::addColumn(6),
+            BooleanField::new('published')
+                ->setHelp('help.published')
+                ->addCssClass('pt-4 pe-5'),
             FormField::addColumn(12),
+            TextField::new('name'),
             TextField::new('title')
                 ->hideOnIndex(),
             Editorjs::new('content')

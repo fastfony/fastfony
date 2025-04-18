@@ -1,8 +1,40 @@
 <script setup>
 import { useRecordCollectionsStore } from '../../../../../stores/Pro/Admin/recordCollections';
-const store = useRecordCollectionsStore();
-
+import { onMounted, ref } from 'vue';
 import axios from 'axios';
+const store = useRecordCollectionsStore();
+const props = defineProps({});
+
+const publishedValue = ref(false);
+
+onMounted(() => {
+  publishedValue.value = store.records.find(
+    (record) => record['@id'] === props.params.value,
+  ).published;
+});
+
+function togglePublished() {
+  // we need to find the record in the store
+  const record = store.records.find(
+    (record) => record['@id'] === props.params.value,
+  );
+  if (record) {
+    record.published = !record.published;
+    axios
+      .patch(
+        `/api/internal/records/${record['id']}`,
+        { published: record.published },
+        {
+          headers: {
+            'Content-Type': 'application/merge-patch+json',
+          },
+        },
+      )
+      .catch((error) => {
+        console.error('Error updating published status:', error);
+      });
+  }
+}
 
 function select(iri) {
   // we need to find the record in the store
@@ -11,7 +43,20 @@ function select(iri) {
 </script>
 
 <template>
-  <div>
+  <div class="d-flex flex-row align-items-center">
+    <div
+      class="form-switch mx-auto d-flex justify-content-center align-items-center"
+    >
+      <input
+        class="form-check-input"
+        type="checkbox"
+        role="switch"
+        id="flexSwitchCheckDefault"
+        @change="togglePublished()"
+        v-model="publishedValue"
+      />
+    </div>
+
     <button
       type="button"
       class="btn btn-link action-edit action-label"
@@ -35,5 +80,3 @@ function select(iri) {
     </button>
   </div>
 </template>
-
-<!-- params.value -->
