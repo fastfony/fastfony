@@ -1,4 +1,5 @@
 @import './admin/editorjs.css';
+@import './admin/formkit.css';
 
 /* see vendor/easycorp/easyadmin-bundle/assets/css/easyadmin-theme/variables-theme.scss for other vars */
 
@@ -9,4 +10,15 @@
 
 .ea-dark-scheme {
     --bs-border-color: var(--bs-border-color-translucent);
+}
+
+.card-body:has(.collapse.show) {
+    margin: 1rem 0;
+}
+
+.content-wrapper:has(.container-fluid) {
+    padding: 0;
+    .container-fluid {
+        padding: 0;
+    }
 }

@@ -15,7 +15,8 @@ class Index extends AbstractController
      */
     #[Route('/admin/collection', name: 'admin_record_collection_index')]
     #[Template('pro/admin/record_collection/index.html.twig')]
-    public function __invoke()
+    public function __invoke(): array
     {
+        return [];
     }
 }

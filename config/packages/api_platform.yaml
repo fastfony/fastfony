@@ -17,3 +17,8 @@ api_platform:
         tokenUrl: '/token'
         authorizationUrl: '/authorize'
         scopes: { email: 'email', roles: 'roles', profile: 'profile' }
+    mapping:
+        paths:
+            - '%kernel.project_dir%/src/ApiResource'
+            - '%kernel.project_dir%/src/Entity'
+            - '%kernel.project_dir%/src/Pro/Entity'

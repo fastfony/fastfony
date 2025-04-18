@@ -37,7 +37,7 @@ const patchParameter = (parameter, event) => {
         { value: value },
         { headers: { 'Content-Type': 'application/merge-patch+json' } },
       )
-      .then((response) => {
+      .then(() => {
         toast.success(t('toast.parameter.updated'), {
           timeout: 2000,
         });
@@ -75,7 +75,13 @@ const patchParameter = (parameter, event) => {
                 </select>
                 <input
                   v-else
-                  :value="parameter.value && 0 < parameter.value.length ? ('secret' === parameter.type ? '*************' : parameter.value) : ''"
+                  :value="
+                    parameter.value && 0 < parameter.value.length
+                      ? 'secret' === parameter.type
+                        ? '*************'
+                        : parameter.value
+                      : ''
+                  "
                   :type="parameter.type"
                   class="form-control"
                   @change="patchParameter(parameter, $event)"

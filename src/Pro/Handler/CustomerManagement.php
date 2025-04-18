@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Pro\Handler;
 
+use App\Entity\User\Profile;
 use App\Entity\User\User;
 use App\Repository\User\UserRepository;
 use Stripe\StripeObject;
@@ -42,7 +43,12 @@ class CustomerManagement
             $customer->appendStripeCustomerId($stripeCustomerId);
         }
 
-        $customer->setName($customerDetails['name']);
+        $customersNames = explode(' ', $customerDetails['name']);
+        $profile = $customer->getProfile() ?? (new Profile())->setUser($customer);
+        $profile->setFirstName($customersNames[0]);
+        if (count($customersNames) > 1) {
+            $profile->setLastName(implode(' ', array_slice($customersNames, 1)));
+        }
 
         return $customer;
     }

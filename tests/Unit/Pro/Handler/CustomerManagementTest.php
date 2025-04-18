@@ -40,9 +40,6 @@ final class CustomerManagementTest extends TestCase
         $user->expects($this->once())
             ->method('appendStripeCustomerId');
 
-        $user->expects($this->once())
-            ->method('setName');
-
         $this->customerManagement->findOrCreate(
             $this->getCustomerDetailsMock(),
             'stripeCustomerId'
@@ -63,9 +60,6 @@ final class CustomerManagementTest extends TestCase
 
         $user->expects($this->once())
             ->method('appendStripeCustomerId');
-
-        $user->expects($this->once())
-            ->method('setName');
 
         // Automatically login
         $this->security->expects($this->once())
@@ -95,9 +89,6 @@ final class CustomerManagementTest extends TestCase
 
         $user->expects($this->once())
             ->method('appendStripeCustomerId');
-
-        $user->expects($this->once())
-            ->method('setName');
 
         // Automatically login
         $this->security->expects($this->once())

@@ -37,6 +37,8 @@ import { useToast } from 'vue-toastification';
 import 'vue-toastification/dist/index.css';
 const toast = useToast();
 
+import { plugin, defaultConfig } from '@formkit/vue';
+import formkitConfig from './js/formkit.config.js';
 import { createPinia } from 'pinia';
 import axios from 'axios';
 
@@ -53,8 +55,8 @@ document.addEventListener('vue:before-mount', (event) => {
   });
 
   app.use(i18n);
-
   app.use(Toast, {});
+  app.use(plugin, defaultConfig(formkitConfig));
 
   // Capture and toast all axios errors
   axios.interceptors.response.use(
@@ -63,20 +65,28 @@ document.addEventListener('vue:before-mount', (event) => {
     },
     function (error) {
       if (error.response) {
-        const ignoreErrors = [422];
+        const ignoreErrors = [];
         // Si ce n'est pas dans les erreurs à ignorer
         if (
           !ignoreErrors.find(
             (errorCodeIgnore) => errorCodeIgnore === error.response.status,
           )
         ) {
-          const message =
+          if (error.response.data && error.response.data.detail) {
+            toast.error(error.response.data.detail, {
+              timeout: 15000,
+            });
+            return;
+          }
+
+          toast.error(
             '' !== error.response.statusText
               ? error.response.statusText
-              : error.message;
-          toast.error(message, {
-            timeout: 15000,
-          });
+              : error.message,
+            {
+              timeout: 15000,
+            },
+          );
         }
       }
 

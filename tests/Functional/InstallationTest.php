@@ -55,6 +55,7 @@ final class InstallationTest extends WebTestCase
 
         $this->client->submitForm('Create super admin user', [
             'installation_form[email]' => 'test@test.com',
+            'installation_form[mailerSender]' => 'test@test.com',
             'installation_form[licenseKey]' => 'test',
         ]);
 

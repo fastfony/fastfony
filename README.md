@@ -67,6 +67,7 @@ Documentation is available on [docs.fastfony.com](https://docs.fastfony.com/).
 - EasyAdmin 4 (with Bootstrap 5)
 - Vue.js 3 & Bootstrap 5 for admin (with EasyAdmin)
 - Vue.js 3 & Tailwind CSS 4 & DaisyUI 5 for front (and you can use also React or another frontend framework!)
+- Vueuse, AG Grid, Vue I18n, Pinia, FormKit and others for front
 - Webpack Encore
 - Taskfile for easy install & start commands (just `task start` and develop)
 - Flysystem for file storage management (local and AWS S3 ready)

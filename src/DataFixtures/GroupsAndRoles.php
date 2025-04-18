@@ -80,10 +80,12 @@ class GroupsAndRoles extends Fixture implements FixtureGroupInterface
                 $this->getReference('ROLE_USER', Role::class),
             ],
             'Administrator' => [
+                $this->getReference('ROLE_API', Role::class),
                 $this->getReference('ROLE_USER', Role::class),
                 $this->getReference('ROLE_ADMIN', Role::class),
             ],
             Group::SUPER_ADMIN_NAME => [
+                $this->getReference('ROLE_API', Role::class),
                 $this->getReference('ROLE_USER', Role::class),
                 $this->getReference('ROLE_ADMIN', Role::class),
                 $this->getReference('ROLE_ALLOWED_TO_SWITCH', Role::class),
