@@ -16,7 +16,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Symfony\Component\Serializer\Attribute\Groups;
+use Symfony\Component\Serializer\Attribute\SerializedName;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 #[ApiResource(
     operations: [
@@ -50,6 +52,7 @@ class Page
     use CommonProperties\Required\Published;
     use CommonProperties\Seo;
     use TimestampableEntity;
+    private const TEMPLATES_DIR = '../templates/';
 
     #[Groups([
         'public:page:read',
@@ -69,12 +72,12 @@ class Page
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $slug = null;
 
-    #[Groups([
-        'public:page:read',
-    ])]
     #[Gedmo\Versioned]
     #[ORM\Column(nullable: true)]
     private ?string $content = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $template = null;
 
     #[Groups([
         'public:page:read',
@@ -110,9 +113,46 @@ class Page
         return $this->content;
     }
 
+    #[SerializedName('content')]
+    #[Groups([
+        'public:page:read',
+    ])]
+    public function getHtmlContent(): ?string
+    {
+        if (!empty($this->getTemplate()) && file_exists(self::TEMPLATES_DIR.$this->getTemplate())) {
+            if (class_exists(\Twig\Environment::class)) {
+                $twig = new \Twig\Environment(new \Twig\Loader\FilesystemLoader(self::TEMPLATES_DIR));
+
+                try {
+                    return $twig->render($this->getTemplate(), [
+                        'page' => $this,
+                    ]);
+                } catch (\Throwable $t) {
+                    throw new \RuntimeException('Twig template rendering failed (probably because you use a function unavailable in twig with Fastfony pages): '.$t->getMessage());
+                }
+            }
+
+            throw new \RuntimeException('Twig is unavailable.');
+        }
+
+        return $this->content;
+    }
+
     public function setContent(?string $content): static
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function getTemplate(): ?string
+    {
+        return $this->template;
+    }
+
+    public function setTemplate(?string $template): static
+    {
+        $this->template = $template;
 
         return $this;
     }
@@ -139,5 +179,24 @@ class Page
         $this->homepage = $homepage;
 
         return $this;
+    }
+
+    #[Assert\Callback]
+    public function validateContentOrTemplate(ExecutionContextInterface $context): void
+    {
+        if (!empty($this->content) && !empty($this->template)) {
+            $context->buildViolation('You cannot enter “prose content” and “template path” at the same time.')
+                ->atPath('template')
+                ->addViolation();
+        }
+
+        if (!empty($this->template)) {
+            $templatePath = self::TEMPLATES_DIR.$this->template;
+            if (!file_exists($templatePath)) {
+                $context->buildViolation('The template file does not exist.')
+                    ->atPath('template')
+                    ->addViolation();
+            }
+        }
     }
 }

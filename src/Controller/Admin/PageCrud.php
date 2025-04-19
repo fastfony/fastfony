@@ -122,9 +122,12 @@ class PageCrud extends AbstractCrudController
             TextField::new('name'),
             TextField::new('title')
                 ->hideOnIndex(),
+            FormField::addFieldset('Custom template or prose content'),
+            TextField::new('template')
+                ->setHelp('help.template'),
             RichTextEditor::new('content')
-                ->setColumns(12)
-                ->hideOnIndex(),
+                ->hideOnIndex()
+                ->setHelp('help.content'),
             ...$this->getSeoTabFields(),
             FormField::addTab('Rich Snippets'),
             Json::new('richSnippets')
