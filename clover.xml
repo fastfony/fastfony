@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745016503">
-  <project timestamp="1745016503">
+<coverage generated="1745079391">
+  <project timestamp="1745079391">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -203,7 +203,7 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Admin/PageCrud.php">
       <class name="App\Controller\Admin\PageCrud" namespace="global">
-        <metrics complexity="7" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="77" coveredstatements="76" elements="82" coveredelements="80"/>
+        <metrics complexity="7" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="80" coveredstatements="79" elements="85" coveredelements="83"/>
       </class>
       <line num="28" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="33" type="stmt" count="2"/>
@@ -287,7 +287,10 @@
       <line num="132" type="stmt" count="2"/>
       <line num="133" type="stmt" count="2"/>
       <line num="134" type="stmt" count="2"/>
-      <metrics loc="137" ncloc="134" classes="1" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="77" coveredstatements="76" elements="82" coveredelements="80"/>
+      <line num="135" type="stmt" count="2"/>
+      <line num="136" type="stmt" count="2"/>
+      <line num="137" type="stmt" count="2"/>
+      <metrics loc="140" ncloc="137" classes="1" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="80" coveredstatements="79" elements="85" coveredelements="83"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Admin/PageLogEntryCrud.php">
       <class name="App\Controller\Admin\PageLogEntryCrud" namespace="global">
@@ -1065,31 +1068,58 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/Page/Page.php">
       <class name="App\Entity\Page\Page" namespace="global">
-        <metrics complexity="9" methods="9" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="22" coveredelements="22"/>
+        <metrics complexity="21" methods="13" coveredmethods="11" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="18" elements="49" coveredelements="29"/>
       </class>
-      <line num="87" type="method" name="getId" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="93" type="stmt" count="4"/>
-      <line num="96" type="method" name="getTitle" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="98" type="stmt" count="8"/>
-      <line num="101" type="method" name="setTitle" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="103" type="stmt" count="3"/>
-      <line num="105" type="stmt" count="3"/>
-      <line num="108" type="method" name="getContent" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="110" type="stmt" count="8"/>
-      <line num="113" type="method" name="setContent" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="115" type="stmt" count="1"/>
-      <line num="117" type="stmt" count="1"/>
-      <line num="120" type="method" name="getSlug" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="122" type="stmt" count="3"/>
-      <line num="125" type="method" name="setSlug" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="127" type="stmt" count="1"/>
-      <line num="129" type="stmt" count="1"/>
-      <line num="132" type="method" name="isHomepage" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="134" type="stmt" count="4"/>
-      <line num="137" type="method" name="setHomepage" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="139" type="stmt" count="3"/>
-      <line num="141" type="stmt" count="3"/>
-      <metrics loc="144" ncloc="144" classes="1" methods="9" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="22" coveredelements="22"/>
+      <line num="90" type="method" name="getId" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="96" type="stmt" count="4"/>
+      <line num="99" type="method" name="getTitle" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="101" type="stmt" count="8"/>
+      <line num="104" type="method" name="setTitle" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="106" type="stmt" count="3"/>
+      <line num="108" type="stmt" count="3"/>
+      <line num="111" type="method" name="getContent" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="113" type="stmt" count="8"/>
+      <line num="116" type="method" name="getHtmlContent" visibility="public" complexity="5" crap="30" count="0"/>
+      <line num="122" type="stmt" count="0"/>
+      <line num="123" type="stmt" count="0"/>
+      <line num="124" type="stmt" count="0"/>
+      <line num="127" type="stmt" count="0"/>
+      <line num="128" type="stmt" count="0"/>
+      <line num="129" type="stmt" count="0"/>
+      <line num="130" type="stmt" count="0"/>
+      <line num="131" type="stmt" count="0"/>
+      <line num="135" type="stmt" count="0"/>
+      <line num="138" type="stmt" count="0"/>
+      <line num="141" type="method" name="setContent" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="143" type="stmt" count="1"/>
+      <line num="145" type="stmt" count="1"/>
+      <line num="148" type="method" name="getTemplate" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="150" type="stmt" count="3"/>
+      <line num="153" type="method" name="setTemplate" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="155" type="stmt" count="1"/>
+      <line num="157" type="stmt" count="1"/>
+      <line num="160" type="method" name="getSlug" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="162" type="stmt" count="3"/>
+      <line num="165" type="method" name="setSlug" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="167" type="stmt" count="1"/>
+      <line num="169" type="stmt" count="1"/>
+      <line num="172" type="method" name="isHomepage" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="174" type="stmt" count="4"/>
+      <line num="177" type="method" name="setHomepage" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="179" type="stmt" count="3"/>
+      <line num="181" type="stmt" count="3"/>
+      <line num="184" type="method" name="validateContentOrTemplate" visibility="public" complexity="5" crap="17.80" count="1"/>
+      <line num="187" type="stmt" count="1"/>
+      <line num="188" type="stmt" count="0"/>
+      <line num="189" type="stmt" count="0"/>
+      <line num="190" type="stmt" count="0"/>
+      <line num="193" type="stmt" count="1"/>
+      <line num="194" type="stmt" count="0"/>
+      <line num="195" type="stmt" count="0"/>
+      <line num="196" type="stmt" count="0"/>
+      <line num="197" type="stmt" count="0"/>
+      <line num="198" type="stmt" count="0"/>
+      <metrics loc="203" ncloc="203" classes="1" methods="13" coveredmethods="11" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="18" elements="49" coveredelements="29"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/Page/PageLogEntry.php">
       <class name="App\Entity\Page\PageLogEntry" namespace="global">
@@ -3951,6 +3981,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="165" loc="9481" ncloc="8973" classes="154" methods="585" coveredmethods="356" conditionals="0" coveredconditionals="0" statements="2387" coveredstatements="1608" elements="2972" coveredelements="1964"/>
+    <metrics files="165" loc="9543" ncloc="9035" classes="154" methods="589" coveredmethods="358" conditionals="0" coveredconditionals="0" statements="2413" coveredstatements="1616" elements="3002" coveredelements="1974"/>
   </project>
 </coverage>
