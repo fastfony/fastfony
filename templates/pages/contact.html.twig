@@ -1,0 +1,71 @@
+{% extends 'front.html.twig' %}
+
+{% trans_default_domain 'front' %}
+
+{% block title %}{{ 'contact.title'|trans }}{% endblock %}
+
+{% block main %}
+    <div class="max-md:order-2 lg:col-span-3">
+        <h1 class="text-2xl font-medium">{{ 'contact.title'|trans }}</h1>
+        <p class="text-base-content/80">
+            {{ 'contact.description'|trans }}
+        </p>
+        <form data-turbo="false" method="POST" name="contact_request">
+            <div class="fieldset mt-8 gap-4">
+                <div class="grid grid-cols-2 gap-5">
+                    <div class="space-y-2">
+                        <label class="fieldset-label" for="first_name">{{ 'contact.label.firstName'|trans }}</label>
+                        <label class="input w-full focus:outline-0">
+                            <svg class="size-4.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></g></svg>
+                            {{ form_widget(form.firstName, {attr: {class: 'grow focus:outline-0'}}) }}
+                        </label>
+                        {{ form_errors(form.firstName) }}
+                    </div>
+                    <div class="space-y-2">
+                        <label class="fieldset-label" for="last_name">{{ 'contact.label.lastName'|trans }}</label>
+                        <label class="input w-full focus:outline-0">
+                            <svg class="size-4.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></g></svg>
+                            {{ form_widget(form.lastName, {attr: {class: 'grow focus:outline-0'}}) }}
+                        </label>
+                        {{ form_errors(form.lastName) }}
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="fieldset-label" for="email">{{ 'contact.label.email'|trans }}</label>
+                    <label class="input w-full focus:outline-0">
+                        <svg class="size-4.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></g></svg>
+                        {{ form_widget(form.email, {attr: {class: 'grow focus:outline-0'}}) }}
+                    </label>
+                    {{ form_errors(form.email) }}
+                </div>
+                <div class="space-y-2">
+                    <label class="fieldset-label" for="phone">{{ 'contact.label.phone'|trans }}</label>
+                    <label class="input w-full focus:outline-0">
+                        <svg class="size-4.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 16.92v3a2 2 0 0 1-2.18 2a19.8 19.8 0 0 1-8.63-3.07a19.5 19.5 0 0 1-6-6a19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72a12.8 12.8 0 0 0 .7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45a12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92"/></svg>
+                        {{ form_widget(form.phoneNumber, {attr: {class: 'grow focus:outline-0'}}) }}
+                    </label>
+                    {{ form_errors(form.phoneNumber) }}
+                </div>
+                <div class="space-y-2">
+                    <label class="fieldset-label" for="message">{{ 'contact.label.message'|trans }}</label>
+                    {{ form_widget(form.message, {attr: {class: 'textarea h-30 w-full'}}) }}
+                </div>
+                <div class="flex items-center gap-3">
+                    <input class="checkbox checkbox-sm" id="agreement" type="checkbox" required>
+                    <label for="agreement" class="text-sm">
+                        {{ 'contact.agree_with'|trans }}
+                        <a href="#" target="_blank" class="link hover:link-primary ms-1">
+                            {{ 'contact.privacy_policy'|trans }}
+                        </a>
+                    </label>
+                </div>
+            </div>
+            <div class="mt-6 text-center">
+                <button class="btn btn-primary gap-2.5">
+                    <svg class="size-4.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zm7.318-19.539l-10.94 10.939"/></svg>
+                    Send a Message
+                </button>
+            </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

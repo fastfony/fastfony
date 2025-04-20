@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
+use App\Entity\ContactRequest;
 use App\Entity\Page\Page;
 use App\Entity\Parameter\Parameter;
 use App\Entity\User\User;
@@ -65,6 +66,7 @@ class Dashboard extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('menu.dashboard', 'fa fa-home');
+        yield MenuItem::linkToCrud('menu.crud.contact_requests', 'fas fa-inbox', ContactRequest::class);
 
         yield MenuItem::section('menu.objects');
 

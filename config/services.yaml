@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
     default_app_name: 'Fastfony'
+    default_app_contact_email: 'contact@fastfony.com'
 
 services:
     # default configuration for services in *this* file
@@ -13,6 +14,7 @@ services:
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
         bind:
             $appName: '%env(default:default_app_name:database:APP_NAME)%'
+            $appContactEmail: '%env(default:default_app_contact_email:database:APP_CONTACT_EMAIL)%'
             $mailerSender: '%env(database:MAILER_SENDER)%'
             $stripeEnabled: '%env(bool:database:STRIPE_ENABLED)%'
             $stripeApiKey: '%env(database:STRIPE_API_KEY)%'

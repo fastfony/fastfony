@@ -9,6 +9,7 @@ use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Get;
 use App\Entity\BlameableEntity;
 use App\Entity\CommonProperties;
+use App\Entity\ContactRequest;
 use App\Pro\Entity\OAuth2Server\Client;
 use App\Pro\Entity\Order;
 use App\Repository\User\UserRepository;
@@ -84,6 +85,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(targetEntity: Order::class, mappedBy: 'customer')]
     private Collection $orders;
 
+    /**
+     * @var Collection<int, ContactRequest>
+     */
+    #[ORM\OneToMany(targetEntity: ContactRequest::class, mappedBy: 'user', orphanRemoval: true)]
+    private Collection $contactRequests;
+
     public function __construct()
     {
         $this->groups = new ArrayCollection();
@@ -91,6 +98,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->clients = new ArrayCollection();
         $this->orders = new ArrayCollection();
         $this->initStripeUserTrait();
+        $this->contactRequests = new ArrayCollection();
     }
 
     public function __toString(): string
@@ -303,6 +311,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($order->getCustomer() === $this) {
                 $order->setCustomer(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ContactRequest>
+     */
+    public function getContactRequests(): Collection
+    {
+        return $this->contactRequests;
+    }
+
+    public function addContactRequest(ContactRequest $contactRequest): static
+    {
+        if (!$this->contactRequests->contains($contactRequest)) {
+            $this->contactRequests->add($contactRequest);
+            $contactRequest->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContactRequest(ContactRequest $contactRequest): static
+    {
+        if ($this->contactRequests->removeElement($contactRequest)) {
+            // set the owning side to null (unless already changed)
+            if ($contactRequest->getUser() === $this) {
+                $contactRequest->setUser(null);
             }
         }
 
