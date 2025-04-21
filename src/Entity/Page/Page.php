@@ -55,7 +55,7 @@ class Page
     use CommonProperties\Required\Published;
     use CommonProperties\Seo;
     use TimestampableEntity;
-    private const TEMPLATES_DIR = '../templates/';
+    private const TEMPLATES_DIR = __DIR__.'/../../../templates/';
 
     #[Groups([
         'public:page:read',
@@ -250,6 +250,7 @@ class Page
 
         if (!empty($this->template)) {
             $templatePath = self::TEMPLATES_DIR.$this->template;
+            dump($templatePath);
             if (!file_exists($templatePath)) {
                 $context->buildViolation('The template file does not exist.')
                     ->atPath('template')

@@ -35,6 +35,7 @@ final class Step3Test extends TestCase
             ->willReturn([
                 'autoGenerateLicenseKey' => false,
                 'email' => 'test@test.com',
+                'mailerSender' => 'test@test.com',
                 'licenseKey' => 'test-license-key',
             ]);
 

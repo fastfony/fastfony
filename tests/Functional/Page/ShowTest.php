@@ -20,7 +20,7 @@ final class ShowTest extends WebTestCase
 
     public function testPublicShow(): void
     {
-        $this->client->request('GET', '/pages/welcome-on-fastfony');
+        $this->client->request('GET', '/pages/go-fast');
         $this->assertResponseIsSuccessful();
     }
 

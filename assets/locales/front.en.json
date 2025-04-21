@@ -22,8 +22,9 @@
   "link.documentation": "Docs",
   "link.login": "Login",
   "link.logout": "Logout",
+  "link.privacy_policy": "Privacy policy",
   "link.products": "Products",
-  "paragraph.products_marketing1": "Pricing that grows with you",
-  "paragraph.products_marketing2": "Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer loyalty, and driving sales.",
-  "title.products": "Products"
+  "paragraph.products_marketing1": "Your products list",
+  "paragraph.products_marketing2": "You can create and edit your products in the admin UI",
+  "title.products": "Your Products"
 }

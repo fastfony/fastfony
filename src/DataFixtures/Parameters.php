@@ -107,9 +107,9 @@ class Parameters extends Fixture implements FixtureGroupInterface
                 'value' => 'contact@'.$domain,
                 'type' => 'email',
                 'label' => 'Contact email address',
-                'help' => 'This address will receive all contact form messages',
+                'help' => 'This address will receive contact form requests messages',
                 'category' => $this->getReference(
-                    self::APP_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
+                    self::EMAIL_PARAMETER_CATEGORY.self::PARAMETER_CATEGORY_REFERENCE_SUFFIX,
                     ParameterCategory::class
                 ),
             ],

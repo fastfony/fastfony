@@ -40,12 +40,10 @@ Documentation is available on [docs.fastfony.com](https://docs.fastfony.com/).
 
 ## Features
 
-- Simple pages SEO friendly (front and backoffice)
+- Simple pages with HTML or custom twig template and SEO friendly (front and backoffice)
+- Collections & records builder
 - Register and received a login link by email
-- Settings panel
-- DaisyUI themes chooser
-- Toasts notifications (flash messages from Symfony and others with [vue-toastification](https://vue-toastification.maronato.dev/))
-- CRUD controllers for : Parameters, Parameter categories etc...
+- Contact requests form
 - Complete user management with Profile (and Groups, Roles) and security features :
     - Login form with email that send a login link by email
     - Login form with password
@@ -58,7 +56,13 @@ Documentation is available on [docs.fastfony.com](https://docs.fastfony.com/).
     - Products list
     - Buy with Stripe and save orders (subscription or one-time payment)
 - Scheduler dashboard and logs : list configured recurring messages and display logs
+- CRUD controllers for : Parameters, Parameter categories, Contact requests, etc.
+- Settings panel
+- DaisyUI themes chooser
+- Toasts notifications (flash messages from Symfony and others with [vue-toastification](https://vue-toastification.maronato.dev/))
 - OAuth2 Server for authenticated registered users and by applications/clients via OAuth2 grant types (password, client credentials, authorization code, refresh token)
+- Public, internal and private with OAuth2 API (you can use it as a headless CMS!)
+- I18n ready with Vue I18n and Symfony translation component
 
 ## Technical stack
 

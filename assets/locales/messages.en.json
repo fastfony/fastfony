@@ -1,5 +1,7 @@
 {
   "button.theme": "Appearance",
+  "feature.collections": "Collections",
+  "feature.contact_requests": "Contact form",
   "feature.oauth2_server": "OAuth 2 Server",
   "feature.pages": "Pages (SEO friendly)",
   "feature.products": "Products",

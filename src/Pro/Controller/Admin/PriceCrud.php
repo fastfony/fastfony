@@ -18,7 +18,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CurrencyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Form\Extension\Core\Type\EnumType;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -74,11 +73,7 @@ class PriceCrud extends AbstractCrudController
         }
 
         return [
-            FormField::addColumn(6),
-            TextField::new('id')
-                ->setHtmlAttribute('readonly', 'readonly')
-                ->hideWhenCreating(),
-            FormField::addColumn(6),
+            FormField::addColumn(12),
             BooleanField::new('enabled')
                 ->addCssClass('text-right pt-4 pe-5'),
             FormField::addColumn(4),

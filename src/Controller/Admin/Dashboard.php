@@ -66,11 +66,15 @@ class Dashboard extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('menu.dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('menu.crud.contact_requests', 'fas fa-inbox', ContactRequest::class);
+        if ($this->featureFlag->isEnabled(Features::CONTACT_REQUESTS->value)) {
+            yield MenuItem::linkToCrud('menu.crud.contact_requests', 'fas fa-inbox', ContactRequest::class);
+        }
 
         yield MenuItem::section('menu.objects');
 
-        yield MenuItem::linkToRoute('menu.collections', 'fas fa-database', 'admin_record_collection_index');
+        if ($this->featureFlag->isEnabled(Features::COLLECTIONS->value)) {
+            yield MenuItem::linkToRoute('menu.collections', 'fas fa-database', 'admin_record_collection_index');
+        }
 
         if ($this->featureFlag->isEnabled(Features::PAGES->value)) {
             yield MenuItem::linkToCrud('menu.crud.pages', 'fas fa-file', Page::class);

@@ -27,12 +27,16 @@
             </div>
         {% endif %}
 
-        <div class="relative py-16 prose !max-w-none">
-            <h1 class="text-primary">{{ page.title }}</h1>
+        {% if page.template %}
+            {{ include(page.template, {page: page, collections: collections}) }}
+        {% else %}
+            <div class="relative py-16 prose !max-w-none">
+                <h1 class="text-primary">{{ page.title }}</h1>
 
-            {% if page.content|length > 0 %}
-                {{ page.content|raw }}
-            {% endif %}
-        </div>
+                {% if page.content|length > 0 %}
+                    {{ page.content|raw }}
+                {% endif %}
+            </div>
+        {% endif %}
     {% endif %}
 {% endblock %}

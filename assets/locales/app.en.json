@@ -60,7 +60,7 @@
   "Stripe": "Stripe",
   "table.group-role-matrix": "Permissions / Groups",
   "Test mode enabled": "Test mode enabled",
-  "This address will receive all contact form messages": "This address will receive all contact form messages",
+  "This address will receive all contact form messages": "This address will receive contact form requests messages",
   "This e-mail must be authorize by server configure on MAILER_DSN in .env.local": "This e-mail must be authorize by server configure on MAILER_DSN in .env.local",
   "This is required if Stripe is enabled.": "This is required if Stripe is enabled.",
   "toast.error": "An error occured.Please retry.",

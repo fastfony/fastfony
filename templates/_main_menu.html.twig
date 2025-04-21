@@ -12,8 +12,10 @@
         </a>
     </li>
 {% endif %}
-<li>
-    <a href="{{ path('app_page_contact__invoke') }}">
-        {{ 'link.contact'|trans }}
-    </a>
-</li>
+{% if feature_enabled('contact_requests') %}
+    <li>
+        <a href="{{ path('app_page_contact__invoke') }}">
+            {{ 'link.contact'|trans }}
+        </a>
+    </li>
+{% endif %}

@@ -1,3 +1,5 @@
+{% trans_default_domain 'front' %}
+
 <footer class="bg-base-200 text-base-content p-10">
     <div class="footer mx-auto px-4 lg:px-8 xl:max-w-7xl sm:footer-horizontal">
         <aside>
@@ -14,6 +16,10 @@
             <p>
                 &copy; 2025 {{ app_name }}<br>
             </p>
+
+            <a href="{{ path('page_show', {slug: 'privacy-policy'}) }}">
+                {{ 'link.privacy_policy'|trans }}
+            </a>
         </aside>
     </div>
 </footer>

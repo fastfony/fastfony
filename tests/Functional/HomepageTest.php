@@ -21,7 +21,7 @@ final class HomepageTest extends WebTestCase
         $client->request('GET', '/');
 
         $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h1', 'Welcome on Fastfony');
+        $this->assertSelectorTextContains('h1', 'Go fast!');
 
         $pageRepository = static::getContainer()->get(PageRepository::class);
         $homepage2 = (new Page())

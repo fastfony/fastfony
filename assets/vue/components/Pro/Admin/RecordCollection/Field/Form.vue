@@ -64,7 +64,7 @@ const isNew = computed(() => {
           { value: 'plainText', label: $t('Plain Text') },
           { value: 'richEditor', label: $t('Rich Editor') },
           { value: 'number', label: $t('Number') },
-          // { value: 'boolean', label: $t('Boolean') },
+          { value: 'boolean', label: $t('Boolean') },
           { value: 'date', label: $t('Date') },
           { value: 'datetime', label: $t('Datetime') },
           { value: 'email', label: $t('Email') },

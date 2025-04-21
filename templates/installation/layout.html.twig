@@ -20,7 +20,10 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="navbar bg-base-100">
             <div class="navbar-start">
-                <a href="https://fastfony.com?source=installation-navbar" target="_blank">
+                <a
+                    href="{{ 'installation_step_3' == app.request.attributes.get('_route') ? path('homepage') : 'https://fastfony.com?source=installation-navbar' }}"
+                    target="_blank"
+                >
                     <img src="{{ asset('build/images/Fastfony-white.svg') }}" alt="Fastfony" class="h-16 m-4 hidden dark:block light:hidden" />
                     <img src="{{ asset('build/images/Fastfony-black.svg') }}" alt="Fastfony" class="h-16 m-4 dark:hidden light:block" />
                     <span class="btn btn-ghost text-xl sr-only">Fastfony</span>

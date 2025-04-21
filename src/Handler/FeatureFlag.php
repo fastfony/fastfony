@@ -13,6 +13,8 @@ class FeatureFlag
         Features::USERS_MANAGEMENT->value,
         Features::REGISTRATION->value,
         Features::PAGES->value,
+        Features::COLLECTIONS->value,
+        Features::CONTACT_REQUESTS->value,
         Features::PRODUCTS->value,
         Features::THEME_CHOOSER->value,
         Features::OAUTH2_SERVER->value,
@@ -67,6 +69,6 @@ class FeatureFlag
         file_put_contents('../.env.local', $envContent);
 
         $dotenv = new Dotenv();
-        $dotenv->loadEnv($this->kernel->getProjectDir(). '/.env');
+        $dotenv->loadEnv($this->kernel->getProjectDir().'/.env');
     }
 }

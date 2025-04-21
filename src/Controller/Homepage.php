@@ -36,8 +36,11 @@ class Homepage extends AbstractController
             return $this->redirectToRoute('installation');
         }
 
+        $homepage = $this->getHomepage();
+
         return [
-            'page' => $this->getHomepage(),
+            'page' => $homepage,
+            'collections' => $homepage->getRecordCollectionsAsArrayWithPublishedRecords(),
         ];
     }
 
@@ -46,9 +49,7 @@ class Homepage extends AbstractController
         try {
             return $this->pageRepository->findHomepage();
         } catch (NonUniqueResultException $exception) {
-            throw $this->createNotFoundException(
-                'You have multiple homepages configured.',
-            );
+            throw $this->createNotFoundException('You have multiple homepages configured.');
         }
     }
 }
