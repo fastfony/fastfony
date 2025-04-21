@@ -38,6 +38,7 @@ class Show extends AbstractController
 
         return [
             'page' => $page,
+            'collections' => $page->getRecordCollectionsAsArrayWithPublishedRecords(),
         ];
     }
 }

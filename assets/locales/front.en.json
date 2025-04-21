@@ -1,6 +1,7 @@
 {
   "button.buy": "Buy",
   "contact.agree_with": "I agree with",
+  "contact.button.send": "Send a Message",
   "contact.description": "Have questions? Send us a message, and we’ll respond soon.",
   "contact.label.email": "Email address",
   "contact.label.firstName": "Firstname",

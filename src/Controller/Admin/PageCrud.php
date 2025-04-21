@@ -14,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -109,7 +110,7 @@ class PageCrud extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            FormField::addTab('Content'),
+            FormField::addTab('Configuration'),
             FormField::addColumn(6),
             BooleanField::new('enabled')
                 ->setHelp('help.enabled')
@@ -122,12 +123,21 @@ class PageCrud extends AbstractCrudController
             TextField::new('name'),
             TextField::new('title')
                 ->hideOnIndex(),
-            FormField::addFieldset('Custom template or prose content'),
-            TextField::new('template')
-                ->setHelp('help.template'),
+            FormField::addTab('Content'),
+            FormField::addFieldset('Classic page')
+                ->setHelp('help.classic_page'),
             RichTextEditor::new('content')
+                ->setLabel('Prose content')
                 ->hideOnIndex()
                 ->setHelp('help.content'),
+            FormField::addFieldset('or Custom page with a custom twig template')
+                ->setHelp('help.custom_template'),
+            TextField::new('template')
+                ->setHelp('help.template')
+                ->hideOnIndex(),
+            FormField::addTab('Record collections'),
+            AssociationField::new('recordCollections')
+                ->setHelp('help.recordCollections'),
             ...$this->getSeoTabFields(),
             FormField::addTab('Rich Snippets'),
             Json::new('richSnippets')

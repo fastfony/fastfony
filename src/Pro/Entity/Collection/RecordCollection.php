@@ -95,6 +95,11 @@ class RecordCollection
         $this->fields = new ArrayCollection();
     }
 
+    public function __toString(): string
+    {
+        return $this->name;
+    }
+
     #[Groups([
         'record_collection:read',
     ])]
@@ -139,6 +144,13 @@ class RecordCollection
     public function getRecords(): Collection
     {
         return $this->records;
+    }
+
+    public function getPublishedRecords(): Collection
+    {
+        return $this->records->filter(
+            static fn (Record $record) => $record->isPublished()
+        );
     }
 
     public function addRecord(Record $record): static

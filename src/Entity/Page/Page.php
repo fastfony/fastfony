@@ -9,9 +9,12 @@ use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
 use App\Entity\BlameableEntity;
 use App\Entity\CommonProperties;
+use App\Pro\Entity\Collection\RecordCollection;
 use App\Repository\Page\PageRepository;
 use App\State\PublishedPageProvider;
 use App\Validator\UniqueHomepage;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
@@ -86,6 +89,23 @@ class Page
     #[Gedmo\Versioned]
     #[ORM\Column(options: ['default' => false])]
     private bool $homepage = false;
+
+    /*
+     * The record collections this page is linked to.
+     * This is used to display the records in the page.
+     *
+     * This is a pro feature.
+     */
+    /**
+     * @var Collection<int, RecordCollection>
+     */
+    #[ORM\ManyToMany(targetEntity: RecordCollection::class)]
+    private Collection $recordCollections;
+
+    public function __construct()
+    {
+        $this->recordCollections = new ArrayCollection();
+    }
 
     #[Groups([
         'public:page:read',
@@ -177,6 +197,44 @@ class Page
     public function setHomepage(bool $homepage): static
     {
         $this->homepage = $homepage;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, RecordCollection>
+     */
+    public function getRecordCollections(): Collection
+    {
+        return $this->recordCollections;
+    }
+
+    #[SerializedName('collections')]
+    #[Groups([
+        'public:page:read',
+    ])]
+    public function getRecordCollectionsAsArrayWithPublishedRecords(): array
+    {
+        $collections = [];
+        foreach ($this->getRecordCollections() as $recordCollection) {
+            $collections[$recordCollection->getSlug()] = $recordCollection->getPublishedRecords();
+        }
+
+        return $collections;
+    }
+
+    public function addRecordCollection(RecordCollection $recordCollection): static
+    {
+        if (!$this->recordCollections->contains($recordCollection)) {
+            $this->recordCollections->add($recordCollection);
+        }
+
+        return $this;
+    }
+
+    public function removeRecordCollection(RecordCollection $recordCollection): static
+    {
+        $this->recordCollections->removeElement($recordCollection);
 
         return $this;
     }

@@ -81,6 +81,7 @@ class Record
         'record:read',
         'record:list',
         'public:record:list',
+        'public:page:read',
     ])]
     #[ORM\Id]
     #[ORM\Column(type: UuidType::NAME, unique: true)]
@@ -190,6 +191,7 @@ class Record
     #[SerializedName('fields')]
     #[Groups([
         'public:record:list',
+        'public:page:read',
     ])]
     public function getPresentableArrayFields(): array
     {
