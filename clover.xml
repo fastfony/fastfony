@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745252623">
-  <project timestamp="1745252623">
+<coverage generated="1745344629">
+  <project timestamp="1745344629">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -1170,7 +1170,7 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/Page/Page.php">
       <class name="App\Entity\Page\Page" namespace="global">
-        <metrics complexity="28" methods="18" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="48" coveredstatements="29" elements="66" coveredelements="45"/>
+        <metrics complexity="28" methods="18" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="47" coveredstatements="29" elements="65" coveredelements="45"/>
       </class>
       <line num="105" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
       <line num="107" type="stmt" count="7"/>
@@ -1226,7 +1226,7 @@
       <line num="235" type="method" name="removeRecordCollection" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="237" type="stmt" count="1"/>
       <line num="239" type="stmt" count="1"/>
-      <line num="242" type="method" name="validateContentOrTemplate" visibility="public" complexity="5" crap="18.69" count="1"/>
+      <line num="242" type="method" name="validateContentOrTemplate" visibility="public" complexity="5" crap="17.80" count="1"/>
       <line num="245" type="stmt" count="1"/>
       <line num="246" type="stmt" count="0"/>
       <line num="247" type="stmt" count="0"/>
@@ -1237,8 +1237,7 @@
       <line num="254" type="stmt" count="0"/>
       <line num="255" type="stmt" count="0"/>
       <line num="256" type="stmt" count="0"/>
-      <line num="257" type="stmt" count="0"/>
-      <metrics loc="262" ncloc="250" classes="1" methods="18" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="48" coveredstatements="29" elements="66" coveredelements="45"/>
+      <metrics loc="261" ncloc="249" classes="1" methods="18" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="47" coveredstatements="29" elements="65" coveredelements="45"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/Page/PageLogEntry.php">
       <class name="App\Entity\Page\PageLogEntry" namespace="global">
@@ -1858,8 +1857,8 @@
       </class>
       <line num="26" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="27"/>
       <line num="30" type="stmt" count="27"/>
-      <line num="32" type="method" name="isEnabled" visibility="public" complexity="2" crap="2" count="11"/>
-      <line num="34" type="stmt" count="11"/>
+      <line num="32" type="method" name="isEnabled" visibility="public" complexity="2" crap="2" count="12"/>
+      <line num="34" type="stmt" count="12"/>
       <line num="40" type="method" name="getEnabled" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="42" type="stmt" count="0"/>
       <line num="48" type="method" name="save" visibility="public" complexity="3" crap="3" count="2"/>
@@ -4181,20 +4180,20 @@
       </class>
       <line num="13" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="26"/>
       <line num="16" type="stmt" count="26"/>
-      <line num="21" type="method" name="getFunctions" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="23" type="stmt" count="8"/>
-      <line num="24" type="stmt" count="8"/>
-      <line num="25" type="stmt" count="8"/>
+      <line num="21" type="method" name="getFunctions" visibility="public" complexity="1" crap="1" count="11"/>
+      <line num="23" type="stmt" count="11"/>
+      <line num="24" type="stmt" count="11"/>
+      <line num="25" type="stmt" count="11"/>
       <metrics loc="28" ncloc="25" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Twig/Inspect.php">
       <class name="App\Twig\Inspect" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
       </class>
-      <line num="15" type="method" name="getFilters" visibility="public" complexity="1" crap="1" count="9"/>
-      <line num="17" type="stmt" count="9"/>
-      <line num="18" type="stmt" count="9"/>
-      <line num="19" type="stmt" count="9"/>
+      <line num="15" type="method" name="getFilters" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="17" type="stmt" count="12"/>
+      <line num="18" type="stmt" count="12"/>
+      <line num="19" type="stmt" count="12"/>
       <line num="22" type="method" name="inspect" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="25" type="stmt" count="1"/>
       <metrics loc="28" ncloc="24" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
@@ -4246,6 +4245,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="172" loc="10103" ncloc="9569" classes="161" methods="624" coveredmethods="405" conditionals="0" coveredconditionals="0" statements="2601" coveredstatements="1720" elements="3225" coveredelements="2125"/>
+    <metrics files="172" loc="10102" ncloc="9568" classes="161" methods="624" coveredmethods="405" conditionals="0" coveredconditionals="0" statements="2600" coveredstatements="1720" elements="3224" coveredelements="2125"/>
   </project>
 </coverage>
