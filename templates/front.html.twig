@@ -2,13 +2,6 @@
 
 {% trans_default_domain 'front' %}
 
-{% block javascripts %}
-    {{ parent() }}
-    {% if feature_enabled('theme_chooser') %}
-        <script type="text/javascript">document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') ?? 'light');</script>
-    {% endif %}
-{% endblock %}
-
 {% block body %}
     <header class="navbar bg-base-100 mx-auto px-4 lg:px-8 xl:max-w-7xl">
         <div class="navbar-start">

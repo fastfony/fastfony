@@ -250,7 +250,6 @@ class Page
 
         if (!empty($this->template)) {
             $templatePath = self::TEMPLATES_DIR.$this->template;
-            dump($templatePath);
             if (!file_exists($templatePath)) {
                 $context->buildViolation('The template file does not exist.')
                     ->atPath('template')

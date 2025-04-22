@@ -18,6 +18,9 @@
 
         {% block javascripts %}
             {{ encore_entry_script_tags('front') }}
+            {% if feature_enabled('theme_chooser') %}
+                <script type="text/javascript">document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') ?? 'light');</script>
+            {% endif %}
         {% endblock %}
 
         {% block rich_snippets %}{% endblock %}
