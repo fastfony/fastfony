@@ -12,6 +12,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 
+/* This class is a Pro feature and should be moved to the Pro namespace. */
 class Collections extends Fixture implements FixtureGroupInterface
 {
     public function load(ObjectManager $manager): void
@@ -80,6 +81,12 @@ class Collections extends Fixture implements FixtureGroupInterface
                 'title' => 'Collections & Records',
                 'description' => 'Build structured data with flexible collections and custom records.',
                 'icon' => 'fas fa-database',
+                'pro' => true,
+            ],
+            'taxonomies' => [
+                'title' => 'Taxonomies & Tags',
+                'description' => 'Organize your content with taxonomies and tags for easy filtering.',
+                'icon' => 'fas fa-folder-tree',
                 'pro' => true,
             ],
             'email_login_link' => [
