@@ -22,3 +22,66 @@
         padding: 0;
     }
 }
+
+/* Customization PrimeVue Tree */
+.p-tree {
+    .p-tree-root-children {
+        padding-left: 0;
+        list-style: none;
+
+        .p-tree-node-children {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .p-tree-node-content {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+
+            .p-tree-node-toggle-button {
+                background: transparent;
+                border: none;
+                display: flex;
+                color: var(--link-color);
+            }
+
+            .p-tree-node-label {
+                flex: 1;
+                padding: 0.15rem 0;
+                margin: 0;
+            }
+        }
+    }
+}
+
+/* Form search of PrimeVue Tree integrate to EasyAdmin top search */
+form.form-action-search {
+    div.p-tree-filter.p-iconfield {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: start;
+
+        input[type='text'] {
+            width: 50%;
+            border: none;
+            height: 2rem;
+            box-shadow: none;
+
+            &:focus {
+                box-shadow: none;
+                border: none;
+                outline: none;
+            }
+        }
+
+        .p-inputicon {
+            position: relative;
+            color: var(--content-search-icon-color);
+            top: 0;
+            margin: 0.5rem;
+        }
+    }
+}

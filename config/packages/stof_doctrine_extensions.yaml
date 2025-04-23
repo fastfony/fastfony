@@ -8,3 +8,4 @@ stof_doctrine_extensions:
             blameable: true
             loggable: true
             sluggable: true
+            tree: true

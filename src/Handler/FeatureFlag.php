@@ -14,6 +14,7 @@ class FeatureFlag
         Features::REGISTRATION->value,
         Features::PAGES->value,
         Features::COLLECTIONS->value,
+        Features::TAXONOMIES->value,
         Features::CONTACT_REQUESTS->value,
         Features::PRODUCTS->value,
         Features::THEME_CHOOSER->value,

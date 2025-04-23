@@ -13,6 +13,7 @@ use App\Handler\Features;
 use App\Pro\Entity\OAuth2Server\Client;
 use App\Pro\Entity\Order;
 use App\Pro\Entity\Product\Product;
+use App\Pro\Entity\Taxonomy;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -86,6 +87,10 @@ class Dashboard extends AbstractDashboardController
         }
 
         yield MenuItem::linkToCrud('menu.crud.parameters', 'fas fa-gears', Parameter::class);
+
+        if ($this->featureFlag->isEnabled(Features::TAXONOMIES->value)) {
+            yield MenuItem::linkToCrud('menu.taxonomies', 'fas fa-folder-tree', Taxonomy::class);
+        }
 
         if ($this->featureFlag->isEnabled(Features::USERS_MANAGEMENT->value)) {
             yield MenuItem::section('menu.users');

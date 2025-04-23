@@ -37,8 +37,14 @@ import { useToast } from 'vue-toastification';
 import 'vue-toastification/dist/index.css';
 const toast = useToast();
 
+/* FormKit */
 import { plugin, defaultConfig } from '@formkit/vue';
 import formkitConfig from './js/formkit.config.js';
+
+/* PrimeVue */
+import { createApp } from 'vue';
+import PrimeVue from 'primevue/config';
+
 import { createPinia } from 'pinia';
 import axios from 'axios';
 
@@ -57,6 +63,9 @@ document.addEventListener('vue:before-mount', (event) => {
   app.use(i18n);
   app.use(Toast, {});
   app.use(plugin, defaultConfig(formkitConfig));
+  app.use(PrimeVue, {
+    theme: 'none',
+  });
 
   // Capture and toast all axios errors
   axios.interceptors.response.use(

@@ -10,6 +10,7 @@ enum Features: string
     case REGISTRATION = 'registration';
     case PAGES = 'pages';
     case COLLECTIONS = 'collections';
+    case TAXONOMIES = 'taxonomies';
     case CONTACT_REQUESTS = 'contact_requests';
     case PRODUCTS = 'products';
     case THEME_CHOOSER = 'theme_chooser';
