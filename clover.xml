@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745344660">
-  <project timestamp="1745344660">
+<coverage generated="1745400815">
+  <project timestamp="1745400815">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -74,53 +74,55 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Admin/Dashboard.php">
       <class name="App\Controller\Admin\Dashboard" namespace="global">
-        <metrics complexity="12" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="33" elements="44" coveredelements="37"/>
+        <metrics complexity="13" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="40" coveredstatements="34" elements="46" coveredelements="38"/>
       </class>
-      <line num="28" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="32" type="stmt" count="3"/>
-      <line num="34" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="36" type="stmt" count="0"/>
-      <line num="39" type="method" name="configureDashboard" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="41" type="stmt" count="3"/>
+      <line num="29" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="33" type="stmt" count="3"/>
+      <line num="35" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="40" type="method" name="configureDashboard" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="42" type="stmt" count="3"/>
       <line num="43" type="stmt" count="3"/>
       <line num="44" type="stmt" count="3"/>
       <line num="45" type="stmt" count="3"/>
-      <line num="48" type="method" name="configureCrud" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="50" type="stmt" count="3"/>
+      <line num="46" type="stmt" count="3"/>
+      <line num="49" type="method" name="configureCrud" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="51" type="stmt" count="3"/>
       <line num="52" type="stmt" count="3"/>
       <line num="53" type="stmt" count="3"/>
-      <line num="56" type="method" name="configureAssets" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="58" type="stmt" count="3"/>
+      <line num="54" type="stmt" count="3"/>
+      <line num="57" type="method" name="configureAssets" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="59" type="stmt" count="3"/>
       <line num="60" type="stmt" count="3"/>
-      <line num="66" type="method" name="configureMenuItems" visibility="public" complexity="7" crap="7.23" count="2"/>
-      <line num="68" type="stmt" count="2"/>
+      <line num="61" type="stmt" count="3"/>
+      <line num="67" type="method" name="configureMenuItems" visibility="public" complexity="8" crap="8.46" count="2"/>
       <line num="69" type="stmt" count="2"/>
-      <line num="70" type="stmt" count="0"/>
-      <line num="73" type="stmt" count="2"/>
-      <line num="75" type="stmt" count="2"/>
-      <line num="76" type="stmt" count="0"/>
-      <line num="79" type="stmt" count="2"/>
+      <line num="70" type="stmt" count="2"/>
+      <line num="71" type="stmt" count="0"/>
+      <line num="74" type="stmt" count="2"/>
+      <line num="76" type="stmt" count="2"/>
+      <line num="77" type="stmt" count="0"/>
       <line num="80" type="stmt" count="2"/>
-      <line num="83" type="stmt" count="2"/>
+      <line num="81" type="stmt" count="2"/>
       <line num="84" type="stmt" count="2"/>
       <line num="85" type="stmt" count="2"/>
-      <line num="88" type="stmt" count="2"/>
-      <line num="90" type="stmt" count="2"/>
+      <line num="86" type="stmt" count="2"/>
+      <line num="89" type="stmt" count="2"/>
       <line num="91" type="stmt" count="2"/>
-      <line num="92" type="stmt" count="2"/>
-      <line num="93" type="stmt" count="2"/>
+      <line num="92" type="stmt" count="0"/>
+      <line num="95" type="stmt" count="2"/>
       <line num="96" type="stmt" count="2"/>
-      <line num="97" type="stmt" count="0"/>
-      <line num="98" type="stmt" count="0"/>
+      <line num="97" type="stmt" count="2"/>
+      <line num="98" type="stmt" count="2"/>
       <line num="101" type="stmt" count="2"/>
-      <line num="102" type="stmt" count="2"/>
-      <line num="103" type="stmt" count="2"/>
-      <line num="104" type="stmt" count="2"/>
-      <line num="105" type="stmt" count="2"/>
-      <metrics loc="108" ncloc="105" classes="1" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="33" elements="44" coveredelements="37"/>
+      <line num="102" type="stmt" count="0"/>
+      <line num="103" type="stmt" count="0"/>
+      <line num="106" type="stmt" count="2"/>
+      <line num="107" type="stmt" count="2"/>
+      <line num="108" type="stmt" count="2"/>
+      <line num="109" type="stmt" count="2"/>
+      <line num="110" type="stmt" count="2"/>
+      <metrics loc="113" ncloc="110" classes="1" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="40" coveredstatements="34" elements="46" coveredelements="38"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Admin/Feature/Index.php">
       <class name="App\Controller\Admin\Feature\Index" namespace="global">
@@ -1855,33 +1857,33 @@
       <class name="App\Handler\FeatureFlag" namespace="global">
         <metrics complexity="7" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="18" elements="23" coveredelements="21"/>
       </class>
-      <line num="26" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="27"/>
-      <line num="30" type="stmt" count="27"/>
-      <line num="32" type="method" name="isEnabled" visibility="public" complexity="2" crap="2" count="12"/>
-      <line num="34" type="stmt" count="12"/>
-      <line num="40" type="method" name="getEnabled" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="42" type="stmt" count="0"/>
-      <line num="48" type="method" name="save" visibility="public" complexity="3" crap="3" count="2"/>
-      <line num="50" type="stmt" count="2"/>
+      <line num="27" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="27"/>
+      <line num="31" type="stmt" count="27"/>
+      <line num="33" type="method" name="isEnabled" visibility="public" complexity="2" crap="2" count="12"/>
+      <line num="35" type="stmt" count="12"/>
+      <line num="41" type="method" name="getEnabled" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="49" type="method" name="save" visibility="public" complexity="3" crap="3" count="2"/>
       <line num="51" type="stmt" count="2"/>
       <line num="52" type="stmt" count="2"/>
       <line num="53" type="stmt" count="2"/>
-      <line num="56" type="stmt" count="2"/>
+      <line num="54" type="stmt" count="2"/>
       <line num="57" type="stmt" count="2"/>
-      <line num="58" type="stmt" count="1"/>
-      <line num="61" type="stmt" count="2"/>
+      <line num="58" type="stmt" count="2"/>
+      <line num="59" type="stmt" count="1"/>
       <line num="62" type="stmt" count="2"/>
       <line num="63" type="stmt" count="2"/>
       <line num="64" type="stmt" count="2"/>
       <line num="65" type="stmt" count="2"/>
       <line num="66" type="stmt" count="2"/>
-      <line num="69" type="stmt" count="2"/>
-      <line num="71" type="stmt" count="2"/>
+      <line num="67" type="stmt" count="2"/>
+      <line num="70" type="stmt" count="2"/>
       <line num="72" type="stmt" count="2"/>
-      <metrics loc="75" ncloc="65" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="18" elements="23" coveredelements="21"/>
+      <line num="73" type="stmt" count="2"/>
+      <metrics loc="76" ncloc="66" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="18" elements="23" coveredelements="21"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Handler/Features.php">
-      <metrics loc="18" ncloc="18" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      <metrics loc="19" ncloc="19" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/HealthCheck/All.php">
       <class name="App\HealthCheck\All" namespace="global">
@@ -2369,6 +2371,32 @@
       <line num="80" type="stmt" count="1"/>
       <line num="82" type="stmt" count="1"/>
       <metrics loc="85" ncloc="82" classes="1" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="37" elements="43" coveredelements="41"/>
+    </file>
+    <file name="/home/runner/work/fastfony/fastfony/src/Pro/Controller/Admin/TaxonomyCrud.php">
+      <class name="App\Pro\Controller\Admin\TaxonomyCrud" namespace="global">
+        <metrics complexity="3" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="6" elements="10" coveredelements="8"/>
+      </class>
+      <line num="15" type="method" name="getEntityFqcn" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="17" type="stmt" count="0"/>
+      <line num="20" type="method" name="configureFields" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="28" type="method" name="configureCrud" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <metrics loc="34" ncloc="34" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="6" elements="10" coveredelements="8"/>
+    </file>
+    <file name="/home/runner/work/fastfony/fastfony/src/Pro/Controller/Api/Taxonomy/GetCollection.php">
+      <class name="App\Pro\Controller\Api\Taxonomy\GetCollection" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
+      </class>
+      <line num="13" type="method" name="__invoke" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="16" type="stmt" count="0"/>
+      <line num="17" type="stmt" count="0"/>
+      <line num="18" type="stmt" count="0"/>
+      <metrics loc="21" ncloc="21" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Pro/Controller/Product/Buy.php">
       <class name="App\Pro\Controller\Product\Buy" namespace="global">
@@ -3376,6 +3404,53 @@
       <line num="45" type="stmt" count="2"/>
       <metrics loc="48" ncloc="47" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="10" elements="17" coveredelements="11"/>
     </file>
+    <file name="/home/runner/work/fastfony/fastfony/src/Pro/Entity/Taxonomy.php">
+      <class name="App\Pro\Entity\Taxonomy" namespace="global">
+        <metrics complexity="18" methods="18" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="0" elements="41" coveredelements="0"/>
+      </class>
+      <line num="94" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="96" type="stmt" count="0"/>
+      <line num="99" type="method" name="__toString" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="101" type="stmt" count="0"/>
+      <line num="104" type="method" name="getSlug" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="106" type="stmt" count="0"/>
+      <line num="109" type="method" name="setSlug" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="111" type="stmt" count="0"/>
+      <line num="113" type="stmt" count="0"/>
+      <line num="116" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="118" type="stmt" count="0"/>
+      <line num="121" type="method" name="getKey" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="123" type="stmt" count="0"/>
+      <line num="126" type="method" name="setKey" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="128" type="stmt" count="0"/>
+      <line num="130" type="stmt" count="0"/>
+      <line num="133" type="method" name="getLft" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="135" type="stmt" count="0"/>
+      <line num="138" type="method" name="setLft" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="140" type="stmt" count="0"/>
+      <line num="142" type="stmt" count="0"/>
+      <line num="145" type="method" name="getLvl" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="147" type="stmt" count="0"/>
+      <line num="150" type="method" name="setLvl" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="152" type="stmt" count="0"/>
+      <line num="154" type="stmt" count="0"/>
+      <line num="157" type="method" name="getRgt" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="159" type="stmt" count="0"/>
+      <line num="162" type="method" name="setRgt" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="164" type="stmt" count="0"/>
+      <line num="166" type="stmt" count="0"/>
+      <line num="169" type="method" name="getRoot" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="171" type="stmt" count="0"/>
+      <line num="174" type="method" name="setRoot" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="176" type="stmt" count="0"/>
+      <line num="179" type="method" name="setParent" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="181" type="stmt" count="0"/>
+      <line num="184" type="method" name="getParent" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="186" type="stmt" count="0"/>
+      <line num="189" type="method" name="getChildren" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="191" type="stmt" count="0"/>
+      <metrics loc="194" ncloc="194" classes="1" methods="18" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="0" elements="41" coveredelements="0"/>
+    </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Pro/Enum/RecurringInterval.php">
       <metrics loc="14" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
@@ -3700,6 +3775,14 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Pro/Repository/Scheduler/RunRepository.php">
       <class name="App\Pro\Repository\Scheduler\RunRepository" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      </class>
+      <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <metrics loc="24" ncloc="21" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+    </file>
+    <file name="/home/runner/work/fastfony/fastfony/src/Pro/Repository/TaxonomyRepository.php">
+      <class name="App\Pro\Repository\TaxonomyRepository" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
       </class>
       <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
@@ -4245,6 +4328,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="172" loc="10102" ncloc="9568" classes="161" methods="624" coveredmethods="405" conditionals="0" coveredconditionals="0" statements="2600" coveredstatements="1720" elements="3224" coveredelements="2125"/>
+    <metrics files="176" loc="10382" ncloc="9845" classes="165" methods="647" coveredmethods="407" conditionals="0" coveredconditionals="0" statements="2636" coveredstatements="1727" elements="3283" coveredelements="2134"/>
   </project>
 </coverage>
