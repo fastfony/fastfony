@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745400957">
-  <project timestamp="1745400957">
+<coverage generated="1745419259">
+  <project timestamp="1745419259">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -2845,6 +2845,22 @@
       <line num="88" type="stmt" count="0"/>
       <metrics loc="92" ncloc="89" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="0" elements="50" coveredelements="0"/>
     </file>
+    <file name="/home/runner/work/fastfony/fastfony/src/Pro/DataFixtures/Taxonomies.php">
+      <class name="App\Pro\DataFixtures\Taxonomies" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="10" coveredelements="0"/>
+      </class>
+      <line num="14" type="method" name="load" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="16" type="stmt" count="0"/>
+      <line num="17" type="stmt" count="0"/>
+      <line num="19" type="stmt" count="0"/>
+      <line num="20" type="stmt" count="0"/>
+      <line num="26" type="method" name="getGroups" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <metrics loc="34" ncloc="31" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="10" coveredelements="0"/>
+    </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Pro/Entity/Collection/Field.php">
       <class name="App\Pro\Entity\Collection\Field" namespace="global">
         <metrics complexity="15" methods="15" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="2" elements="37" coveredelements="4"/>
@@ -4328,6 +4344,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="176" loc="10382" ncloc="9845" classes="165" methods="647" coveredmethods="407" conditionals="0" coveredconditionals="0" statements="2636" coveredstatements="1727" elements="3283" coveredelements="2134"/>
+    <metrics files="177" loc="10416" ncloc="9876" classes="166" methods="649" coveredmethods="407" conditionals="0" coveredconditionals="0" statements="2644" coveredstatements="1727" elements="3293" coveredelements="2134"/>
   </project>
 </coverage>
