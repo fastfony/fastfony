@@ -15,6 +15,7 @@ use App\State\PublishedPageProvider;
 use App\Validator\UniqueHomepage;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
@@ -76,7 +77,7 @@ class Page
     private ?string $slug = null;
 
     #[Gedmo\Versioned]
-    #[ORM\Column(nullable: true)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $content = null;
 
     #[ORM\Column(length: 255, nullable: true)]
