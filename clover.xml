@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745419300">
-  <project timestamp="1745419300">
+<coverage generated="1745604539">
+  <project timestamp="1745604539">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -1174,72 +1174,72 @@
       <class name="App\Entity\Page\Page" namespace="global">
         <metrics complexity="28" methods="18" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="47" coveredstatements="29" elements="65" coveredelements="45"/>
       </class>
-      <line num="105" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
-      <line num="107" type="stmt" count="7"/>
-      <line num="110" type="method" name="getId" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="116" type="stmt" count="4"/>
-      <line num="119" type="method" name="getTitle" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="121" type="stmt" count="8"/>
-      <line num="124" type="method" name="setTitle" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="126" type="stmt" count="3"/>
-      <line num="128" type="stmt" count="3"/>
-      <line num="131" type="method" name="getContent" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="133" type="stmt" count="2"/>
-      <line num="136" type="method" name="getHtmlContent" visibility="public" complexity="5" crap="30" count="0"/>
-      <line num="142" type="stmt" count="0"/>
+      <line num="106" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="108" type="stmt" count="7"/>
+      <line num="111" type="method" name="getId" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="117" type="stmt" count="4"/>
+      <line num="120" type="method" name="getTitle" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="122" type="stmt" count="8"/>
+      <line num="125" type="method" name="setTitle" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="127" type="stmt" count="3"/>
+      <line num="129" type="stmt" count="3"/>
+      <line num="132" type="method" name="getContent" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="134" type="stmt" count="2"/>
+      <line num="137" type="method" name="getHtmlContent" visibility="public" complexity="5" crap="30" count="0"/>
       <line num="143" type="stmt" count="0"/>
       <line num="144" type="stmt" count="0"/>
-      <line num="147" type="stmt" count="0"/>
+      <line num="145" type="stmt" count="0"/>
       <line num="148" type="stmt" count="0"/>
       <line num="149" type="stmt" count="0"/>
       <line num="150" type="stmt" count="0"/>
       <line num="151" type="stmt" count="0"/>
-      <line num="155" type="stmt" count="0"/>
-      <line num="158" type="stmt" count="0"/>
-      <line num="161" type="method" name="setContent" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="163" type="stmt" count="1"/>
-      <line num="165" type="stmt" count="1"/>
-      <line num="168" type="method" name="getTemplate" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="170" type="stmt" count="8"/>
-      <line num="173" type="method" name="setTemplate" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="175" type="stmt" count="1"/>
-      <line num="177" type="stmt" count="1"/>
-      <line num="180" type="method" name="getSlug" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="182" type="stmt" count="3"/>
-      <line num="185" type="method" name="setSlug" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="187" type="stmt" count="1"/>
-      <line num="189" type="stmt" count="1"/>
-      <line num="192" type="method" name="isHomepage" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="194" type="stmt" count="4"/>
-      <line num="197" type="method" name="setHomepage" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="199" type="stmt" count="3"/>
-      <line num="201" type="stmt" count="3"/>
-      <line num="207" type="method" name="getRecordCollections" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="209" type="stmt" count="8"/>
-      <line num="212" type="method" name="getRecordCollectionsAsArrayWithPublishedRecords" visibility="public" complexity="2" crap="2" count="7"/>
-      <line num="218" type="stmt" count="7"/>
+      <line num="152" type="stmt" count="0"/>
+      <line num="156" type="stmt" count="0"/>
+      <line num="159" type="stmt" count="0"/>
+      <line num="162" type="method" name="setContent" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="164" type="stmt" count="1"/>
+      <line num="166" type="stmt" count="1"/>
+      <line num="169" type="method" name="getTemplate" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="171" type="stmt" count="8"/>
+      <line num="174" type="method" name="setTemplate" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="176" type="stmt" count="1"/>
+      <line num="178" type="stmt" count="1"/>
+      <line num="181" type="method" name="getSlug" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="183" type="stmt" count="3"/>
+      <line num="186" type="method" name="setSlug" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="188" type="stmt" count="1"/>
+      <line num="190" type="stmt" count="1"/>
+      <line num="193" type="method" name="isHomepage" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="195" type="stmt" count="4"/>
+      <line num="198" type="method" name="setHomepage" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="200" type="stmt" count="3"/>
+      <line num="202" type="stmt" count="3"/>
+      <line num="208" type="method" name="getRecordCollections" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="210" type="stmt" count="8"/>
+      <line num="213" type="method" name="getRecordCollectionsAsArrayWithPublishedRecords" visibility="public" complexity="2" crap="2" count="7"/>
       <line num="219" type="stmt" count="7"/>
-      <line num="220" type="stmt" count="6"/>
-      <line num="223" type="stmt" count="7"/>
-      <line num="226" type="method" name="addRecordCollection" visibility="public" complexity="2" crap="2" count="1"/>
-      <line num="228" type="stmt" count="1"/>
+      <line num="220" type="stmt" count="7"/>
+      <line num="221" type="stmt" count="6"/>
+      <line num="224" type="stmt" count="7"/>
+      <line num="227" type="method" name="addRecordCollection" visibility="public" complexity="2" crap="2" count="1"/>
       <line num="229" type="stmt" count="1"/>
-      <line num="232" type="stmt" count="1"/>
-      <line num="235" type="method" name="removeRecordCollection" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="237" type="stmt" count="1"/>
-      <line num="239" type="stmt" count="1"/>
-      <line num="242" type="method" name="validateContentOrTemplate" visibility="public" complexity="5" crap="17.80" count="1"/>
-      <line num="245" type="stmt" count="1"/>
-      <line num="246" type="stmt" count="0"/>
+      <line num="230" type="stmt" count="1"/>
+      <line num="233" type="stmt" count="1"/>
+      <line num="236" type="method" name="removeRecordCollection" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="238" type="stmt" count="1"/>
+      <line num="240" type="stmt" count="1"/>
+      <line num="243" type="method" name="validateContentOrTemplate" visibility="public" complexity="5" crap="17.80" count="1"/>
+      <line num="246" type="stmt" count="1"/>
       <line num="247" type="stmt" count="0"/>
       <line num="248" type="stmt" count="0"/>
-      <line num="251" type="stmt" count="1"/>
-      <line num="252" type="stmt" count="0"/>
+      <line num="249" type="stmt" count="0"/>
+      <line num="252" type="stmt" count="1"/>
       <line num="253" type="stmt" count="0"/>
       <line num="254" type="stmt" count="0"/>
       <line num="255" type="stmt" count="0"/>
       <line num="256" type="stmt" count="0"/>
-      <metrics loc="261" ncloc="249" classes="1" methods="18" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="47" coveredstatements="29" elements="65" coveredelements="45"/>
+      <line num="257" type="stmt" count="0"/>
+      <metrics loc="262" ncloc="250" classes="1" methods="18" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="47" coveredstatements="29" elements="65" coveredelements="45"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Entity/Page/PageLogEntry.php">
       <class name="App\Entity\Page\PageLogEntry" namespace="global">
@@ -4344,6 +4344,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="177" loc="10416" ncloc="9876" classes="166" methods="649" coveredmethods="407" conditionals="0" coveredconditionals="0" statements="2644" coveredstatements="1727" elements="3293" coveredelements="2134"/>
+    <metrics files="177" loc="10417" ncloc="9877" classes="166" methods="649" coveredmethods="407" conditionals="0" coveredconditionals="0" statements="2644" coveredstatements="1727" elements="3293" coveredelements="2134"/>
   </project>
 </coverage>
