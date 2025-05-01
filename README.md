@@ -31,7 +31,7 @@ Be careful to the minimum versions requirements for:
 
 Specific things from Fastfony:
 
-- Translation files are not in `./translations` directory but in `./assets/locales` directory in order to use [vue-i18n](https://vue-i18n.intlify.dev/) and symfony translation component.
+- Translation files are not in `./translations` directory but in `./assets/locales` directory in order to use [vue-i18n](https://vue-i18n.intlify.dev/) and symfony translation component. We try to apply [php-translation best practices](https://php-translation.readthedocs.io/en/latest/best-practice/index.html).
 - In directories `pro` or `Pro` you can find the pro features of Fastfony. You can use them if you have a license. If you don't have a license, you can use only in development mode.
 
 ## Documentation
@@ -64,6 +64,7 @@ Documentation is available on [docs.fastfony.com](https://docs.fastfony.com/).
 - OAuth2 Server for authenticated registered users and by applications/clients via OAuth2 grant types (password, client credentials, authorization code, refresh token)
 - Public, internal and private with OAuth2 API (you can use it as a headless CMS!)
 - I18n ready with Vue I18n and Symfony translation component
+- Edit translations in place
 
 ## Technical stack
 
@@ -132,6 +133,7 @@ Without the following projects, Fastfony would not exist:
 - [Symfony](https://symfony.com)
 - [API Platform](https://api-platform.com)
 - [EasyAdmin](https://symfony.com/doc/current/bundles/EasyAdminBundle/index.html)
+- [PHP Translation](https://php-translation.readthedocs.io)
 - [Webpack Encore](https://symfony.com/doc/current/frontend.html)
 - [Vue.js](https://vuejs.org)
 - [Tailwind CSS](https://tailwindcss.com)
