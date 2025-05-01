@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "915ee526640d6393091d180e08b93c4d",
+    "content-hash": "a49a137b0ec3bd97853377da4487a0f9",
     "packages": [
         {
             "name": "api-platform/doctrine-common",
@@ -1342,6 +1342,76 @@
                 "source": "https://github.com/dflydev/dflydev-dot-access-data/tree/v3.0.3"
             },
             "time": "2024-07-08T12:26:09+00:00"
+        },
+        {
+            "name": "doctrine/annotations",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/annotations.git",
+                "reference": "901c2ee5d26eb64ff43c47976e114bf00843acf7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/901c2ee5d26eb64ff43c47976e114bf00843acf7",
+                "reference": "901c2ee5d26eb64ff43c47976e114bf00843acf7",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/lexer": "^2 || ^3",
+                "ext-tokenizer": "*",
+                "php": "^7.2 || ^8.0",
+                "psr/cache": "^1 || ^2 || ^3"
+            },
+            "require-dev": {
+                "doctrine/cache": "^2.0",
+                "doctrine/coding-standard": "^10",
+                "phpstan/phpstan": "^1.10.28",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "symfony/cache": "^5.4 || ^6.4 || ^7",
+                "vimeo/psalm": "^4.30 || ^5.14"
+            },
+            "suggest": {
+                "php": "PHP 8.0 or higher comes with attributes, a native replacement for annotations"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": ["MIT"],
+            "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Docblock Annotations Parser",
+            "homepage": "https://www.doctrine-project.org/projects/annotations.html",
+            "keywords": ["annotations", "docblock", "parser"],
+            "support": {
+                "issues": "https://github.com/doctrine/annotations/issues",
+                "source": "https://github.com/doctrine/annotations/tree/2.0.2"
+            },
+            "time": "2024-09-05T10:17:24+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -5048,6 +5118,107 @@
             "time": "2025-03-30T21:06:30+00:00"
         },
         {
+            "name": "nikic/php-parser",
+            "version": "v5.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/PHP-Parser.git",
+                "reference": "447a020a1f875a434d62f2a401f53b82a396e494"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/447a020a1f875a434d62f2a401f53b82a396e494",
+                "reference": "447a020a1f875a434d62f2a401f53b82a396e494",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-json": "*",
+                "ext-tokenizer": "*",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "ircmaxell/php-yacc": "^0.0.7",
+                "phpunit/phpunit": "^9.0"
+            },
+            "bin": ["bin/php-parse"],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpParser\\": "lib/PhpParser"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": ["BSD-3-Clause"],
+            "authors": [
+                {
+                    "name": "Nikita Popov"
+                }
+            ],
+            "description": "A PHP parser written in PHP",
+            "keywords": ["parser", "php"],
+            "support": {
+                "issues": "https://github.com/nikic/PHP-Parser/issues",
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.4.0"
+            },
+            "time": "2024-12-30T11:07:19+00:00"
+        },
+        {
+            "name": "nyholm/nsa",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nyholm/NSA.git",
+                "reference": "c264c17ed2aa8251c64ad289442ed53f64cdb283"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nyholm/NSA/zipball/c264c17ed2aa8251c64ad289442ed53f64cdb283",
+                "reference": "c264c17ed2aa8251c64ad289442ed53f64cdb283",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "webmozart/assert": "^1.1.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^4.4 || ^5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nyholm\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": ["MIT"],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                }
+            ],
+            "description": "See everything and do whatever you want. No privacy rule will stop us. Used in tests, debugging and fixtures to access properties and methods.",
+            "homepage": "https://tnyholm.se",
+            "keywords": ["Fixture", "debug", "reflection", "test"],
+            "support": {
+                "issues": "https://github.com/Nyholm/NSA/issues",
+                "source": "https://github.com/Nyholm/NSA/tree/1.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/nyholm",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-07-15T18:25:37+00:00"
+        },
+        {
             "name": "nyholm/psr7",
             "version": "1.8.2",
             "source": {
@@ -5162,6 +5333,228 @@
                 "source": "https://github.com/paragonie/random_compat"
             },
             "time": "2020-10-15T08:29:30+00:00"
+        },
+        {
+            "name": "php-translation/common",
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-translation/common.git",
+                "reference": "f5e0e36222bcf400310d089646f8cde1648ca974"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-translation/common/zipball/f5e0e36222bcf400310d089646f8cde1648ca974",
+                "reference": "f5e0e36222bcf400310d089646f8cde1648ca974",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "symfony/translation": " ^3.4 || ^4.3 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "require-dev": {
+                "phpspec/prophecy-phpunit": "^2.1",
+                "phpunit/phpunit": ">=8.5.23",
+                "symfony/framework-bundle": " ^3.4 || ^4.3 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Translation\\Common\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": ["MIT"],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                }
+            ],
+            "description": "Common translation stuff",
+            "support": {
+                "issues": "https://github.com/php-translation/common/issues",
+                "source": "https://github.com/php-translation/common/tree/3.3.0"
+            },
+            "time": "2024-01-29T16:29:12+00:00"
+        },
+        {
+            "name": "php-translation/extractor",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-translation/extractor.git",
+                "reference": "4975dfa64bd69a48ccfce81ab53f28e533abd4e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-translation/extractor/zipball/4975dfa64bd69a48ccfce81ab53f28e533abd4e4",
+                "reference": "4975dfa64bd69a48ccfce81ab53f28e533abd4e4",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "^1.7 || ^2.0",
+                "nikic/php-parser": "^4.0 || ^5.0",
+                "php": "^8.1",
+                "symfony/finder": "^5.4 || ^6.4 || ^7.0",
+                "twig/twig": "^2.0 || ^3.0"
+            },
+            "require-dev": {
+                "knplabs/knp-menu": "^3.1",
+                "symfony/phpunit-bridge": "^5.4 || ^6.4 || ^7.0",
+                "symfony/translation": "^5.4 || ^6.4 || ^7.0",
+                "symfony/twig-bridge": "^5.4 || ^6.4 || ^7.0",
+                "symfony/validator": "^5.4 || ^6.4 || ^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Translation\\Extractor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": ["MIT"],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                }
+            ],
+            "description": "Extract translations form the source code",
+            "support": {
+                "issues": "https://github.com/php-translation/extractor/issues",
+                "source": "https://github.com/php-translation/extractor/tree/2.2.1"
+            },
+            "time": "2024-10-02T18:00:08+00:00"
+        },
+        {
+            "name": "php-translation/symfony-bundle",
+            "version": "0.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-translation/symfony-bundle.git",
+                "reference": "553ea2bc07babe69505a94eddcc86639b7904014"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-translation/symfony-bundle/zipball/553ea2bc07babe69505a94eddcc86639b7904014",
+                "reference": "553ea2bc07babe69505a94eddcc86639b7904014",
+                "shasum": ""
+            },
+            "require": {
+                "nyholm/nsa": "^1.1",
+                "php": "^8.1",
+                "php-translation/extractor": "^2.0",
+                "php-translation/symfony-storage": "^2.1",
+                "symfony/asset": "^5.3 || ^6.0 || ^7.0",
+                "symfony/console": "^5.3 || ^6.0 || ^7.0",
+                "symfony/finder": "^5.3 || ^6.0 || ^7.0",
+                "symfony/framework-bundle": "^5.3 || ^6.0 || ^7.0",
+                "symfony/intl": "^5.3 || ^6.0 || ^7.0",
+                "symfony/translation": "^5.3 || ^6.0 || ^7.0",
+                "symfony/twig-bundle": "^5.3 || ^6.0 || ^7.0",
+                "symfony/validator": "^5.3 || ^6.0 || ^7.0",
+                "twig/twig": "^3.3"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.3",
+                "matthiasnoback/symfony-config-test": "^5.2",
+                "matthiasnoback/symfony-dependency-injection-test": "^5.1",
+                "nyholm/psr7": "^1.1",
+                "nyholm/symfony-bundle-test": "^2.0",
+                "php-http/curl-client": "^1.7 || ^2.0",
+                "php-http/message": "^1.11",
+                "php-http/message-factory": "^1.0.2",
+                "php-translation/translator": "^1.0",
+                "phpstan/phpstan": "^1.11",
+                "phpunit/phpunit": "^9.6",
+                "symfony/dependency-injection": "^5.3 || ^6.0 || ^7.0",
+                "symfony/phpunit-bridge": "^5.2 || ^6.0 || ^7.0",
+                "symfony/twig-bridge": "^5.3 || ^6.0 || ^7.0",
+                "symfony/web-profiler-bundle": "^5.3 || ^6.0 || ^7.0"
+            },
+            "suggest": {
+                "php-http/httplug-bundle": "To easier configure your httplug clients."
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.12-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Translation\\Bundle\\": ""
+                },
+                "exclude-from-classmap": ["/Tests/"]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": ["MIT"],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/php-translation/symfony-bundle/issues",
+                "source": "https://github.com/php-translation/symfony-bundle/tree/0.16.0"
+            },
+            "time": "2025-03-27T15:24:24+00:00"
+        },
+        {
+            "name": "php-translation/symfony-storage",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-translation/symfony-storage.git",
+                "reference": "0f4702c5837802507231ee6649c49b57b6d7ab89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-translation/symfony-storage/zipball/0f4702c5837802507231ee6649c49b57b6d7ab89",
+                "reference": "0f4702c5837802507231ee6649c49b57b6d7ab89",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0",
+                "php-translation/common": "^3.0",
+                "symfony/translation": "^3.4 || ^4.2 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=8.5.20",
+                "symfony/framework-bundle": " ^3.4 || ^4.2 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Translation\\SymfonyStorage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": ["MIT"],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                }
+            ],
+            "description": "A translation file storage using Symfony translation component.",
+            "support": {
+                "issues": "https://github.com/php-translation/symfony-storage/issues",
+                "source": "https://github.com/php-translation/symfony-storage/tree/2.4.0"
+            },
+            "time": "2024-01-29T16:41:31+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -14363,57 +14756,6 @@
                 }
             ],
             "time": "2025-02-12T12:17:51+00:00"
-        },
-        {
-            "name": "nikic/php-parser",
-            "version": "v5.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "447a020a1f875a434d62f2a401f53b82a396e494"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/447a020a1f875a434d62f2a401f53b82a396e494",
-                "reference": "447a020a1f875a434d62f2a401f53b82a396e494",
-                "shasum": ""
-            },
-            "require": {
-                "ext-ctype": "*",
-                "ext-json": "*",
-                "ext-tokenizer": "*",
-                "php": ">=7.4"
-            },
-            "require-dev": {
-                "ircmaxell/php-yacc": "^0.0.7",
-                "phpunit/phpunit": "^9.0"
-            },
-            "bin": ["bin/php-parse"],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PhpParser\\": "lib/PhpParser"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": ["BSD-3-Clause"],
-            "authors": [
-                {
-                    "name": "Nikita Popov"
-                }
-            ],
-            "description": "A PHP parser written in PHP",
-            "keywords": ["parser", "php"],
-            "support": {
-                "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.4.0"
-            },
-            "time": "2024-12-30T11:07:19+00:00"
         },
         {
             "name": "nunomaduro/phpinsights",

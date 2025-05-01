@@ -38,6 +38,7 @@ class GroupsAndRoles extends Fixture implements FixtureGroupInterface
             'ROLE_ADMIN' => 'Administrator',
             'ROLE_ALLOWED_TO_SWITCH' => 'Allowed to switch',
             'ROLE_SUPER_ADMIN' => 'Super Administrator',
+            'ROLE_EDIT_IN_PLACE' => 'Edit content in place',
         ];
 
         foreach ($roles as $key => $description) {
@@ -61,6 +62,9 @@ class GroupsAndRoles extends Fixture implements FixtureGroupInterface
             'Facilities in admin' => [
                 $this->getReference('ROLE_ALLOWED_TO_SWITCH', Role::class),
             ],
+            'Facilities in front' => [
+                $this->getReference('ROLE_EDIT_IN_PLACE', Role::class),
+            ],
         ];
 
         foreach ($roleCategory as $key => $roleReferences) {
@@ -82,11 +86,13 @@ class GroupsAndRoles extends Fixture implements FixtureGroupInterface
             'Administrator' => [
                 $this->getReference('ROLE_API', Role::class),
                 $this->getReference('ROLE_USER', Role::class),
+                $this->getReference('ROLE_EDIT_IN_PLACE', Role::class),
                 $this->getReference('ROLE_ADMIN', Role::class),
             ],
             Group::SUPER_ADMIN_NAME => [
                 $this->getReference('ROLE_API', Role::class),
                 $this->getReference('ROLE_USER', Role::class),
+                $this->getReference('ROLE_EDIT_IN_PLACE', Role::class),
                 $this->getReference('ROLE_ADMIN', Role::class),
                 $this->getReference('ROLE_ALLOWED_TO_SWITCH', Role::class),
                 $this->getReference('ROLE_SUPER_ADMIN', Role::class),

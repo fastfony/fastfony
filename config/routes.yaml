@@ -6,3 +6,7 @@ controllers:
 
 login_check:
     path: /login_check
+
+_translation_edit_in_place:
+    resource: '@TranslationBundle/Resources/config/routing_edit_in_place.yaml'
+    prefix: /admin

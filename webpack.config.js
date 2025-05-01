@@ -41,7 +41,7 @@ Encore.setOutputPath('public/build/')
       watch: false,
     };
     options.watchFiles = {
-      paths: ['assets/locales/*', 'src/**/*.php', 'templates/**/*'],
+      paths: ['src/**/*.php', 'templates/**/*'],
     };
     options.allowedHosts = 'all';
     options.server = {

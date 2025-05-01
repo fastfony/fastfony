@@ -1,0 +1,33 @@
+name: quality
+
+on:
+    push:
+        branches:
+            - '**'
+    pull_request:
+        branches:
+            - '**'
+
+jobs:
+    tests:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Set up PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: 8.4
+                  extensions: mbstring, intl, pdo_sqlite, xdebug
+                  coverage: xdebug
+
+            - name: Install dependencies
+              run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+            - name: Run PHPStan
+              run: vendor/bin/phpstan analyse
+
+            - name: Run PHP Insights
+              run: vendor/bin/phpinsights --no-interaction --ansi

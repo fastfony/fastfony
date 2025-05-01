@@ -41,9 +41,10 @@ final class LoginTest extends WebTestCase
     {
         $this->client->followRedirects(); // The admin page is redirected to the login page
         $this->client->request('GET', '/admin');
-        // One flash message is expected and the request login link form
-        $this->assertSelectorExists('#toast-container .alert.alert-note');
-        $this->assertSelectorExists('form input#login_form_email');
+        $this->assertSelectorExists('form input#username');
+
+        // We use the request login link for this test
+        $this->client->request('GET', '/request-login-link');
 
         // The login form is submitted with invalid credentials
         $this->sendFormLoginLink('unknow@fastfony.com');

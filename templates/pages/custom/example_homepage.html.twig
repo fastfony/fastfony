@@ -1,3 +1,5 @@
+{% trans_default_domain 'homepage' %}
+
 <div
     class="hero min-h-100"
     style="background-image: url({{ asset('build/images/hero.jpg') }});"
@@ -5,22 +7,28 @@
     <div class="hero-overlay"></div>
     <div class="hero-content text-neutral-content text-center">
         <div class="max-w-xl">
-            <h1 class="mb-5 text-5xl font-bold">Go fast!</h1>
+            <h1 class="mb-5 text-5xl font-bold">{{ 'Go fast!'|trans }}</h1>
             <p class="mb-5 text-xl">
-                Pragmatic boilerplate and starter-kit for fastly develop 🏎️  with Symfony
-                or for launch your Saas project 🚀
+                {{ 'Pragmatic boilerplate and starter-kit for fastly develop 🏎️  with Symfony
+                or for launch your Saas project 🚀'|trans }}
             </p>
-            <a href="https://docs.fastfony.com" target="_blank" class="btn btn-primary">Get Started</a>
+            <a href="https://docs.fastfony.com" target="_blank" class="btn btn-primary">
+                {{ 'Get Started'|trans }}
+            </a>
         </div>
     </div>
 </div>
 
 <div class="w-full flex flex-col lg:flex-row gap-16 my-16">
     <div class="flex-grow-1">
-        <h2 class="text-2xl font-semibold my-8 text-primary">What you can build with Fastfony</h2>
+        <h2 class="text-2xl font-semibold my-8 text-primary">
+            {{ 'What you can build with Fastfony'|trans }}
+        </h2>
         <ul class="list bg-base-100 rounded-box shadow-md">
 
-            <li class="p-4 pb-2 text-sm opacity-60 tracking-wide">Just few use cases... but you have the power!</li>
+            <li class="p-4 pb-2 text-sm opacity-60 tracking-wide">
+                {{ 'Just few use cases... but you have the power!'|trans }}
+            </li>
 
             {% if collections['use-cases'] is defined %}
                 {% for use_case in collections['use-cases'] %}
@@ -43,7 +51,7 @@
     </div>
 
     <div class="flex-grow-0">
-        <h2 class="text-2xl font-semibold my-8 text-primary">Features available & customizable</h2>
+        <h2 class="text-2xl font-semibold my-8 text-primary">{{ 'Features available & customizable'|trans }}</h2>
         <div class="join join-vertical bg-base-100 w-full">
             {% if collections['features'] is defined %}
                 {% for feature in collections['features'] %}

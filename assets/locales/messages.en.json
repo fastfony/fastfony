@@ -26,7 +26,7 @@
   "forgot_password.link_sent_validity": "If you have an account a link to reset your password has been sent to your email address. This link is valid for 5 minutes.",
   "forgot_password.title": "Reset your password",
   "input.admin_email": "Your email",
-  "input.license_key": "Copy/paste your license key here",
+  "input.license_key": "Copy\/paste your license key here",
   "input.mailer_sender": "Sender email address",
   "installation.error": "An error occurred. Please verify the configuration and retry.",
   "label.email": "Email address",
