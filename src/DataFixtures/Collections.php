@@ -191,6 +191,12 @@ class Collections extends Fixture implements FixtureGroupInterface
                 'icon' => 'fas fa-globe',
                 'pro' => false,
             ],
+            'edit_in_place' => [
+                'title' => 'Edit content in place',
+                'description' => 'Directly from the front update yours translations.',
+                'icon' => 'fas fa-pen',
+                'pro' => false,
+            ],
         ];
 
         foreach ($records as $recordData) {
