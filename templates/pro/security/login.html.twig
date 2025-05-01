@@ -44,7 +44,6 @@
         </p>
 
         <div class="mb-4">
-            <input type="hidden" name="_target_path" value="{{ app.request.query.get('_target_path') }}"/>
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('login') }}">
             <button type="submit" class="btn btn-primary w-full">
                 {{ 'login.button'|trans }}

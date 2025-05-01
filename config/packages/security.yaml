@@ -34,7 +34,7 @@ security:
                 check_route: login_check
                 signature_properties: [id, email]
                 max_uses: 3
-            entry_point: App\Security\AuthenticationEntryPoint
+            entry_point: form_login
             remember_me:
                 always_remember_me: true
                 signature_properties: ['id', 'email', 'password']
@@ -60,7 +60,7 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/api, roles: ROLE_API }
+        - { path: ^\/api\/(?!public).*$, roles: ROLE_API }
         - { path: ^/installation, roles: PUBLIC_ACCESS }
         - {
               path: ^/(login$|request-login-link$|forgot-password$|register$|reset-password),
