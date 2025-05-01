@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745604555">
-  <project timestamp="1745604555">
+<coverage generated="1746122995">
+  <project timestamp="1746122995">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -2522,14 +2522,14 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Pro/Controller/Security/Login.php">
       <class name="App\Pro\Controller\Security\Login" namespace="global">
-        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
       </class>
-      <line num="17" type="method" name="__invoke" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="21" type="stmt" count="0"/>
-      <line num="22" type="stmt" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <metrics loc="27" ncloc="24" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
+      <line num="17" type="method" name="__invoke" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <metrics loc="27" ncloc="24" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Pro/Controller/Security/OAuthClient/AbstractCheck.php">
       <class name="App\Pro\Controller\Security\OAuthClient\AbstractCheck" namespace="global">
@@ -4140,25 +4140,17 @@
       <line num="26" type="stmt" count="0"/>
       <metrics loc="29" ncloc="29" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="9" coveredelements="0"/>
     </file>
-    <file name="/home/runner/work/fastfony/fastfony/src/Security/AuthenticationEntryPoint.php">
-      <class name="App\Security\AuthenticationEntryPoint" namespace="global">
-        <metrics complexity="3" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="4" elements="14" coveredelements="5"/>
+    <file name="/home/runner/work/fastfony/fastfony/src/Security/EditInPlaceTranslatorRoleActivator.php">
+      <class name="App\Security\EditInPlaceTranslatorRoleActivator" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="2" elements="6" coveredelements="3"/>
       </class>
-      <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="12"/>
-      <line num="18" type="stmt" count="12"/>
-      <line num="20" type="method" name="start" visibility="public" complexity="2" crap="3.54" count="2"/>
-      <line num="23" type="stmt" count="2"/>
+      <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="26"/>
+      <line num="17" type="stmt" count="26"/>
+      <line num="19" type="method" name="checkRequest" visibility="public" complexity="2" crap="3.19" count="12"/>
+      <line num="22" type="stmt" count="12"/>
+      <line num="23" type="stmt" count="0"/>
       <line num="24" type="stmt" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="27" type="stmt" count="0"/>
-      <line num="28" type="stmt" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="30" type="stmt" count="0"/>
-      <line num="31" type="stmt" count="0"/>
-      <line num="36" type="stmt" count="2"/>
-      <line num="38" type="stmt" count="2"/>
-      <metrics loc="41" ncloc="38" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="4" elements="14" coveredelements="5"/>
+      <metrics loc="28" ncloc="28" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="2" elements="6" coveredelements="3"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Security/LoginLink.php">
       <class name="App\Security\LoginLink" namespace="global">
@@ -4344,6 +4336,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="177" loc="10417" ncloc="9877" classes="166" methods="649" coveredmethods="407" conditionals="0" coveredconditionals="0" statements="2644" coveredstatements="1727" elements="3293" coveredelements="2134"/>
+    <metrics files="177" loc="10404" ncloc="9867" classes="166" methods="649" coveredmethods="408" conditionals="0" coveredconditionals="0" statements="2636" coveredstatements="1729" elements="3285" coveredelements="2137"/>
   </project>
 </coverage>
