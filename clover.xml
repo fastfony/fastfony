@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1747586390">
-  <project timestamp="1747586390">
+<coverage generated="1747592767">
+  <project timestamp="1747592767">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -74,7 +74,7 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Admin/Dashboard.php">
       <class name="App\Controller\Admin\Dashboard" namespace="global">
-        <metrics complexity="13" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="40" coveredstatements="34" elements="46" coveredelements="38"/>
+        <metrics complexity="13" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="41" coveredstatements="35" elements="47" coveredelements="39"/>
       </class>
       <line num="29" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="33" type="stmt" count="3"/>
@@ -95,7 +95,7 @@
       <line num="59" type="stmt" count="3"/>
       <line num="60" type="stmt" count="3"/>
       <line num="61" type="stmt" count="3"/>
-      <line num="67" type="method" name="configureMenuItems" visibility="public" complexity="8" crap="8.46" count="2"/>
+      <line num="67" type="method" name="configureMenuItems" visibility="public" complexity="8" crap="8.41" count="2"/>
       <line num="69" type="stmt" count="2"/>
       <line num="70" type="stmt" count="2"/>
       <line num="71" type="stmt" count="0"/>
@@ -122,7 +122,8 @@
       <line num="108" type="stmt" count="2"/>
       <line num="109" type="stmt" count="2"/>
       <line num="110" type="stmt" count="2"/>
-      <metrics loc="113" ncloc="110" classes="1" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="40" coveredstatements="34" elements="46" coveredelements="38"/>
+      <line num="111" type="stmt" count="2"/>
+      <metrics loc="114" ncloc="111" classes="1" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="41" coveredstatements="35" elements="47" coveredelements="39"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Admin/Feature/Index.php">
       <class name="App\Controller\Admin\Feature\Index" namespace="global">
@@ -4356,6 +4357,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="179" loc="10452" ncloc="9914" classes="167" methods="651" coveredmethods="408" conditionals="0" coveredconditionals="0" statements="2642" coveredstatements="1732" elements="3293" coveredelements="2140"/>
+    <metrics files="179" loc="10453" ncloc="9915" classes="167" methods="651" coveredmethods="408" conditionals="0" coveredconditionals="0" statements="2643" coveredstatements="1733" elements="3294" coveredelements="2141"/>
   </project>
 </coverage>
