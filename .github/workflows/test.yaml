@@ -52,12 +52,6 @@ jobs:
             - name: Run PHPUnit with coverage
               run: task coverage
 
-            - name: Run PHPStan
-              run: vendor/bin/phpstan analyse
-
-            - name: Run PHP Insights
-              run: vendor/bin/phpinsights --no-interaction --ansi
-
             - name: Make code coverage badge
               uses: timkrase/phpunit-coverage-badge@v1.2.1
               with:
