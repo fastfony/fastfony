@@ -68,6 +68,7 @@
   "menu.exit": "Exit",
   "menu.features": "Features",
   "menu.group_role_matrix": "Permissions matrix",
+  "menu.messenger": "Messenger monitor",
   "menu.oauth": "OAuth2 Server",
   "menu.oauth.clients": "Clients",
   "menu.objects": "Objects",
