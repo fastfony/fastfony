@@ -19,6 +19,10 @@ class EditInPlaceTranslatorRoleActivator implements ActivatorInterface
     public function checkRequest(?Request $request = null): bool
     {
         try {
+            if ($request && str_starts_with($request->getPathInfo(), '/admin')) {
+                return false;
+            }
+
             return $this->authorizationChecker->isGranted('ROLE_EDIT_IN_PLACE');
         } catch (AuthenticationCredentialsNotFoundException $e) {
             return false;

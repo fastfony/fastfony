@@ -80,7 +80,8 @@
         "twig/intl-extra": "^3.20",
         "twig/markdown-extra": "^3.20",
         "twig/twig": "^2.12|^3.20",
-        "vich/uploader-bundle": "^2.6.1"
+        "vich/uploader-bundle": "^2.6.1",
+        "zenstruck/messenger-monitor-bundle": "^0.5.2"
     },
     "config": {
         "allow-plugins": {

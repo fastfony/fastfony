@@ -37,6 +37,7 @@ class ClientCrud extends AbstractCrudController
             TextField::new('name'),
             TextField::new('identifier'),
             TextField::new('secret')
+                ->setDisabled(true)
                 ->hideOnIndex()
                 ->hideOnDetail()
                 ->hideWhenCreating(),

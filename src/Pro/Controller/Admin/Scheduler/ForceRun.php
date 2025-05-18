@@ -22,7 +22,7 @@ class ForceRun extends AbstractController
         if ($this->handler->forceRun($recurringMessageId)) {
             $this->addFlash('success', 'flash.scheduler.force_run.success');
         } else {
-            $this->addFlash('error', 'flash.scheduler.force_run.error');
+            $this->addFlash('danger', 'flash.scheduler.force_run.error');
         }
 
         return $this->redirectToRoute('admin', ['routeName' => 'admin_scheduler_index']);
