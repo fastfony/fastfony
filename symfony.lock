@@ -75,9 +75,12 @@
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "main",
-            "version": "3.0",
-            "ref": "b131e6cbfe1b898a508987851963fff485986285"
-        }
+            "version": "4.14",
+            "ref": "13b3e524d1038a6861ad6c7fc64e31b644ba0c54"
+        },
+        "files": [
+            "config/routes/easyadmin.yaml"
+        ]
     },
     "fastfony/license-bundle": {
         "version": "dev-main"
