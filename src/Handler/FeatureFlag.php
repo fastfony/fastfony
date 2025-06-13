@@ -51,20 +51,16 @@ class FeatureFlag
      */
     public function save(array $enabledFeatures): void
     {
+        $projectDir = $this->kernel->getProjectDir();
         $featureJson = json_encode(array_fill_keys(
             $enabledFeatures,
             true
         ));
 
-        // Check if the .env.local file exists and is writable
-        if (!is_writable('../.env.local')) {
-            throw new CannotWriteFileException('.env.local file is not writable.');
-        }
-
         // Update .env.local file
         $envContent = "\nFEATURE_FLAGS='{$featureJson}'\n";
-        if (file_exists('../.env.local')) {
-            $envContent = file_get_contents('../.env.local');
+        if (file_exists($projectDir.'/.env.local')) {
+            $envContent = file_get_contents($projectDir.'/.env.local');
         }
 
         if (preg_match('/^FEATURE_FLAGS=.*$/m', $envContent)) {
@@ -75,9 +71,14 @@ class FeatureFlag
             );
         }
 
-        file_put_contents('../.env.local', $envContent);
+        // Check if the .env.local file exists and is writable
+        if (!is_writable($projectDir.'/.env.local')) {
+            throw new CannotWriteFileException($projectDir.'/.env.local file is not writable.');
+        }
+
+        file_put_contents($projectDir.'/.env.local', $envContent);
 
         $dotenv = new Dotenv();
-        $dotenv->loadEnv($this->kernel->getProjectDir().'/.env');
+        $dotenv->loadEnv($projectDir.'/.env');
     }
 }

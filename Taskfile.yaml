@@ -38,8 +38,6 @@ tasks:
 
     setup_tests:
         cmds:
-            - task: vendor
-            - task: node_modules
             - bin/console doctrine:database:drop --force --env=test
             - bin/console doctrine:database:create --env=test
             - bin/console doctrine:schema:create --env=test
@@ -52,6 +50,7 @@ tasks:
         cmds:
             - task: vendor
             - task: node_modules
+            - npm run build
             - chmod -R 777 public/uploads/
             - bin/console app:install --env=dev
             - bin/console doctrine:schema:update --force  --env=dev

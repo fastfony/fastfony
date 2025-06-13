@@ -40,6 +40,18 @@ jobs:
             - name: Init OAuth2 server
               run: task oauth2-server-init
 
+            - name: Install dependencies
+              run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+            - name: Nodejs install
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+            - run: npm install
+
+            - name: Npm build
+              run: npm run build
+
             - name: Run PHPUnit with coverage
               run: task coverage
             
