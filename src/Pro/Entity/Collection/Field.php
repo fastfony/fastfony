@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Pro\Entity\Collection;
 
 use ApiPlatform\Metadata\ApiResource;
@@ -42,6 +44,9 @@ class Field
     #[ORM\Column(length: 255)]
     private ?string $type = null;
 
+    /**
+     * @var array <string, mixed>
+     */
     #[Groups([
         'record_collection:read',
     ])]
@@ -112,11 +117,17 @@ class Field
         return $this;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getParameters(): array
     {
         return $this->parameters;
     }
 
+    /**
+     * @param array<string, mixed> $parameters
+     */
     public function setParameters(array $parameters): static
     {
         $this->parameters = $parameters;

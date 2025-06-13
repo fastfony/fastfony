@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Tests\Unit\Entity;
 
-use PHPUnit\Framework\Attributes\DataProvider;
 use App\Entity\User\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\Persistence\Reflection\EnumReflectionProperty;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\String\Inflector\EnglishInflector;
 
@@ -22,6 +22,7 @@ final class EntitiesTest extends KernelTestCase
 {
     private const EXCLUDED_ENTITIES = [
         'App\Pro\Entity\OAuth2Server\Client',
+        'App\Pro\Entity\Scheduler\ProcessedMessage',
     ];
 
     #[DataProvider('getEntities')]
@@ -138,7 +139,8 @@ final class EntitiesTest extends KernelTestCase
         return array_map(function (ClassMetadata $classMetadata) {
             return [$classMetadata];
         }, array_filter($metadatas, function (ClassMetadata $className) {
-            return u($className->getName())->startsWith('App\Entity');
+            return u($className->getName())->startsWith('App\Entity')
+                || u($className->getName())->startsWith('App\Pro\Entity');
         }));
     }
 

@@ -11,6 +11,7 @@ use App\Pro\Entity\Collection\RecordFieldValue;
 use App\Pro\Repository\Collection\FieldRepository;
 use App\Pro\Repository\Collection\RecordRepository;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
+use Symfony\Component\HttpFoundation\Request;
 
 class RecordProcessor implements ProcessorInterface
 {
@@ -23,7 +24,9 @@ class RecordProcessor implements ProcessorInterface
     }
 
     /**
-     * @param Record $data
+     * @param Record                                                                 $data
+     * @param array<string, mixed>                                                   $uriVariables
+     * @param array<string, mixed>|array{request?: Request, resource_class?: string} $context
      */
     public function process(
         mixed $data,

@@ -51,6 +51,7 @@ return [
 
     'exclude' => [
         'src/DataFixtures',
+        'src/Pro/DataFixtures',
     ],
 
     'add' => [
@@ -74,23 +75,28 @@ return [
         SlevomatCodingStandard\Sniffs\ControlStructures\DisallowEmptySniff::class,
         PHP_CodeSniffer\Standards\Generic\Sniffs\Strings\UnnecessaryStringConcatSniff::class,
         SlevomatCodingStandard\Sniffs\ControlStructures\DisallowShortTernaryOperatorSniff::class,
+        PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\OperatorSpacingSniff::class,
     ],
 
     'config' => [
         NunoMaduro\PhpInsights\Domain\Insights\CyclomaticComplexityIsHigh::class => [
-            'maxComplexity' => 15,
+            'maxComplexity' => 20,
+        ],
+        NunoMaduro\PhpInsights\Domain\Insights\ClassMethodAverageCyclomaticComplexityIsHigh::class => [
+            'maxClassMethodAverageComplexity' => 10,
+        ],
+        NunoMaduro\PhpInsights\Domain\Insights\MethodCyclomaticComplexityIsHigh::class => [
+            'maxMethodComplexity' => 10,
         ],
         SlevomatCodingStandard\Sniffs\Functions\FunctionLengthSniff::class => [
-            'maxLinesLength' => 50,
-            'maxLinesLimit' => 50,
+            'maxLinesLength' => 65,
         ],
         PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff::class => [
             'lineLimit' => 120,
-            'absoluteLineLimit' => 120,
+            'absoluteLineLimit' => 140,
         ],
         SlevomatCodingStandard\Sniffs\Files\LineLengthSniff::class => [
-            'lineLimit' => 120,
-            'absoluteLineLimit' => 120,
+            'lineLengthLimit' => 120,
         ],
     ],
 

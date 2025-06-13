@@ -29,8 +29,8 @@ class CreateContactRequest
             ->from($this->mailerSender)
             ->to($this->appContactEmail)
             ->subject('New contact request from '.$this->appName)
-            ->text('
-                From : '.$contactRequest->getFirstName().' '.$contactRequest->getLastName().'
+            ->text(
+                'From : '.$contactRequest->getFirstName().' '.$contactRequest->getLastName().'
                 Email : '.$contactRequest->getEmail().'
                 Phone : '.$contactRequest->getPhoneNumber().'
                 Message : '.$contactRequest->getMessage()

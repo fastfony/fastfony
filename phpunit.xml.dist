@@ -7,10 +7,13 @@
          colors="true"
          bootstrap="tests/bootstrap.php"
          cacheDirectory=".phpunit.cache"
+         stopOnError="true"
+         stopOnFailure="true"
 >
     <php>
         <ini name="display_errors" value="1" />
         <ini name="error_reporting" value="-1" />
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
         <server name="APP_ENV" value="test" force="true" />
         <server name="SHELL_VERBOSITY" value="-1" />
         <server name="SYMFONY_PHPUNIT_REMOVE" value="" />
@@ -35,7 +38,9 @@
         </include>
         <exclude>
             <directory>src/Command</directory>
+            <directory>src/Pro/Command</directory>
             <directory>src/DataFixtures</directory>
+            <directory>src/Pro/DataFixtures</directory>
             <file>src/MessageHandler/ExampleHandler.php</file>
             <file>src/Scheduler/Example.php</file>
             <file>src/Kernel.php</file>

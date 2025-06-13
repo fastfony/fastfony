@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\DataFixtures;
 
 use App\Entity\User\Group;
+use App\Entity\User\Stripe\CustomerId;
 use App\Entity\User\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
@@ -30,6 +31,12 @@ class Users extends Fixture implements FixtureGroupInterface
             ->setEnabled(true)
             ->addGroup($superAdminGroup)
         ;
+
+        $user->addStripeCustomerId(
+            (new CustomerId())
+                ->setId('stripe-customer-id')
+                ->setUser($user)
+        );
 
         $manager->persist($user);
 

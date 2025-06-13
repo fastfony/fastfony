@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Pro\Entity\Collection;
 
 use ApiPlatform\Metadata\ApiResource;
@@ -19,6 +21,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
+use Symfony\Bridge\Doctrine\IdGenerator\UuidGenerator;
 use Symfony\Bridge\Doctrine\Types\UuidType;
 use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Serializer\Attribute\SerializedName;
@@ -84,8 +87,10 @@ class Record
         'public:page:read',
     ])]
     #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'CUSTOM')]
+    #[ORM\CustomIdGenerator(class: UuidGenerator::class)]
     #[ORM\Column(type: UuidType::NAME, unique: true)]
-    private ?Uuid $id = null;
+    private Uuid $id;
 
     #[Groups([
         'record:write',
@@ -174,6 +179,9 @@ class Record
         return null;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     #[SerializedName('fields')]
     #[Groups([
         'record:list',
@@ -188,6 +196,9 @@ class Record
         return $fields;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     #[SerializedName('fields')]
     #[Groups([
         'public:record:list',

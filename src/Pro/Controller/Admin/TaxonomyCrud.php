@@ -6,6 +6,7 @@ namespace App\Pro\Controller\Admin;
 
 use App\Pro\Entity\Taxonomy as TaxonomyEntity;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -17,6 +18,9 @@ class TaxonomyCrud extends AbstractCrudController
         return TaxonomyEntity::class;
     }
 
+    /**
+     * @return iterable<FieldInterface>
+     */
     public function configureFields(string $pageName): iterable
     {
         return [

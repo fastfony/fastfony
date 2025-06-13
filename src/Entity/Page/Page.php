@@ -9,6 +9,7 @@ use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
 use App\Entity\BlameableEntity;
 use App\Entity\CommonProperties;
+use App\Pro\Entity\Collection\Record;
 use App\Pro\Entity\Collection\RecordCollection;
 use App\Repository\Page\PageRepository;
 use App\State\PublishedPageProvider;
@@ -149,7 +150,8 @@ class Page
                         'page' => $this,
                     ]);
                 } catch (\Throwable $t) {
-                    throw new \RuntimeException('Twig template rendering failed (probably because you use a function unavailable in twig with Fastfony pages): '.$t->getMessage());
+                    throw new \RuntimeException('Twig template rendering failed (probably because you use
+                         a function unavailable in twig with Fastfony pages): '.$t->getMessage(), );
                 }
             }
 
@@ -210,6 +212,9 @@ class Page
         return $this->recordCollections;
     }
 
+    /**
+     * @return array<string, Collection<int, Record>>
+     */
     #[SerializedName('collections')]
     #[Groups([
         'public:page:read',
@@ -247,6 +252,8 @@ class Page
             $context->buildViolation('You cannot enter “prose content” and “template path” at the same time.')
                 ->atPath('template')
                 ->addViolation();
+
+            return;
         }
 
         if (!empty($this->template)) {

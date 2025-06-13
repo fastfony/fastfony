@@ -10,6 +10,7 @@ use ApiPlatform\State\ProviderInterface;
 use App\Pro\Entity\Collection\Record;
 use App\Pro\Entity\Collection\RecordCollection;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class PublishedRecordProvider implements ProviderInterface
@@ -18,6 +19,10 @@ class PublishedRecordProvider implements ProviderInterface
     {
     }
 
+    /**
+     * @param array<string, mixed>                                                   $uriVariables
+     * @param array<string, mixed>|array{request?: Request, resource_class?: string} $context
+     */
     public function provide(
         Operation $operation,
         array $uriVariables = [],

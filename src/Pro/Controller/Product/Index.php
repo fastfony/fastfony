@@ -19,7 +19,11 @@ class Index extends AbstractController
     /**
      * @return array<string, mixed>
      */
-    #[Route('/products', name: 'product_index')]
+    #[Route(
+        '/products',
+        name: 'product_index',
+        methods: ['GET'],
+    )]
     #[Template('pro/product/index.html.twig')]
     public function __invoke(): array
     {

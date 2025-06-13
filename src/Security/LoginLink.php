@@ -62,9 +62,9 @@ class LoginLink
     }
 
     /**
-     * @throws \Psr\Cache\InvalidArgumentException
-     *
      * @return array<int>
+     *
+     * @throws \Psr\Cache\InvalidArgumentException
      */
     private function getUserRecentlyAskLoginTime(User $user): array
     {

@@ -68,7 +68,15 @@ class InstallationFormType extends AbstractType
                     && true === (bool) $data['autoGenerateLicenseKey']
                     && $data['email']) {
                     $licenseKey = $this->licenseChecker->generate($data['email'], 'fastfony');
-                    $event->setData(array_merge($data, ['licenseKey' => $licenseKey ?? 'Error during generation of a new license key... Please contact support.']));
+                    $event->setData(
+                        array_merge(
+                            $data,
+                            [
+                                'licenseKey' => $licenseKey
+                                    ?? 'Error during generation of a new license key... Please contact support.',
+                            ]
+                        ),
+                    );
                 }
             })
         ;

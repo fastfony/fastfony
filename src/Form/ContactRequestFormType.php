@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Form;
 
 use App\Entity\ContactRequest;
@@ -12,6 +14,9 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ContactRequestFormType extends AbstractType
 {
+    /**
+     * @param array<string, mixed> $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder

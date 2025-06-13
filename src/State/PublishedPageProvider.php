@@ -9,6 +9,7 @@ use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProviderInterface;
 use App\Entity\Page\Page;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class PublishedPageProvider implements ProviderInterface
@@ -17,6 +18,10 @@ class PublishedPageProvider implements ProviderInterface
     {
     }
 
+    /**
+     * @param array<string, mixed>                                                   $uriVariables
+     * @param array<string, mixed>|array{request?: Request, resource_class?: string} $context
+     */
     public function provide(
         Operation $operation,
         array $uriVariables = [],

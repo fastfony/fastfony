@@ -9,6 +9,7 @@ use App\Handler\FeatureFlag;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\CannotWriteFileException;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
@@ -38,7 +39,13 @@ class Index extends AbstractController
             $featureFlagForm->handleRequest($request);
 
             if ($featureFlagForm->isSubmitted() && $featureFlagForm->isValid()) {
-                $this->featureFlag->save($featureFlagForm->getData()['features']);
+                try {
+                    $this->featureFlag->save($featureFlagForm->getData()['features']);
+                } catch (CannotWriteFileException $e) {
+                    $this->addFlash('danger', 'flash.features.update.error');
+
+                    return $this->redirect($this->adminUrlGenerator->generateUrl());
+                }
 
                 $this->addFlash('success', 'flash.features.update.success');
 

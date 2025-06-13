@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Pro\Entity\Collection;
 
 use App\Entity\BlameableEntity;

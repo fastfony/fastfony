@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Pro\Entity\Collection;
 
 use ApiPlatform\Metadata\ApiResource;
@@ -146,6 +148,9 @@ class RecordCollection
         return $this->records;
     }
 
+    /**
+     * @return Collection<int, Record>
+     */
     public function getPublishedRecords(): Collection
     {
         return $this->records->filter(

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Handler;
 
 use Symfony\Component\Dotenv\Dotenv;
+use Symfony\Component\HttpFoundation\File\Exception\CannotWriteFileException;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 class FeatureFlag
@@ -45,6 +46,8 @@ class FeatureFlag
 
     /**
      * @param array <int, string> $enabledFeatures
+     *
+     * @throw CannotWriteFileException
      */
     public function save(array $enabledFeatures): void
     {
@@ -52,6 +55,11 @@ class FeatureFlag
             $enabledFeatures,
             true
         ));
+
+        // Check if the .env.local file exists and is writable
+        if (!is_writable('../.env.local')) {
+            throw new CannotWriteFileException('.env.local file is not writable.');
+        }
 
         // Update .env.local file
         $envContent = "\nFEATURE_FLAGS='{$featureJson}'\n";

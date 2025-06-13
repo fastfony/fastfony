@@ -18,7 +18,10 @@ final class UserCrudTest extends WebTestCase
         $client = static::createClient();
         $client->loginUser($user);
 
-        $client->request('GET', '/admin/user-crud/'.$user->getId().'/send-login-link');
+        $client->request(
+            'GET',
+            '/admin/user-crud/'.$user->getId().'/send-login-link',
+        );
         $this->assertEmailCount(1);
     }
 }

@@ -19,6 +19,7 @@ class EditInPlaceTranslatorRoleActivator implements ActivatorInterface
     public function checkRequest(?Request $request = null): bool
     {
         try {
+            // Translator edit in place is not available in the admin area
             if ($request && str_starts_with($request->getPathInfo(), '/admin')) {
                 return false;
             }

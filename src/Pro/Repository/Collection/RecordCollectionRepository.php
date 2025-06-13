@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Pro\Repository\Collection;
 
 use App\Pro\Entity\Collection\RecordCollection;

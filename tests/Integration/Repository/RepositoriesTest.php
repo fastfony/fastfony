@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Tests\Integration\Repository;
 
-use PHPUnit\Framework\Attributes\DataProvider;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\DBAL\Exception\NotNullConstraintViolationException;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\ClassMetadata;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 use function Symfony\Component\String\u;
@@ -55,7 +55,8 @@ final class RepositoriesTest extends KernelTestCase
         return array_map(function (ClassMetadata $classMetadata) {
             return [$classMetadata];
         }, array_filter($metadatas, function (ClassMetadata $className) {
-            return u($className->getName())->startsWith('App\Entity');
+            return u($className->getName())->startsWith('App\Entity')
+             || u($className->getName())->startsWith('App\Pro\Entity');
         }));
     }
 }
