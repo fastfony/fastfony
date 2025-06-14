@@ -105,7 +105,6 @@ class Dashboard extends AbstractDashboardController
 
         yield MenuItem::section('---');
         yield MenuItem::linkToRoute('menu.scheduler', 'fas fa-calendar', 'admin_scheduler_index');
-        yield MenuItem::linkToRoute('menu.messenger', 'fas fa-message', 'zenstruck_messenger_monitor_dashboard');
         yield MenuItem::linkToRoute('menu.features', 'fas fa-toggle-on', 'admin_features');
         yield MenuItem::linkToRoute('menu.settings', 'fas fa-gear', 'admin_parameters');
         yield MenuItem::linkToRoute('menu.exit', 'fas fa-door-open', 'homepage');
