@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1749887452">
-  <project timestamp="1749887452">
+<coverage generated="1749891408">
+  <project timestamp="1749891408">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -3128,9 +3128,9 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Pro/Entity/Product/Stripe/Product.php">
       <class name="App\Pro\Entity\Product\Stripe\Product" namespace="global">
-        <metrics complexity="7" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="10" elements="21" coveredelements="10"/>
+        <metrics complexity="8" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="10" elements="21" coveredelements="10"/>
       </class>
-      <line num="14" type="method" name="synchronizeWithStripe" visibility="public" complexity="5" crap="5.93" count="1"/>
+      <line num="14" type="method" name="synchronizeWithStripe" visibility="public" complexity="6" crap="7.33" count="1"/>
       <line num="16" type="stmt" count="1"/>
       <line num="17" type="stmt" count="1"/>
       <line num="18" type="stmt" count="1"/>
