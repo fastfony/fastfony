@@ -22,7 +22,7 @@ trait Product
             $productData['description'] = $this->getDescription();
         }
 
-        if (0 < $this->getMarketingFeatures()->count()) {
+        if ($this->getMarketingFeatures() && 0 < $this->getMarketingFeatures()->count()) {
             $productData['marketing_features'] = [];
             foreach ($this->getMarketingFeatures() as $marketingFeature) {
                 $productData['marketing_features'][]['name'] = $marketingFeature->getName();

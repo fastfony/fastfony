@@ -57,7 +57,7 @@ class Product
      */
     #[ORM\ManyToMany(targetEntity: MarketingFeature::class, inversedBy: 'products')]
     #[ORM\OrderBy(['name' => 'ASC'])]
-    private Collection $marketingFeatures;
+    private ?Collection $marketingFeatures = null;
 
     #[ORM\ManyToOne]
     private ?Price $defaultPrice = null;
@@ -132,7 +132,7 @@ class Product
     /**
      * @return Collection<int, MarketingFeature>
      */
-    public function getMarketingFeatures(): Collection
+    public function getMarketingFeatures(): ?Collection
     {
         return $this->marketingFeatures;
     }
