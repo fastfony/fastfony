@@ -31,8 +31,14 @@ class Install extends Command
         $envContent = [];
 
         $io->title('Welcome on Fastfony!');
-        $this->configureDatabase($io, $envContent);
-        $this->createDatabaseAndFixtures($output);
+        try {
+            $this->configureDatabase($io, $envContent);
+            $this->createDatabaseAndFixtures($output);
+        } catch (\Throwable $e) {
+            $io->error('An error occurred while configuring or creating the database: '.$e->getMessage());
+
+            return Command::FAILURE;
+        }
 
         $this->configureMailerDsn($io, $envContent);
 

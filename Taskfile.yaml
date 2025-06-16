@@ -55,10 +55,10 @@ tasks:
             - bin/console app:install --env=dev
             - bin/console doctrine:schema:update --force  --env=dev
             - bin/console assets:install
-            - rm -rf var/cache/*
             - npm run dev
             - symfony proxy:start
             - symfony server:start -d
+            - rm -rf var/cache/*
 
     stop:
         desc: Stop Docker containers, Symfony server & kill npm dev-server

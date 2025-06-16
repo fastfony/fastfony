@@ -42,7 +42,7 @@ class Price
     #[ORM\Column(nullable: true)]
     private ?int $recurringIntervalCount = null;
 
-    #[Assert\GreaterThanOrEqual(1)]
+    #[Assert\GreaterThanOrEqual(0)]
     #[ORM\Column(nullable: true)]
     private ?int $recurringTrialPeriodDays = null;
 

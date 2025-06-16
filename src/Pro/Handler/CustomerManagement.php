@@ -43,11 +43,13 @@ class CustomerManagement
             $customer->appendStripeCustomerId($stripeCustomerId);
         }
 
-        $customersNames = explode(' ', $customerDetails['name']);
-        $profile = $customer->getProfile() ?? (new Profile())->setUser($customer);
-        $profile->setFirstName($customersNames[0]);
-        if (count($customersNames) > 1) {
-            $profile->setLastName(implode(' ', array_slice($customersNames, 1)));
+        if (isset($customerDetails['name'])) {
+            $customersNames = explode(' ', $customerDetails['name']);
+            $profile = $customer->getProfile() ?? (new Profile())->setUser($customer);
+            $profile->setFirstName($customersNames[0]);
+            if (count($customersNames) > 1) {
+                $profile->setLastName(implode(' ', array_slice($customersNames, 1)));
+            }
         }
 
         return $customer;
