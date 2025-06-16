@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1750081932">
-  <project timestamp="1750081932">
+<coverage generated="1750081935">
+  <project timestamp="1750081935">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
