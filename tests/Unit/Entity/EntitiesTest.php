@@ -47,7 +47,7 @@ final class EntitiesTest extends KernelTestCase
 
         $properties = [];
         $reflectionProperties = array_filter(
-            $classMetadata->getReflectionProperties(),
+            (array) $classMetadata->getReflectionProperties()->getIterator(),
             function (\ReflectionProperty $property) use ($classMetadata) {
                 if ($property instanceof EnumReflectionProperty) {
                     return false;
