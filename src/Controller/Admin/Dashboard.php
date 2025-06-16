@@ -14,6 +14,7 @@ use App\Pro\Entity\OAuth2Server\Client;
 use App\Pro\Entity\Order;
 use App\Pro\Entity\Product\Product;
 use App\Pro\Entity\Taxonomy;
+use App\Pro\Enum\Fastfony;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -26,6 +27,8 @@ use Symfony\Component\HttpFoundation\Response;
 #[AdminDashboard(routePath: '/admin', routeName: 'admin')]
 class Dashboard extends AbstractDashboardController
 {
+    private const APP_ICON = '<img src="'.Fastfony::IconHost->value.'/admin-icon.png" alt="" />';
+
     public function __construct(
         private readonly string $appName,
         private readonly FeatureFlag $featureFlag,
@@ -40,7 +43,7 @@ class Dashboard extends AbstractDashboardController
     public function configureDashboard(): EasyAdminDashboard
     {
         return EasyAdminDashboard::new()
-            ->setTitle($this->appName)
+            ->setTitle(self::APP_ICON.$this->appName)
             ->setFaviconPath('favicon.ico')
             ->setTranslationDomain('admin')
         ;
