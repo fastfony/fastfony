@@ -32,7 +32,10 @@ class All
             $checks[$sensor] = $this->$sensor->check();
         }
 
-        $this->requestStack->getCurrentRequest()->getSession()->set('installation_checks', $checks);
+        $request = $this->requestStack->getCurrentRequest();
+        if ($request) {
+            $request->getSession()->set('installation_checks', $checks);
+        }
 
         return $checks;
     }
