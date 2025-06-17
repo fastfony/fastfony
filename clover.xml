@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1750081935">
-  <project timestamp="1750081935">
+<coverage generated="1750167755">
+  <project timestamp="1750167755">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -3447,7 +3447,7 @@
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Pro/Handler/CheckoutSessionManagement.php">
       <class name="App\Pro\Handler\CheckoutSessionManagement" namespace="global">
-        <metrics complexity="5" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="25" elements="28" coveredelements="26"/>
+        <metrics complexity="5" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="26" elements="29" coveredelements="27"/>
       </class>
       <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="22" type="stmt" count="2"/>
@@ -3471,13 +3471,14 @@
       <line num="44" type="stmt" count="1"/>
       <line num="45" type="stmt" count="1"/>
       <line num="46" type="stmt" count="1"/>
-      <line num="48" type="stmt" count="1"/>
+      <line num="47" type="stmt" count="1"/>
       <line num="49" type="stmt" count="1"/>
-      <line num="51" type="stmt" count="1"/>
-      <line num="52" type="stmt" count="0"/>
-      <line num="55" type="stmt" count="1"/>
-      <line num="59" type="stmt" count="1"/>
-      <metrics loc="62" ncloc="60" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="25" elements="28" coveredelements="26"/>
+      <line num="50" type="stmt" count="1"/>
+      <line num="52" type="stmt" count="1"/>
+      <line num="53" type="stmt" count="0"/>
+      <line num="56" type="stmt" count="1"/>
+      <line num="60" type="stmt" count="1"/>
+      <metrics loc="63" ncloc="61" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="26" elements="29" coveredelements="27"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Pro/Handler/CustomerManagement.php">
       <class name="App\Pro\Handler\CustomerManagement" namespace="global">
@@ -4147,6 +4148,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="175" loc="10214" ncloc="9644" classes="162" methods="637" coveredmethods="521" conditionals="0" coveredconditionals="0" statements="2474" coveredstatements="2191" elements="3111" coveredelements="2712"/>
+    <metrics files="175" loc="10215" ncloc="9645" classes="162" methods="637" coveredmethods="521" conditionals="0" coveredconditionals="0" statements="2475" coveredstatements="2192" elements="3112" coveredelements="2713"/>
   </project>
 </coverage>
