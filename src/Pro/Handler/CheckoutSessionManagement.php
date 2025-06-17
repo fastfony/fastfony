@@ -27,6 +27,7 @@ class CheckoutSessionManagement
     ): Session {
         $params = [
             'mode' => $price->isRecurring() ? 'subscription' : 'payment',
+            'automatic_tax' => ['enabled' => true],
             'line_items' => [
                 [
                     'price' => $price->getStripeId(),
