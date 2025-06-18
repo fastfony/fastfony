@@ -25,6 +25,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * @extends AbstractCrudController<User>
+ */
 class UserCrud extends AbstractCrudController
 {
     public function __construct(

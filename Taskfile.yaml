@@ -53,7 +53,7 @@ tasks:
             - npm run build
             - chmod -R 777 public/uploads/
             - bin/console app:install --env=dev
-            - bin/console doctrine:schema:update --force  --env=dev
+            - bin/console doctrine:schema:update --force --env=dev
             - bin/console assets:install
             - npm run dev
             - symfony proxy:start
@@ -73,7 +73,7 @@ tasks:
             - symfony run bin/phpunit
 
     coverage:
-        desc: Run tests with coverage (required Xdebug)
+        desc: Run tests with coverage (require Xdebug)
         cmds:
             - task: setup_tests
             - XDEBUG_MODE=coverage php bin/phpunit --coverage-html=docs/coverage

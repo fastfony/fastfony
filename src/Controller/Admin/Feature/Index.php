@@ -9,6 +9,7 @@ use App\Handler\FeatureFlag;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\File\Exception\CannotWriteFileException;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,7 +24,7 @@ class Index extends AbstractController
     }
 
     /**
-     * @return array<string, mixed>
+     * @return array<string, FormInterface<array<string, mixed>>>|RedirectResponse
      */
     #[Route('/admin/features', name: 'admin_features')]
     #[Template('admin/features/index.html.twig')]

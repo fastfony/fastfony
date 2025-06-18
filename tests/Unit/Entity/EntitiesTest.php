@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Tests\Unit\Entity;
 
 use App\Entity\User\User;
+use App\Pro\Entity\OAuth2Server\Client;
+use App\Pro\Entity\Scheduler\ProcessedMessage;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\Entity;
@@ -20,9 +22,9 @@ use function Symfony\Component\String\u;
  */
 final class EntitiesTest extends KernelTestCase
 {
-    private const EXCLUDED_ENTITIES = [
-        'App\Pro\Entity\OAuth2Server\Client',
-        'App\Pro\Entity\Scheduler\ProcessedMessage',
+    private const array EXCLUDED_ENTITIES = [
+        Client::class,
+        ProcessedMessage::class,
     ];
 
     #[DataProvider('getEntities')]

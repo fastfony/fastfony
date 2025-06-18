@@ -19,6 +19,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class RecordProcessorTest extends TestCase
 {
+    /**
+     * @var MockObject|ProcessorInterface<int, string>|(ProcessorInterface<int, string>&object&MockObject)|(ProcessorInterface<int, string>&MockObject)|(object&MockObject)
+     */
     private MockObject|ProcessorInterface $persistProcessor;
     private MockObject|FieldRepository $fieldRepository;
     private MockObject|RecordRepository $recordRepository;

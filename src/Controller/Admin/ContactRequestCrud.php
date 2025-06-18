@@ -17,6 +17,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
+/**
+ * @extends AbstractCrudController<ContactRequest>
+ */
 class ContactRequestCrud extends AbstractCrudController
 {
     public static function getEntityFqcn(): string

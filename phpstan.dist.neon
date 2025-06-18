@@ -1,5 +1,5 @@
 parameters:
-    level: 5
+    level: 6
     treatPhpDocTypesAsCertain: false
     paths:
         - bin/
@@ -12,6 +12,8 @@ parameters:
             identifier: nullCoalesce.offset
         -
             identifier: isset.offset
+        -
+            '#contains unresolvable type#'
 
 includes:
     - vendor/symplify/phpstan-rules/config/symfony-rules.neon
