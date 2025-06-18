@@ -15,6 +15,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * @extends AbstractCrudController<Profile>
+ */
 class ProfileCrud extends AbstractCrudController
 {
     public function __construct(

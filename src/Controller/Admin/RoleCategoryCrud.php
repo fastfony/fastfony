@@ -15,6 +15,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 
+/**
+ * @extends AbstractCrudController<RoleCategory>
+ */
 class RoleCategoryCrud extends AbstractCrudController
 {
     public function __construct(

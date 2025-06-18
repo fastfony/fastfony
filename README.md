@@ -16,7 +16,7 @@ For starting with Fastfony, you can follow the online [installation guide](https
 
 Documentation is available on [docs.fastfony.com](https://docs.fastfony.com/).
 
-- Techology stack : https://docs.fastfony.com/technology-stack
+- Technology stack : https://docs.fastfony.com/technology-stack
 - List of features : https://docs.fastfony.com/features
 - [For developers](https://docs.fastfony.com/for-developers)
 - [For admin users](https://docs.fastfony.com/for-admin-users)

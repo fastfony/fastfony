@@ -12,7 +12,10 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class PublishedPageProvider implements ProviderInterface
+/**
+ * @implements ProviderInterface<Page>
+ */
+readonly class PublishedPageProvider implements ProviderInterface
 {
     public function __construct(private EntityManagerInterface $entityManager)
     {
@@ -21,6 +24,8 @@ class PublishedPageProvider implements ProviderInterface
     /**
      * @param array<string, mixed>                                                   $uriVariables
      * @param array<string, mixed>|array{request?: Request, resource_class?: string} $context
+     *
+     * @return array<Page>
      */
     public function provide(
         Operation $operation,

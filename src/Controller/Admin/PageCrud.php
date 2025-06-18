@@ -22,6 +22,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\RouterInterface;
 
+/**
+ * @extends AbstractCrudController<Page>
+ */
 class PageCrud extends AbstractCrudController
 {
     use SeoTabFields;

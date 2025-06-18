@@ -13,13 +13,13 @@ use App\Repository\Collection\RecordRepository;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\Request;
 
-class RecordProcessor implements ProcessorInterface
+readonly class RecordProcessor implements ProcessorInterface
 {
     public function __construct(
         #[Autowire(service: 'api_platform.doctrine.orm.state.persist_processor')]
-        private readonly ProcessorInterface $persistProcessor,
-        private readonly FieldRepository $fieldRepository,
-        private readonly RecordRepository $recordRepository,
+        private ProcessorInterface $persistProcessor,
+        private FieldRepository $fieldRepository,
+        private RecordRepository $recordRepository,
     ) {
     }
 

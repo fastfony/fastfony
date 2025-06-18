@@ -18,6 +18,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * @extends AbstractCrudController<Role>
+ */
 class RoleCrud extends AbstractCrudController
 {
     public function __construct(

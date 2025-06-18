@@ -16,6 +16,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Routing\RouterInterface;
 
+/**
+ * @extends AbstractCrudController<Parameter>
+ */
 class ParameterCrud extends AbstractCrudController
 {
     public function __construct(

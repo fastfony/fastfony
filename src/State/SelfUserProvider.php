@@ -8,11 +8,15 @@ use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProviderInterface;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\User\UserInterface;
 
-class SelfUserProvider implements ProviderInterface
+/**
+ * @implements ProviderInterface<UserInterface>
+ */
+readonly class SelfUserProvider implements ProviderInterface
 {
     public function __construct(
-        private readonly Security $security,
+        private Security $security,
     ) {
     }
 
