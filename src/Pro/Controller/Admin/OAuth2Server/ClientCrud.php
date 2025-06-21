@@ -14,6 +14,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use League\Bundle\OAuth2ServerBundle\OAuth2Grants;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
+/**
+ * @extends AbstractCrudController<Client>
+ */
 class ClientCrud extends AbstractCrudController
 {
     public function __construct(

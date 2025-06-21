@@ -7,12 +7,10 @@ namespace App\Controller\Admin\Feature;
 use App\Form\FeaturesFormType;
 use App\Handler\FeatureFlag;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
-use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\File\Exception\CannotWriteFileException;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 class Index extends AbstractController
@@ -23,14 +21,10 @@ class Index extends AbstractController
     ) {
     }
 
-    /**
-     * @return array<string, FormInterface<array<string, mixed>>>|RedirectResponse
-     */
     #[Route('/admin/features', name: 'admin_features')]
-    #[Template('admin/features/index.html.twig')]
     public function __invoke(
         Request $request,
-    ): array|RedirectResponse {
+    ): Response {
         $featureFlagForm = $this->createForm(
             FeaturesFormType::class,
             ['features' => $this->featureFlag->getEnabled()]
@@ -55,8 +49,11 @@ class Index extends AbstractController
             }
         }
 
-        return [
-            'feature_flag_form' => $featureFlagForm,
-        ];
+        return $this->render(
+            'admin/features/index.html.twig',
+            [
+                'feature_flag_form' => $featureFlagForm,
+            ]
+        );
     }
 }

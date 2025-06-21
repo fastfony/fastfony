@@ -15,6 +15,7 @@ class Step2
     ) {
     }
 
+    /** @phpstan-ignore missingType.generics */
     public function do(
         FormInterface $form,
         Request $request,

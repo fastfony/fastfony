@@ -65,6 +65,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ApiProperty(security: "is_granted('ROLE_OAUTH2_PROFILE')")]
     private ?Profile $profile = null;
 
+    /**
+     * @var ArrayCollection<int, RequestPassword>
+     */
     #[ORM\OneToMany(
         targetEntity: RequestPassword::class,
         mappedBy: 'user',

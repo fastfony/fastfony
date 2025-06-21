@@ -22,11 +22,14 @@ use function Symfony\Component\String\u;
  */
 final class EntitiesTest extends KernelTestCase
 {
-    private const array EXCLUDED_ENTITIES = [
+    private const EXCLUDED_ENTITIES = [
         Client::class,
         ProcessedMessage::class,
     ];
 
+    /**
+     * @param ClassMetadata<object> $classMetadata
+     */
     #[DataProvider('getEntities')]
     public function testGettersAndSetters(ClassMetadata $classMetadata): void
     {
@@ -76,6 +79,7 @@ final class EntitiesTest extends KernelTestCase
 
                 $parameters = $reflectionMethod->getParameters();
                 $childType = $parameters[0]->getType();
+                /** @phpstan-ignore-next-line  */
                 $child = $this->createMock($childType->__toString());
 
                 $entity->$addMethod($child);
@@ -129,7 +133,7 @@ final class EntitiesTest extends KernelTestCase
     }
 
     /**
-     * @return array<int, ClassMetadata[]>
+     * @return array<int, array<int, ClassMetadata<object>>>
      */
     public static function getEntities(): array
     {

@@ -7,11 +7,9 @@ namespace App\Controller\Page;
 use App\Form\ContactRequestFormType;
 use App\Repository\ContactRequestRepository;
 use App\Repository\User\UserRepository;
-use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\FormInterface;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 class Contact extends AbstractController
@@ -22,12 +20,8 @@ class Contact extends AbstractController
     ) {
     }
 
-    /**
-     * @return array<string, FormInterface<array<string, mixed>>>|RedirectResponse
-     */
     #[Route('/contact')]
-    #[Template('pages/contact.html.twig')]
-    public function __invoke(Request $request): array|RedirectResponse
+    public function __invoke(Request $request): Response
     {
         $form = $this->createForm(ContactRequestFormType::class);
 
@@ -49,8 +43,11 @@ class Contact extends AbstractController
             return $this->redirectToRoute('homepage');
         }
 
-        return [
-            'form' => $form,
-        ];
+        return $this->render(
+            'pages/contact.html.twig',
+            [
+                'form' => $form,
+            ]
+        );
     }
 }

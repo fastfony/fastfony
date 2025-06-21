@@ -9,11 +9,15 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 
+/**
+ * @extends AbstractType<array>
+ */
 class FeaturesFormType extends AbstractType
 {
     /**
      * @param array<string, mixed> $options
      */
+    /** @phpstan-ignore missingType.iterableValue */
     public function buildForm(
         FormBuilderInterface $builder,
         array $options,

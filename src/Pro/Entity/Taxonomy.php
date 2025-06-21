@@ -77,6 +77,9 @@ class Taxonomy
     #[ORM\Column]
     private ?int $rgt = null;
 
+    /**
+     * @var ArrayCollection <int, self>
+     */
     #[ORM\OneToMany(targetEntity: self::class, mappedBy: 'parent', fetch: 'EAGER')]
     #[ORM\OrderBy(['key' => 'ASC'])]
     private Collection $children;
@@ -186,6 +189,9 @@ class Taxonomy
         return $this->parent;
     }
 
+    /**
+     * @return ArrayCollection<int, self>
+     */
     public function getChildren(): Collection
     {
         return $this->children;

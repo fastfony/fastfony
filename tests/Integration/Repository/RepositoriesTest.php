@@ -15,11 +15,14 @@ use function Symfony\Component\String\u;
 
 final class RepositoriesTest extends KernelTestCase
 {
+    /**
+     * @param ClassMetadata<object> $classMetadata
+     */
     #[DataProvider('getEntities')]
     public function testSaveFindAndRemoveMethods(ClassMetadata $classMetadata): void
     {
         $entity = $classMetadata->newInstance();
-        /** @var ServiceEntityRepository $repository */
+        /** @var ServiceEntityRepository<object> $repository */
         $repository = static::getContainer()->get(EntityManagerInterface::class)
             ->getRepository($entity::class);
 
@@ -43,7 +46,7 @@ final class RepositoriesTest extends KernelTestCase
     }
 
     /**
-     * @return array<array<int, ClassMetadata>>
+     * @return array<array<int, ClassMetadata<object>>>
      */
     public static function getEntities(): array
     {
