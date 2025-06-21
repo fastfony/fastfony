@@ -1,8 +1,8 @@
 {
   "button.reload": "Reload",
-  "check.database": "Database connection",
-  "check.internet": "Internet connection",
-  "check.mailer": "Mailer service",
+  "check.App\\HealthCheck\\Database": "Database connection",
+  "check.App\\HealthCheck\\Internet": "Internet connection",
+  "check.App\\HealthCheck\\Mailer": "Mailer service",
   "error.checks": "At least one service is unavailable.",
   "head.title": "Fastfony installation",
   "step1.button.next": "It's OK",
