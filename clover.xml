@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1750502168">
-  <project timestamp="1750502168">
+<coverage generated="1750510774">
+  <project timestamp="1750510774">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -128,26 +128,26 @@
       <class name="App\Controller\Admin\Feature\Index" namespace="global">
         <metrics complexity="6" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="14" elements="19" coveredelements="15"/>
       </class>
-      <line num="18" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="22" type="stmt" count="1"/>
-      <line num="24" type="method" name="__invoke" visibility="public" complexity="5" crap="5.16" count="1"/>
-      <line num="28" type="stmt" count="1"/>
-      <line num="29" type="stmt" count="1"/>
-      <line num="30" type="stmt" count="1"/>
-      <line num="31" type="stmt" count="1"/>
+      <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="28" type="method" name="__invoke" visibility="public" complexity="5" crap="5.16" count="1"/>
       <line num="33" type="stmt" count="1"/>
       <line num="34" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="1"/>
       <line num="36" type="stmt" count="1"/>
       <line num="38" type="stmt" count="1"/>
-      <line num="39" type="stmt" count="0"/>
-      <line num="40" type="stmt" count="0"/>
-      <line num="42" type="stmt" count="0"/>
-      <line num="45" type="stmt" count="1"/>
-      <line num="48" type="stmt" count="1"/>
-      <line num="52" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="43" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="0"/>
+      <line num="45" type="stmt" count="0"/>
+      <line num="47" type="stmt" count="0"/>
+      <line num="50" type="stmt" count="1"/>
       <line num="53" type="stmt" count="1"/>
-      <line num="54" type="stmt" count="1"/>
-      <metrics loc="57" ncloc="56" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="14" elements="19" coveredelements="15"/>
+      <line num="57" type="stmt" count="1"/>
+      <line num="58" type="stmt" count="1"/>
+      <line num="59" type="stmt" count="1"/>
+      <metrics loc="62" ncloc="58" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="14" elements="19" coveredelements="15"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Admin/GroupCrud.php">
       <class name="App\Controller\Admin\GroupCrud" namespace="global">
@@ -1911,23 +1911,23 @@
       <class name="App\HealthCheck\All" namespace="global">
         <metrics complexity="5" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="16" coveredelements="16"/>
       </class>
-      <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="23" type="stmt" count="1"/>
-      <line num="28" type="method" name="checks" visibility="public" complexity="3" crap="3" count="1"/>
-      <line num="30" type="stmt" count="1"/>
-      <line num="31" type="stmt" count="1"/>
+      <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="20" type="stmt" count="1"/>
+      <line num="25" type="method" name="checks" visibility="public" complexity="3" crap="3" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="1"/>
       <line num="32" type="stmt" count="1"/>
-      <line num="35" type="stmt" count="1"/>
-      <line num="36" type="stmt" count="1"/>
+      <line num="33" type="stmt" count="1"/>
+      <line num="34" type="stmt" count="1"/>
       <line num="37" type="stmt" count="1"/>
-      <line num="40" type="stmt" count="1"/>
-      <line num="43" type="method" name="hasPreviouslyErrors" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="40" type="method" name="hasPreviouslyErrors" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="42" type="stmt" count="1"/>
+      <line num="43" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="1"/>
       <line num="45" type="stmt" count="1"/>
       <line num="46" type="stmt" count="1"/>
-      <line num="47" type="stmt" count="1"/>
-      <line num="48" type="stmt" count="1"/>
-      <line num="49" type="stmt" count="1"/>
-      <metrics loc="52" ncloc="49" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="16" coveredelements="16"/>
+      <metrics loc="49" ncloc="43" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="16" coveredelements="16"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/HealthCheck/Database.php">
       <class name="App\HealthCheck\Database" namespace="global">
@@ -1983,6 +1983,9 @@
       <line num="38" type="stmt" count="1"/>
       <line num="39" type="stmt" count="1"/>
       <metrics loc="43" ncloc="43" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="16" coveredelements="16"/>
+    </file>
+    <file name="/home/runner/work/fastfony/fastfony/src/HealthCheck/SensorInterface.php">
+      <metrics loc="14" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Installation/Step1.php">
       <class name="App\Installation\Step1" namespace="global">
@@ -4148,6 +4151,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="175" loc="10210" ncloc="9643" classes="162" methods="637" coveredmethods="521" conditionals="0" coveredconditionals="0" statements="2475" coveredstatements="2192" elements="3112" coveredelements="2713"/>
+    <metrics files="176" loc="10226" ncloc="9653" classes="162" methods="637" coveredmethods="521" conditionals="0" coveredconditionals="0" statements="2475" coveredstatements="2192" elements="3112" coveredelements="2713"/>
   </project>
 </coverage>
