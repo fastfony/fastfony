@@ -161,6 +161,9 @@ class Record
         return $this->fields;
     }
 
+    /**
+     * @param Collection<int, RecordFieldValue> $fields
+     */
     public function setFields(Collection $fields): static
     {
         $this->fields = $fields;

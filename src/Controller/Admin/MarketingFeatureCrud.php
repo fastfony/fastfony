@@ -11,6 +11,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
+/**
+ * @extends AbstractCrudController<MarketingFeature>
+ */
 class MarketingFeatureCrud extends AbstractCrudController
 {
     public static function getEntityFqcn(): string

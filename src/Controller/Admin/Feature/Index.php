@@ -49,8 +49,11 @@ class Index extends AbstractController
             }
         }
 
-        return $this->render('admin/features/index.html.twig', [
-            'feature_flag_form' => $featureFlagForm,
-        ]);
+        return $this->render(
+            'admin/features/index.html.twig',
+            [
+                'feature_flag_form' => $featureFlagForm,
+            ]
+        );
     }
 }

@@ -21,6 +21,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use Symfony\Component\Form\Extension\Core\Type\EnumType;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * @extends AbstractCrudController<Price>
+ */
 class PriceCrud extends AbstractCrudController
 {
     public function __construct(

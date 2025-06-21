@@ -8,6 +8,9 @@ use App\Repository\Product\ProductLogEntryRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Loggable\Entity\MappedSuperclass\AbstractLogEntry;
 
+/**
+ * @extends AbstractLogEntry<Product>
+ */
 #[ORM\Entity(repositoryClass: ProductLogEntryRepository::class)]
 class ProductLogEntry extends AbstractLogEntry
 {
