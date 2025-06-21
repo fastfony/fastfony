@@ -9,7 +9,7 @@ use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 
-class Mailer
+class Mailer implements SensorInterface
 {
     public function __construct(
         private MailerInterface $mailer,

@@ -4,21 +4,18 @@ declare(strict_types=1);
 
 namespace App\HealthCheck;
 
+use Symfony\Component\DependencyInjection\Attribute\AutowireIterator;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 class All
 {
-    public const SENSORS = [
-        'internet',
-        'database',
-        'mailer',
-    ];
-
+    /**
+     * @param iterable<SensorInterface> $sensors
+     */
     public function __construct(
         private RequestStack $requestStack,
-        private Internet $internet,
-        private Database $database,
-        private Mailer $mailer,
+        #[AutowireIterator(tag: 'app.healthcheck.sensor')]
+        private iterable $sensors,
     ) {
     }
 
@@ -28,8 +25,8 @@ class All
     public function checks(): array
     {
         $checks = [];
-        foreach (self::SENSORS as $sensor) {
-            $checks[$sensor] = $this->$sensor->check();
+        foreach ($this->sensors as $sensor) {
+            $checks[get_class($sensor)] = $sensor->check();
         }
 
         $request = $this->requestStack->getCurrentRequest();
