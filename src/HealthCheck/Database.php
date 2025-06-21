@@ -7,7 +7,7 @@ namespace App\HealthCheck;
 use App\Repository\Parameter\ParameterRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
-class Database
+class Database implements SensorInterface
 {
     public function __construct(
         private EntityManagerInterface $entityManager,
