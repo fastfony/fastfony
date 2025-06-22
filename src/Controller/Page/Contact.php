@@ -47,7 +47,7 @@ class Contact extends AbstractController
             'pages/contact.html.twig',
             [
                 'form' => $form,
-            ]
+            ],
         );
     }
 }
