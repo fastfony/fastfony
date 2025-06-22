@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Repository\Parameter\ParameterRepository;
-use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 class Maintenance extends AbstractController
@@ -17,12 +16,8 @@ class Maintenance extends AbstractController
     ) {
     }
 
-    /**
-     * @return array<string, mixed>
-     */
     #[Route('/maintenance', name: 'maintenance', methods: ['GET'])]
-    #[Template('maintenance.html.twig')]
-    public function __invoke(): array|RedirectResponse
+    public function __invoke(): Response
     {
         if (!$this->isGranted('ROLE_ADMIN')) {
             $maintenanceMode = $this->parameterRepository->findOneBy(['key' => 'FASTFONY_MAINTENANCE_MODE']);
@@ -31,6 +26,6 @@ class Maintenance extends AbstractController
             }
         }
 
-        return [];
+        return $this->render('maintenance.html.twig');
     }
 }

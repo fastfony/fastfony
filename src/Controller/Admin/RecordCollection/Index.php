@@ -4,19 +4,15 @@ declare(strict_types=1);
 
 namespace App\Controller\Admin\RecordCollection;
 
-use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 class Index extends AbstractController
 {
-    /**
-     * @return array<string, mixed>
-     */
     #[Route('/admin/collection', name: 'admin_record_collection_index')]
-    #[Template('admin/record_collection/index.html.twig')]
-    public function __invoke(): array
+    public function __invoke(): Response
     {
-        return [];
+        return $this->render('admin/record_collection/index.html.twig');
     }
 }

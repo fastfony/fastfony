@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Controller\Admin\Scheduler;
 
-use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\Attribute\AutowireIterator;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Scheduler\RecurringMessage;
 use Symfony\Component\Scheduler\ScheduleProviderInterface;
@@ -22,12 +22,8 @@ class Index extends AbstractController
     ) {
     }
 
-    /**
-     * @return array<string, mixed>
-     */
     #[Route('/admin/scheduler', name: 'admin_scheduler_index')]
-    #[Template('admin/scheduler/index.html.twig')]
-    public function __invoke(): array
+    public function __invoke(): Response
     {
         $scheduleMessages = [];
         /** @var ScheduleProviderInterface $schedule */
@@ -46,8 +42,11 @@ class Index extends AbstractController
             }
         }
 
-        return [
-            'schedule_messages' => $scheduleMessages,
-        ];
+        return $this->render(
+            'admin/scheduler/index.html.twig',
+            [
+                'schedule_messages' => $scheduleMessages,
+            ],
+        );
     }
 }
