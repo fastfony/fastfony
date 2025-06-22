@@ -33,7 +33,7 @@ jobs:
               uses: arduino/setup-task@v2
               with:
                   version: 3.x
-            
+
             - name: Copy file .env.local.dist
               run: cp .env.local.dist .env.local && chmod +w .env.local
 
@@ -54,8 +54,8 @@ jobs:
 
             - name: Run PHPUnit with coverage
               run: task coverage
-            
-            - name: Make code coverage badge  
+
+            - name: Make code coverage badge
               if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
               uses: timkrase/phpunit-coverage-badge@v1.2.1
               with:

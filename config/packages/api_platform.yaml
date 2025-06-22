@@ -21,4 +21,3 @@ api_platform:
         paths:
             - '%kernel.project_dir%/src/ApiResource'
             - '%kernel.project_dir%/src/Entity'
-            - '%kernel.project_dir%/src/Pro/Entity'

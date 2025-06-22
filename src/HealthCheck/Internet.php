@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\HealthCheck;
 
-class Internet implements SensorInterface
+class Internet implements Sensor
 {
     public function __construct(
         private string $domain1 = 'google.com',

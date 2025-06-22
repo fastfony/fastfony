@@ -24,12 +24,6 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Entity'
                 prefix: 'App\Entity'
                 alias: App
-            Pro:
-                type: attribute
-                is_bundle: false
-                dir: '%kernel.project_dir%/src/Pro/Entity'
-                prefix: 'App\Pro\Entity'
-                alias: App
             gedmo_loggable:
                 type: attribute
                 prefix: Gedmo\Loggable\Entity

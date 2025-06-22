@@ -1,4 +1,4 @@
 zenstruck_messenger_monitor:
     storage:
         orm:
-            entity_class: App\Pro\Entity\Scheduler\ProcessedMessage
+            entity_class: App\Entity\Scheduler\ProcessedMessage

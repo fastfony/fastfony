@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\DataFixtures;
 
-use App\Pro\Entity\Collection\Field;
-use App\Pro\Entity\Collection\Record;
-use App\Pro\Entity\Collection\RecordCollection;
-use App\Pro\Entity\Collection\RecordFieldValue;
+use App\Entity\Collection\Field;
+use App\Entity\Collection\Record;
+use App\Entity\Collection\RecordCollection;
+use App\Entity\Collection\RecordFieldValue;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;

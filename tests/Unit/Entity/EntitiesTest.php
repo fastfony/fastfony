@@ -21,8 +21,8 @@ use function Symfony\Component\String\u;
 final class EntitiesTest extends KernelTestCase
 {
     private const EXCLUDED_ENTITIES = [
-        'App\Pro\Entity\OAuth2Server\Client',
-        'App\Pro\Entity\Scheduler\ProcessedMessage',
+        'App\Entity\OAuth2Server\Client',
+        'App\Entity\Scheduler\ProcessedMessage',
     ];
 
     #[DataProvider('getEntities')]
@@ -139,8 +139,7 @@ final class EntitiesTest extends KernelTestCase
         return array_map(function (ClassMetadata $classMetadata) {
             return [$classMetadata];
         }, array_filter($metadatas, function (ClassMetadata $className) {
-            return u($className->getName())->startsWith('App\Entity')
-                || u($className->getName())->startsWith('App\Pro\Entity');
+            return u($className->getName())->startsWith('App\Entity');
         }));
     }
 

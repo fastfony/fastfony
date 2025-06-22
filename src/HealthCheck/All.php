@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class All
 {
     /**
-     * @param iterable<SensorInterface> $sensors
+     * @param iterable<Sensor> $sensors
      */
     public function __construct(
         private RequestStack $requestStack,
@@ -26,7 +26,7 @@ class All
     {
         $checks = [];
         foreach ($this->sensors as $sensor) {
-            $checks[get_class($sensor)] = $sensor->check();
+            $checks[$sensor::class] = $sensor->check();
         }
 
         $request = $this->requestStack->getCurrentRequest();

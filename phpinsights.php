@@ -51,7 +51,6 @@ return [
 
     'exclude' => [
         'src/DataFixtures',
-        'src/Pro/DataFixtures',
     ],
 
     'add' => [

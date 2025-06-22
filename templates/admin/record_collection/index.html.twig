@@ -1,0 +1,13 @@
+{% extends '@EasyAdmin/layout.html.twig' %}
+
+{% trans_default_domain 'admin' %}
+
+{% block content_title %}{% endblock %}
+
+{% block content %}
+    <article class="container-fluid">
+        <section class="content-body">
+            <div {{ vue_component('Admin/RecordCollection/Index') }}></div>
+        </section>
+    </article>
+{% endblock %}
