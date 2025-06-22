@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Controller\Product\Buy;
 
 use App\Entity\Product\Price;
-use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
