@@ -27,7 +27,7 @@
     "webpack-dev-server": "^5.2.1",
     "webpack-notifier": "^1.15.0"
   },
-  "license": "MIT",
+  "license": "Apache-2.0 WITH Commons-Clause",
   "private": true,
   "scripts": {
     "dev-server": "encore dev-server",

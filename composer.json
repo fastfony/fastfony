@@ -1,7 +1,7 @@
 {
     "type": "project",
     "name": "fastfony/fastfony",
-    "license": "MIT",
+    "license": "Apache-2.0 WITH Commons-Clause",
     "authors": [
         {
             "name": "Minuit 11",
@@ -17,15 +17,15 @@
         "ext-intl": "*",
         "ext-openssl": "*",
         "ext-pdo_sqlite": "*",
-        "api-platform/doctrine-orm": "^4.1.16",
-        "api-platform/symfony": "^4.1.16",
-        "aws/aws-sdk-php": "^3.344.6",
+        "api-platform/doctrine-orm": "^4.1.17",
+        "api-platform/symfony": "^4.1.17",
+        "aws/aws-sdk-php": "^3.346.2",
         "doctrine/dbal": "^3.9.5",
-        "doctrine/doctrine-bundle": "^2.14.1",
+        "doctrine/doctrine-bundle": "^2.15.0",
         "doctrine/doctrine-fixtures-bundle": "^4.1",
         "doctrine/doctrine-migrations-bundle": "^3.4.2",
-        "doctrine/orm": "^3.4.0",
-        "easycorp/easyadmin-bundle": "^4.24.8",
+        "doctrine/orm": "^3.4.1",
+        "easycorp/easyadmin-bundle": "^4.24.9",
         "fastfony/license-bundle": "dev-main",
         "knpuniversity/oauth2-client-bundle": "^2.18.3",
         "league/commonmark": "^2.7.0",
@@ -143,7 +143,7 @@
         "phpstan/extension-installer": "^1.4.3",
         "phpstan/phpstan": "^2.1.17",
         "phpstan/phpstan-symfony": "^2.0.6",
-        "phpunit/phpunit": "^10.5.46",
+        "phpunit/phpunit": "^10.5.47",
         "symfony/browser-kit": "7.3.*",
         "symfony/css-selector": "7.3.*",
         "symfony/debug-bundle": "7.3.*",
@@ -152,6 +152,6 @@
         "symfony/stopwatch": "7.3.*",
         "symfony/web-profiler-bundle": "7.3.*",
         "symplify/phpstan-rules": "^14.6.9",
-        "vincentlanglet/twig-cs-fixer": "^3.7.1"
+        "vincentlanglet/twig-cs-fixer": "^3.8.1"
     }
 }
