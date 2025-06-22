@@ -65,7 +65,9 @@ The Conventional Commits specification is a lightweight convention on top of com
 
 ## License
 
-Fastfony is an open source project licensed under the [MIT license](https://opensource.org/licenses/MIT), expect all content that resides under any "pro/" or "Pro/" directory of this repository, if such directories exists, are licensed under the license defined in "pro/LICENSE" or "Pro/LICENSE".
+Fastfony is an available source project licensed under the Apache-2.0 WITH Commons-Clause.
+
+Fastfony is free for non-commercial use, but if you want to use it for professional or commercial purposes, you must [purchase a license](https://fastfony.com/products).
 
 ## Special thanks
 
