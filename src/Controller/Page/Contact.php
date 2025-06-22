@@ -35,7 +35,7 @@ class Contact extends AbstractController
 
             $contactRequest->setUser($user);
 
-            // An event listener postPersit will send the email
+            // An event listener postPersist will send the email
             $this->contactRequestRepository->save($form->getData());
 
             $this->addFlash('success', 'flash.contact.success');
@@ -47,7 +47,7 @@ class Contact extends AbstractController
             'pages/contact.html.twig',
             [
                 'form' => $form,
-            ]
+            ],
         );
     }
 }
