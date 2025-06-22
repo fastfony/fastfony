@@ -47,8 +47,8 @@ security:
                     - cookies
                     - storage
             custom_authenticators:
-                - App\Pro\Security\OAuthClient\GithubAuthenticator
-                - App\Pro\Security\OAuthClient\GoogleAuthenticator
+                - App\Security\OAuthClient\GithubAuthenticator
+                - App\Security\OAuthClient\GoogleAuthenticator
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall

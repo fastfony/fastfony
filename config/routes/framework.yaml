@@ -1,7 +1,3 @@
-pro_controllers:
-    resource: '../../src/Pro/Controller/'
-    type: attribute
-
 when@dev:
     _errors:
         resource: '@FrameworkBundle/Resources/config/routing/errors.php'

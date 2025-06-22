@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Entity\User;
 
 use App\Entity\CommonProperties;
-use App\Pro\Repository\RequestPasswordRepository;
+use App\Repository\RequestPasswordRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Uid\Uuid;
 

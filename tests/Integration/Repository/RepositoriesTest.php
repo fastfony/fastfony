@@ -55,8 +55,7 @@ final class RepositoriesTest extends KernelTestCase
         return array_map(function (ClassMetadata $classMetadata) {
             return [$classMetadata];
         }, array_filter($metadatas, function (ClassMetadata $className) {
-            return u($className->getName())->startsWith('App\Entity')
-             || u($className->getName())->startsWith('App\Pro\Entity');
+            return u($className->getName())->startsWith('App\Entity');
         }));
     }
 }
