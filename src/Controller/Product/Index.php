@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Controller\Product;
 
 use App\Repository\Product\ProductRepository;
-use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 class Index extends AbstractController
@@ -16,19 +16,18 @@ class Index extends AbstractController
     ) {
     }
 
-    /**
-     * @return array<string, mixed>
-     */
     #[Route(
         '/products',
         name: 'product_index',
         methods: ['GET'],
     )]
-    #[Template('product/index.html.twig')]
-    public function __invoke(): array
+    public function __invoke(): Response
     {
-        return [
-            'products' => $this->productRepository->findBy(['enabled' => true], ['name' => 'ASC']),
-        ];
+        return $this->render(
+            'product/index.html.twig',
+            [
+                'products' => $this->productRepository->findBy(['enabled' => true], ['name' => 'ASC']),
+            ],
+        );
     }
 }

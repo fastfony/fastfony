@@ -6,11 +6,10 @@ namespace App\Controller\Product\Buy;
 
 use App\Entity\Product\Price;
 use App\Event\BuySuccess;
-use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 class Success extends AbstractController
@@ -20,15 +19,11 @@ class Success extends AbstractController
     ) {
     }
 
-    /**
-     * @return array<string, mixed>|RedirectResponse
-     */
     #[Route('/product/buy/{id}/success', name: 'product_buy_success')]
-    #[Template('product/buy/success.html.twig')]
     public function __invoke(
         Price $price,
         Request $request,
-    ): array|RedirectResponse {
+    ): Response {
         if (null === $request->query->get('session_id')) {
             return $this->redirectToRoute('product_buy_cancel', ['id' => $price->getId()]);
         }
@@ -43,6 +38,6 @@ class Success extends AbstractController
 
         $this->addFlash('success', 'flash.product.buy.success');
 
-        return [];
+        return $this->render('product/buy/success.html.twig');
     }
 }
