@@ -30,7 +30,7 @@ declare(strict_types=1);
 
 namespace App\Controller\Security\OAuthClient\Provider;
 
-use App\Pro\Controller\Security\OAuthClient\AbstractCheck;use Symfony\Component\Routing\Attribute\Route;
+use App\Controller\Security\OAuthClient\AbstractCheck;use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/connect/provider/check', name: 'connect_provider_check')]
 class Check extends AbstractCheck
@@ -45,7 +45,7 @@ declare(strict_types=1);
 
 namespace App\Controller\Security\OAuthClient\Provider;
 
-use App\Pro\Controller\Security\OAuthClient\AbstractConnect;use Symfony\Component\HttpFoundation\RedirectResponse;use Symfony\Component\Routing\Attribute\Route;
+use App\Controller\Security\OAuthClient\AbstractConnect;use Symfony\Component\HttpFoundation\RedirectResponse;use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/connect/provider', name: 'connect_provider', methods: ['GET'])]
 class Connect extends AbstractConnect

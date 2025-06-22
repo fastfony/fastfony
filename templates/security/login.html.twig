@@ -1,0 +1,55 @@
+{% extends 'security/layout.html.twig' %}
+
+{% block main %}
+    {{ include('security/_company_icon.html.twig') }}
+
+    <h2 class="mt-4 text-2xl/9 font-bold tracking-tight">{{ 'login.title'|trans }}</h2>
+
+    {% if feature_enabled('registration') %}
+        <p class="mt-4 text-sm/6">
+            {{ 'login.no_account'|trans }}
+            <a href="{{ path('register') }}" class="link link-hover link-accent">
+                {{ 'login.create_account'|trans }}
+            </a>
+        </p>
+    {% endif %}
+
+    <form action="{{ path('login') }}" method="post" class="space-y-6 mt-4">
+        {% if error is not null %}
+            <div class="pb-3 text-sm text-error">
+                {{ error.message|trans({}, 'validators') }}
+            </div>
+        {% endif %}
+
+        <div class="mt-2">
+            <label class="floating-label">
+                <span>{{ 'label.email'|trans }}</span>
+                <input type="email" class="input w-full" tabindex="1" required id="username" name="_username" value="{{ last_username }}">
+            </label>
+        </div>
+
+        <div>
+            <div class="mt-2">
+                <label class="floating-label">
+                    <span>{{ 'label.password'|trans }}</span>
+                    <input type="password" class="input w-full" tabindex="2" required id="password" name="_password">
+                </label>
+            </div>
+        </div>
+
+        <p class="mt-4 text-sm/6 text-end">
+            <a href="{{ path('forgot_password') }}" class="link link-hover">
+                {{ 'login.forgot_password'|trans }}
+            </a>
+        </p>
+
+        <div class="mb-4">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('login') }}">
+            <button type="submit" class="btn btn-primary w-full">
+                {{ 'login.button'|trans }}
+            </button>
+        </div>
+    </form>
+
+    {{ include('security/_oauth_clients.html.twig') }}
+{% endblock %}

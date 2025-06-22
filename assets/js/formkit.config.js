@@ -1,6 +1,6 @@
 import { en } from '@formkit/i18n';
 import { createInput } from '@formkit/vue';
-import RichTextEditor from '../vue/components/Pro/RichTextEditor.vue';
+import RichTextEditor from '../vue/components/RichTextEditor.vue';
 
 const config = {
   locales: { en },

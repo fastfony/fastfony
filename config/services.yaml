@@ -26,7 +26,6 @@ services:
         exclude:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
-            - '../src/Pro/Entity/'
             - '../src/Kernel.php'
 
     App\DataCollector\Fastfony:
@@ -40,7 +39,7 @@ services:
         arguments:
             $features: '%env(json:FEATURE_FLAGS)%'
 
-    App\Pro\Controller\Security\OAuthServer\Jwks:
+    App\Controller\Security\OAuthServer\Jwks:
         arguments:
             $oauthServerPublicKeyPath: '%env(resolve:OAUTH_PUBLIC_KEY)%'
 

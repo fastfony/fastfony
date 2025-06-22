@@ -11,7 +11,7 @@ league_oauth2_server:
         available: ['email', 'roles', 'profile']
         default: ['email', 'roles', 'profile']
     client:
-        classname: App\Pro\Entity\OAuth2Server\Client
+        classname: App\Entity\OAuth2Server\Client
     persistence:
         doctrine:
             entity_manager: default
