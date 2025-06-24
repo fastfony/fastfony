@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1750621085">
-  <project timestamp="1750621085">
+<coverage generated="1750782116">
+  <project timestamp="1750782116">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -2132,8 +2132,8 @@
       <line num="188" type="method" name="setSlug" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="190" type="stmt" count="0"/>
       <line num="192" type="stmt" count="0"/>
-      <line num="195" type="method" name="isHomepage" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="197" type="stmt" count="3"/>
+      <line num="195" type="method" name="isHomepage" visibility="public" complexity="1" crap="1" count="10"/>
+      <line num="197" type="stmt" count="10"/>
       <line num="200" type="method" name="setHomepage" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="202" type="stmt" count="2"/>
       <line num="204" type="stmt" count="2"/>
