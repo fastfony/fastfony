@@ -3,6 +3,7 @@
 {% block title %}{{ page.title }}{% endblock %}
 
 {% block meta %}
+    <link rel="canonical" href="{{ page.homepage ? url('homepage') : url('page_show', {slug: page.slug}) }}" />
     {% if page.metaTitle %}<meta name="title" content="{{ page.metaTitle }}">{% endif %}
     {% if page.metaDescription %}<meta name="description" content="{{ page.metaDescription }}">{% endif %}
 {% endblock %}
