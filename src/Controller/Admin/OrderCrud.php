@@ -23,6 +23,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Form\Extension\Core\Type\EnumType;
 
+/**
+ * @extends AbstractCrudController<Order>
+ */
 class OrderCrud extends AbstractCrudController
 {
     public static function getEntityFqcn(): string

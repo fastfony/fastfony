@@ -17,6 +17,9 @@ use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
+/**
+ * @extends AbstractType<array>
+ */
 class InstallationFormType extends AbstractType
 {
     public function __construct(
@@ -28,6 +31,7 @@ class InstallationFormType extends AbstractType
     /**
      * @param array<string, mixed> $options
      */
+    /** @phpstan-ignore missingType.iterableValue */
     public function buildForm(
         FormBuilderInterface $builder,
         array $options,

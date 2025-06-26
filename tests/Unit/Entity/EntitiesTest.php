@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Tests\Unit\Entity;
 
+use App\Entity\OAuth2Server\Client;
+use App\Entity\Scheduler\ProcessedMessage;
 use App\Entity\User\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\ClassMetadata;
@@ -21,10 +23,13 @@ use function Symfony\Component\String\u;
 final class EntitiesTest extends KernelTestCase
 {
     private const EXCLUDED_ENTITIES = [
-        'App\Entity\OAuth2Server\Client',
-        'App\Entity\Scheduler\ProcessedMessage',
+        Client::class,
+        ProcessedMessage::class,
     ];
 
+    /**
+     * @param ClassMetadata<object> $classMetadata
+     */
     #[DataProvider('getEntities')]
     public function testGettersAndSetters(ClassMetadata $classMetadata): void
     {
@@ -74,6 +79,7 @@ final class EntitiesTest extends KernelTestCase
 
                 $parameters = $reflectionMethod->getParameters();
                 $childType = $parameters[0]->getType();
+                /** @phpstan-ignore-next-line  */
                 $child = $this->createMock($childType->__toString());
 
                 $entity->$addMethod($child);
@@ -127,7 +133,7 @@ final class EntitiesTest extends KernelTestCase
     }
 
     /**
-     * @return array<int, ClassMetadata[]>
+     * @return array<int, array<int, ClassMetadata<object>>>
      */
     public static function getEntities(): array
     {

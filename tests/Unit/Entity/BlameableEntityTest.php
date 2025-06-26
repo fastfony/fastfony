@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class BlameableEntityTest extends TestCase
 {
-    private $entity;
+    private object $entity;
 
     protected function setUp(): void
     {

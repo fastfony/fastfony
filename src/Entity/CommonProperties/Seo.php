@@ -57,6 +57,9 @@ trait Seo
         return $this->richSnippets;
     }
 
+    /**
+     * @param array<string, string>|null $richSnippets
+     */
     public function setRichSnippets(?array $richSnippets): static
     {
         $this->richSnippets = $richSnippets;

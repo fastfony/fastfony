@@ -13,6 +13,9 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * @implements ProviderInterface<Record>
+ */
 class PublishedRecordProvider implements ProviderInterface
 {
     public function __construct(private EntityManagerInterface $entityManager)
@@ -22,6 +25,8 @@ class PublishedRecordProvider implements ProviderInterface
     /**
      * @param array<string, mixed>                                                   $uriVariables
      * @param array<string, mixed>|array{request?: Request, resource_class?: string} $context
+     *
+     * @return Record|array<Record>
      */
     public function provide(
         Operation $operation,

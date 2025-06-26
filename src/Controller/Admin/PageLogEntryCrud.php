@@ -26,6 +26,9 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * @extends AbstractCrudController<PageLogEntry>
+ */
 class PageLogEntryCrud extends AbstractCrudController
 {
     public function __construct(
