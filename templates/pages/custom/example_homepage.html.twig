@@ -12,15 +12,38 @@
                 {{ 'Pragmatic boilerplate and starter-kit for fastly develop 🏎️  with Symfony
                 or for launch your Saas project 🚀'|trans }}
             </p>
-            <a href="https://docs.fastfony.com" target="_blank" class="btn btn-primary">
-                {{ 'Get Started'|trans }}
+            <a href="https://docs.fastfony.com" target="_blank" class="btn btn-outline-primary">
+                {{ 'Read docs'|trans }}
+            </a>
+            <a href="/admin" class="btn btn-primary">
+                {{ 'Go to Admin Dashboard'|trans }}
             </a>
         </div>
     </div>
 </div>
 
-<div class="w-full flex flex-col lg:flex-row gap-16 my-16">
-    <div class="flex-grow-1">
+<div class="w-full flex flex-col gap-16 my-16">
+    <div class="mx-3">
+        <h2 class="text-2xl font-semibold my-8 text-primary">
+            {{ 'Features available and customizable'|trans }}
+        </h2>
+        <div class="join join-vertical bg-base-100 w-full">
+            {% if collections['features'] is defined %}
+                {% for feature in collections['features'] %}
+                    <div class="collapse collapse-arrow join-item border-base-300 border">
+                        <input type="radio" name="features-accordion" {% if loop.first %}checked="checked"{% endif %} />
+                        <h3 class="collapse-title font-semibold text-xl">
+                            <i class="{{ feature.presentableArrayFields['icon'] }} me-2"></i>
+                            {{ feature.presentableArrayFields['title'] }}
+                        </h3>
+                        <div class="collapse-content">{{ feature.presentableArrayFields['description']|nl2br }}</div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="mx-3">
         <h2 class="text-2xl font-semibold my-8 text-primary">
             {{ 'What you can build with Fastfony'|trans }}
         </h2>
@@ -36,41 +59,13 @@
                         <i class="{{ use_case.presentableArrayFields['icon'] }} text-4xl"></i>
                         <h3 class="text-2xl font-semibold">
                             {{ use_case.presentableArrayFields['title'] }}
-                            {% if use_case.presentableArrayFields['pro'] %}
-                                <div class="ms-2 badge badge-dash badge-warning badge-sm">PRO</div>
-                            {% endif %}
                         </h3>
                         <p class="list-col-wrap">
-                            {{ use_case.presentableArrayFields['description'] }}
+                            {{ use_case.presentableArrayFields['description']|nl2br }}
                         </p>
                     </li>
                 {% endfor %}
             {% endif %}
-
         </ul>
-    </div>
-
-    <div class="flex-grow-0">
-        <h2 class="text-2xl font-semibold my-8 text-primary">
-            {{ 'Features available and customizable'|trans }}
-        </h2>
-        <div class="join join-vertical bg-base-100 w-full">
-            {% if collections['features'] is defined %}
-                {% for feature in collections['features'] %}
-                    <div class="collapse collapse-arrow join-item border-base-300 border">
-                        <input type="radio" name="features-accordion" {% if loop.first %}checked="checked"{% endif %} />
-                        <h3 class="collapse-title font-semibold text-xl">
-                            <i class="{{ feature.presentableArrayFields['icon'] }} me-2"></i>
-                            {{ feature.presentableArrayFields['title'] }}
-
-                            {% if feature.presentableArrayFields['pro'] %}
-                                <div class="ms-2 badge badge-dash badge-warning badge-sm">PRO</div>
-                            {% endif %}
-                        </h3>
-                        <div class="collapse-content text-sm">{{ feature.presentableArrayFields['description'] }}</div>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        </div>
     </div>
 </div>
