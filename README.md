@@ -23,19 +23,21 @@ Documentation is available on [docs.fastfony.com](https://docs.fastfony.com/).
 
 ## Start & stop
 
-- Start : just run `task start`
-- Stop : just run `task stop`
+- Start : just run `make start` or `task start` (with Taskfile installed)
+- Stop : just run `make stop` or `task stop`
 
-Thanks to Taskfile!
+## Execute tests without coverage
 
-## Execute tests
+- Run `make tests` or `task tests`
 
-- Run `task tests` or `task coverage`
+## Execute tests with coverage
+
+- Run `make coverage` or `task coverage`
 
 ## Execute analytics
 
-- Run `task phpstan` for PHPStan
-- Run `task phpinsights` for PHPInsights
+- Run `make phpstan` or `task phpstan` for PHPStan
+- Run `make phpinsights` or `task phpinsights` for PHPInsights
 
 # Updating Your Project
 
