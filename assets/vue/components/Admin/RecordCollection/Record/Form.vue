@@ -58,6 +58,8 @@ function getFormKitType(type) {
   switch (type) {
     case 'plainText':
       return 'text';
+    case 'plainTextarea':
+      return 'textarea';
     case 'richEditor':
       return 'richTextEditor';
     case 'number':

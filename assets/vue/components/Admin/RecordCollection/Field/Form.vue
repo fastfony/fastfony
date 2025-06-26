@@ -62,6 +62,7 @@ const isNew = computed(() => {
         input-class="form-control form-control-sm"
         :options="[
           { value: 'plainText', label: $t('Plain Text') },
+          { value: 'plainTextarea', label: $t('Plain Textarea') },
           { value: 'richEditor', label: $t('Rich Editor') },
           { value: 'number', label: $t('Number') },
           { value: 'boolean', label: $t('Boolean') },
