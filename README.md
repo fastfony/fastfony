@@ -28,7 +28,7 @@ Documentation is available on [docs.fastfony.com](https://docs.fastfony.com/).
 
 ## Execute tests without coverage
 
-- Run `make tests` or `tast tests`
+- Run `make tests` or `task tests`
 
 ## Execute tests with coverage
 

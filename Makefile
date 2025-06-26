@@ -1,4 +1,4 @@
-.PHONY: fixtures oauth2-server-init vendor node_modules setup_tests start stop tests coverage phpstan phpinsights
+.PHONY: fixtures oauth2-server-init vendor node_modules setup_tests start stop tests coverage phpstan phpinsights help
 
 fixtures: ## Generate fixtures for dev environment
 	$(MAKE) vendor
