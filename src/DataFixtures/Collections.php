@@ -12,7 +12,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 
-/* This class is a Pro feature and should be moved to the Pro namespace. */
 class Collections extends Fixture implements FixtureGroupInterface
 {
     public function load(ObjectManager $manager): void
@@ -49,20 +48,14 @@ class Collections extends Fixture implements FixtureGroupInterface
             ->setName('icon')
             ->setType('plainText');
 
-        $proField = (new Field())
-            ->setName('pro')
-            ->setType('boolean');
-
         $this->addReference('title-field', $titleField);
         $this->addReference('description-field', $descriptionField);
         $this->addReference('icon-field', $iconField);
-        $this->addReference('pro-field', $proField);
 
         $featureCollection
             ->addField($titleField)
             ->addField($descriptionField)
-            ->addField($iconField)
-            ->addField($proField);
+            ->addField($iconField);
 
         $manager->persist($featureCollection);
         $this->addReference(
@@ -71,131 +64,35 @@ class Collections extends Fixture implements FixtureGroupInterface
         );
 
         $records = [
-            'simple_pages' => [
-                'title' => 'Simple SEO-Friendly Pages',
-                'description' => 'Create clean HTML or Twig pages with built-in SEO, in both front and backoffice.',
+            'content_management' => [
+                'title' => 'Content Management',
+                'description' => "• Simple SEO-Friendly Pages: Create HTML or Twig pages with built-in SEO\n• Collections & Records: Structure your data with flexible collections\n• Taxonomies & Tags: Organize your content for easy filtering\n• Edit in place: Modify content directly from the front-end",
                 'icon' => 'fas fa-file-code',
-                'pro' => false,
             ],
-            'collections_records' => [
-                'title' => 'Collections & Records',
-                'description' => 'Build structured data with flexible collections and custom records.',
-                'icon' => 'fas fa-database',
-                'pro' => true,
-            ],
-            'taxonomies' => [
-                'title' => 'Taxonomies & Tags',
-                'description' => 'Organize your content with taxonomies and tags for easy filtering.',
-                'icon' => 'fas fa-folder-tree',
-                'pro' => true,
-            ],
-            'email_login_link' => [
-                'title' => 'Magic Link Login',
-                'description' => 'Let users register and log in via secure login links sent by email.',
-                'icon' => 'fas fa-envelope-open-text',
-                'pro' => false,
-            ],
-            'contact_form' => [
-                'title' => 'Contact Form Ready',
-                'description' => 'Easily collect user inquiries with a contact form.',
-                'icon' => 'fas fa-paper-plane',
-                'pro' => false,
-            ],
-            'user_management' => [
-                'title' => 'Full User Management',
-                'description' => 'Manage users, profiles, roles, groups and security out of the box.',
+            'user_authentication' => [
+                'title' => 'Authentication & User Management',
+                'description' => "• Magic Link Login: Login via secure links sent by email\n• Full User Management: Manage users, profiles and roles\n• Multiple Auth Methods: Email, password or OAuth with Google and GitHub\n• Profile with Avatar: Add profile pictures with local or S3 storage\n• Permissions Matrix: Control access with an intuitive permissions system\n• Password Reset Flow: Allow users to reset their password",
                 'icon' => 'fas fa-users-cog',
-                'pro' => false,
             ],
-            'auth_methods' => [
-                'title' => 'Multiple Auth Methods',
-                'description' => 'Email, password or OAuth login with Google & GitHub pre-integrated.',
-                'icon' => 'fas fa-unlock-alt',
-                'pro' => true,
+            'e_commerce' => [
+                'title' => 'E-Commerce & Payments',
+                'description' => "• Product Management: Manage products with front & back views, connected to Stripe\n• Stripe Payments: Sell one-time or recurring products with Stripe integration\n• Contact Form Ready: Easily collect user requests",
+                'icon' => 'fas fa-shopping-cart',
             ],
-            'profile_upload' => [
-                'title' => 'Profile with Avatar',
-                'description' => 'Add user profile pictures with local or S3 storage via VichUploader.',
-                'icon' => 'fas fa-user-circle',
-                'pro' => false,
-            ],
-            'permissions_matrix' => [
-                'title' => 'Permissions Matrix',
-                'description' => 'Control user access with a detailed and intuitive permissions system.',
-                'icon' => 'fas fa-lock',
-                'pro' => true,
-            ],
-            'reset_password' => [
-                'title' => 'Password Reset Flow',
-                'description' => 'Allow users to securely reset their password via email.',
-                'icon' => 'fas fa-key',
-                'pro' => true,
-            ],
-            'product_management' => [
-                'title' => 'Product Management',
-                'description' => 'Manage products with front & back views, connected to your Stripe account.',
-                'icon' => 'fas fa-box-open',
-                'pro' => true,
-            ],
-            'stripe_integration' => [
-                'title' => 'Stripe Payments',
-                'description' => 'Sell one-time or recurring products with seamless Stripe integration.',
-                'icon' => 'fas fa-credit-card',
-                'pro' => true,
-            ],
-            'scheduler' => [
-                'title' => 'Scheduler & Logs',
-                'description' => 'Monitor recurring tasks and view execution logs in a simple dashboard.',
-                'icon' => 'fas fa-clock',
-                'pro' => true,
-            ],
-            'crud_controllers' => [
-                'title' => 'Reusable CRUD Setup',
-                'description' => 'Quickly manage parameters, contacts, and more with ready-to-go CRUDs.',
-                'icon' => 'fas fa-th-list',
-                'pro' => false,
-            ],
-            'settings_panel' => [
-                'title' => 'Settings Panel',
-                'description' => 'Easily manage app-level configurations through a clean UI.',
+            'admin_tools' => [
+                'title' => 'Administration Tools',
+                'description' => "• Scheduler & Logs: Monitor recurring tasks and view execution logs\n• Reusable CRUD Setup: Quickly manage settings, contacts, etc\n• Settings Panel: Easily manage application-level configurations",
                 'icon' => 'fas fa-cogs',
-                'pro' => false,
             ],
-            'theme_chooser' => [
-                'title' => 'Tailwind with DaisyUI & Theme Switcher',
-                'description' => 'Switch themes on the fly with integrated DaisyUI theme support.',
+            'ui_ux' => [
+                'title' => 'User Interface & UX',
+                'description' => "• Tailwind with DaisyUI & Theme Switcher: Change themes on the fly\n• Toast Notifications: Display clean alerts with Symfony flashes and Vue Toastification\n• i18n Multi-language: Ready for international applications",
                 'icon' => 'fas fa-palette',
-                'pro' => false,
             ],
-            'toasts' => [
-                'title' => 'Toast Notifications',
-                'description' => 'Display clean alerts using Symfony flashes and Vue Toastification.',
-                'icon' => 'fas fa-bell',
-                'pro' => false,
-            ],
-            'oauth2_server' => [
-                'title' => 'OAuth2 Server Ready',
-                'description' => 'Authenticate users and apps using standard OAuth2 flows.',
-                'icon' => 'fas fa-server',
-                'pro' => true,
-            ],
-            'api_modes' => [
-                'title' => 'Flexible API Access',
-                'description' => 'Expose public, internal or private APIs — perfect for headless setups.',
+            'api_integration' => [
+                'title' => 'API & Integrations',
+                'description' => "• OAuth2 Server Ready: Authenticate users and applications with standard OAuth2 flows\n• Flexible API Access: Expose public, internal or private APIs\n• API Platform: Create powerful and documented REST and GraphQL APIs",
                 'icon' => 'fas fa-plug',
-                'pro' => false,
-            ],
-            'i18n' => [
-                'title' => 'i18n Multi-language',
-                'description' => 'Ready for international apps with Vue I18n & Symfony translations.',
-                'icon' => 'fas fa-globe',
-                'pro' => false,
-            ],
-            'edit_in_place' => [
-                'title' => 'Edit content in place',
-                'description' => 'Directly from the front update yours translations.',
-                'icon' => 'fas fa-pen',
-                'pro' => false,
             ],
         ];
 
@@ -218,19 +115,12 @@ class Collections extends Fixture implements FixtureGroupInterface
 
             $manager->persist($iconValue);
 
-            $proValue = (new RecordFieldValue())
-                ->setField($this->getReference('pro-field', Field::class))
-                ->setValue((string) $recordData['pro']);
-
-            $manager->persist($proValue);
-
             $record = (new Record())
                 ->setCollection($featureCollection)
                 ->setPublished(true)
                 ->addField($titleValue)
                 ->addField($descriptionValue)
-                ->addField($iconValue)
-                ->addField($proValue);
+                ->addField($iconValue);
 
             $manager->persist($record);
         }
@@ -258,20 +148,14 @@ class Collections extends Fixture implements FixtureGroupInterface
             ->setType('plainText')
         ;
 
-        $proField = (new Field())
-            ->setName('pro')
-            ->setType('boolean');
-
         $this->setReference('title-field', $titleField);
         $this->setReference('description-field', $descriptionField);
         $this->setReference('icon-field', $iconField);
-        $this->setReference('pro-field', $proField);
 
         $useCasesCollection
             ->addField($titleField)
             ->addField($descriptionField)
             ->addField($iconField)
-            ->addField($proField)
         ;
 
         $manager->persist($useCasesCollection);
@@ -281,77 +165,35 @@ class Collections extends Fixture implements FixtureGroupInterface
         );
 
         $useCases = [
-            'simple_cms' => [
-                'title' => 'Simple CMS Solution',
-                'description' => 'Build a custom content site with SEO pages, collections, and contact form.',
+            'content_management' => [
+                'title' => 'Content Management Solutions',
+                'description' => "• Simple CMS Solution: Build a custom content site with SEO pages, collections, and contact form\n• Landing Page Builder: Quickly create and manage SEO-optimized landing pages for campaigns\n• Multilingual App: Create multilingual apps ready for global users with built-in i18n tools",
                 'icon' => 'fas fa-edit',
-                'pro' => false,
             ],
-            'headless_cms' => [
-                'title' => 'Headless CMS',
-                'description' => 'Use Fastfony as a backend-only CMS with a full-featured OAuth2 API.',
+            'api_services' => [
+                'title' => 'API & Integration Services',
+                'description' => "• Headless CMS: Use Fastfony as a backend-only CMS with a full-featured OAuth2 API\n• API-first Backbone: Expose your app's logic through a secure and flexible Symfony and API Platform-based API\n• OAuth2 Auth System: Provide secure authentication for users and third-party apps via OAuth2",
                 'icon' => 'fas fa-network-wired',
-                'pro' => false,
             ],
-            'auth_platform' => [
-                'title' => 'OAuth2 Auth System',
-                'description' => 'Provide secure authentication for users and third-party apps via OAuth2.',
-                'icon' => 'fas fa-user-shield',
-                'pro' => true,
-            ],
-            'ecommerce_platform' => [
-                'title' => 'E-Commerce Platform',
-                'description' => 'Create a modern storefront with Stripe integration and product management.',
+            'ecommerce' => [
+                'title' => 'E-Commerce Solutions',
+                'description' => "• E-Commerce Platform: Create a modern storefront with Stripe integration and product management\n• Contact Request System: Collect and manage customer messages through smart contact forms",
                 'icon' => 'fas fa-shopping-cart',
-                'pro' => true,
             ],
-            'user_portal' => [
-                'title' => 'User Portal',
-                'description' => 'Build a complete user space with profiles, permissions and login options.',
+            'user_management' => [
+                'title' => 'User Access & Management',
+                'description' => "• User Portal: Build a complete user space with profiles, permissions and login options\n• OAuth2 Auth System: Provide secure authentication for users and third-party apps via OAuth2",
                 'icon' => 'fas fa-user-lock',
-                'pro' => false,
             ],
-            'contact_platform' => [
-                'title' => 'Contact Request System',
-                'description' => 'Collect and manage customer messages through smart contact forms.',
-                'icon' => 'fas fa-comments',
-                'pro' => false,
-            ],
-            'admin_panel' => [
-                'title' => 'Admin Dashboard',
-                'description' => 'Quickly generate admin views to manage content, users and settings.',
+            'administration' => [
+                'title' => 'Administrative Tools',
+                'description' => "• Admin Dashboard: Quickly generate admin views to manage content, users and settings\n• Job Monitoring Tool: Manage and track scheduled jobs with logs from Symfony Messenger",
                 'icon' => 'fas fa-tools',
-                'pro' => false,
             ],
-            'multi_lang_app' => [
-                'title' => 'Multilingual App',
-                'description' => 'Create multilingual apps ready for global users with built-in i18n tools.',
-                'icon' => 'fas fa-language',
-                'pro' => false,
-            ],
-            'api_backbone' => [
-                'title' => 'API-first Backbone',
-                'description' => 'Expose your app’s logic through a secure and flexible Symfony and API Platform-based API.',
-                'icon' => 'fas fa-code-branch',
-                'pro' => false,
-            ],
-            'job_monitoring' => [
-                'title' => 'Job Monitoring Tool',
-                'description' => 'Manage and track scheduled jobs with logs from Symfony Messenger.',
-                'icon' => 'fas fa-tasks',
-                'pro' => true,
-            ],
-            'landing_builder' => [
-                'title' => 'Landing Page Builder',
-                'description' => 'Quickly create and manage SEO-optimized landing pages for campaigns.',
-                'icon' => 'fas fa-rocket',
-                'pro' => false,
-            ],
-            'your_saas_project' => [
-                'title' => 'Your SaaS Project',
-                'description' => 'Fastly develop your SaaS project, leveraging Fastfony powerful features and flexibility.',
+            'custom_applications' => [
+                'title' => 'Custom Application Development',
+                'description' => "• Your SaaS Project: Fastly develop your SaaS project, leveraging Fastfony powerful features and flexibility\n• Multi-purpose Platform: Create any web application utilizing the full range of Fastfony components and tools",
                 'icon' => 'fas fa-building',
-                'pro' => true,
             ],
         ];
 
@@ -374,19 +216,12 @@ class Collections extends Fixture implements FixtureGroupInterface
 
             $manager->persist($iconValue);
 
-            $proValue = (new RecordFieldValue())
-                ->setField($this->getReference('pro-field', Field::class))
-                ->setValue((string) $useCaseData['pro']);
-
-            $manager->persist($proValue);
-
             $record = (new Record())
                 ->setCollection($useCasesCollection)
                 ->setPublished(true)
                 ->addField($titleValue)
                 ->addField($descriptionValue)
                 ->addField($iconValue)
-                ->addField($proValue)
             ;
 
             $manager->persist($record);

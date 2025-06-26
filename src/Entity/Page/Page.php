@@ -95,8 +95,6 @@ class Page
     /*
      * The record collections this page is linked to.
      * This is used to display the records in the page.
-     *
-     * This is a pro feature.
      */
     /**
      * @var Collection<int, RecordCollection>
