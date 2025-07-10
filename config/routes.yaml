@@ -10,3 +10,8 @@ login_check:
 _translation_edit_in_place:
     resource: '@TranslationBundle/Resources/config/routing_edit_in_place.yaml'
     prefix: /admin
+    
+api_doc:
+    path: /api/docs
+    controller: api_platform.action.documentation
+    condition: "'%kernel.environment%' != 'prod'"

@@ -16,7 +16,7 @@ security:
             pattern: ^/token$
             security: false
         api:
-            pattern: ^\/api\/(?!internal\/|public\/|docs$).*
+            pattern: ^\/api\/(?!internal\/|public\/$).*
             security: true
             stateless: true
             oauth2: true
@@ -60,7 +60,7 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^\/api\/(?!public).*$, roles: ROLE_API }
+        - { path: ^\/api\/(?!public|docs).*$, roles: ROLE_API }
         - { path: ^/installation, roles: PUBLIC_ACCESS }
         - {
               path: ^/(login$|request-login-link$|forgot-password$|register$|reset-password),
