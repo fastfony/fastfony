@@ -4,6 +4,7 @@ translation:
         enabled: true
         config_name: app
         activator: App\Security\EditInPlaceTranslatorRoleActivator
+        show_untranslatable: false
     configs:
         app:
             dirs: ['%kernel.project_dir%/templates', '%kernel.project_dir%/src']

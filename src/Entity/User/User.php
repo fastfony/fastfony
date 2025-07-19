@@ -6,6 +6,7 @@ namespace App\Entity\User;
 
 use ApiPlatform\Metadata\ApiProperty;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\Get;
 use App\Entity\BlameableEntity;
 use App\Entity\CommonProperties;
@@ -30,6 +31,9 @@ use Symfony\Component\Validator\Constraints as Assert;
             normalizationContext: ['groups' => ['user:profile:read']],
             security: "is_granted('ROLE_API') and object == user",
             provider: SelfUserProvider::class,
+        ),
+        new Delete(
+            security: "object == user or is_granted('ROLE_ADMIN')",
         ),
     ]
 )]
