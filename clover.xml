@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1752233133">
-  <project timestamp="1752233133">
+<coverage generated="1752914768">
+  <project timestamp="1752914768">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -2795,104 +2795,104 @@
       <class name="App\Entity\User\User" namespace="global">
         <metrics complexity="41" methods="27" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="37" elements="97" coveredelements="52"/>
       </class>
-      <line num="97" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="29"/>
-      <line num="99" type="stmt" count="29"/>
-      <line num="100" type="stmt" count="29"/>
-      <line num="101" type="stmt" count="29"/>
-      <line num="102" type="stmt" count="29"/>
+      <line num="101" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="29"/>
       <line num="103" type="stmt" count="29"/>
       <line num="104" type="stmt" count="29"/>
-      <line num="107" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="9"/>
-      <line num="109" type="stmt" count="9"/>
-      <line num="115" type="method" name="__serialize" visibility="public" complexity="1" crap="1" count="12"/>
-      <line num="117" type="stmt" count="12"/>
-      <line num="118" type="stmt" count="12"/>
-      <line num="119" type="stmt" count="12"/>
-      <line num="120" type="stmt" count="12"/>
+      <line num="105" type="stmt" count="29"/>
+      <line num="106" type="stmt" count="29"/>
+      <line num="107" type="stmt" count="29"/>
+      <line num="108" type="stmt" count="29"/>
+      <line num="111" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="9"/>
+      <line num="113" type="stmt" count="9"/>
+      <line num="119" type="method" name="__serialize" visibility="public" complexity="1" crap="1" count="12"/>
       <line num="121" type="stmt" count="12"/>
-      <line num="127" type="method" name="__unserialize" visibility="public" complexity="1" crap="1" count="12"/>
-      <line num="129" type="stmt" count="12"/>
-      <line num="130" type="stmt" count="12"/>
-      <line num="131" type="stmt" count="12"/>
-      <line num="139" type="method" name="getUserIdentifier" visibility="public" complexity="1" crap="1" count="16"/>
-      <line num="144" type="stmt" count="16"/>
-      <line num="147" type="method" name="getEmail" visibility="public" complexity="1" crap="1" count="10"/>
-      <line num="153" type="stmt" count="10"/>
-      <line num="156" type="method" name="getPassword" visibility="public" complexity="1" crap="1" count="13"/>
-      <line num="158" type="stmt" count="13"/>
-      <line num="161" type="method" name="setPassword" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="163" type="stmt" count="2"/>
-      <line num="165" type="stmt" count="2"/>
-      <line num="173" type="method" name="getRoles" visibility="public" complexity="3" crap="3" count="14"/>
-      <line num="180" type="stmt" count="14"/>
-      <line num="182" type="stmt" count="14"/>
-      <line num="183" type="stmt" count="12"/>
-      <line num="184" type="stmt" count="12"/>
-      <line num="188" type="stmt" count="14"/>
-      <line num="194" type="method" name="eraseCredentials" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="198" type="stmt" count="2"/>
-      <line num="203" type="method" name="getGroups" visibility="public" complexity="1" crap="1" count="14"/>
-      <line num="205" type="stmt" count="14"/>
-      <line num="208" type="method" name="addGroup" visibility="public" complexity="2" crap="2" count="5"/>
-      <line num="210" type="stmt" count="5"/>
-      <line num="211" type="stmt" count="5"/>
-      <line num="212" type="stmt" count="5"/>
+      <line num="122" type="stmt" count="12"/>
+      <line num="123" type="stmt" count="12"/>
+      <line num="124" type="stmt" count="12"/>
+      <line num="125" type="stmt" count="12"/>
+      <line num="131" type="method" name="__unserialize" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="133" type="stmt" count="12"/>
+      <line num="134" type="stmt" count="12"/>
+      <line num="135" type="stmt" count="12"/>
+      <line num="143" type="method" name="getUserIdentifier" visibility="public" complexity="1" crap="1" count="16"/>
+      <line num="148" type="stmt" count="16"/>
+      <line num="151" type="method" name="getEmail" visibility="public" complexity="1" crap="1" count="10"/>
+      <line num="157" type="stmt" count="10"/>
+      <line num="160" type="method" name="getPassword" visibility="public" complexity="1" crap="1" count="13"/>
+      <line num="162" type="stmt" count="13"/>
+      <line num="165" type="method" name="setPassword" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="167" type="stmt" count="2"/>
+      <line num="169" type="stmt" count="2"/>
+      <line num="177" type="method" name="getRoles" visibility="public" complexity="3" crap="3" count="14"/>
+      <line num="184" type="stmt" count="14"/>
+      <line num="186" type="stmt" count="14"/>
+      <line num="187" type="stmt" count="12"/>
+      <line num="188" type="stmt" count="12"/>
+      <line num="192" type="stmt" count="14"/>
+      <line num="198" type="method" name="eraseCredentials" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="202" type="stmt" count="2"/>
+      <line num="207" type="method" name="getGroups" visibility="public" complexity="1" crap="1" count="14"/>
+      <line num="209" type="stmt" count="14"/>
+      <line num="212" type="method" name="addGroup" visibility="public" complexity="2" crap="2" count="5"/>
+      <line num="214" type="stmt" count="5"/>
       <line num="215" type="stmt" count="5"/>
-      <line num="218" type="method" name="removeGroup" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="220" type="stmt" count="0"/>
-      <line num="221" type="stmt" count="0"/>
+      <line num="216" type="stmt" count="5"/>
+      <line num="219" type="stmt" count="5"/>
+      <line num="222" type="method" name="removeGroup" visibility="public" complexity="2" crap="6" count="0"/>
       <line num="224" type="stmt" count="0"/>
-      <line num="227" type="method" name="getProfile" visibility="public" complexity="1" crap="1" count="10"/>
-      <line num="229" type="stmt" count="10"/>
-      <line num="232" type="method" name="setProfile" visibility="public" complexity="3" crap="3" count="1"/>
-      <line num="235" type="stmt" count="1"/>
-      <line num="236" type="stmt" count="1"/>
+      <line num="225" type="stmt" count="0"/>
+      <line num="228" type="stmt" count="0"/>
+      <line num="231" type="method" name="getProfile" visibility="public" complexity="1" crap="1" count="10"/>
+      <line num="233" type="stmt" count="10"/>
+      <line num="236" type="method" name="setProfile" visibility="public" complexity="3" crap="3" count="1"/>
       <line num="239" type="stmt" count="1"/>
-      <line num="241" type="stmt" count="1"/>
-      <line num="247" type="method" name="getRequestPasswords" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="249" type="stmt" count="0"/>
-      <line num="252" type="method" name="addRequestPassword" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="254" type="stmt" count="0"/>
-      <line num="255" type="stmt" count="0"/>
-      <line num="256" type="stmt" count="0"/>
+      <line num="240" type="stmt" count="1"/>
+      <line num="243" type="stmt" count="1"/>
+      <line num="245" type="stmt" count="1"/>
+      <line num="251" type="method" name="getRequestPasswords" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="253" type="stmt" count="0"/>
+      <line num="256" type="method" name="addRequestPassword" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="258" type="stmt" count="0"/>
       <line num="259" type="stmt" count="0"/>
-      <line num="262" type="method" name="removeRequestPassword" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="264" type="stmt" count="0"/>
-      <line num="266" type="stmt" count="0"/>
-      <line num="272" type="method" name="getClients" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="274" type="stmt" count="1"/>
-      <line num="277" type="method" name="addClient" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="279" type="stmt" count="0"/>
-      <line num="280" type="stmt" count="0"/>
+      <line num="260" type="stmt" count="0"/>
+      <line num="263" type="stmt" count="0"/>
+      <line num="266" type="method" name="removeRequestPassword" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="268" type="stmt" count="0"/>
+      <line num="270" type="stmt" count="0"/>
+      <line num="276" type="method" name="getClients" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="278" type="stmt" count="1"/>
+      <line num="281" type="method" name="addClient" visibility="public" complexity="2" crap="6" count="0"/>
       <line num="283" type="stmt" count="0"/>
-      <line num="286" type="method" name="removeClient" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="288" type="stmt" count="0"/>
-      <line num="290" type="stmt" count="0"/>
-      <line num="296" type="method" name="getOrders" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="298" type="stmt" count="0"/>
-      <line num="301" type="method" name="addOrder" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="303" type="stmt" count="0"/>
-      <line num="304" type="stmt" count="0"/>
-      <line num="305" type="stmt" count="0"/>
+      <line num="284" type="stmt" count="0"/>
+      <line num="287" type="stmt" count="0"/>
+      <line num="290" type="method" name="removeClient" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="292" type="stmt" count="0"/>
+      <line num="294" type="stmt" count="0"/>
+      <line num="300" type="method" name="getOrders" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="302" type="stmt" count="0"/>
+      <line num="305" type="method" name="addOrder" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="307" type="stmt" count="0"/>
       <line num="308" type="stmt" count="0"/>
-      <line num="311" type="method" name="removeOrder" visibility="public" complexity="3" crap="12" count="0"/>
-      <line num="313" type="stmt" count="0"/>
-      <line num="315" type="stmt" count="0"/>
-      <line num="316" type="stmt" count="0"/>
+      <line num="309" type="stmt" count="0"/>
+      <line num="312" type="stmt" count="0"/>
+      <line num="315" type="method" name="removeOrder" visibility="public" complexity="3" crap="12" count="0"/>
+      <line num="317" type="stmt" count="0"/>
+      <line num="319" type="stmt" count="0"/>
       <line num="320" type="stmt" count="0"/>
-      <line num="326" type="method" name="getContactRequests" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="328" type="stmt" count="0"/>
-      <line num="331" type="method" name="addContactRequest" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="333" type="stmt" count="0"/>
-      <line num="334" type="stmt" count="0"/>
-      <line num="335" type="stmt" count="0"/>
+      <line num="324" type="stmt" count="0"/>
+      <line num="330" type="method" name="getContactRequests" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="332" type="stmt" count="0"/>
+      <line num="335" type="method" name="addContactRequest" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="337" type="stmt" count="0"/>
       <line num="338" type="stmt" count="0"/>
-      <line num="341" type="method" name="removeContactRequest" visibility="public" complexity="3" crap="12" count="0"/>
-      <line num="343" type="stmt" count="0"/>
-      <line num="345" type="stmt" count="0"/>
-      <line num="346" type="stmt" count="0"/>
+      <line num="339" type="stmt" count="0"/>
+      <line num="342" type="stmt" count="0"/>
+      <line num="345" type="method" name="removeContactRequest" visibility="public" complexity="3" crap="12" count="0"/>
+      <line num="347" type="stmt" count="0"/>
+      <line num="349" type="stmt" count="0"/>
       <line num="350" type="stmt" count="0"/>
-      <metrics loc="353" ncloc="295" classes="1" methods="27" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="37" elements="97" coveredelements="52"/>
+      <line num="354" type="stmt" count="0"/>
+      <metrics loc="357" ncloc="299" classes="1" methods="27" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="37" elements="97" coveredelements="52"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Enum/Fastfony.php">
       <metrics loc="14" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -4178,6 +4178,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="176" loc="10316" ncloc="9657" classes="162" methods="637" coveredmethods="525" conditionals="0" coveredconditionals="0" statements="2502" coveredstatements="2223" elements="3139" coveredelements="2748"/>
+    <metrics files="176" loc="10320" ncloc="9661" classes="162" methods="637" coveredmethods="525" conditionals="0" coveredconditionals="0" statements="2502" coveredstatements="2223" elements="3139" coveredelements="2748"/>
   </project>
 </coverage>
