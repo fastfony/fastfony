@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3075deda9caac4aa986980f74908e68e",
+    "content-hash": "43aa58b904dbacd3718caa614027dce4",
     "packages": [
         {
             "name": "api-platform/doctrine-common",
@@ -5734,16 +5734,16 @@
         },
         {
             "name": "php-translation/symfony-bundle",
-            "version": "0.16.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-translation/symfony-bundle.git",
-                "reference": "553ea2bc07babe69505a94eddcc86639b7904014"
+                "url": "https://github.com/fastfony/phptranslation-symfony-bundle.git",
+                "reference": "2ec9485d166d7a5fd1ad31eb24cc0be5db09055f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-translation/symfony-bundle/zipball/553ea2bc07babe69505a94eddcc86639b7904014",
-                "reference": "553ea2bc07babe69505a94eddcc86639b7904014",
+                "url": "https://api.github.com/repos/fastfony/phptranslation-symfony-bundle/zipball/2ec9485d166d7a5fd1ad31eb24cc0be5db09055f",
+                "reference": "2ec9485d166d7a5fd1ad31eb24cc0be5db09055f",
                 "shasum": ""
             },
             "require": {
@@ -5781,6 +5781,7 @@
             "suggest": {
                 "php-http/httplug-bundle": "To easier configure your httplug clients."
             },
+            "default-branch": true,
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -5795,7 +5796,14 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ],
+                "test-ci": [
+                    "vendor/bin/phpunit --coverage-text --coverage-clover=build/coverage.xml Tests/Unit"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -5806,10 +5814,9 @@
                 }
             ],
             "support": {
-                "issues": "https://github.com/php-translation/symfony-bundle/issues",
-                "source": "https://github.com/php-translation/symfony-bundle/tree/0.16.0"
+                "source": "https://github.com/fastfony/phptranslation-symfony-bundle/tree/master"
             },
-            "time": "2025-03-27T15:24:24+00:00"
+            "time": "2025-07-20T19:14:56+00:00"
         },
         {
             "name": "php-translation/symfony-storage",
@@ -19527,7 +19534,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "php-translation/symfony-bundle": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -4,21 +4,11 @@ declare(strict_types=1);
 
 namespace App\Twig;
 
-use Twig\Extension\AbstractExtension;
-use Twig\TwigFilter;
+use Twig\Attribute\AsTwigFilter;
 
-class Inspect extends AbstractExtension
+class Inspect
 {
-    /**
-     * @return array<TwigFilter>
-     */
-    public function getFilters(): array
-    {
-        return [
-            new TwigFilter('inspect', [$this, 'inspect']),
-        ];
-    }
-
+    #[AsTwigFilter('inspect')]
     public function inspect(mixed $value): string
     {
         // We do this because dump() filter is disabled with APP_DEBUG=false

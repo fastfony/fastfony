@@ -1,11 +1,11 @@
 {
-  "All recurring fields must be set together or left empty": "All recurring fields must be set together or left empty",
-  "Bad credentials.": "Bad credentials.",
-  "The license key is unknow or unvalid.": "The license key is unknow or unvalid.",
-  "The presented password is invalid.": "Bad credentials.",
-  "The role name must start with 'ROLE_'.": "The role name must start with 'ROLE_'.",
-  "The string contains a syntax error and it is not encodable to JSON.": "The string contains a syntax error and it is not encodable to JSON.",
-  "The template file does not exist.": "The template file does not exist.",
-  "There can only be one homepage.": "There can only be one homepage.",
-  "You cannot enter “prose content” and “template path” at the same time.": ""
+    "All recurring fields must be set together or left empty": "All recurring fields must be set together or left empty",
+    "Bad credentials.": "Bad credentials.",
+    "The license key is unknow or unvalid.": "The license key is unknow or unvalid.",
+    "The presented password is invalid.": "Bad credentials.",
+    "The role name must start with 'ROLE_'.": "The role name must start with 'ROLE_'.",
+    "The string contains a syntax error and it is not encodable to JSON.": "The string contains a syntax error and it is not encodable to JSON.",
+    "The template file does not exist.": "The template file does not exist.",
+    "There can only be one homepage.": "There can only be one homepage.",
+    "You cannot enter \u201cprose content\u201d and \u201ctemplate path\u201d at the same time.": ""
 }

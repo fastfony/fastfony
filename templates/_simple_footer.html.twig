@@ -20,6 +20,13 @@
             <a href="{{ path('page_show', {slug: 'privacy-policy'}) }}">
                 {{ 'link.privacy_policy'|trans }}
             </a>
+
+            {% if app.user %}
+                <br><small>
+                    {{ 'You are logged in as'|trans }} <strong>{{ app.user.userIdentifier }}</strong>.<br>
+                    <a href="{{ path('_logout_main') }}" class="link" data-turbo="false">{{ 'link.logout'|trans }}</a>
+                </small>
+            {% endif %}
         </aside>
     </div>
 </footer>

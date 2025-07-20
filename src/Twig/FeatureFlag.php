@@ -5,23 +5,18 @@ declare(strict_types=1);
 namespace App\Twig;
 
 use App\Handler\FeatureFlag as FeatureFlagHandler;
-use Twig\Extension\AbstractExtension;
-use Twig\TwigFunction;
+use Twig\Attribute\AsTwigFunction;
 
-class FeatureFlag extends AbstractExtension
+class FeatureFlag
 {
     public function __construct(
         private FeatureFlagHandler $featureFlagHandler,
     ) {
     }
 
-    /**
-     * @return array<TwigFunction>
-     */
-    public function getFunctions(): array
+    #[AsTwigFunction('feature_enabled')]
+    public function featureEnabled(string $feature)
     {
-        return [
-            new TwigFunction('feature_enabled', [$this->featureFlagHandler, 'isEnabled']),
-        ];
+        return $this->featureFlagHandler->isEnabled($feature);
     }
 }

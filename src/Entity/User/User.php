@@ -135,6 +135,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->password = $data['password'];
     }
 
+    #[Groups([
+        'user:profile:read',
+    ])]
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
     /**
      * A visual identifier that represents this user.
      *
