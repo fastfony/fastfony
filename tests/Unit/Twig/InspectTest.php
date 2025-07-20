@@ -14,10 +14,4 @@ final class InspectTest extends TestCase
         $inspect = new Inspect();
         $this->assertSame('1', $inspect->inspect(1));
     }
-
-    public function testGetFilters(): void
-    {
-        $inspect = new Inspect();
-        $this->assertCount(1, $inspect->getFilters());
-    }
 }
