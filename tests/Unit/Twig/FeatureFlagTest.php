@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class FeatureFlagTest extends TestCase
 {
-    public function testFeatureIsDisabledByDefault()
+    public function testFeatureIsDisabledByDefault(): void
     {
         $handler = $this->createMock(FeatureFlagHandler::class);
         $handler->method('isEnabled')->with('nouvelle_fonctionnalite')->willReturn(false);
@@ -19,7 +19,7 @@ class FeatureFlagTest extends TestCase
         $this->assertFalse($featureFlag->featureEnabled('nouvelle_fonctionnalite'));
     }
 
-    public function testEnableFeature()
+    public function testEnableFeature(): void
     {
         $handler = $this->createMock(FeatureFlagHandler::class);
         $handler->method('isEnabled')->with('nouvelle_fonctionnalite')->willReturn(true);
@@ -28,7 +28,7 @@ class FeatureFlagTest extends TestCase
         $this->assertTrue($featureFlag->featureEnabled('nouvelle_fonctionnalite'));
     }
 
-    public function testDisableFeature()
+    public function testDisableFeature(): void
     {
         $handler = $this->createMock(FeatureFlagHandler::class);
         $handler->method('isEnabled')->with('nouvelle_fonctionnalite')->willReturn(false);

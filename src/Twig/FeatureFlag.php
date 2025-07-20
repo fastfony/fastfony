@@ -15,7 +15,7 @@ class FeatureFlag
     }
 
     #[AsTwigFunction('feature_enabled')]
-    public function featureEnabled(string $feature)
+    public function featureEnabled(string $feature): bool
     {
         return $this->featureFlagHandler->isEnabled($feature);
     }
