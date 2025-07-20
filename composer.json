@@ -34,7 +34,7 @@
         "easycorp/easyadmin-bundle": "^4.24.9",
         "fastfony/license-bundle": "^1.0.0",
         "knpuniversity/oauth2-client-bundle": "^2.18.3",
-        "league/commonmark": "^2.7.0",
+        "league/commonmark": "^2.7.1",
         "league/flysystem-aws-s3-v3": "^3.29",
         "league/flysystem-bundle": "^3.5",
         "league/flysystem-local": "^3.30",
