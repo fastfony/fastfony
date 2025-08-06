@@ -29,7 +29,7 @@
         "ext-pdo_sqlite": "*",
         "api-platform/doctrine-orm": "^4.1.20",
         "api-platform/symfony": "^4.1.20",
-        "aws/aws-sdk-php": "^3.352.2",
+        "aws/aws-sdk-php": "^3.352.3",
         "doctrine/dbal": "^3.10.1",
         "doctrine/doctrine-bundle": "^2.15.1",
         "doctrine/doctrine-fixtures-bundle": "^4.1",
