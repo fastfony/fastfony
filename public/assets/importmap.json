@@ -1,0 +1,122 @@
+{
+    "app": {
+        "path": "\/assets\/app-9Ns2Gh9.js",
+        "type": "js"
+    },
+    "\/assets\/styles\/app.css": {
+        "path": "\/assets\/styles\/app-eIw5Hz4.css",
+        "type": "css"
+    },
+    "\/assets\/styles\/richTextEditorFront.css": {
+        "path": "\/assets\/styles\/richTextEditorFront-o795aa7.css",
+        "type": "css"
+    },
+    "admin": {
+        "path": "\/assets\/admin-lTcVwQR.js",
+        "type": "js"
+    },
+    "\/assets\/bootstrap.js": {
+        "path": "\/assets\/bootstrap-Bzg-5q8.js",
+        "type": "js"
+    },
+    "\/assets\/js\/loader.js": {
+        "path": "\/assets\/js\/loader-uua_o9D.js",
+        "type": "js"
+    },
+    "\/assets\/locales\/app.en.json": {
+        "path": "\/assets\/locales\/app.en-Rb0YB9C.json",
+        "type": "js"
+    },
+    "\/assets\/js\/formkit.config.js": {
+        "path": "\/assets\/js\/formkit.config-nIoRDh7.js",
+        "type": "js"
+    },
+    "\/assets\/vue\/components\/RichTextEditor.vue": {
+        "path": "\/assets\/vue\/components\/RichTextEditor-efmBNDC.vue",
+        "type": "js"
+    },
+    "\/assets\/js\/richTextEditor.js": {
+        "path": "\/assets\/js\/richTextEditor-OEBTxHU.js",
+        "type": "js"
+    },
+    "\/assets\/styles\/admin.css": {
+        "path": "\/assets\/styles\/admin-76hmpA9.css",
+        "type": "css"
+    },
+    "\/assets\/styles\/admin\/formkit.css": {
+        "path": "\/assets\/styles\/admin\/formkit-GidwXc-.css",
+        "type": "css"
+    },
+    "@hotwired\/stimulus": {
+        "path": "\/assets\/vendor\/@hotwired\/stimulus\/stimulus.index-S4zNcea.js",
+        "type": "js"
+    },
+    "@symfony\/stimulus-bundle": {
+        "path": "\/assets\/@symfony\/stimulus-bundle\/loader-V1GtHuK.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/stimulus-bundle\/controllers.js": {
+        "path": "\/assets\/@symfony\/stimulus-bundle\/controllers-RIEp6kG.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/ux-turbo\/turbo_controller.js": {
+        "path": "\/assets\/@symfony\/ux-turbo\/turbo_controller-8wQNi2p.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/ux-vue\/render_controller.js": {
+        "path": "\/assets\/@symfony\/ux-vue\/render_controller-J9zGKDB.js",
+        "type": "js"
+    },
+    "\/assets\/controllers\/hello_controller.js": {
+        "path": "\/assets\/controllers\/hello_controller-wA_hJSJ.js",
+        "type": "js"
+    },
+    "\/assets\/controllers\/csrf_protection_controller.js": {
+        "path": "\/assets\/controllers\/csrf_protection_controller-sx6pMuw.js",
+        "type": "js"
+    },
+    "@hotwired\/turbo": {
+        "path": "\/assets\/vendor\/@hotwired\/turbo\/turbo.index-pT15T6h.js",
+        "type": "js"
+    },
+    "daisyui": {
+        "path": "\/assets\/vendor\/daisyui\/daisyui.index-1AzpO2S.js",
+        "type": "js"
+    },
+    "daisyui\/daisyui.min.css": {
+        "path": "\/assets\/vendor\/daisyui\/daisyui.min-nR1pv4e.css",
+        "type": "css"
+    },
+    "quill": {
+        "path": "\/assets\/vendor\/quill\/quill.index-QQtvyJU.js",
+        "type": "js"
+    },
+    "lodash-es": {
+        "path": "\/assets\/vendor\/lodash-es\/lodash-es.index-BAEpLOo.js",
+        "type": "js"
+    },
+    "parchment": {
+        "path": "\/assets\/vendor\/parchment\/parchment.index-bcOBtoW.js",
+        "type": "js"
+    },
+    "quill-delta": {
+        "path": "\/assets\/vendor\/quill-delta\/quill-delta.index-QMYXhEQ.js",
+        "type": "js"
+    },
+    "eventemitter3": {
+        "path": "\/assets\/vendor\/eventemitter3\/eventemitter3.index-aZ8G0VH.js",
+        "type": "js"
+    },
+    "fast-diff": {
+        "path": "\/assets\/vendor\/fast-diff\/fast-diff.index-Tx4nipO.js",
+        "type": "js"
+    },
+    "lodash.clonedeep": {
+        "path": "\/assets\/vendor\/lodash.clonedeep\/lodash.clonedeep.index-gK3ZDUn.js",
+        "type": "js"
+    },
+    "lodash.isequal": {
+        "path": "\/assets\/vendor\/lodash.isequal\/lodash.isequal.index-iErKTzk.js",
+        "type": "js"
+    }
+}

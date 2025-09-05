@@ -51,16 +51,15 @@ final class EntitiesTest extends KernelTestCase
         $this->assertNotEmpty($attributes);
 
         $properties = [];
-        $reflectionProperties = array_filter(
-            (array) $classMetadata->getReflectionProperties()->getIterator(),
-            function (\ReflectionProperty $property) use ($classMetadata) {
-                if ($property instanceof EnumReflectionProperty) {
-                    return false;
-                }
-
-                return $property->class === $classMetadata->getName();
+        $reflectionProperties = [];
+        foreach ($classMetadata->getPropertyAccessors() as $propertyAccessor) {
+            $property = $propertyAccessor->getUnderlyingReflector();
+            if (!$property instanceof EnumReflectionProperty
+                && $property->class === $classMetadata->getName()
+            ) {
+                $reflectionProperties[] = $property;
             }
-        );
+        }
 
         $inflector = new EnglishInflector();
         foreach ($reflectionProperties as $reflectionProperty) {
