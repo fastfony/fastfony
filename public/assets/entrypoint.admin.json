@@ -1,0 +1,12 @@
+[
+    "\/assets\/bootstrap.js",
+    "\/assets\/js\/richTextEditor.js",
+    "\/assets\/styles\/admin.css",
+    "\/assets\/styles\/admin\/formkit.css",
+    "\/assets\/js\/loader.js",
+    "\/assets\/locales\/app.en.json",
+    "\/assets\/js\/formkit.config.js",
+    "vue",
+    "\/assets\/vue\/components\/RichTextEditor.vue",
+    "@vue\/runtime-dom"
+]
