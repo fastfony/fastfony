@@ -124,7 +124,7 @@ final class EntitiesTest extends KernelTestCase
                 // The mock does not handle datetime automatically
                 $value = new \DateTimeImmutable();
             } elseif (u($getter->getReturnType()->__toString())->containsAny('Enum')) {
-                continue; // Enum are not handled by the mock
+                continue; // Enums are not handled by the mock
             } else {
                 $value = $entityMock->{$property['getter']}();
             }
