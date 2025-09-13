@@ -23,16 +23,36 @@ final class FeatureFlag
     {
         $controller = $event->getController();
 
-        if ($controller instanceof AbstractController) {
-            $reflection = new \ReflectionClass($controller);
-            $attributes = $reflection->getAttributes(FeatureFlagAttribute::class);
+        $attributes = [];
 
-            foreach ($attributes as $attribute) {
-                /** @var FeatureFlagAttribute $instance */
-                $instance = $attribute->newInstance();
-                if (false === $this->featureFlag->isEnabled($instance->flag)) {
-                    throw new NotFoundHttpException();
-                }
+        if (is_array($controller) && count($controller) === 2) {
+            // [object, method]
+            $reflectionClass = new \ReflectionClass($controller[0]);
+            $attributes = array_merge(
+                $reflectionClass->getAttributes(FeatureFlagAttribute::class),
+                (new \ReflectionMethod($controller[0], $controller[1]))->getAttributes(FeatureFlagAttribute::class)
+            );
+        } elseif (is_object($controller)) {
+            // Invokable controller
+            $reflectionClass = new \ReflectionClass($controller);
+            $attributes = $reflectionClass->getAttributes(FeatureFlagAttribute::class);
+            if ($reflectionClass->hasMethod('__invoke')) {
+                $attributes = array_merge(
+                    $attributes,
+                    $reflectionClass->getMethod('__invoke')->getAttributes(FeatureFlagAttribute::class)
+                );
+            }
+        } elseif (is_string($controller) && function_exists($controller)) {
+            // Function name
+            $reflectionFunction = new \ReflectionFunction($controller);
+            $attributes = $reflectionFunction->getAttributes(FeatureFlagAttribute::class);
+        }
+
+        foreach ($attributes as $attribute) {
+            /** @var FeatureFlagAttribute $instance */
+            $instance = $attribute->newInstance();
+            if (false === $this->featureFlag->isEnabled($instance->flag)) {
+                throw new NotFoundHttpException();
             }
         }
     }
