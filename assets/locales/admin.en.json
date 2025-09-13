@@ -169,5 +169,6 @@
     "View or preview": "View or preview",
     "warning-matrix": "Modifying a group disconnects all its members.",
     "Week": "Week",
-    "Year": "Year"
+    "Year": "Year",
+    "user_crud.action.switch_user": "Impersonalization"
 }

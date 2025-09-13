@@ -44,6 +44,7 @@ class UserCrud extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
+            ->showEntityActionsInlined(false)
             ->setEntityLabelInPlural('Users')
             ->setDefaultSort(['email' => 'ASC']);
     }
@@ -97,6 +98,12 @@ class UserCrud extends AbstractCrudController
             throw new NotFoundHttpException();
         }
 
+        /* @var User $currentUser */
+        $currentUser = $this->getUser();
+        $switchUserAction = Action::new('switchUser', 'user_crud.action.switch_user', 'fa fa-user-secret')
+            ->linkToCrudAction('switchUser')
+            ->displayIf(static fn ($entity) => $entity->getId() !== $currentUser->getId());
+
         $sendLoginLinkAction = Action::new('sendLoginLinkEmail', 'user_crud.action.send_login_link_email')
             ->linkToCrudAction('sendLoginLinkEmail')
             ->displayIf(static fn ($entity) => $entity->isEnabled());
@@ -117,8 +124,11 @@ class UserCrud extends AbstractCrudController
 
         return $actions
             ->add(Crud::PAGE_EDIT, $sendLoginLinkAction)
+            ->add(Crud::PAGE_EDIT, $switchUserAction)
             ->add(Crud::PAGE_INDEX, $sendLoginLinkAction)
             ->add(Crud::PAGE_INDEX, $groupsCrudAction)
+            ->add(Crud::PAGE_INDEX, $switchUserAction)
+            ->setPermission('switchUser', 'ROLE_ALLOWED_TO_SWITCH')
         ;
     }
 
@@ -144,5 +154,15 @@ class UserCrud extends AbstractCrudController
         }
 
         return $this->redirectToRoute('admin_user_crud_index');
+    }
+
+    #[AdminAction(routePath: '/{entityId}/switch-user', routeName: 'switch_user')]
+    public function switchUser(
+        AdminContext $adminContext,
+    ): RedirectResponse {
+        return $this->redirectToRoute(
+            'homepage',
+            ['_switch_user' => $adminContext->getEntity()->getInstance()->getUserIdentifier()],
+        );
     }
 }

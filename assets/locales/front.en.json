@@ -27,5 +27,8 @@
     "paragraph.products_marketing1": "Your products list",
     "paragraph.products_marketing2": "You can create and edit your products in the admin UI",
     "title.products": "Your Products",
-    "You are logged in as": "You are logged in as"
+    "You are logged in as": "You are logged in as",
+    "title.impersonation": "Impersonalization",
+    "text.impersonation": "You are connected with the user account %identifier%",
+    "link.exit_impersonation": "Stop"
 }
