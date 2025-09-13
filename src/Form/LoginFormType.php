@@ -18,8 +18,9 @@ class LoginFormType extends AbstractType
 {
     /**
      * @param array<string, mixed> $options
+     *
+     * @phpstan-ignore missingType.iterableValue
      */
-    /** @phpstan-ignore missingType.iterableValue */
     public function buildForm(
         FormBuilderInterface $builder,
         array $options,
