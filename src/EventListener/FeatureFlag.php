@@ -6,7 +6,6 @@ namespace App\EventListener;
 
 use App\Attribute\FeatureFlag as FeatureFlagAttribute;
 use App\Handler\FeatureFlag as FeatureFlagHandler;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -22,30 +21,23 @@ final class FeatureFlag
     public function onKernelController(ControllerEvent $event): void
     {
         $controller = $event->getController();
-
         $attributes = [];
 
-        if (is_array($controller) && count($controller) === 2) {
-            // [object, method]
+        if (is_array($controller) && 2 === count($controller)) {
             $reflectionClass = new \ReflectionClass($controller[0]);
             $attributes = array_merge(
                 $reflectionClass->getAttributes(FeatureFlagAttribute::class),
                 (new \ReflectionMethod($controller[0], $controller[1]))->getAttributes(FeatureFlagAttribute::class)
             );
         } elseif (is_object($controller)) {
-            // Invokable controller
             $reflectionClass = new \ReflectionClass($controller);
             $attributes = $reflectionClass->getAttributes(FeatureFlagAttribute::class);
-            if ($reflectionClass->hasMethod('__invoke')) {
+            if (true === $reflectionClass->hasMethod('__invoke')) {
                 $attributes = array_merge(
                     $attributes,
                     $reflectionClass->getMethod('__invoke')->getAttributes(FeatureFlagAttribute::class)
                 );
             }
-        } elseif (is_string($controller) && function_exists($controller)) {
-            // Function name
-            $reflectionFunction = new \ReflectionFunction($controller);
-            $attributes = $reflectionFunction->getAttributes(FeatureFlagAttribute::class);
         }
 
         foreach ($attributes as $attribute) {
