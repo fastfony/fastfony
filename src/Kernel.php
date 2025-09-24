@@ -10,6 +10,7 @@ use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 class Kernel extends BaseKernel
 {
     use MicroKernelTrait;
+
     public const FF_VERSION = '0.4.0';
     public const FF_VERSION_ID = 00400;
     public const FF_MAJOR_VERSION = 0;
@@ -19,4 +20,10 @@ class Kernel extends BaseKernel
 
     public const FF_END_OF_MAINTENANCE = '01/2029';
     public const FF_END_OF_LIFE = '01/2030';
+
+    public function boot(): void
+    {
+        parent::boot();
+        date_default_timezone_set($this->getContainer()->getParameter('app.timezone'));
+    }
 }

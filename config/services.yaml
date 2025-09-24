@@ -6,6 +6,7 @@
 parameters:
     default_app_name: 'Fastfony'
     default_app_contact_email: 'contact@fastfony.com'
+    app.timezone: '%env(default:UTC:APP_TIMEZONE)%'
 
 services:
     # default configuration for services in *this* file
