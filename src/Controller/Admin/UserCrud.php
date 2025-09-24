@@ -68,6 +68,13 @@ class UserCrud extends AbstractCrudController
                     'by_reference' => false,
                 ])
                 ->hideOnIndex(),
+            CollectionField::new('roleObjects')
+                ->hideOnForm(),
+            AssociationField::new('roleObjects')
+                ->setFormTypeOptions([
+                    'by_reference' => false,
+                ])
+                ->hideOnIndex(),
             CollectionField::new('clients')
                 ->hideOnForm(),
             AssociationField::new('clients')

@@ -98,6 +98,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(targetEntity: ContactRequest::class, mappedBy: 'user', orphanRemoval: true)]
     private Collection $contactRequests;
 
+    /**
+     * @var Collection<int, Role>
+     */
+    #[ORM\ManyToMany(targetEntity: Role::class, inversedBy: 'users')]
+    #[ORM\JoinTable(name: 'user_role')]
+    #[ORM\JoinColumn(name: 'user_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
+    #[ORM\InverseJoinColumn(name: 'role_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
+    private Collection $roleObjects;
+
     public function __construct()
     {
         $this->groups = new ArrayCollection();
@@ -106,6 +115,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->orders = new ArrayCollection();
         $this->initStripeUserTrait();
         $this->contactRequests = new ArrayCollection();
+        $this->roleObjects = new ArrayCollection();
     }
 
     public function __toString(): string
@@ -195,6 +205,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             foreach ($group->getRoles() as $role) {
                 $roles[] = $role->getName();
             }
+        }
+
+        foreach ($this->getRoleObjects() as $role) {
+            $roles[] = $role->getName();
         }
 
         return array_values(array_unique($roles));
@@ -358,6 +372,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $contactRequest->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Role>
+     */
+    public function getRoleObjects(): Collection
+    {
+        return $this->roleObjects;
+    }
+
+    public function addRoleObject(Role $role): static
+    {
+        if (!$this->roleObjects->contains($role)) {
+            $this->roleObjects->add($role);
+        }
+
+        return $this;
+    }
+
+    public function removeRoleObject(Role $role): static
+    {
+        $this->roleObjects->removeElement($role);
 
         return $this;
     }
