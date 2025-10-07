@@ -11,6 +11,7 @@ use ApiPlatform\Metadata\Get;
 use App\Entity\BlameableEntity;
 use App\Entity\CommonProperties;
 use App\Entity\ContactRequest;
+use App\Entity\Notification\AppChannel;
 use App\Entity\OAuth2Server\Client;
 use App\Entity\Order;
 use App\Repository\User\UserRepository;
@@ -97,6 +98,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\OneToMany(targetEntity: ContactRequest::class, mappedBy: 'user', orphanRemoval: true)]
     private Collection $contactRequests;
+
+    #[ORM\OneToOne(mappedBy: 'user', cascade: ['persist', 'remove'])]
+    private ?AppChannel $appChannel = null;
 
     public function __construct()
     {
@@ -358,6 +362,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $contactRequest->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAppChannel(): ?AppChannel
+    {
+        if (null === $this->appChannel) {
+            $this->setAppChannel(
+                (new AppChannel())
+                    ->setUser($this)
+            );
+        }
+
+        return $this->appChannel;
+    }
+
+    public function setAppChannel(AppChannel $appChannel): static
+    {
+        // set the owning side of the relation if necessary
+        if ($appChannel->getUser() !== $this) {
+            $appChannel->setUser($this);
+        }
+
+        $this->appChannel = $appChannel;
 
         return $this;
     }

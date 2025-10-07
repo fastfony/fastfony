@@ -1,0 +1,14 @@
+{# Template for a notification item, reusable in both Twig and JS #}
+<li class="bg-base-200 rounded-lg px-3 py-2 flex flex-col gap-1 notification">
+    <div class="flex items-center justify-between">
+        <span class="font-semibold text-sm subject">
+            {{ subject }}
+        </span>
+    </div>
+    <div class="text-xs text-base-content/80 content">
+        {{ content }}
+    </div>
+    <div class="text-xs text-right text-base-content/60 createdAt">
+        {{ createdAt }}
+    </div>
+</li>

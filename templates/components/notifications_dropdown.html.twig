@@ -1,0 +1,74 @@
+{% trans_default_domain 'front' %}
+
+{% if app.user and app.user.appChannel.id is not null %}
+    <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <div class="indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                </svg>
+                <span
+                    class="badge badge-sm indicator-item"
+                    id="notifications-counter"
+                >
+                    {{ notifications|length }}
+                </span>
+            </div>
+        </div>
+        <div
+            tabindex="0"
+            class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-100 shadow"
+        >
+            <div class="card-body max-h-[80vh] overflow-y-auto p-4">
+                {% if notifications is not empty %}
+                    <ul class="space-y-2" id="notifications">
+                        {% for notification in notifications %}
+                            {{ include('components/_notification_item.html.twig', {
+                                subject: notification.subject,
+                                content: notification.content,
+                                createdAt: notification.createdAt|ago,
+                            }) }}
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <div class="text-center text-sm text-base-content/60">
+                        {{ 'notification.no_one'|trans }}
+                    </div>
+                {% endif %}
+
+                <template id="notification-item-template">
+                    {{ include('components/_notification_item.html.twig', {
+                        subject: '__SUBJECT__',
+                        content: '__CONTENT__',
+                        createdAt: 'notification.now'|trans,
+                    }) }}
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const notificationsContainer = document.querySelector('#notifications');
+        const notificationsCounter = document.querySelector('#notifications-counter');
+        const template = document.querySelector('#notification-item-template');
+
+        function addNotificationToList(notification) {
+            const clone = template.content.cloneNode(true);
+            const html = clone.firstElementChild || clone.querySelector('li');
+            html.querySelector('.notification .subject').textContent = notification.subject;
+            html.querySelector('.notification .content').textContent = notification.content;
+            notificationsContainer.prepend(html);
+            notificationsCounter.textContent = parseInt(notificationsCounter.textContent) + 1;
+        }
+
+        const eventSource = new EventSource(
+            "{{ mercure(url('_api_/app_channels/{id}{._format}_get', {id: app.user.appChannel.id}))|escape('js') }}",
+            {
+                withCredentials: true
+            }
+        );
+        eventSource.onmessage = event => {
+            addNotificationToList(JSON.parse(event.data));
+        }
+    </script>
+{% endif %}

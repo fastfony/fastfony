@@ -31,23 +31,35 @@
             </ul>
         </div>
         <div class="navbar-end">
-            {% if is_granted('ROLE_ADMIN') %}
-                <a
-                    href="{{ path('admin') }}"
-                    class="link link-hover"
-                >
-                    <span>{{ 'link.admin'|trans }}</span>
-                </a>
-            {% endif %}
-
             {% if app.user %}
-                <a
-                    href="{{ path('_logout_main') }}"
-                    class="link link-hover mx-2"
-                    data-turbo="false"
-                >
-                    <span>{{ 'link.logout'|trans }}</span>
-                </a>
+                <!-- Start Notifications Dropdown -->
+                    <twig:DropdownNotifications />
+                <!-- End Notifications Dropdown -->
+
+                <div class="dropdown dropdown-end">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                        <div class="w-10 rounded-full flex place-content-center justify-items-center">
+                            <svg class="flex" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img">
+                                <title>User</title>
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <ul
+                        tabindex="0"
+                        class="menu dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li>
+                                <a href="{{ path('admin') }}">{{ 'link.admin'|trans }}</a>
+                            </li>
+                        {% endif %}
+                        <li>
+                            <a href="{{ path('_logout_main') }}" data-turbo="false">{{ 'link.logout'|trans }}</a>
+                        </li>
+                    </ul>
+                </div>
             {% else %}
                 <a
                     href="{{ path('request_login_link') }}"

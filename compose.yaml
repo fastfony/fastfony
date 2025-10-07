@@ -1,2 +1,13 @@
+services:
 ###> symfony/mercure-bundle ###
+    mercure:
+        image: dunglas/mercure
+        environment:
+            SERVER_NAME: ':80'
+            MERCURE_PUBLISHER_JWT_KEY: ${MERCURE_JWT_SECRET}
+            MERCURE_SUBSCRIBER_JWT_KEY: ${MERCURE_JWT_SECRET}
+            MERCURE_ALLOW_ANONYMOUS: '1'
+            MERCURE_EXTRA_DIRECTIVES: |
+               cors_origins ${APP_URL}
+               anonymous true 
 ###< symfony/mercure-bundle ###
