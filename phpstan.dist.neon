@@ -11,8 +11,6 @@ parameters:
         -
             identifier: nullCoalesce.offset
         -
-            identifier: isset.offset
-        -
             '#contains unresolvable type#'
 
 includes:
