@@ -3,3 +3,8 @@ framework:
     translator:
         default_path: '%kernel.project_dir%/assets/locales'
         providers:
+
+when@test:
+    framework:
+        translator:
+            fallbacks: ['en']

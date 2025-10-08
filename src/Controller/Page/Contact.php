@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Controller\Page;
 
+use App\Attribute\FeatureFlag;
 use App\Form\ContactRequestFormType;
+use App\Handler\Features;
 use App\Repository\ContactRequestRepository;
 use App\Repository\User\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,6 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+#[FeatureFlag(Features::CONTACT_REQUESTS->value)]
 class Contact extends AbstractController
 {
     public function __construct(
