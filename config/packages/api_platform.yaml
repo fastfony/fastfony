@@ -1,6 +1,6 @@
 api_platform:
     title: Fastfony API (public & internal)
-    version: 0.3.4
+    version: 0.3.6
     formats:
         jsonld: ['application/ld+json']
         json: ['application/json']
