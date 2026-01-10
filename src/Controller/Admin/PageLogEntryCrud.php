@@ -10,7 +10,7 @@ use App\Handler\FeatureFlag;
 use App\Handler\Features;
 use App\Repository\Page\PageLogEntryRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminAction;
+use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminRoute;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -97,7 +97,7 @@ class PageLogEntryCrud extends AbstractCrudController
         ;
     }
 
-    #[AdminAction(routePath: '/revert/{entityId}', routeName: 'revertToPreviousVersion', methods: ['GET'])]
+    #[AdminRoute(path: '/revert/{entityId}', name: 'revertToPreviousVersion')]
     public function revertToPreviousVersion(AdminContext $context): RedirectResponse
     {
         $pageLogEntry = $context->getEntity()->getInstance();
