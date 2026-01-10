@@ -8,10 +8,6 @@ framework:
     #esi: true
     #fragments: true
 
-    cache:
-        app: cache.adapter.filesystem
-        system: cache.adapter.system
-
 when@test:
     framework:
         test: true
