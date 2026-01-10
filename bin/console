@@ -4,6 +4,8 @@
 use App\Kernel;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 
+ini_set('memory_limit', '-1');
+
 if (!is_dir(dirname(__DIR__).'/vendor')) {
     throw new LogicException('Dependencies are missing. Try running "composer install".');
 }
