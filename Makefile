@@ -16,6 +16,7 @@ oauth2-server-init: ## Generate private and public keys for OAuth2 Server
 
 vendor: ## Install composer dependencies
 	composer install
+	npm run build
 	vendor/bin/grumphp git:init
 
 node_modules: ## Install npm dependencies
@@ -32,7 +33,6 @@ setup_tests: ## Setup test environment
 start: ## Start the development server
 	$(MAKE) vendor
 	$(MAKE) node_modules
-	npm run build
 	chmod -R 777 public/uploads/
 	bin/console app:install --env=dev
 	bin/console doctrine:schema:update --force --env=dev
