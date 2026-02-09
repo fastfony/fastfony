@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1768591471">
-  <project timestamp="1768591471">
+<coverage generated="1770670320">
+  <project timestamp="1770670320">
     <file name="/home/runner/work/fastfony/fastfony/src/Admin/Field/Json.php">
       <class name="App\Admin\Field\Json" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
@@ -589,23 +589,23 @@
       <line num="95" type="stmt" count="1"/>
       <line num="96" type="stmt" count="1"/>
       <line num="97" type="stmt" count="1"/>
-      <line num="100" type="method" name="revertToPreviousVersion" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="103" type="stmt" count="0"/>
-      <line num="104" type="stmt" count="0"/>
-      <line num="105" type="stmt" count="0"/>
+      <line num="103" type="method" name="revertToPreviousVersion" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="106" type="stmt" count="0"/>
       <line num="107" type="stmt" count="0"/>
       <line num="108" type="stmt" count="0"/>
-      <line num="109" type="stmt" count="0"/>
       <line num="110" type="stmt" count="0"/>
+      <line num="111" type="stmt" count="0"/>
       <line num="112" type="stmt" count="0"/>
       <line num="113" type="stmt" count="0"/>
-      <line num="114" type="stmt" count="0"/>
       <line num="115" type="stmt" count="0"/>
       <line num="116" type="stmt" count="0"/>
       <line num="117" type="stmt" count="0"/>
       <line num="118" type="stmt" count="0"/>
+      <line num="119" type="stmt" count="0"/>
+      <line num="120" type="stmt" count="0"/>
       <line num="121" type="stmt" count="0"/>
-      <metrics loc="124" ncloc="117" classes="1" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="44" coveredstatements="28" elements="51" coveredelements="33"/>
+      <line num="124" type="stmt" count="0"/>
+      <metrics loc="127" ncloc="117" classes="1" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="44" coveredstatements="28" elements="51" coveredelements="33"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Admin/Parameter/Index.php">
       <class name="App\Controller\Admin\Parameter\Index" namespace="global">
@@ -1138,20 +1138,20 @@
       <line num="120" type="stmt" count="2"/>
       <line num="121" type="stmt" count="2"/>
       <line num="122" type="stmt" count="2"/>
-      <line num="125" type="method" name="sendLoginLinkEmail" visibility="public" complexity="3" crap="3.33" count="1"/>
-      <line num="130" type="stmt" count="1"/>
-      <line num="132" type="stmt" count="1"/>
+      <line num="128" type="method" name="sendLoginLinkEmail" visibility="public" complexity="3" crap="3.33" count="1"/>
       <line num="133" type="stmt" count="1"/>
-      <line num="134" type="stmt" count="1"/>
       <line num="135" type="stmt" count="1"/>
       <line num="136" type="stmt" count="1"/>
       <line num="137" type="stmt" count="1"/>
-      <line num="139" type="stmt" count="0"/>
-      <line num="140" type="stmt" count="0"/>
-      <line num="141" type="stmt" count="0"/>
+      <line num="138" type="stmt" count="1"/>
+      <line num="139" type="stmt" count="1"/>
+      <line num="140" type="stmt" count="1"/>
       <line num="142" type="stmt" count="0"/>
-      <line num="146" type="stmt" count="1"/>
-      <metrics loc="149" ncloc="143" classes="1" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="72" coveredstatements="67" elements="79" coveredelements="72"/>
+      <line num="143" type="stmt" count="0"/>
+      <line num="144" type="stmt" count="0"/>
+      <line num="145" type="stmt" count="0"/>
+      <line num="149" type="stmt" count="1"/>
+      <metrics loc="152" ncloc="143" classes="1" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="72" coveredstatements="67" elements="79" coveredelements="72"/>
     </file>
     <file name="/home/runner/work/fastfony/fastfony/src/Controller/Api/Taxonomy/GetCollection.php">
       <class name="App\Controller\Api\Taxonomy\GetCollection" namespace="global">
@@ -4439,6 +4439,6 @@
       <line num="25" type="stmt" count="2"/>
       <metrics loc="29" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="187" loc="10957" ncloc="10275" classes="173" methods="674" coveredmethods="598" conditionals="0" coveredconditionals="0" statements="2660" coveredstatements="2388" elements="3334" coveredelements="2986"/>
+    <metrics files="187" loc="10963" ncloc="10275" classes="173" methods="674" coveredmethods="598" conditionals="0" coveredconditionals="0" statements="2660" coveredstatements="2388" elements="3334" coveredelements="2986"/>
   </project>
 </coverage>
