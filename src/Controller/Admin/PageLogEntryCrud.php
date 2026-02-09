@@ -97,6 +97,9 @@ class PageLogEntryCrud extends AbstractCrudController
         ;
     }
 
+    /**
+     * @param AdminContext<PageLogEntry> $context
+     */
     #[AdminRoute(path: '/revert/{entityId}', name: 'revertToPreviousVersion')]
     public function revertToPreviousVersion(AdminContext $context): RedirectResponse
     {

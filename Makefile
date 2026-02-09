@@ -55,7 +55,7 @@ coverage: ## Run tests with coverage (requires Xdebug)
 	XDEBUG_MODE=coverage php bin/phpunit --coverage-html=docs/coverage
 
 phpstan: ## Run PHPStan
-	vendor/bin/phpstan analyse src tests
+	php -d memory_limit=-1 vendor/bin/phpstan analyse src tests
 
 phpinsights: ## Run PHP Insights
 	vendor/bin/phpinsights
