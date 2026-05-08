@@ -1,3 +1,17 @@
+> [!WARNING]
+> ## This repository is archived
+>
+> Fastfony is no longer a monolithic starter-kit. We learned the hard way that one all-in-one boilerplate ends up too opinionated to reuse — removing what you don't need costs more than starting from scratch.
+>
+> **What replaces it (all MIT):**
+>
+> - 📦 Focused Symfony bundles, e.g. [`fastfony/identity-bundle`](https://github.com/fastfony/identity-bundle)
+> - 🎁 Composer packs, e.g. [`fastfony/quality-pack`](https://github.com/fastfony/quality-pack)
+> - 🤖 A [Claude Code skill](https://github.com/fastfony/claude-skill) that assembles your own starter-kit in one conversation
+>
+> Pick the pieces you need at [github.com/fastfony](https://github.com/fastfony) · [Read the manifesto](https://fastfony.com/en/manifesto) · [☕ Buy a coffee](https://buymeacoffee.com/neothone)
+
+
 <p align="center"><a href="https://fastfony.com" target="_blank">
     <img src="assets/images/Fastfony-black.svg" alt="Fastfony" style="width: 250px">
 </a></p>
